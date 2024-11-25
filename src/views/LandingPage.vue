@@ -85,7 +85,7 @@ video {
   font-family: "Inter";
   font-size: 50px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .intro_container .body {
