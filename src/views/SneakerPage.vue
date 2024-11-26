@@ -1,5 +1,23 @@
 <template>
   <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
 </template>
 
 <script>
@@ -15,7 +33,7 @@ export default{
   },
   print2(){
     console.log("False")
-  }
+  },
 }
 };
 </script>

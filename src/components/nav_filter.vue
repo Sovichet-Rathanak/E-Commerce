@@ -1,16 +1,16 @@
 <template>
   <nav class="nav_container" v-if="$route.name !== 'Home'">
-    <button class="nav_btn" v-for="(category, index) in categories" :key="index" @mouseover="showFilter(index), this.FilterVisible = true">
+    <button class="nav_btn" v-for="(category, index) in filters.categories" :key="index" @mouseover="filters.showFilter(index), filters.FilterVisible = true">
       {{ category }}
     </button>
   </nav>
 
   <transition name="filter_result">
-    <div class="filter_result" v-if="FilterVisible" @mouseleave="this.FilterVisible = false">
+    <div class="filter_result" v-if="filters.FilterVisible" @mouseleave="filters.FilterVisible = false">
       <div class="by_price">
         <span>Sort By Price:</span>
         <div class="filt_resBtn_container" style="width: 200px;">
-          <button v-for="filter in selectedCat.Price" :key="filter">{{ filter }}</button>
+          <button v-for="filter in filters.selectedCat.Price" :key="filter">{{ filter }}</button>
         </div>
       </div>
 
@@ -20,7 +20,7 @@
       <div class="by_brand">
         <span>Sort By Brand:</span>
         <div class="filt_resBtn_container">
-          <button v-for="filter in selectedCat.Brand" :key="filter" @click="console.log(selectedCat)">{{ filter }}</button>
+          <button v-for="filter in filters.selectedCat.Brand" :key="filter" @click="console.log(selectedCat)">{{ filter }}</button>
         </div>
       </div>
 
@@ -30,7 +30,7 @@
       <div class="by_rating">
         <span>Sort By Rating:</span>
         <div class="filt_resBtn_container" style="width: 200px;"> <!-- Filter result button container -->
-          <button v-for="filter in selectedCat.Rating" :key="filter">{{ filter }}</button>
+          <button v-for="filter in filters.selectedCat.Rating" :key="filter">{{ filter }}</button>
         </div>
       </div>
     </div>
@@ -38,53 +38,14 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      FilterVisible: false,
-      selectedCat: null,
-      categories: ["Sneakers","Accessories","Menswear","Womenswear","Collectibles"],
-      filters: {
-        Sneakers:{
-          Brand:["Nike", "Adidas", "Air Jordan", "New Balance", "Converse", "Vans", "FILA", "Puma", "Rebook", "Onitsuka Tiger", "Sketchers"],
-          Price:["Designers", "Below $300", "Below $200", "Below $100", "Below $50"],
-          Rating:["Highest to Lowest", "Lowest to Highest"]
-        },
-        Accessories:{
-          Brand:["Hermes", "Chanel", "Prada", "DIOR", "Goyard", "Louis Vuitton", "GUCCI", "COACH", "Yves Saint Laurent", "Fendi", "Givenchy", "BURBERRY"],
-          Price:["Very high prolly idk :3"],
-          Rating:["Highest to Lowest", "Lowest to Highest"]
-        },
-        Menswear:{
-          Brand:["I like menswear"],
-          Price:["Very high prolly idk :3"],
-          Rating:["Highest to Lowest", "Lowest to Highest"]
-        },
-        Womenswear:{
-          Brand:["sundress goated fr"],
-          Price:["Very high prolly idk :3"],
-          Rating:["Highest to Lowest", "Lowest to Highest"]
-        },
-        Collectibles:{
-          Brand:["Aespa", "NewJeans", "NCT Wish", "ILLIT", "LE SSERAFIM", "ATEEZ", "Stray Kids", "ITZY", "TXT", "RIIZE", "XG", "TWICE", "IVE", "SEVENTEEN", "ENHYPEN"],
-          Price:["Mid"],
-          Rating:["Highest to Lowest", "Lowest to Highest"]
-        }
-      },
-    };
+import { useFilterStore } from '@/store/filter';
+
+export default{
+  setup(){
+    const filters = useFilterStore();
+    return { filters };
   },
-  methods: {
-    print() {
-      console.log(this.filters.Sneakers.Brand[0])
-    },
-    showFilter(index){
-      const CurrentCategory = this.categories[index]; //do this to get the filter category we're on
-      this.selectedCat = this.filters[CurrentCategory]; //Get the name of the nested object we hover on so we could use it to dynamically display the filter result
-      console.log(CurrentCategory);
-      console.log("This:" + this.selectedCat)
-    }
-  },
-};
+}
 </script>
 
 <style>
@@ -92,11 +53,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   background-color: #0d0907;
   height: 3.6rem;
   border-top: 1.5px solid white;
   gap: 4.3rem;
   box-shadow: 5px 0px 10px black;
+  width: 100%;
 }
 
 .nav_container button {
@@ -111,6 +74,8 @@ export default {
 .filter_result {
   display: flex;
   justify-content: center;
+  width: 100%;
+  position: absolute;
   background-color: #101010;
   gap: 4.3rem;
   box-shadow: 5px 0px 10px black;
@@ -119,6 +84,7 @@ export default {
   color: #949494;
   font-family: "Inter";
   font-weight: bold;
+  box-sizing: border-box;
   padding: 1rem;
 }
 
