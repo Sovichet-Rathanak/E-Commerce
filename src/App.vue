@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="header">
     <h1>Kravan</h1>
     <div class="header_nav" v-if="$route.name !== 'Home'">
@@ -15,9 +16,12 @@
     <button>Collectibles</button>
   </nav>
   <router-view></router-view>
+</div>
 </template>
 
-<script></script>
+<script>
+
+</script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
