@@ -1,45 +1,51 @@
 <template>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-  <h1>Hello World</h1>
-</template>
+<div> 
+  <SeemoreSection @see-more="handleSeeMore" />
+  
+</div>
+</template> 
 
 <script>
-export default{
-  data(){
-    return{
-      FilterVisible: false,
+
+import NewAndNoteworthys from "./components/NewAndNoteworthys.vue";
+
+export default {
+
+  components: {
+    SeemoreSection: NewAndNoteworthys,
+
+  },
+
+  props: {
+        
+        },
+  methods: {
+    handleSeeMore() {
+      // Handle the click event here
+      console.log('See More button clicked in NewAndNoteworthys.vue');
+      // You can perform actions to fetch or display more content here
     }
-  },
-  methods:{
-  print(){
-    console.log("True")
-  },
-  print2(){
-    console.log("False")
-  },
-}
+  }
+
 };
 </script>
 
 <style scoped>
-h1 {
-  color: red;
+
+.SeeMore_btn button {
+  background-color: transparent;
+  font-size: 20px;
+  color: black;
+  border: none;
+  font-family: "Inter";
+  font-weight: bold;
 }
+h2 {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Inter";
+}
+
+
 </style>
