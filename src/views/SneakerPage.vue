@@ -1,20 +1,19 @@
 <template>
   <div>
-    <BrandsSection />
-    <OffersSection />
+    <BrandCard />
+    <OfferCard/>
   </div>
 </template>
 
 
 <script>
-import PopularBrands from "./components/PopularBrands.vue";
-import SpecialOffers from "./components/SpecialOffers.vue";
+import BrandCard from "@/components/BrandCard.vue";
+import OfferCard from "@/components/OfferCard.vue";
 
 export default {
   components: {
-    BrandsSection: PopularBrands,
-    OffersSection: SpecialOffers,
-  }, 
+   BrandCard,OfferCard,
+  },
 };
 </script>
 <style scoped>
