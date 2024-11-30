@@ -74,7 +74,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .brand-card {
@@ -87,7 +87,7 @@ export default {
   width: 23.125rem;
   height: 19.688rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
-  margin: 20px;
+  margin: 10px;
 }
 
 .brand-logo {
