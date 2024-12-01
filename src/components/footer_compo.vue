@@ -46,10 +46,10 @@
         </ul>
       </figure>
       <div class="social">
-        <Icon icon="bi:twitter-x" width="2rem" height="2rem"/>
-        <Icon icon="fe:facebook" width="2rem" height="2rem" />
-        <Icon icon="lucide:instagram" width="2rem" height="2rem" />
-        <Icon icon="lineicons:linkedin" width="2rem" height="2rem" />
+        <iconify-icon icon="bi:twitter-x" width="2rem" height="2rem"/>
+        <iconify-icon icon="fe:facebook" width="2rem" height="2rem" />
+        <iconify-icon icon="lucide:instagram" width="2rem" height="2rem" />
+        <iconify-icon icon="lineicons:linkedin" width="2rem" height="2rem" />
       </div>
     </div>
   </div>
@@ -65,8 +65,7 @@
   </div>
 </template>
 
-<script setup>
-  import { Icon } from '@iconify/vue';
+<script>
 </script>
 
 <style>

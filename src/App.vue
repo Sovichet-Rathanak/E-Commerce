@@ -4,7 +4,7 @@
     <div class="header_nav" v-if="$route.name !== 'Home'">
       <button>Cart</button>
       <button>Sign In</button>
-      <button>Search</button>
+      <search-btn></search-btn>
     </div>
   </div>
   <nav-filter></nav-filter>
