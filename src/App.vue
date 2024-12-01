@@ -1,5 +1,4 @@
 <template>
-  <div>
   <div class="header">
     <h1>Kravan</h1>
     <div class="header_nav" v-if="$route.name !== 'Home'">
@@ -16,85 +15,12 @@
     <button>Collectibles</button>
   </nav>
   <router-view></router-view>
-
-  <div class="articleSection">
-            <ArticleCardComponent 
-            v-for="articleCard in articleCards"
-            :key="articleCard" 
-            :article_image="articleCard.article_image"
-            :article_title="articleCard.article_title"
-            />
-        </div>
-
-        <div class="magazineSection">
-            <MagazineCardComponent
-            v-for="MagazineCard in MagazineCards" 
-            :key="MagazineCard" 
-            :Magazine_image="MagazineCard.Magazine_image"
-            :Magazine_title="MagazineCard.Magazine_title"
-            />
-
-        </div>
-</div>
-  
-
-
 </template>
 
-<script>
-import ArticleCardComponent from "./components/ArticleCardComponent.vue";
-import MagazineCardComponent from "./components/MagazineCardComponent.vue";
-
-export default {
-    name: "App",
-    components: {
-        ArticleCardComponent,
-        MagazineCardComponent,
-    },
-
-    data (){
-        return {
-            articleCards: [
-                {
-                    article_image:"/src/assets/image/articleImage1.jpg", 
-                    article_title:"The best dupes and look alike handbags for the Dior saddle bag, Diorama and miss Dior bag"
-                },
-
-                {
-                    article_image:"/src/assets//image/articleImage1.jpg", 
-                    article_title:"The best dupes and look alike handbags for the Dior saddle bag, Diorama and miss Dior bag"
-                },
-            ],
-            MagazineCards: [
-                {
-                    Magazine_image:"/src/assets//image/magazine1.jpg", 
-                    Magazine_title:"DANIELLE (NEWJEANS) - MARIE CLAIRE (MAY 2024)"
-                },
-
-                {
-                    Magazine_image:"/src/assets//image/magazine2.jpg", 
-                    Magazine_title:"Barbara Palvin Smolders in 'What Sexy Now' by Greg Swales"
-                },
-
-                {
-                    Magazine_image:"/src/assets//image/magazine3.jpg", 
-                    Magazine_title:"Urassaya Sperbund Throughout the Years in Vogue"
-                },
-            ],
-            
-        };
-    }
-}
-</script>
+<script></script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
-.articleSection, .magazineSection{
-    display: flex;
-    font-family: "Inter";
-    margin: 10px 25px 50px 40px;
-}
 
 .header {
   display: flex;
