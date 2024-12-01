@@ -1,40 +1,22 @@
 <template>
   <div>
-  <div class="header">
-    <h1>Kravan</h1>
-    <div class="header_nav" v-if="$route.name !== 'Home'">
-      <button>Cart</button>
-      <button>Sign In</button>
-      <button>Search</button>
-    </div>
-  </div>
-  <nav class="nav_container" v-if="$route.name !== 'Home'">
-    <button>Sneakers</button>
-    <button>Accessories</button>
-    <button>Menswear</button>
-    <button>Womenswear</button>
-    <button>Collectibles</button>
-  </nav>
-  <router-view></router-view>
-
-  <div class="articleSection">
+    <div class="articleSection">
             <ArticleCardComponent 
             v-for="articleCard in articleCards"
             :key="articleCard" 
             :article_image="articleCard.article_image"
             :article_title="articleCard.article_title"
             />
-        </div>
+    </div>
 
-        <div class="magazineSection">
+    <div class="magazineSection">
             <MagazineCardComponent
             v-for="MagazineCard in MagazineCards" 
             :key="MagazineCard" 
             :Magazine_image="MagazineCard.Magazine_image"
             :Magazine_title="MagazineCard.Magazine_title"
             />
-
-        </div>
+    </div>
 </div>
   
 
@@ -42,11 +24,10 @@
 </template>
 
 <script>
-import ArticleCardComponent from "./components/ArticleCardComponent.vue";
-import MagazineCardComponent from "./components/MagazineCardComponent.vue";
+import ArticleCardComponent from "@/components/ArticleCardComponent.vue";
+import MagazineCardComponent from "@/components/MagazineCardComponent.vue";
 
 export default {
-    name: "App",
     components: {
         ArticleCardComponent,
         MagazineCardComponent,
