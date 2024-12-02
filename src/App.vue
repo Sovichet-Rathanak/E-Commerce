@@ -1,23 +1,20 @@
 <template>
   <div class="header">
-    <h1>Kravan</h1>
+    <router-link to="/" style="text-decoration: none;"><h1>Kravan</h1></router-link>
     <div class="header_nav" v-if="$route.name !== 'Home'">
       <button>Cart</button>
       <button>Sign In</button>
-      <button>Search</button>
+      <search-btn></search-btn>
     </div>
   </div>
-  <nav class="nav_container" v-if="$route.name !== 'Home'">
-    <button>Sneakers</button>
-    <button>Accessories</button>
-    <button>Menswear</button>
-    <button>Womenswear</button>
-    <button>Collectibles</button>
-  </nav>
+  <nav-filter></nav-filter>
   <router-view></router-view>
+  <footer-component v-if="$route.name !== 'Home'"></footer-component>
 </template>
 
-<script></script>
+<script>
+
+</script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
@@ -26,13 +23,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #0d0907;
   color: white;
   height: 7rem;
   z-index: 1;
+  width: 100%;
+  position: sticky;
+  top: 0;
 }
 
-.header h1 {
+.header h1{
   color: white;
   margin: 0;
   font-family: "Inter";
@@ -43,9 +43,16 @@
 
 .header_nav {
   display: flex;
-  gap: 3rem;
+  gap: 2.5rem;
   position: absolute;
   right: 3rem;
+}
+
+.header_nav button:hover {
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  color: white;
+  cursor: pointer;
 }
 
 .header_nav button {
@@ -54,29 +61,5 @@
   border: none;
   font-family: "Inter";
   font-weight: bold;
-}
-
-.nav_container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  height: 3.6rem;
-  border-top: 1.5px solid white;
-  gap: 5rem;
-}
-
-.nav_container button{
-  background-color: transparent;
-  font-size: 20px;
-  color: #949494;
-  border: none;
-  font-family: "Inter";
-  font-weight: bold;
-}
-
-.nav_container button:hover{
-  color: white;
-  cursor: pointer;
 }
 </style>

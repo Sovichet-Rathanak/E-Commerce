@@ -8,18 +8,12 @@
     </div>
     <div class="button_container">
       <RouterLink to="/Sneakers"><button>Discover Sneaker</button></RouterLink>
-      <RouterLink to="/Collectibles"
-        ><button>Discover Collectibles</button></RouterLink
-      >
-      <RouterLink to="/Womenswear"
-        ><button>Discover Fashion</button></RouterLink
-      >
-      <RouterLink to="/Accessories"
-        ><button>Discover Accessories</button></RouterLink
-      >
+      <RouterLink to="/Collectibles"><button>Discover Collectibles</button></RouterLink>
+      <RouterLink to="/Womenswear"><button>Discover Fashion</button></RouterLink>
+      <RouterLink to="/Accessories"><button>Discover Accessories</button></RouterLink>
     </div>
-    <video :src="src" autoplay muted loop>
-      <source :src="src" :type="type" class="vid" />
+    <video :src="src" autoplay muted disablePictureInPicture controlsList="nodownload" loop>
+      <source :src="src" :type="type" class="vid"/>
     </video>
   </div>
 </template>
@@ -85,7 +79,7 @@ video {
   font-family: "Inter";
   font-size: 50px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .intro_container .body {
