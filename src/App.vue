@@ -12,7 +12,8 @@
   <footer-component v-if="$route.name !== 'Home'"></footer-component>
 </template>
 
-<script></script>
+<script>
+</script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
@@ -26,6 +27,8 @@
   height: 7rem;
   z-index: 1;
   width: 100%;
+  position: sticky;
+  top: 0;
 }
 
 .header h1{

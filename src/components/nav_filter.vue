@@ -1,42 +1,44 @@
 <template>
-  <nav class="nav_container" v-if="$route.name !== 'Home'">
-    <template v-for="(category, index) in filters.categories" :key="index">
-      <RouterLink :to="'/' + category" @mouseover="filters.showFilter(index), filters.FilterVisible = true">
-        <button class="nav_btn">{{ category }}</button>
-      </RouterLink>
-    </template>
-  </nav>
+  <div class="wrapper">
+    <nav class="nav_container" v-if="$route.name !== 'Home'">
+      <template v-for="(category, index) in filters.categories" :key="index">
+        <RouterLink :to="'/' + category" @mouseover="filters.showFilter(index), filters.FilterVisible = true">
+          <button class="nav_btn">{{ category }}</button>
+        </RouterLink>
+      </template>
+    </nav>
 
-  <transition name="filter_result">
-    <div class="filter_result" v-if="filters.FilterVisible" @mouseleave="filters.FilterVisible = false">
-      <div class="by_price">
-        <span>Sort By Price:</span>
-        <div class="filt_resBtn_container" style="width: 200px;">
-          <button v-for="filter in filters.selectedCat.Price" :key="filter">{{ filter }}</button>
+    <transition name="filter_result">
+      <div class="filter_result" v-if="filters.FilterVisible" @mouseleave="filters.FilterVisible = false">
+        <div class="by_price">
+          <span>Sort By Price:</span>
+          <div class="filt_resBtn_container" style="width: 200px;">
+            <button v-for="filter in filters.selectedCat.Price" :key="filter">{{ filter }}</button>
+          </div>
+        </div>
+
+        <!-- vertical line -->
+        <div class="vl"></div>
+
+        <div class="by_brand">
+          <span>Sort By Brand:</span>
+          <div class="filt_resBtn_container">
+            <button v-for="filter in filters.selectedCat.Brand" :key="filter" @click="clicked">{{ filter }}</button>
+          </div>
+        </div>
+
+        <!-- vertical line -->
+        <div class="vl"></div>
+
+        <div class="by_rating">
+          <span>Sort By Rating:</span>
+          <div class="filt_resBtn_container" style="width: 200px;">
+            <button v-for="filter in filters.selectedCat.Rating" :key="filter">{{ filter }}</button>
+          </div>
         </div>
       </div>
-
-      <!-- vertical line -->
-      <div class="vl"></div>
-
-      <div class="by_brand">
-        <span>Sort By Brand:</span>
-        <div class="filt_resBtn_container">
-          <button v-for="filter in filters.selectedCat.Brand" :key="filter" @click="clicked">{{ filter }}</button>
-        </div>
-      </div>
-
-      <!-- vertical line -->
-      <div class="vl"></div>
-
-      <div class="by_rating">
-        <span>Sort By Rating:</span>
-        <div class="filt_resBtn_container" style="width: 200px;">
-          <button v-for="filter in filters.selectedCat.Rating" :key="filter">{{ filter }}</button>
-        </div>
-      </div>
-    </div>
-  </transition>
+    </transition>
+  </div>
 </template>
 
 
@@ -52,6 +54,12 @@ export default{
 </script>
 
 <style scoped>
+.wrapper{
+  position: sticky;
+  top: 7rem;
+  z-index: 0;
+}
+
 .nav_container {
   display: flex;
   justify-content: center;
