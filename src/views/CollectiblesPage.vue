@@ -1,17 +1,20 @@
 <template>
-  <web_banner :images="ImageList"/>
+  <web_banner :images="banner.collectiblesBanner.image"/>
   <div class="sectionOne"> 
     <product_card v-for="(productCard, index) in productCard"
       :key="index"
       :productImage="productCard.productImage"
-      :title="productCard.title"
-      :status="productCard.status"/>
+      :productName="productCard.productName"
+      :productStatus="productCard.productStatus"/>
   </div>
 </template>
 
 <script>
 import web_banner from '@/components/web_banner.vue';
 import product_card from '@/components/product_card.vue';
+import { useBannerStore } from '@/store/banner';
+import { mapState } from 'pinia';
+
 export default{
   components:{
     web_banner,
@@ -19,25 +22,38 @@ export default{
   },
   data(){
     return{
-      ImageList: [        
-        './src/assets/images/aespa3.jpg',
-        './src/assets/images/aespa4.jpg',
-        './src/assets/images/newjeans.jpg',
-        './src/assets/images/nct.jpg',
-        './src/assets/images/illit.jpg',
-        './src/assets/images/lessera.jpg',
-        './src/assets/images/RIIZE.jpeg',
-        './src/assets/images/straykids.jpg',
-        './src/assets/images/ateez.jpeg',
-      ],
       productCard:[
-        {productImage: './src/assets/images/testimg1.jpg', title: 'Hello Bomboclat', status: 'Available'},
-        {productImage: './src/assets/images/testimg1.jpg', title: 'Hello Bomboclat', status: 'Available'},
-        {productImage: './src/assets/images/testimg1.jpg', title: 'Hello Bomboclat', status: 'Available'},
-        {productImage: './src/assets/images/testimg1.jpg', title: 'Hello Bomboclat', status: 'Available'},
+        {
+          productImage: './src/assets/images/testimg1.jpg', 
+          productName: 'Hello Bomboclat', 
+          productStatus: 'Available'
+        },
+        {
+          productImage: './src/assets/images/testimg1.jpg', 
+          productName: 'Hello Bomboclat', 
+          productStatus: 'Available'
+        },
+        {
+          productImage: './src/assets/images/testimg1.jpg', 
+          productName: 'Hello Bomboclat', 
+          productStatus: 'Available'
+        },
+        {
+          productImage: './src/assets/images/testimg1.jpg', 
+          productName: 'Hello Bomboclat', 
+          productStatus: 'Available'
+        },
       ]
     }
-
+  },
+  setup(){
+    const bannerStore = useBannerStore();
+    return {bannerStore};
+  },
+  computed:{
+    ...mapState(useBannerStore, {
+      banner: 'banners'
+    })
   }
 }
 </script>

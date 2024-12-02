@@ -1,31 +1,31 @@
 <template>
   <div class="offers-section">
-    <h2>Special Offers</h2>
     <div class="offer-list">
-      <div
-        v-for="(offer, index) in offers"
-        :key="index"
-        class="offer-card"
-      >
+      <div v-for="(offer, index) in offers" :key="index" class="offer-card">
         <img :src="offer.image" class="offer-image" />
-
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ComingSoon from "@/assets/image/ComingSoon.png";
-import NewYear from "@/assets/image/NewYear.png";
-import NewArrival from "@/assets/image/NewArrival.png";
+import ComingSoon from "@/assets/images/SpecialOffers/ComingSoon.png";
+import NewYear from "@/assets/images/SpecialOffers/NewYear.png";
+import NewArrival from "@/assets/images/SpecialOffers/NewArrival.png";
 export default {
   name: "OffersSection",
   data() {
     return {
       offers: [
-        {image: ComingSoon},
-        { image: NewYear},
-        { image: NewArrival},
+        {
+          image: ComingSoon
+        },
+        { 
+          image: NewYear
+        },
+        { 
+          image: NewArrival
+        },
       ],
     };
   },

@@ -1,106 +1,46 @@
 <template>
-  <div class="brand-section">
-    <h2>Popular Brands</h2>
-    <div class="brand-list">
-      <div
-        v-for="(brand, index) in brands"
-        :key="index"
-        class="brand-card"
-        :style="{ backgroundColor: brand.bgColor }"
-      >
-        <img :src="brand.logo" :alt="brand.name" class="brand-logo" />
-        <div class="brand-name">{{ brand.name }}</div>
-      </div>
+    <div class="card_wrapper">
+      <img class="brand_image" :src="brandImg" alt="brand_logo">
+      <span class="brand_name">{{ brandName }}</span>
     </div>
-  </div>
 </template>
 
 <script>
-import Converse from "@/assets/image/Converse.png";
-import Jordan from "@/assets/image/Jordan.png";
-import Vans from "@/assets/image/Vans.png";
-import Yeezy from "@/assets/image/Yeezy.png";
-
-export default {
-  name: "BrandCard",
-  data() {
-    return {
-      brands: [
-        {
-          logo: Jordan,
-          name: "Converse",
-          bgColor: "#fff",
-        },
-        {
-          logo: Converse,
-          name: "Converse",
-          bgColor: "#fff",
-        },
-        {
-          logo: Vans,
-          name: "Vans",
-          bgColor: "#fff",
-        },
-        {
-          logo: Yeezy,
-          name: "Yeezy",
-          bgColor: "#fff",
-        },
-      ],
-    };
-  },
-};
+  export default{
+    props:{
+      brandImg: String,
+      brandName: String
+    }
+  }
 </script>
 
 <style scoped>
-.brand-section {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  font-size: 40px;
-  margin-bottom: 20px;
-  margin-left: 70px;
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+.card_wrapper{
+  width: 370px;
+  height: 315px;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin-top: 1.75rem;
+  border: 1px solid black; 
+  background-color: #F0F0F0;
 }
 
-/* .brand-section h2 {
-  font-size: 40px;
-  margin-bottom: 20px;
-
-} */
-
-.brand-list {
+.brand_image{
+  height: 253px;
+  width: 370px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-}
-
-.brand-card {
-
   align-items: center;
-  justify-content: center;
-  border-radius: 1.875rem;
-  color: #fff;
-  text-align: center;
-  width: 23.125rem;
-  height: 19.688rem;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
-  margin: 10px;
+  border-radius: 30px 30px 0px 0px;
+  margin-bottom: 10px;
 }
 
-.brand-logo {
-  width: 23.125rem;
-  height: 15.813rem;
-  object-fit: cover;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-}
-
-.brand-name {
-  margin-top: 0.5rem;
-  font-size: 1.75rem;
-  color: black;
+.brand_name{
+  font-weight: bold;
+  font-size: 28px;
+  font-family: 'Inter';
+  margin: 20px;
 }
 </style>

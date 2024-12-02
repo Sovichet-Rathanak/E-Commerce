@@ -1,8 +1,8 @@
 <template>
     <div class="productCard">
         <img class="productImg" :src="productImage" alt="product image">
-        <h3 class="title"> {{ title }}</h3>
-        <h3 class="status"> {{ status }}</h3>
+        <h3 class="productName"> {{ productName }}</h3>
+        <h3 class="productStatus"> {{ productStatus }}</h3>
         <button @click="alertBuy()" class="buyBtn">Buy</button>
     </div>
 </template>
@@ -10,7 +10,11 @@
 <script>
 export default{
     name: "productCard",
-    props: ["productImage", "title","status"],
+    props: {
+        productImage: String,
+        productName: String,
+        productStatus: String
+    },
     methods:{
         alertBuy(){
             alert("Buy Button is click! Slayyy");
@@ -21,9 +25,6 @@ export default{
     
 <style>
 .productCard{
-    margin-top: 50px;
-    margin-left: 100px;
-    margin-right: 40px;
     width: 320px;
     height: 500px;
     background-color: transparent;
@@ -34,13 +35,13 @@ export default{
     border-radius: 20px;
     background-color: blue;
 }
-.title{
+.productName{
     margin-left: 5px;
     font-weight: normal;
     font-size: 20px;
     font-family: "Inter";
 }
-.status{
+.productStatus{
     margin-left: 5px;
     font-weight: medium;
     font-size: 18px;

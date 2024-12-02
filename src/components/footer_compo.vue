@@ -111,14 +111,18 @@
 
   .social{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 1rem;
   }
 
   .li_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid white;
-    width: fit-content;
+    width: 100%;
     padding: .7rem;
     border-radius: 5px;
   }

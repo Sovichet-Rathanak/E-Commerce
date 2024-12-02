@@ -1,6 +1,6 @@
 <template>
     <div class="article">
-        <img :src="article_image" alt="" class="article_image">
+        <img :src="article_image" alt="image" class="article_image">
         <div class="article_title">{{ article_title }}</div>
     </div>  
 </template>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 .article {
     width: 795px;
@@ -27,7 +27,7 @@ export default {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column; 
-    margin: 0 25px 50px 0;
+    margin: 1.75rem 0rem 1.75rem;
 }
 
 .article_image {
@@ -39,6 +39,7 @@ export default {
 }
 
 .article_title {
+    font-family: 'Inter';
     font-size: 25px;
     font-weight: bold;
     text-align: left;  

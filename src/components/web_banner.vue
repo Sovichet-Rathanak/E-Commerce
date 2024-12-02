@@ -13,7 +13,9 @@
 
 <script>
 export default {
-    props: ['images'], 
+    props: {
+        images: String
+    },
     data() {
         return {
             currentIndex: 0
@@ -52,6 +54,7 @@ export default {
     align-items: flex-end;
     overflow: hidden;
     justify-content: center;
+    z-index: -1;
 }
 .img{
     width: 100%;

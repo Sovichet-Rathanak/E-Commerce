@@ -57,7 +57,7 @@ export default{
 .wrapper{
   position: sticky;
   top: 7rem;
-  z-index: 0;
+  z-index: 1;
 }
 
 .nav_container {

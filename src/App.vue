@@ -8,7 +8,7 @@
     </div>
   </div>
   <nav-filter></nav-filter>
-  <router-view></router-view>
+  <router-view class="router"></router-view>
   <footer-component v-if="$route.name !== 'Home'"></footer-component>
 </template>
 
