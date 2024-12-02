@@ -1,5 +1,4 @@
 <template>
-  <div>
   <div class="header">
     <router-link to="/" style="text-decoration: none;"><h1>Kravan</h1></router-link>
     <div class="header_nav" v-if="$route.name !== 'Home'">
