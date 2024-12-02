@@ -1,9 +1,9 @@
-import AccessoriesPage from "@/views/AccessoriesPage.vue";
-import CollectiblesPage from "@/views/CollectiblesPage.vue";
-import LandingPage from "@/views/LandingPage.vue";
-import MenswearPage from "@/views/MenswearPage.vue";
-import SneakerPage from "@/views/SneakerPage.vue";
-import WomenswearPage from "@/views/WomenswearPage.vue";
+import Accessories from "@/views/AccessoriesPage.vue";
+import Collectibles from "@/views/CollectiblesPage.vue";
+import Landing from "@/views/LandingPage.vue";
+import Menswear from "@/views/MenswearPage.vue";
+import Sneaker from "@/views/SneakerPage.vue";
+import Womenswear from "@/views/WomenswearPage.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -11,33 +11,33 @@ const routes = [
     path: "/",
     name: "Home",
     meta: { disableOverflow: true },
-    component: LandingPage,
+    component: Landing,
   },
   {
     path: "/Sneakers",
-    name: "SneakerSec",
-    component: SneakerPage,
+    name: "Sneaker",
+    component: Sneaker,
   },
   {
     path: "/Collectibles",
-    name: "CollectiblesSec",
-    component: CollectiblesPage,
+    name: "Collectibles",
+    component: Collectibles,
   },
   {
     path: "/Menswear",
-    name: "MenswearSec",
-    component: MenswearPage,
+    name: "Menswear",
+    component: Menswear,
   },
   {
     path: "/Womenswear",
-    name: "WomenswearSec",
-    component: WomenswearPage,
+    name: "Womenswear",
+    component: Womenswear,
   },
   {
     path: "/Accessories",
-    name: "AccessoriesSec",
-    component: AccessoriesPage,
-  },
+    name: "Accessories",
+    component: Accessories,
+  }
 ];
 
 const router = createRouter({
