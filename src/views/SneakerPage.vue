@@ -1,19 +1,24 @@
 <template>
-<div> 
-  <SeemoreSection @see-more="handleSeeMore" />
-  
-</div>
-</template> 
+  <div>
+    <BrandCard />
+    <OfferCard/>
+  </div>
+  <div>
+    <SeeMore @see-more="handleSeeMore" />
+  </div>
+</template>
+
+ 
 
 <script>
-
+import BrandCard from "@/components/BrandCard.vue";
+import OfferCard from "@/components/OfferCard.vue";
 import SeeMore from "@/components/SeeMore.vue";
 
 export default {
 
   components: {
-    SeemoreSection: SeeMore,
-
+    SeeMore,BrandCard,OfferCard,
   },
 
   props: {
