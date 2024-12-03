@@ -46,6 +46,7 @@
     border-bottom: 2px solid grey;
     width: fit-content;
     background-color: #0d0907;
+    margin-left: 10px;
   }
 
   input:focus{
