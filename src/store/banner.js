@@ -15,15 +15,13 @@ export const useBannerStore = defineStore('banners',{
                 },
                 accessoryBanner:{
                     image:[
-                        './src/assets/images/Banner/AccessoriesBanner/aespa3.jpg',
-                        './src/assets/images/Banner/AccessoriesBanner/aespa4.jpg',
-                        './src/assets/images/Banner/AccessoriesBanner/newjeans.jpg',
-                        './src/assets/images/Banner/AccessoriesBanner/nct.jpg',
-                        './src/assets/images/Banner/AccessoriesBanner/illit.jpg',
-                        './src/assets/images/Banner/AccessoriesBanner/lessera.jpg',
-                        './src/assets/images/Banner/AccessoriesBanner/RIIZE.jpeg',
-                        './src/assets/images/Banner/AccessoriesBanner/straykids.jpg',
-                        './src/assets/images/Banner/AccessoriesBanner/ateez.jpeg',
+                        './src/assets/images/Banner/AccessoriesBanner/bagbanner1.jpg',
+                        './src/assets/images/Banner/AccessoriesBanner/bagbanner2.jpg',
+                        './src/assets/images/Banner/AccessoriesBanner/bagbanner3.jpg',
+                        './src/assets/images/Banner/AccessoriesBanner/bagbanner4.jpg',
+                        './src/assets/images/Banner/AccessoriesBanner/bagbanner5.jpg',
+                        './src/assets/images/Banner/AccessoriesBanner/bagbanner6.jpg',
+                        './src/assets/images/Banner/AccessoriesBanner/bagbanner7.jpg',
                     ]
                 },
                 menswearBanner:{

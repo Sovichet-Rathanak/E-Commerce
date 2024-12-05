@@ -15,9 +15,12 @@ export const useBrandStore = defineStore('brands',{
                 },
                 accessoryBrand:{
                     logo:[
-
+                        "./src/assets/images/BrandLogo/SneakerBrand/AccessoryBrand/Hermes.png", 
+                        "./src/assets/images/BrandLogo/SneakerBrand/AccessoryBrand/Chanel.png", 
+                        "./src/assets/images/BrandLogo/SneakerBrand/AccessoryBrand/Prada.png", 
+                        "./src/assets/images/BrandLogo/SneakerBrand/AccessoryBrand/Dior.png"
                     ],
-                    brand_name:[]
+                    brand_name:["Hermes","Chanel", "Prada", "DIOR"]
                 },
                 menswearBrand:{
                     logo:[
