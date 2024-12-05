@@ -12,9 +12,9 @@
       ></ProductCard>
   </div>
   
-    <SeeMore
-    SectionTitle="Recommended For You"
-    />
+  <SeeMore
+  SectionTitle="Recommended For You"
+  />
 
   <div class="recommended_section">
       <ProductCard v-for="index in 4" :key="index"

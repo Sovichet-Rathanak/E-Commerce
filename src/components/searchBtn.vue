@@ -21,14 +21,14 @@
   }
 </script>
 
-<style>
+<style scoped>
   button{
     background-color: transparent;
     border: none;
     font-family: 'Inter';
     font-weight: bold;
     font-size: 18px;
-    color: grey;
+    color: #949494;
   }
 
   button:hover{
