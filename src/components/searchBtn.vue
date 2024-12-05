@@ -21,14 +21,14 @@
   }
 </script>
 
-<style>
+<style scoped>
   button{
     background-color: transparent;
     border: none;
     font-family: 'Inter';
     font-weight: bold;
     font-size: 18px;
-    color: grey;
+    color: #949494;
   }
 
   button:hover{
@@ -46,6 +46,7 @@
     border-bottom: 2px solid grey;
     width: fit-content;
     background-color: #0d0907;
+    margin-left: 10px;
   }
 
   input:focus{
