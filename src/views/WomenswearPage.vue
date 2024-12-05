@@ -1,135 +1,137 @@
 <template>
-  <div>
-    <div class="articleSection">
-            <ArticleCardComponent 
-            v-for="articleCard in articleCards"
-            :key="articleCard" 
-            :article_image="articleCard.article_image"
-            :article_title="articleCard.article_title"
-            />
-    </div>
+  <WebBanner :images="banner.womenswearBanner.image"/>  <!-- checkout banner.js and just basically populate the image array with your own image -->
+  <SeeMore
+    SectionTitle="New and Noteworthy" style="margin-top: 1.75rem;"
+  />
 
-    <div class="magazineSection">
-            <MagazineCardComponent
-            v-for="MagazineCard in MagazineCards" 
-            :key="MagazineCard" 
-            :Magazine_image="MagazineCard.Magazine_image"
-            :Magazine_title="MagazineCard.Magazine_title"
-            />
-    </div>
-</div>
-  
+  <div class="recommended_section">         <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
+      <ProductCard v-for="index in 4" :key="index"
+        productImage="./src/assets/images/clothes1.jpg"
+        productName="Elevate your style with our latest collection!"
+        productStatus="Available In Stock"
+      ></ProductCard>
+  </div>
+
+  <SeeMore
+  SectionTitle="Recommended For You"
+  />
+
+  <div class="recommended_section">
+      <ProductCard v-for="index in 4" :key="index"
+        productImage="./src/assets/images/clothes1.jpg"
+        productName="Elevate your style with our latest collection!"
+        productStatus="Available In Stock"
+      ></ProductCard>
+  </div>
+
+  <span class="indie_section">Popular Brand</span>  <!-- indie_section meaning it doesnt rely on the SeeMore component -->
+
+  <div class="brand_section">
+    <BrandCard v-for="index in 4" :key="index"
+      :brandImg= "brand.womenswearBrand.logo[index -1]"
+      :brandName= "brand.womenswearBrand.brand_name[index -1]"
+    />
+  </div>
+
+  <SeeMore
+    SectionTitle="Exclusives and Collaborations"
+  />
+
+  <div class="recommended_section">
+      <ProductCard v-for="index in 4" :key="index"
+        productImage="./src/assets/images/clothes1.jpg"
+        productName="Elevate your style with our latest collection!"
+        productStatus="Available In Stock"
+      ></ProductCard>
+  </div>
+
+  <span class="indie_section">Special Offer</span> <!-- indie_section meaning it doesnt rely on the SeeMore component -->
+
+  <div class="offer_section">
+    <OfferCard></OfferCard>
+  </div>
+
+  <SeeMore
+    SectionTitle="Articles"
+  />
+  <div class="article_section">  <!-- just like the product component you just have to change the path of the productImage, we will also setup pinia for this :3 -->
+    <MagazineCard v-for="index in 3" :key="index"
+      Magazine_image="src/assets/images/Magazine/Magazine1.jpg"
+      Magazine_title = "Step into the world of timeless fashion with our exclusive collection!"
+    />
+  </div>
 </template>
 
 <script>
-import ArticleCardComponent from "@/components/ArticleCardComponent.vue";
-import MagazineCardComponent from "@/components/MagazineCardComponent.vue";
+import SeeMore from "@/components/SeeMore.vue";
+import WebBanner from "@/components/web_banner.vue";
+import BrandCard from "@/components/BrandCard.vue";
+import OfferCard from "@/components/OfferCard.vue";
+import MagazineCard from "@/components/MagazineCardComponent.vue";
+import ProductCard from '@/components/product_card.vue';
+import { useBrandStore } from "@/store/brand";
+import { mapState } from "pinia";
+import { useBannerStore } from '@/store/banner';
 
 export default {
-    components: {
-        ArticleCardComponent,
-        MagazineCardComponent,
-    },
+  components: {
+    BrandCard,
+    OfferCard,
+    WebBanner,
+    ProductCard,
+    SeeMore,
+    MagazineCard
+  },
+  setup(){
+    const brandStore = useBrandStore();
+    const bannerStore = useBannerStore();
 
-    data (){
-        return {
-            articleCards: [
-                {
-                    article_image:"/src/assets/image/articleImage1.jpg", 
-                    article_title:"The best dupes and look alike handbags for the Dior saddle bag, Diorama and miss Dior bag"
-                },
-
-                {
-                    article_image:"/src/assets//image/articleImage1.jpg", 
-                    article_title:"The best dupes and look alike handbags for the Dior saddle bag, Diorama and miss Dior bag"
-                },
-            ],
-            MagazineCards: [
-                {
-                    Magazine_image:"/src/assets//image/magazine1.jpg", 
-                    Magazine_title:"DANIELLE (NEWJEANS) - MARIE CLAIRE (MAY 2024)"
-                },
-
-                {
-                    Magazine_image:"/src/assets//image/magazine2.jpg", 
-                    Magazine_title:"Barbara Palvin Smolders in 'What Sexy Now' by Greg Swales"
-                },
-
-                {
-                    Magazine_image:"/src/assets//image/magazine3.jpg", 
-                    Magazine_title:"Urassaya Sperbund Throughout the Years in Vogue"
-                },
-            ],
-            
-        };
+    return {
+      brandStore,
+      bannerStore
+    };
+  },
+  computed:{
+    ...mapState(useBrandStore, {
+      brand: 'brands'
+    }),
+    ...mapState(useBannerStore,{
+      banner: 'banners'
+    })
+  },
+  methods:{
+    display(){
+      console.log(this.brand.sneakerBrand.logo[0])
     }
-}
+  }
+};
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
-.articleSection, .magazineSection{
+  .brand_section,
+  .offer_section,
+  .article_section{
     display: flex;
-    font-family: "Inter";
-    margin: 10px 25px 50px 40px;
-}
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3.44rem;
+    margin: 1.75rem 0rem 1.75rem;
+  }
 
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  color: white;
-  height: 7rem;
-  z-index: 1;
-}
+  .recommended_section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 7.5rem;
+    margin: 1.75rem 0rem 1.75rem;
+  }
 
-.header h1 {
-  color: white;
-  margin: 0;
-  font-family: "Inter";
-  font-weight: bold;
-  letter-spacing: 4px;
-  font-size: 40px;
-}
-
-.header_nav {
-  display: flex;
-  gap: 3rem;
-  position: absolute;
-  right: 3rem;
-}
-
-.header_nav button {
-  background-color: transparent;
-  color: #949494;
-  border: none;
-  font-family: "Inter";
-  font-weight: bold;
-}
-
-.nav_container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  height: 3.6rem;
-  border-top: 1.5px solid white;
-  gap: 5rem;
-}
-
-.nav_container button{
-  background-color: transparent;
-  font-size: 20px;
-  color: #949494;
-  border: none;
-  font-family: "Inter";
-  font-weight: bold;
-}
-
-.nav_container button:hover{
-  color: white;
-  cursor: pointer;
-}
+  .indie_section{
+    font-family: 'Inter';
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 5rem;
+  }
 </style>

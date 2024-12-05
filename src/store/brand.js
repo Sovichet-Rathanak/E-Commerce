@@ -6,16 +6,16 @@ export const useBrandStore = defineStore('brands',{
             brands:{
                 sneakerBrand:{
                     logo:[
-                        "./src/assets/images/BrandLogo/SneakerBrand/Jordan.png", 
-                        "./src/assets/images/BrandLogo/SneakerBrand/Converse.png", 
-                        "./src/assets/images/BrandLogo/SneakerBrand/Vans.png", 
+                        "./src/assets/images/BrandLogo/SneakerBrand/Jordan.png",
+                        "./src/assets/images/BrandLogo/SneakerBrand/Converse.png",
+                        "./src/assets/images/BrandLogo/SneakerBrand/Vans.png",
                         "./src/assets/images/BrandLogo/SneakerBrand/Yeezy.png"
                     ],
                     brand_name:["Jordan","Converse", "Vans", "Yeezy"]
                 },
                 accessoryBrand:{
                     logo:[
-                        
+
                     ],
                     brand_name:[]
                 },
@@ -24,8 +24,13 @@ export const useBrandStore = defineStore('brands',{
                     brand_name:[]
                 },
                 womenswearBrand:{
-                    logo:[],
-                    brand_name:[]
+                  logo:[
+                    "./src/assets/images/BrandLogo/Womenwear/D&G.jpg",
+                    "./src/assets/images/BrandLogo/Womenwear/Dior.jpg",
+                    "./src/assets/images/BrandLogo/Womenwear/PRADA.JPG",
+                    "./src/assets/images/BrandLogo/Womenwear/Valentino.jpg"
+                ],
+                brand_name:["Docle & Gabbana","Dior", "Prada", "Valentino"]
                 },
                 collectibleBrand:{
                     logo:[],
