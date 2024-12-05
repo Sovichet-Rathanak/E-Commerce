@@ -54,15 +54,13 @@ export const useBannerStore = defineStore('banners',{
                 },
                 collectiblesBanner:{
                     image:[
-                        './src/assets/images/Banner/CollectiblesBanner/aespa3.jpg',
-                        './src/assets/images/Banner/CollectiblesBanner/aespa4.jpg',
-                        './src/assets/images/Banner/CollectiblesBanner/newjeans.jpg',
-                        './src/assets/images/Banner/CollectiblesBanner/nct.jpg',
-                        './src/assets/images/Banner/CollectiblesBanner/illit.jpg',
-                        './src/assets/images/Banner/CollectiblesBanner/lessera.jpg',
-                        './src/assets/images/Banner/CollectiblesBanner/RIIZE.jpeg',
-                        './src/assets/images/Banner/CollectiblesBanner/straykids.jpg',
-                        './src/assets/images/Banner/CollectiblesBanner/ateez.jpeg',
+                        './src/assets/images/Banner/CollectiblesBanner/aespa.jpeg',
+                        './src/assets/images/Banner/CollectiblesBanner/twice.jpg',
+                        './src/assets/images/Banner/CollectiblesBanner/nctdream.jpeg',
+                        './src/assets/images/Banner/CollectiblesBanner/illit.jpeg',
+                        './src/assets/images/Banner/CollectiblesBanner/bibi.jpeg',
+                        './src/assets/images/Banner/CollectiblesBanner/riize.png',
+                        './src/assets/images/Banner/CollectiblesBanner/enhypen.jpg',
                     ]
                 },
             }
