@@ -42,12 +42,17 @@ export default{
 }
 
 button{
+  font-family: 'Inter';
+  font-weight: bold;
   font-size: 30px;
   color: black;
+  background-color: transparent;
+  border: none;
 }
 
 button:hover{
   color: black;
+  cursor: pointer;
 }
 
 </style>

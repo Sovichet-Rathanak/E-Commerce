@@ -1,17 +1,21 @@
 <template>
-  <div class="header">
+  <div class="header" v-if="$route.name !== 'Registration'">
+
     <div class="title_section" :style="titleStyle">
       <router-link to="/" style="text-decoration: none;"><h1>Kravan</h1></router-link>
+      
       <div class="header_nav" v-if="$route.name !== 'Home'">
         <button>Cart</button>
-        <button>Sign In</button>
+        <router-link to="/Registration"><button>Sign In</button></router-link>
         <search-btn></search-btn>
       </div>
+      
     </div>
+
     <nav-filter :style="navStyle"></nav-filter>
   </div>
-  <router-view class="router"></router-view>
-  <footer-component v-if="$route.name !== 'Home'"></footer-component>
+  <router-view></router-view>
+  <footer-component v-if="$route.name !== 'Home' && $route.name !== 'Registration'"></footer-component>
 </template>
 
 <script>
@@ -95,5 +99,6 @@
   border: none;
   font-family: "Inter";
   font-weight: bold;
+  font-size: 18px;
 }
 </style>

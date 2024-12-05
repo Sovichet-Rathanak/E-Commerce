@@ -4,6 +4,7 @@ import Landing from "@/views/LandingPage.vue";
 import Menswear from "@/views/MenswearPage.vue";
 import Sneaker from "@/views/SneakerPage.vue";
 import Womenswear from "@/views/WomenswearPage.vue";
+import Registration from "@/views/RegistrationPage.vue"
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -37,6 +38,12 @@ const routes = [
     path: "/Accessories",
     name: "Accessories",
     component: Accessories,
+  },
+  {
+    path: "/Registration",
+    name: "Registration",
+    meta: { disableOverflow: true },
+    component: Registration,
   }
 ];
 
