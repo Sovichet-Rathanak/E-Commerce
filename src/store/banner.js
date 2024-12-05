@@ -28,15 +28,14 @@ export const useBannerStore = defineStore('banners',{
                 },
                 menswearBanner:{
                     image:[
-                        './src/assets/images/Banner/MenswearBanner/aespa3.jpg',
-                        './src/assets/images/Banner/MenswearBanner/aespa4.jpg',
-                        './src/assets/images/Banner/MenswearBanner/newjeans.jpg',
-                        './src/assets/images/Banner/MenswearBanner/nct.jpg',
-                        './src/assets/images/Banner/MenswearBanner/illit.jpg',
-                        './src/assets/images/Banner/MenswearBanner/lessera.jpg',
-                        './src/assets/images/Banner/MenswearBanner/RIIZE.jpeg',
-                        './src/assets/images/Banner/MenswearBanner/straykids.jpg',
-                        './src/assets/images/Banner/MenswearBanner/ateez.jpeg',
+                        './src/assets/images/Banner/MenswearBanner/Louis_Vuitton.jpg',
+                        './src/assets/images/Banner/MenswearBanner/Gucci.jpg',
+                        './src/assets/images/Banner/MenswearBanner/Gucci1.jpg',
+                        './src/assets/images/Banner/MenswearBanner/Dior1.jpg',
+                        './src/assets/images/Banner/MenswearBanner/valentino.jpg',
+                        './src/assets/images/Banner/MenswearBanner/Balenciaga.jpg',
+
+
                     ]
                 },
                 womenswearBanner:{

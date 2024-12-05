@@ -6,22 +6,27 @@ export const useBrandStore = defineStore('brands',{
             brands:{
                 sneakerBrand:{
                     logo:[
-                        "./src/assets/images/BrandLogo/SneakerBrand/Jordan.png", 
-                        "./src/assets/images/BrandLogo/SneakerBrand/Converse.png", 
-                        "./src/assets/images/BrandLogo/SneakerBrand/Vans.png", 
+                        "./src/assets/images/BrandLogo/SneakerBrand/Jordan.png",
+                        "./src/assets/images/BrandLogo/SneakerBrand/Converse.png",
+                        "./src/assets/images/BrandLogo/SneakerBrand/Vans.png",
                         "./src/assets/images/BrandLogo/SneakerBrand/Yeezy.png"
                     ],
                     brand_name:["Jordan","Converse", "Vans", "Yeezy"]
                 },
                 accessoryBrand:{
                     logo:[
-                        
+
                     ],
                     brand_name:[]
                 },
                 menswearBrand:{
-                    logo:[],
-                    brand_name:[]
+                    logo:[
+                      "./src/assets/images/BrandLogo/MenswearBrand/Dior-Logo.png",
+                      "./src/assets/images/BrandLogo/MenswearBrand/Hermes-Logo.png",
+                      "./src/assets/images/BrandLogo/MenswearBrand/Prada-Logo.png",
+                      "./src/assets/images/BrandLogo/MenswearBrand/Valentino-Logo.png"
+                    ],
+                    brand_name:["Dior","Hermes","Prada", "Valentino"]
                 },
                 womenswearBrand:{
                     logo:[],
