@@ -30,12 +30,10 @@ export const useBannerStore = defineStore('banners',{
                     image:[
                         './src/assets/images/Banner/MenswearBanner/Louis_Vuitton.jpg',
                         './src/assets/images/Banner/MenswearBanner/Gucci.jpg',
-                        './src/assets/images/Banner/MenswearBanner/Gucci1.jpg',
+                        './src/assets/images/Banner/MenswearBanner/gucci1.jpg',
                         './src/assets/images/Banner/MenswearBanner/Dior1.jpg',
-                        './src/assets/images/Banner/MenswearBanner/valentino.jpg',
+                        './src/assets/images/Banner/MenswearBanner/Valentino.jpg',
                         './src/assets/images/Banner/MenswearBanner/Balenciaga.jpg',
-
-
                     ]
                 },
                 womenswearBanner:{
