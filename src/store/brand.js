@@ -33,8 +33,13 @@ export const useBrandStore = defineStore('brands',{
                     brand_name:[]
                 },
                 collectibleBrand:{
-                    logo:[],
-                    brand_name:[]
+                    logo:[
+                        "./src/assets/images/BrandLogo/CollectibleArtist/aespaBrand.jpg", 
+                        "./src/assets/images/BrandLogo/CollectibleArtist/newjeansBrand.jpg", 
+                        "./src/assets/images/BrandLogo/CollectibleArtist/illit.jpg", 
+                        "./src/assets/images/BrandLogo/CollectibleArtist/enhypenBrand.jpg"
+                    ],
+                    brand_name:["AESPA","NEWJEANS","ILLIT","ENHYPEN"]
                 },
             }
         }
