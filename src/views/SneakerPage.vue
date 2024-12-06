@@ -1,65 +1,68 @@
 <template>
   <WebBanner :images="banner.sneakerBanner.image"/>  <!-- checkout banner.js and just basically populate the image array with your own image -->
-  <SeeMore
-    SectionTitle="New and Noteworthy" style="margin-top: 1.75rem;"
-  />
-
-  <div class="recommended_section">         <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
-      <ProductCard v-for="index in 4" :key="index" 
-        productImage="./src/assets/images/AJ1HighLost_Found.jpg"
-        productName="Jordan 1 Retro High OG Chicago Lost and Found"
-        productStatus="Available In Stock"
-      ></ProductCard>
-  </div>
-  
-  <SeeMore
-  SectionTitle="Recommended For You"
-  />
-
-  <div class="recommended_section">
-      <ProductCard v-for="index in 4" :key="index"
-        productImage="./src/assets/images/AJ1HighLost_Found.jpg"
-        productName="Jordan 1 Retro High OG Chicago Lost and Found"
-        productStatus="Available In Stock"
-      ></ProductCard>
-  </div>
-  
-  <span class="indie_section">Popular Brand</span>  <!-- indie_section meaning it doesnt rely on the SeeMore component -->
-
-  <div class="brand_section">
-    <BrandCard v-for="index in 4" :key="index"
-      :brandImg= "brand.sneakerBrand.logo[index -1]"
-      :brandName= "brand.sneakerBrand.brand_name[index -1]"
+  <div class="Container">
+    <SeeMore
+      SectionTitle="New and Noteworthy" style="margin-top: 1.75rem;"
+      />
+      
+    <div class="recommended_section">         <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
+        <ProductCard v-for="index in 4" :key="index" 
+          productImage="./src/assets/images/AJ1HighLost_Found.jpg"
+          productName="Jordan 1 Retro High OG Chicago Lost and Found"
+          productStatus="Available In Stock"
+        ></ProductCard>
+    </div>
+    
+    <SeeMore
+    SectionTitle="Recommended For You"
     />
-  </div>
 
-  <SeeMore
-    SectionTitle="Exclusives and Collaborations"
-  />
+    <div class="recommended_section">
+        <ProductCard v-for="index in 4" :key="index"
+          productImage="./src/assets/images/AJ1HighLost_Found.jpg"
+          productName="Jordan 1 Retro High OG Chicago Lost and Found"
+          productStatus="Available In Stock"
+        ></ProductCard>
+    </div>
+    
+    <span class="indie_section">Popular Brand</span>  <!-- indie_section meaning it doesnt rely on the SeeMore component -->
 
-  <div class="recommended_section">
-      <ProductCard v-for="index in 4" :key="index"
-        productImage="./src/assets/images/AJ1HighLost_Found.jpg"
-        productName="Jordan 1 Retro High OG Chicago Lost and Found"
-        productStatus="Available In Stock"
-      ></ProductCard>
-  </div>
-  
-  <span class="indie_section">Special Offer</span> <!-- indie_section meaning it doesnt rely on the SeeMore component -->
-  
-  <div class="offer_section">
-    <OfferCard></OfferCard>
-  </div>
+    <div class="brand_section">
+      <BrandCard v-for="index in 4" :key="index"
+        :brandImg= "brand.sneakerBrand.logo[index -1]"
+        :brandName= "brand.sneakerBrand.brand_name[index -1]"
+      />
+    </div>
 
-  <SeeMore
-    SectionTitle="Articles"
-  />
-  <div class="article_section">  <!-- just like the product component you just have to change the path of the productImage, we will also setup pinia for this :3 -->
-    <ArticleCard v-for="index in 2" :key="index"
-      article_image="src/assets/images/Articles/travisArticle.jpg"
-      article_title = "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features"
+    <SeeMore
+      SectionTitle="Exclusives and Collaborations"
     />
+
+    <div class="recommended_section">
+        <ProductCard v-for="index in 4" :key="index"
+          productImage="./src/assets/images/AJ1HighLost_Found.jpg"
+          productName="Jordan 1 Retro High OG Chicago Lost and Found"
+          productStatus="Available In Stock"
+        ></ProductCard>
+    </div>
+    
+    <span class="indie_section">Special Offer</span> <!-- indie_section meaning it doesnt rely on the SeeMore component -->
+    
+    <div class="offer_section">
+      <OfferCard></OfferCard>
+    </div>
+
+    <SeeMore
+      SectionTitle="Articles"
+    />
+    <div class="article_section">  <!-- just like the product component you just have to change the path of the productImage, we will also setup pinia for this :3 -->
+      <ArticleCard v-for="index in 2" :key="index"
+        article_image="src/assets/images/Articles/travisArticle.jpg"
+        article_title = "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features"
+      />
+    </div>
   </div>
+  
 </template>
 
 <script>
@@ -133,5 +136,9 @@ export default {
     font-size: 30px;
     font-weight: bold;
     margin-left: 5rem;
+  }
+  .Container{
+    padding-inline: 1rem;
+    overflow: hidden;
   }
 </style>

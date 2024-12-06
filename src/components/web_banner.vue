@@ -47,9 +47,9 @@ export default {
 
 <style>
 .webbannerContainer{
-    width: 100%;
-    height: 900px;
-    background-color: beige;
+    padding: 1rem;
+    width: 98%;
+    height: 600px;
     display: flex;
     align-items: flex-end;
     overflow: hidden;
@@ -60,11 +60,12 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 100% 40%;
 }
 .btnContainer{
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 92%;
+    height: 70%;
     display: flex;
     align-items: center;
     justify-content: space-between;
