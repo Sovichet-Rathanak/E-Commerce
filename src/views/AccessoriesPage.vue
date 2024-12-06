@@ -29,7 +29,7 @@
   <div class="brand_section">
     <BrandCard v-for="index in 4" :key="index"
       :brandImg= "brand.accessoryBrand.logo[index -1]"
-      :brandName= "brand.sneakerBrand.brand_name[index -1]"
+      :brandName= "brand.accessoryBrand.brand_name[index -1]"
     />
   </div>
 
