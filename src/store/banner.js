@@ -38,15 +38,11 @@ export const useBannerStore = defineStore('banners',{
                 },
                 womenswearBanner:{
                     image:[
-                        './src/assets/images/Banner/WomenswearBanner/aespa3.jpg',
-                        './src/assets/images/Banner/WomenswearBanner/aespa4.jpg',
-                        './src/assets/images/Banner/WomenswearBanner/newjeans.jpg',
-                        './src/assets/images/Banner/WomenswearBanner/nct.jpg',
-                        './src/assets/images/Banner/WomenswearBanner/illit.jpg',
-                        './src/assets/images/Banner/WomenswearBanner/lessera.jpg',
-                        './src/assets/images/Banner/WomenswearBanner/RIIZE.jpeg',
-                        './src/assets/images/Banner/WomenswearBanner/straykids.jpg',
-                        './src/assets/images/Banner/WomenswearBanner/ateez.jpeg',
+                        './src/assets/images/Banner/WomenswearBanner/WomenwearBanner3.png',
+                        './src/assets/images/Banner/WomenswearBanner/WomenwearBanner2.png',
+                        './src/assets/images/Banner/WomenswearBanner/WomenwearBanner5.png',
+                        './src/assets/images/Banner/WomenswearBanner/WomenwearBanner4.png',
+                        './src/assets/images/Banner/WomenswearBanner/WomenwearBanner1.png',
                     ]
                 },
                 collectiblesBanner:{

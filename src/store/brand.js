@@ -29,8 +29,13 @@ export const useBrandStore = defineStore('brands',{
                     brand_name:["Dior","Hermes","Prada", "Valentino"]
                 },
                 womenswearBrand:{
-                    logo:[],
-                    brand_name:[]
+                  logo:[
+                        "./src/assets/images/BrandLogo/Womenwear/D&G.jpg",
+                        "./src/assets/images/BrandLogo/Womenwear/Dior.jpg",
+                        "./src/assets/images/BrandLogo/Womenwear/PRADA.jpg",
+                        "./src/assets/images/BrandLogo/Womenwear/Valentino.jpg"
+                    ],
+                brand_name:["Docle & Gabbana","Dior", "Prada", "Valentino"]
                 },
                 collectibleBrand:{
                     logo:[
