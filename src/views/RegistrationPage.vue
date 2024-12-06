@@ -1,128 +1,234 @@
 <template>
     <div class="container">
-        <div class="inner-left-container">
+        <div class="left-container">
             <router-link to="/" style="text-decoration: none;"><h1>Kravan</h1></router-link>
-            <img class="bot" src="@/assets/images/RegistrationBanner/reg_banner.jpg" alt="banner" width="800" height="820">
-        </div>
-        <div class="inner-right-container">
-            <form @submit.prevent="submitForm">
-                <h2>Sign In</h2>
-                <h4>Information Entered are Confidential and Will Be Protected</h4>
-                <div class="input-container">
-                    <input type="email" placeholder="Enter Your Email" autocomplete="on">
-                    <input type="text" placeholder="Password">
-                    <input type="text" placeholder="Confirm password">
-                    <button class="continue-button"> Continue </button>
+            <h2>Sign in or create an account</h2>
+            <form @submit.prevent>
+                <div class="input-container-signup" v-if="isSignUp">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password">
+                    </div>
+                    <div class="input-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password">
+                    </div>
+                    <div class="show-pass">
+                        <span>Already have an account?</span>
+                        <span @click="toggleSignUp" class="signup" style="font-weight: bold;">Sign In</span>
+                    </div>
+                    <button class="submit-button">Sign Up</button>
+                </div>
+
+                <div class="input-container-signin" v-else>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password">
+                    </div>
+                    <div class="show-pass">
+                        <span>Don't have an account?</span>
+                        <span @click="toggleSignUp" class="signup" style="font-weight: bold;">Sign Up</span>
+                    </div>
+                    <button class="submit-button">Sign In</button>
+                    <div class="line-break">
+                        <div class="line-before"></div>
+                        <span>or</span>
+                        <div class="line-after"></div>
+                    </div>
+                    <div class="continue-section">
+                        <iconify-icon icon="devicon:google" width="2.2rem" height="2.2rem" class="google"/>
+                        <iconify-icon icon="logos:facebook" width="2.2rem" height="2.2rem" class="facebook"/>
+                        <iconify-icon icon="ic:outline-apple" width="2.2rem" height="2.2rem" class="apple"/>
+                    </div>
                 </div>
             </form>
+        </div>
+        <div class="video-container">
+            <video class="bg-animation" src="@/assets/videos/blkCutbgVid.mp4" autoplay loop></video>
         </div>
     </div>
 </template>
 
-<script></script>
+<script>
+export default {
+    data() {
+        return {
+            isSignUp: false, 
+        };
+    },
+    methods: {
+        toggleSignUp() {
+            this.isSignUp = !this.isSignUp;
+        },
+    },
+};
+</script>
+
+
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
     .container{
+        font-family: "Inter";
+        padding: 0;
+        margin: 0;
         display: flex;
         flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: auto;
+        height: auto;
+        height: 100vh;
+    }
+    
+    .video-container{
+        padding: 0;
+        margin: 0;
+        width: 40%;
+        height: 100%;
+    }
+
+    .bg-animation{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -100;
+    }
+
+    .left-container{
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h1{
+        padding: 2rem;
+        font-size: 70px;
+        font-weight: bold;
+        display: flex;  
+        justify-content: center;
+        align-items: center;
+        color: black;
+    }   
+
+    h2{
+        font-size: 35px;
+        margin-top: 0;
+    }
+
+    .input-container-signup{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 600px;
+        gap: 20px;
+    }
+
+    label{
+        display: flex;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .input-container-signup input{
+        width: 500px;
+        height: 50px;
+        font-weight: 600;
+        color: black;
+        font-family: "Inter";
+        text-indent: 10px;
+        margin-top: 0;
+    }
+    
+    .show-pass{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 5px;
+        width: 85%;
+    }
+
+    .submit-button{
+        width: 500px;
+        padding: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: white;
+        height: 50px;
+        font-weight: bold;
+        border: 3px solid black;
+    }
+
+    .submit-button:hover{
+        transition: 200ms ease-out;
+        color: black;
+        background-color: white;
+        font-weight: bold;
+        border: 3px solid black;
+        cursor: pointer;
+    }
+
+    .input-container-signin{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 600px;
+        gap: 20px;
+    }
+
+    .input-container-signin input{
+        width: 500px;
+        height: 50px;
+        font-weight: 600;
+        color: black;
+        font-family: "Inter";
+        text-indent: 10px;
+        margin-top: 0;
+    }
+
+    .line-break{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 10px;
         width: 100%;
     }
 
-    .inner-left-container{
-        display: flex;
-        flex-direction: column;
-        padding-left: 63px;
-        /* background-color: blue; */
-    }
-    
-    .inner-left-container h1{
-        font-family: 'Inter';
-        font-weight: bolder;
-        color: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 64px;
-        padding: 90px auto 43px;
-        letter-spacing: 1rem;
-    }
-
-    .inner-right-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        /* background-color: red; */
-        width: 697px;
-        height: 864px;
-        margin-left: 57px;
-    }
-
-    .inner-right-container .input-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    input{
-        font: 'Inter';
-        width: 697px;
-        height: 100px;
-        border-radius: 20px;
-        margin: 10px auto;
-        font-size: 20px;
-        border: 1px solid black;
-        font-weight: bold;
-        text-indent: 20px;
-    }
-
-    h2{
-        font-family: 'Inter';
-        font-size: 32px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    h4{
-        font-family: 'Inter';
-        display: flex;
-        justify-content: center;
-        align-items: center;    
-    }
-
-    .continue-button{
-        background-color: transparent;
-        border: 2px solid black;
-        width: 697px;
-        height: 117px;
-        font-size: 20px;
-        font-weight: bold;
-        margin: 10px auto;
-    }
-
-    .continue-button:hover{
-        transition: 150ms ease-in;
+    .line-before,
+    .line-after{
+        width: 39%;
+        height: 2px;
         background-color: black;
-        border: 2px solid black;
-        width: 697px;
-        height: 117px;
-        font-size: 20px;
-        font-weight: bold;
-        color: white;
     }
 
-    .continue-button:active{
-        transition: 0.1s ease-out;
-        background-color: white;
-        border: 2px solid black;
-        width: 697px;
-        height: 117px;
-        font-size: 20px;
-        font-weight: bold;
-        color: black;
-        border-radius: none;
+    .continue-section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 60px;
+        width: 80%;
     }
 
+    .signup:hover{
+        cursor: pointer;
+    }
 </style>
