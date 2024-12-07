@@ -1,58 +1,60 @@
 <template>
     <div class="container">
-        <div class="left-container">
-            <router-link to="/" style="text-decoration: none;"><h1>Kravan</h1></router-link>
-            <h2>Sign in or create an account</h2>
-            <form @submit.prevent>
-                <div class="input-container-signup" v-if="isSignUp">
-                    <div class="input-group">
-                        <label for="email">Email</label>
-                        <input type="email">
+        <div class="inner-container">
+            <div class="left-container">
+                <router-link to="/" style="text-decoration: none;"><h1>Kravan</h1></router-link>
+                <h2>Sign in or create an account</h2>
+                <form @submit.prevent>
+                    <div class="input-container-signup" v-if="isSignUp">
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email">
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password">
+                        </div>
+                        <div class="input-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password">
+                        </div>
+                        <div class="show-pass">
+                            <span>Already have an account?</span>
+                            <span @click="toggleSignUp" class="signup" style="font-weight: bold;">Sign In</span>
+                        </div>
+                        <button class="submit-button">Sign Up</button>
                     </div>
-                    <div class="input-group">
-                        <label for="password">Password</label>
-                        <input type="password">
+    
+                    <div class="input-container-signin" v-else>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email">
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password">
+                        </div>
+                        <div class="show-pass">
+                            <span>Don't have an account?</span>
+                            <span @click="toggleSignUp" class="signup" style="font-weight: bold;">Sign Up</span>
+                        </div>
+                        <button class="submit-button">Sign In</button>
+                        <div class="line-break">
+                            <div class="line-before"></div>
+                            <span>or</span>
+                            <div class="line-after"></div>
+                        </div>
+                        <div class="continue-section">
+                            <iconify-icon icon="devicon:google" width="2.2rem" height="2.2rem" class="google"/>
+                            <iconify-icon icon="logos:facebook" width="2.2rem" height="2.2rem" class="facebook"/>
+                            <iconify-icon icon="ic:outline-apple" width="2.2rem" height="2.2rem" class="apple"/>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <label for="confirm-password">Confirm Password</label>
-                        <input type="password">
-                    </div>
-                    <div class="show-pass">
-                        <span>Already have an account?</span>
-                        <span @click="toggleSignUp" class="signup" style="font-weight: bold;">Sign In</span>
-                    </div>
-                    <button class="submit-button">Sign Up</button>
-                </div>
-
-                <div class="input-container-signin" v-else>
-                    <div class="input-group">
-                        <label for="email">Email</label>
-                        <input type="email">
-                    </div>
-                    <div class="input-group">
-                        <label for="password">Password</label>
-                        <input type="password">
-                    </div>
-                    <div class="show-pass">
-                        <span>Don't have an account?</span>
-                        <span @click="toggleSignUp" class="signup" style="font-weight: bold;">Sign Up</span>
-                    </div>
-                    <button class="submit-button">Sign In</button>
-                    <div class="line-break">
-                        <div class="line-before"></div>
-                        <span>or</span>
-                        <div class="line-after"></div>
-                    </div>
-                    <div class="continue-section">
-                        <iconify-icon icon="devicon:google" width="2.2rem" height="2.2rem" class="google"/>
-                        <iconify-icon icon="logos:facebook" width="2.2rem" height="2.2rem" class="facebook"/>
-                        <iconify-icon icon="ic:outline-apple" width="2.2rem" height="2.2rem" class="apple"/>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="video-container">
-            <video class="bg-animation" src="@/assets/videos/blkCutbgVid.mp4" autoplay loop></video>
+                </form>
+            </div>
+            <div class="video-container">
+                <video class="bg-animation" src="@/assets/videos/blkCutbgVid.mp4" autoplay loop></video>
+            </div>
         </div>
     </div>
 </template>
@@ -78,22 +80,33 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
     .container{
-        font-family: "Inter";
-        padding: 0;
-        margin: 0;
         display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
-        width: auto;
-        height: auto;
-        height: 100vh;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .inner-container{
+        font-family: "Inter";
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 80vw;
+        height: 85vh;
+        border-radius: 25px;
+        border:1px solid gray;
+        box-shadow: 15px 15px 25px grey;
     }
     
     .video-container{
         padding: 0;
         margin: 0;
-        width: 40%;
+        width: 45%;
         height: 100%;
     }
 
@@ -102,10 +115,11 @@ export default {
         height: 100%;
         object-fit: cover;
         z-index: -100;
+        border-radius: 0px 25px 25px 0px;
     }
 
     .left-container{
-        width: 60%;
+        width: 55%;
         height: 100%;
         display: flex;
         justify-content: flex-start;
@@ -141,6 +155,7 @@ export default {
         display: flex;
         text-align: left;
         font-weight: bold;
+        opacity: .4;
     }
 
     .input-container-signup input{
@@ -151,6 +166,7 @@ export default {
         font-family: "Inter";
         text-indent: 10px;
         margin-top: 0;
+        font-size: 16px;
     }
     
     .show-pass{
@@ -201,6 +217,7 @@ export default {
         font-family: "Inter";
         text-indent: 10px;
         margin-top: 0;
+        font-size: 16px;
     }
 
     .line-break{
