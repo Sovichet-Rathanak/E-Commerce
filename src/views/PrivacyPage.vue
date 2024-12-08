@@ -89,10 +89,10 @@
         <p>
             If you have any questions or concerns about this Agreement, please contact us:
         </p>
-        <ul>
-            <li>Email: support@kravan.com</li>
-            <li>Phone: +1 (800) 123-4567</li>
-            <li>Address: 123 Kravan Street, Fashion City, FC 56789</li>
+        <ul style="list-style: none;">
+          <li>Email: kravansales@gmail.com</li>
+          <li>Contact number: +855 86 510 091</li>
+          <li>Address: <span>#14 ST288, Sangkat BKK1</span></li>
         </ul>
 
         <h2>8. Your Rights</h2>
@@ -339,11 +339,12 @@
         <p>
             If you have any questions or concerns about this Agreement, please contact us:
         </p>
-        <ul>
-            <li>Email: support@kravan.com</li>
-            <li>Phone: +1 (800) 123-4567</li>
-            <li>Address: 123 Kravan Street, Fashion City, FC 56789</li>
+        <ul style="list-style: none;">
+          <li>Email: kravansales@gmail.com</li>
+          <li>Contact number: +855 86 510 091</li>
+          <li>Address: <span>#14 ST288, Sangkat BKK1</span></li>
         </ul>
+
     </div>
 </template>
 

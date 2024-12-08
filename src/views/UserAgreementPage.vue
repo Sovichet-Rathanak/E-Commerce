@@ -82,11 +82,11 @@
         <p>
             If you have any questions or concerns about this Agreement, please contact us at:
         </p>
-        <p>
-            <strong>Email:</strong> support@yourcompany.com <br>
-            <strong>Phone:</strong> +1-234-567-890 <br>
-            <strong>Address:</strong> 123 Main Street, Your City, Your Country
-        </p>
+        <ul style="list-style: none;">
+          <li>Email: kravansales@gmail.com</li>
+          <li>Contact number: +855 86 510 091</li>
+          <li>Address: <span>#14 ST288, Sangkat BKK1</span></li>
+        </ul>
         <p>We’re here to help!</p>
         <h2>12. Third-Party Services</h2>
     <p>
@@ -192,8 +192,8 @@
         If you have questions about this User Agreement or need assistance, please contact us:
     </p>
     <p>
-        <strong>Support Team:</strong> support@yourcompany.com <br>
-        <strong>Phone:</strong> +1-234-567-890
+        <strong>Support Team:</strong> supportkravansales@gmail.com <br>
+        <strong>Phone:</strong> +855 86 510 091
     </p>
 
     <h2>28. Effective Date</h2>
@@ -304,10 +304,10 @@
         <p>
             If you have any questions or concerns about this Agreement, please contact us:
         </p>
-        <ul>
-            <li>Email: support@kravan.com</li>
-            <li>Phone: +1 (800) 123-4567</li>
-            <li>Address: 123 Kravan Street, Fashion City, FC 56789</li>
+        <ul style="list-style: none;">
+          <li>Email: kravansales@gmail.com</li>
+          <li>Contact number: +855 86 510 091</li>
+          <li>Address: <span>#14 ST288, Sangkat BKK1</span></li>
         </ul>
     </section>
 
