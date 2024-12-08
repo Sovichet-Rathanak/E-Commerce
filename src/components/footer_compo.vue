@@ -13,9 +13,9 @@
       <figure class="containerInnerL2">
         <figcaption>Store Policies</figcaption>
           <ul style="list-style: none;">
-            <li>Return Policies</li>
-            <li>Data Protections</li>
-            <li>Accepted Payment Methods</li>
+            <li><RouterLink class="router-link" to="/ReturnPolicies">Return Policies</RouterLink></li>
+            <li><RouterLink class="router-link" to="/DataProtections">Data Protections</RouterLink></li>
+            <li><RouterLink class="router-link" to="/AcceptedPaymentMethods">Accepted Payment Methods</RouterLink></li>
           </ul>
       </figure>
       <figure class="containerInnerL2">
