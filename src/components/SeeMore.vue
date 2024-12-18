@@ -2,7 +2,7 @@
 <template>
     <div class="container">
       <span class="sectionTitle">{{ SectionTitle }}</span>
-      <button @click="showMore">{{ isClicked? "Go Back" : "See More" }}</button>
+      <button @click="showMore">{{ GoBack }}</button>
     </div>
   </template>
 
@@ -15,15 +15,26 @@ export default{
     };
   },
   props:{
-    SectionTitle: String
+    SectionTitle: String,
+    targetPage: String,
+    backPage: String
   },
 
-  methods: {
-    showMore() {
-      this.isClicked = !this.isClicked
-      console.log(this.isClicked)
+  computed: {
+    GoBack() {
+      return this.$route.name === this.targetPage ? "Back" : "See More";
     },
   },
+  methods: {
+    showMore() {
+      if (this.$route.name === this.targetPage) {
+        this.$router.push({ name: this.backPage});
+      } else {
+        this.$router.push({ name: this.targetPage });
+      }
+    },
+  },
+
 }
 </script>
 

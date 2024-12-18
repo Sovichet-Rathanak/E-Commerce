@@ -1,49 +1,49 @@
 <template>
-    <div class="article">
-        <img :src="article_image" alt="image" class="article_image">
-        <div class="article_title">{{ article_title }}</div>
-    </div>  
+  <div class="article">
+    <img :src="article_image" alt="image" class="article_image" />
+    <div class="article_title">{{ article_title }}</div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: "ArticleCardComponent",
-    props: {
-        article_image: String,
-        article_title: String
-    }
-}
+  name: "ArticleCardComponent",
+  props: {
+    article_image: String,
+    article_title: String,
+  },
+};
 </script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 .article {
-    width: 795px;
-    height: 500px;
-    border-radius: 30px;
-    border: 0.5px solid black; 
-    background: #F0F0F0;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column; 
-    margin: 1.75rem 0rem 1.75rem;
+  width: 795px;
+  height: 500px;
+  border-radius: 30px;
+  border: 0.5px solid black;
+  background: #f0f0f0;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  margin: 1.75rem 0rem 1.75rem;
 }
 
 .article_image {
-    width: 100%; 
-    height: 402px;
-    border-radius: 30px 30px 0 0;
-    border-bottom: 0.5px solid black; 
-    object-fit: fill;
+  width: 100%;
+  height: 402px;
+  border-radius: 30px 30px 0 0;
+  border-bottom: 0.5px solid black;
+  object-fit: fill;
 }
 
 .article_title {
-    font-family: 'Inter';
-    font-size: 25px;
-    font-weight: bold;
-    text-align: left;  
-    color: black;
-    margin: 15px 10px 0 25px;
+  font-family: "Inter";
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  margin: 15px 10px 0 25px;
 }
 </style>

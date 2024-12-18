@@ -5,6 +5,8 @@ import Menswear from "@/views/MenswearPage.vue";
 import Sneaker from "@/views/SneakerPage.vue";
 import Womenswear from "@/views/WomenswearPage.vue";
 import Registration from "@/views/RegistrationPage.vue"
+import PopularBrand from "@/views/PopularBrandPage.vue";
+import ArticlePage from "@/views/ArticlePage.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -44,7 +46,17 @@ const routes = [
     name: "Registration",
     meta: { disableOverflow: true },
     component: Registration,
-  }
+  },
+  {
+    path: "/PopularBrand",
+    name: "PopularBrand",
+    component: PopularBrand,
+  },
+  {
+    path: "/ArticlePage",
+    name: "ArticlePage",
+    component: ArticlePage,
+  },
 ];
 
 const router = createRouter({
@@ -60,5 +72,15 @@ router.beforeEach((to, from, next) => {
   }
   next();
 });
+
+router.options.scrollBehavior = (to, from, savedPosition) => {
+  if (savedPosition) {
+    // Restore previous scroll position (useful for "Back" navigation)
+    return savedPosition;
+  } else {
+    // Scroll to the top when navigating to a new page
+    return { top: 0, behavior: "smooth" };
+  }
+};
 
 export default router;
