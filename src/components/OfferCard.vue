@@ -13,22 +13,22 @@ export default{
 }
 </script>
 <style scoped>
-
 .first-offer{
   width: 430px;
   height: 550px;
   border: none;
   border-radius: 30px;
-  margin-top:1.75rem;
+  margin-top:.5rem;
   object-fit: cover;
   margin-right: 30px;
 }
+
 .second-offer{
   width: 900px;
   height: 550px;
   border: none;
   border-radius: 30px;
-  margin-top:1.75rem;
+  margin-top:.5rem;
 }
 
 </style>
