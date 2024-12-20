@@ -10,6 +10,7 @@
           <li>address: <span>#14 ST288, Sangkat BKK1</span></li>
         </ul>
       </figure>
+
       <figure class="containerInnerL2">
         <figcaption>Store Policies</figcaption>
           <ul style="list-style: none;">
@@ -18,13 +19,13 @@
             <li><RouterLink class="router-link" to="/AcceptedPaymentMethods">Accepted Payment Methods</RouterLink></li>
           </ul>
       </figure>
+
       <figure class="containerInnerL2">
         <figcaption>Get Help</figcaption>
         <ul style="list-style: none;">
           <li>email: kravansales@gmail.com</li>
           <li>contact number: +855 86 510 091</li>
         </ul>
-
       </figure>
     </div>
 
