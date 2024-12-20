@@ -49,8 +49,12 @@
     <span class="indie_section">Special Offer</span> <!-- indie_section meaning it doesnt rely on the SeeMore component -->
     
     <div class="offer_section">
-      <OfferCard></OfferCard>
+      <OfferCard
+        :offerImage1="'src/assets/images/SpecialOffers/BlackFriday.jpg'"
+        :offerImage2="'src/assets/images/SpecialOffers/newCollection.jpg'"
+      />
     </div>
+
 
     <SeeMore
       SectionTitle="Articles"
