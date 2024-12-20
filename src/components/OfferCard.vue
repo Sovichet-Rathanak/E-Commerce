@@ -1,75 +1,34 @@
 <template>
-  <div class="offers-section">
-    <div class="offer-list">
-      <div v-for="(offer, index) in offers" :key="index" class="offer-card">
-        <img :src="offer.image" class="offer-image" />
-      </div>
-    </div>
+  <div class="offer_section">
+    <img class="first-offer" :src="offerImage1" alt="Black Friday Banner" />
+    <img class="second-offer" :src="offerImage2" alt="New Collection Banner" />
   </div>
 </template>
-
 <script>
-import ComingSoon from "@/assets/images/SpecialOffers/ComingSoon.png";
-import NewYear from "@/assets/images/SpecialOffers/NewYear.png";
-import NewArrival from "@/assets/images/SpecialOffers/NewArrival.png";
-export default {
-  name: "OffersSection",
-  data() {
-    return {
-      offers: [
-        {
-          image: ComingSoon
-        },
-        { 
-          image: NewYear
-        },
-        { 
-          image: NewArrival
-        },
-      ],
-    };
-  },
-};
+export default{
+  props:{
+    offerImage1: String,
+    offerImage2: String,
+  }
+}
 </script>
-
 <style scoped>
-.offers-section {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  font-size: 40px;
-  margin-bottom: 20px;
-  margin-left: 70px;
+.first-offer{
+  width: 430px;
+  height: 550px;
+  border: none;
+  border-radius: 30px;
+  margin-top:.5rem;
+  object-fit: cover;
+  margin-right: 30px;
 }
 
-.offer-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
+.second-offer{
+  width: 900px;
+  height: 550px;
+  border: none;
+  border-radius: 30px;
+  margin-top:.5rem;
 }
 
-.offer-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 27.313rem;
-  height: 27.438rem;
-  margin: 20px;
-}
-
-.offer-image {
-  width: 100%;
-  height: auto;
-}
-
-.offer-content {
-  margin-top: 8px;
-}
 </style>

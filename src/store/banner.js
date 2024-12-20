@@ -36,11 +36,11 @@ export const useBannerStore = defineStore('banners',{
                 },
                 womenswearBanner:{
                     image:[
-                        './src/assets/images/Banner/WomenswearBanner/WomenwearBanner3.png',
+                        './src/assets/images/Banner/WomenswearBanner/WomenwearBanner6.jpeg',
+                        './src/assets/images/Banner/WomenswearBanner/WomenwearBanner7.jpeg',
+                        './src/assets/images/Banner/WomenswearBanner/WomenwearBanner8.jpg',
+                        './src/assets/images/Banner/WomenswearBanner/WomenwearBanner9.jpg',
                         './src/assets/images/Banner/WomenswearBanner/WomenwearBanner2.png',
-                        './src/assets/images/Banner/WomenswearBanner/WomenwearBanner5.png',
-                        './src/assets/images/Banner/WomenswearBanner/WomenwearBanner4.png',
-                        './src/assets/images/Banner/WomenswearBanner/WomenwearBanner1.png',
                     ]
                 },
                 collectiblesBanner:{
