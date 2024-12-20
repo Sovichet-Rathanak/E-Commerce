@@ -11,8 +11,8 @@
       brandImg: String,
       brandName: String,
       cardSize: {
-      type: String,
-      default: "medium",
+        type: String,
+        default: "medium",
     },
     }
   }

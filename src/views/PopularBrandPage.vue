@@ -1,12 +1,13 @@
 <template>
-  <div class="WomenswearBrandPage">
+  <div class="BrandList">
     <SeeMore
       SectionTitle="Popular Brand"
       targetPage="PopularBrand"
       backPage="Womenswear"
+      class="section-header"
     />
 
-    <div class="Brand_section">
+    <div class="BrandCard">
       <BrandCard
         v-for="index in 15"
         :key="index"
@@ -28,18 +29,20 @@ export default {
     BrandCard,
     SeeMore,
   },
+
   setup() {
     const brandStore = useBrandStore();
-
     return {
       brandStore,
     };
   },
+
   computed: {
     ...mapState(useBrandStore, {
       brand: "brands",
     }),
   },
+
   data() {
     return {
       dynamicSize: "large", // Default size, can be adjusted dynamically
@@ -53,15 +56,24 @@ export default {
 };
 </script>
 
-<style sc>
-.WomenswearBrandPage {
-  padding: 2rem 0;
+<style scoped>
+.section-header{
+  margin-bottom: 2rem;
+  justify-content: space-between;
+  width: auto;
 }
-.Brand_section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3.44rem;
-  justify-items: center;
-  margin: 2.5rem 0;
+
+.BrandList {
+  width: auto;
+  padding: 2rem 2rem;
+}
+
+.BrandCard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;  
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
 }
 </style>
