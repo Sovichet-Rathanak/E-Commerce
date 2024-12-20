@@ -5,34 +5,16 @@
                 <router-link to="/" style="text-decoration: none;"><h1>Kravan</h1></router-link>
                 <h2>Sign in or create an account</h2>
                 <form @submit.prevent>
-                    <div class="input-container-signup" v-if="isSignUp">
+
+                    <!-- signin section -->
+                    <div class="input-container-signin" v-if="formType === 'signin'">
                         <div class="input-group">
                             <label for="email">Email</label>
-                            <input type="email">
+                            <input type="email" required>
                         </div>
                         <div class="input-group">
                             <label for="password">Password</label>
-                            <input type="password">
-                        </div>
-                        <div class="input-group">
-                            <label for="confirm-password">Confirm Password</label>
-                            <input type="password">
-                        </div>
-                        <div class="show-pass">
-                            <span>Already have an account?</span>
-                            <span @click="toggleSignUp" class="signup" style="font-weight: bold;">Sign In</span>
-                        </div>
-                        <button class="submit-button">Sign Up</button>
-                    </div>
-    
-                    <div class="input-container-signin" v-else>
-                        <div class="input-group">
-                            <label for="email">Email</label>
-                            <input type="email">
-                        </div>
-                        <div class="input-group">
-                            <label for="password">Password</label>
-                            <input type="password">
+                            <input type="password" required>
                         </div>
                         <div class="show-pass">
                             <span>Don't have an account?</span>
@@ -49,6 +31,40 @@
                             <iconify-icon icon="logos:facebook" width="2.2rem" height="2.2rem" class="facebook"/>
                             <iconify-icon icon="ic:outline-apple" width="2.2rem" height="2.2rem" class="apple"/>
                         </div>
+                        <span class="forgot-section" @click="toggleForgotpwd">Forgot Password</span>
+                    </div>
+
+                    <!-- signup section -->
+                    <div class="input-container-signup" v-else-if="formType === 'signup'">
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" required>
+                        </div>
+                        <div class="show-pass">
+                            <span>Already have an account?</span>
+                            <span @click="toggleSignIn" class="signup" style="font-weight: bold;">Sign In</span>
+                        </div>
+                        <button class="submit-button">Sign Up</button>
+                    </div>
+
+                    <!-- forgot pwd section -->
+                    <div class="input-container-signup" v-else>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email">
+                        </div>
+                        <div class="show-pass">
+                            <span @click="toggleSignIn" class="signup" style="font-weight: bold;">Back</span>
+                        </div>
+                        <button class="reset-button">Reset Password</button>
                     </div>
                 </form>
             </div>
@@ -63,13 +79,22 @@
 export default {
     data() {
         return {
+            formType: "signin",
             isSignUp: false, 
+            forgotPwd: false,
         };
     },
     methods: {
         toggleSignUp() {
-            this.isSignUp = !this.isSignUp;
+            this.formType = "signup"
         },
+        toggleSignIn(){
+            this.formType = "signin"
+        },  
+        toggleForgotpwd(){
+            this.formType = "forgor"
+            console.log(this.forgotPwd)
+        }
     },
 };
 </script>
@@ -178,7 +203,8 @@ export default {
         width: 85%;
     }
 
-    .submit-button{
+    .submit-button,
+    .reset-button{
         width: 500px;
         padding: 1.5rem;
         display: flex;
@@ -191,7 +217,8 @@ export default {
         border: 3px solid black;
     }
 
-    .submit-button:hover{
+    .submit-button:hover,
+    .reset-button:hover{
         transition: 200ms ease-out;
         color: black;
         background-color: white;
@@ -247,5 +274,26 @@ export default {
 
     .signup:hover{
         cursor: pointer;
+    }
+
+    .forgot-section{
+        font-family: "Inter";
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        font-weight: 600;
+        opacity: .3;
+        text-decoration: underline;
+    }
+
+    .forgot-section:hover{
+        font-family: "Inter";
+        transition: 100ms ease-in;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        font-weight: bolder;
+        opacity: 1;
+        text-decoration: underline;
     }
 </style>
