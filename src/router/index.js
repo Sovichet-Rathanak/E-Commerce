@@ -11,6 +11,8 @@ import UserAgreementPage from "@/views/UserAgreementPage.vue";
 import AcceptedPaymentPage from "@/views/AcceptedPaymentPage.vue";
 import DataProtectionPage from "@/views/DataProtectionPage.vue";
 import ReturnPolicyPage from "@/views/ReturnPolicyPage.vue";
+import PopularBrand from "@/views/PopularBrandPage.vue";
+import ArticlePage from "@/views/ArticlePage.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -81,7 +83,17 @@ const routes = [
     path: "/ReturnPolicies",
     name: "ReturnPolicies",
     component: ReturnPolicyPage
-  }
+  },
+  {
+    path: "/PopularBrand",
+    name: "PopularBrand",
+    component: PopularBrand,
+  },
+  {
+    path: "/ArticlePage",
+    name: "ArticlePage",
+    component: ArticlePage,
+  },
 ];
 
 const router = createRouter({
@@ -97,5 +109,15 @@ router.beforeEach((to, from, next) => {
   }
   next();
 });
+
+router.options.scrollBehavior = (to, from, savedPosition) => {
+  if (savedPosition) {
+    // Restore previous scroll position (useful for "Back" navigation)
+    return savedPosition;
+  } else {
+    // Scroll to the top when navigating to a new page
+    return { top: 0, behavior: "smooth" };
+  }
+};
 
 export default router;
