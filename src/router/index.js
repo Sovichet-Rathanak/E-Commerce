@@ -5,6 +5,12 @@ import Menswear from "@/views/MenswearPage.vue";
 import Sneaker from "@/views/SneakerPage.vue";
 import Womenswear from "@/views/WomenswearPage.vue";
 import Registration from "@/views/RegistrationPage.vue"
+import PrivacyPage from "@/views/PrivacyPage.vue";
+import AdvertisingPage from "@/views/AdvertisingPage.vue";
+import UserAgreementPage from "@/views/UserAgreementPage.vue";
+import AcceptedPaymentPage from "@/views/AcceptedPaymentPage.vue";
+import DataProtectionPage from "@/views/DataProtectionPage.vue";
+import ReturnPolicyPage from "@/views/ReturnPolicyPage.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -44,6 +50,37 @@ const routes = [
     name: "Registration",
     meta: { disableOverflow: true },
     component: Registration,
+  },
+  {
+    path: "/Privacy&Policy",
+    name: "Privacy",
+    component: PrivacyPage
+  },
+  {
+    path: "/Advertising",
+    name: "Advertising",
+    component: AdvertisingPage
+  },
+  {
+    path: "/UserAgreement",
+    name: "UserAgreement",
+    component: UserAgreementPage
+  }
+  ,
+  {
+    path: "/AcceptedPaymentMethods",
+    name: "Accepted",
+    component: AcceptedPaymentPage
+  },
+  {
+    path: "/DataProtections",
+    name: "DataProtections",
+    component: DataProtectionPage
+  },
+  {
+    path: "/ReturnPolicies",
+    name: "ReturnPolicies",
+    component: ReturnPolicyPage
   }
 ];
 
