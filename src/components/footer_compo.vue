@@ -13,9 +13,9 @@
       <figure class="containerInnerL2">
         <figcaption>Store Policies</figcaption>
           <ul style="list-style: none;">
-            <li>Return Policies</li>
-            <li>Data Protections</li>
-            <li>Accepted Payment Methods</li>
+            <li><RouterLink class="router-link" to="/ReturnPolicies">Return Policies</RouterLink></li>
+            <li><RouterLink class="router-link" to="/DataProtections">Data Protections</RouterLink></li>
+            <li><RouterLink class="router-link" to="/AcceptedPaymentMethods">Accepted Payment Methods</RouterLink></li>
           </ul>
       </figure>
       <figure class="containerInnerL2">
@@ -57,15 +57,17 @@
     <div class="lower_lower">
       <span>&copy;Kravan LLC.All Rights Reserved.</span>
       <div class="other">
-        <span>User Agreement</span>
-        <span>Advertising</span>
-        <span>Privacy and Policy</span>
+        <span><RouterLink class="router-link" to="/UserAgreement">User Agreement</RouterLink></span>
+        <span><RouterLink class="router-link" to="/Advertising">Advertising</RouterLink></span>
+        <span><RouterLink class="router-link" to="/Privacy&Policy">Privacy and Policy</RouterLink></span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 </script>
 
 <style>
@@ -155,4 +157,15 @@
     flex-direction: row;
     gap: 1rem;
   }
+  .router-link{
+    text-decoration: none;
+    color: white;
+  } 
+  .router-link:hover{
+    text-decoration: none;
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: .25s ease-in;
+  } 
 </style>
