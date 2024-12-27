@@ -13,6 +13,7 @@ import DataProtectionPage from "@/views/DataProtectionPage.vue";
 import ReturnPolicyPage from "@/views/ReturnPolicyPage.vue";
 import PopularBrand from "@/views/PopularBrandPage.vue";
 import ArticlePage from "@/views/ArticlePage.vue";
+import ProductDetailPage from "@/views/ProductDetailPage.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -94,6 +95,11 @@ const routes = [
     name: "ArticlePage",
     component: ArticlePage,
   },
+  {
+    path: "/ProductDetail",
+    name: "ProductDetail",
+    component: ProductDetailPage
+  }
 ];
 
 const router = createRouter({
