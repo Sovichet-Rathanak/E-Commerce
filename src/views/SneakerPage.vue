@@ -12,6 +12,7 @@
         productImage="./src/assets/images/AJ1HighLost_Found.jpg"
         productName="Jordan 1 Retro High OG Chicago Lost and Found"
         productStatus="Available In Stock"
+        productCat="{{ currentCat }}"
       ></ProductCard>
     </div>
 
@@ -24,6 +25,7 @@
         productImage="./src/assets/images/AJ1HighLost_Found.jpg"
         productName="Jordan 1 Retro High OG Chicago Lost and Found"
         productStatus="Available In Stock"
+        productCat=""
       ></ProductCard>
     </div>
 
@@ -50,6 +52,7 @@
         productImage="./src/assets/images/AJ1HighLost_Found.jpg"
         productName="Jordan 1 Retro High OG Chicago Lost and Found"
         productStatus="Available In Stock"
+        productCat=""
       ></ProductCard>
     </div>
 
@@ -100,6 +103,11 @@ export default {
     WebBanner,
     ProductCard,
     SeeMore,
+  },
+  data(){
+    return{
+      currentCat: "Sneaker",
+    }
   },
   setup() {
     const brandStore = useBrandStore();
