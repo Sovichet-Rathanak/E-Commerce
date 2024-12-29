@@ -1,9 +1,12 @@
 <template>
     <div class="productCard">
         <img class="productImg" :src="productImage" alt="product image">
-        <h3 class="productName"> {{ productName }}</h3>
-        <h3 class="productStatus"> {{ productStatus }}</h3>
-        <button class="buyBtn" @click="$router.push('ProductDetail')">Buy</button>
+        <hgroup>
+            <h3 class="brandName"> {{ brandName }}</h3>
+            <h3 class="productName"> {{ productName }}</h3>
+            <h3 class="productStatus"> {{ productStatus }}</h3>
+        </hgroup>
+        <button class="buyBtn" @click="goToProductDetailPage">Buy</button>
     </div>
 </template>
     
@@ -12,13 +15,15 @@ export default{
     name: "productCard",
     props: {
         productImage: String,
+        brandName: String,
         productName: String,
         productStatus: String,
-        productCat: String
+        productId: String
     },
     methods:{
-        alertBuy(){
-            alert("Buy Button is click! Slayyy");
+        goToProductDetailPage() {
+            this.$router.push(`/product/${this.productId}`);
+            console.log(this.productId)
         }
     }
 }
@@ -36,14 +41,16 @@ export default{
     width: 320px;
     height: 320px;
     border-radius: 20px;
-    background-color: blue;
+    background-color: white;
 }
 
-.productName{
+.productName,
+.brandName{
     margin-left: 5px;
     font-weight: normal;
     font-size: 20px;
     font-family: "Inter";
+    margin: 0;
 }
 
 .productStatus{

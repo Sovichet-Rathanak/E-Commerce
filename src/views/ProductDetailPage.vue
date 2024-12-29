@@ -1,38 +1,55 @@
 <template>
-  <body>
-    <ProductImage
-      :images="productImages"
-      brandname="Air Jordan 1 High OG"
-      productname="Chicago Lost and Found"
-      price_tag="239"
-    />
-        <comment_section/>
-    <Rating_Component />
-    <div>Testing Section</div>
-  </body>
+    <body>
+        <ProductImage 
+            :images="product.productImages"
+            :brandname="product.brand_name"
+            :productname="product.product_name"
+            :price_tag="product.price"
+        />
+        <Rating_Component></Rating_Component>
+        <comment_section></comment_section>
+    </body>
 </template>
 
 <script>
-import ProductImage from "../components/ProductImage.vue";
+import { useProductStore } from '@/store/product';
+import { useRoute } from 'vue-router';
+import ProductImage from "@/components/ProductImage.vue";
 import Rating_Component from "@/components/RatingComponent.vue";
 import comment_section from '@/components/comment_section.vue';
+import { mapState } from 'pinia';
+
 export default {
   components: {
     ProductImage,
     Rating_Component,
-        comment_section
+    comment_section
   },
-  data() {
-    return {
-      productImages: [
-        "src/assets/images/DetailImage/Sneakers/AJ1LostandFound/image1.png",
-        "src/assets/images/DetailImage/Sneakers/AJ1LostandFound/image3.png",
-        "src/assets/images/DetailImage/Sneakers/AJ1LostandFound/image4.png",
-        "src/assets/images/DetailImage/Sneakers/AJ1LostandFound/image5.png",
-        "src/assets/images/DetailImage/Sneakers/AJ1LostandFound/image6.png",
-      ],
-    };
-  },
+    setup(){
+        const route = useRoute();
+        const productStore = useProductStore();
+        return{
+            route,
+            productStore
+        }
+    },
+    computed:{
+        ...mapState(useProductStore, {
+            productsByCategory: (state) => state.productsByCategory,
+        }),
+        prodcutId(){
+            return this.route.params.id;
+        },
+        product(){
+            for(const category in this.productsByCategory){
+                const found = this.productsByCategory[category].find(
+                    (item) => item.product_id === this.prodcutId
+                );
+                if(found) return found;
+            }
+            return null;
+        }
+    }
 };
 </script>
 
