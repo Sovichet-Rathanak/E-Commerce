@@ -8,7 +8,7 @@
                     :src="image"
                     alt="product_image"
                     @click="setLargeImage(index)"
-                    :class="{ active: index === activeIndex }"
+                    :class="{ active: index === activeIndex}"
                 />
             </div>
 
@@ -20,6 +20,7 @@
                 </div>
             </div>
         </div>
+
         <div class="SizePrice-section">
             <div class="title-section">
                 <hgroup>
@@ -66,7 +67,7 @@
                         <hr v-if="show_desc" width="100%">
                     </div>
                     <div class="desc" v-if="show_desc">
-                        <p>"Kravan Verified" represents our commitment to excellence, guaranteeing every item undergoes a meticulous inspection, every time. <router-link to="Privacy&Policy">Learn more.</router-link></p>
+                        <p>"Kravan Verified" represents our commitment to excellence, guaranteeing every item undergoes a meticulous inspection, every time. <router-link to="/Privacy&Policy">Learn more.</router-link></p>
                     </div>
                 </div>
             </div>
@@ -98,7 +99,7 @@ export default {
         return {
             activeIndex: 0,
             show_list: false,
-            show_desc: false, 
+            show_desc: true, 
         };
     },
     methods: {
@@ -138,7 +139,7 @@ export default {
     display: flex;
     flex-direction: row;
     gap: 7px;
-    width: 58.5%;
+    width: 60%;
     height: 100%;
 }
 
@@ -149,10 +150,11 @@ export default {
 }
 
 .row > img {
-    width: 10rem;
+    width: 8rem;
     height: 8rem;
     object-fit: fill;
     cursor: pointer;
+    background-color: #e7e7e7;
 }
 
 .large-section {
@@ -160,8 +162,9 @@ export default {
 }
 
 .large-section > img {
-    height: 41.75rem;
-    width: 56rem;
+    height: 100%;
+    width: 100%;   
+    background-color: #e7e7e7;
 }
 
 .large-section .button-container {
@@ -180,7 +183,7 @@ export default {
 
 /* RIGHT SECTION */
 .ProductImage-container .SizePrice-section{
-    width: 41.5%;
+    width: 40%;
     height: 100%;
 }
 

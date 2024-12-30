@@ -6,25 +6,27 @@
             :productname="product.product_name"
             :price_tag="product.price"
         />
-        <Rating_Component></Rating_Component>
-        <comment_section></comment_section>
+        <ProductDetail
+            :brandname="product.brand_name"
+            :productname="product.product_name"
+            :description="product.description"
+            :detailImages="product.detailImages"
+        />
     </body>
 </template>
 
 <script>
 import { useProductStore } from '@/store/product';
 import { useRoute } from 'vue-router';
-import ProductImage from "@/components/ProductImage.vue";
-import Rating_Component from "@/components/RatingComponent.vue";
-import comment_section from '@/components/comment_section.vue';
+import ProductImage from '@/components/ProductImage.vue';
+import ProductDetail from '@/components/ProductDetail.vue'
 import { mapState } from 'pinia';
 
 export default {
-  components: {
-    ProductImage,
-    Rating_Component,
-    comment_section
-  },
+    components: {
+        ProductImage,
+        ProductDetail
+    },
     setup(){
         const route = useRoute();
         const productStore = useProductStore();
@@ -40,6 +42,7 @@ export default {
         prodcutId(){
             return this.route.params.id;
         },
+        
         product(){
             for(const category in this.productsByCategory){
                 const found = this.productsByCategory[category].find(
@@ -49,16 +52,21 @@ export default {
             }
             return null;
         }
+    },
+    methods:{
+        logg(){
+            console.log(this.product.brand_name)
+        }
     }
 };
 </script>
 
 <style scoped>
-body {
-  margin-top: 3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding-inline: 7rem;
-}
+    body{
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        padding-inline: 7rem;
+    }
 </style>
