@@ -27,7 +27,7 @@
                     <h3 class="brandname">{{ brandname }}</h3>
                     <h1 class="productname">{{ productname }}</h1>
                 </hgroup>
-                <button class="x-button"><iconify-icon icon="maki:cross" width="20px" height="20px"/></button>
+                <button class="x-button" @click="$router.go(-1)"><iconify-icon icon="maki:cross" width="20px" height="20px"/></button>
             </div>
             <div class="func-section">
                 <div class="size-selector" @click="showList">
@@ -126,12 +126,12 @@ export default {
 <style scoped>
 .ProductImage-container {
     font-family: "Inter";
-    height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 2rem;
     width: 100%;
+    height: fit-content;
 }
 
 /* LEFT SECTION */
@@ -155,19 +155,25 @@ export default {
     object-fit: fill;
     cursor: pointer;
     background-color: #e7e7e7;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
 }
 
 .large-section {
     position: relative;
+    width: 80%;
+    height: auto;
 }
 
 .large-section > img {
     height: 100%;
     width: 100%;   
     background-color: #e7e7e7;
+    border-radius: 5px;
+    border: 1px solid #cfcfcf;
 }
 
-.large-section .button-container {
+.button-container {
     display: flex;
     right: 20px;
     bottom: 15px;

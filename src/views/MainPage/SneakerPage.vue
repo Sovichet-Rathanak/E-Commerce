@@ -7,7 +7,7 @@
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
-        v-for="product in filteredProductsByTag('new')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType('new', 'sneaker')" :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName = "product.brand_name"
         :productName="product.product_name"
@@ -20,7 +20,7 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTag('recommend')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType('recommended')" :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName = "product.brand_name"
         :productName="product.product_name"
@@ -48,11 +48,12 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTag('collab')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType('collab', 'sneaker')" :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName = "product.brand_name"
         :productName="product.product_name"
         :productStatus="product.product_status"
+        :productId="product.product_id"
       />
     </div>
 
@@ -105,11 +106,6 @@ export default {
     ProductCard,
     SeeMore,
   },
-  data(){
-    return{
-
-    }
-  },
   setup() {
     const brandStore = useBrandStore();
     const bannerStore = useBannerStore();
@@ -138,6 +134,13 @@ export default {
         return productStore.getProductsByTag(tag); 
       }
     },
+
+    filteredProductsByTagandType(){
+      return(tag, type) => {
+        const productStore = useProductStore();
+        return productStore.getProductByTypeAndTag(tag, type)
+      }
+    }
   },
 
   methods: {
