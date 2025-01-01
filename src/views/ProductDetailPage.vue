@@ -7,14 +7,18 @@
             price_tag="239"/>
 
     </body>
+
+    <Rating_Component /> 
 </template>
 
 <script>
 import ProductImage from '../components/ProductImage.vue';
+import Rating_Component from '@/components/Rating_Component.vue';
 
 export default {
     components: {
         ProductImage,
+        Rating_Component,
     },
     data() {
         return {
