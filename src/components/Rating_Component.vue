@@ -1,315 +1,283 @@
 <template>
-    <div class="ratings-section">
-        <button @click="showModal = true" class="rating-btn">
-            Rating
-          </button>
-      <hr />
-      <div class="rating-wrap">
-        <!-- Audience Rating Summary -->
-        <div class="audience-rating-summary">
-          <p>Audience Rating Summary</p>
-          <div v-for="(rating, index) in ratings" :key="index" class="rating-bar">
-            <span>{{ 5 - index }}</span>
-            <div class="bar">
-              <div class="fill" :style="{ width: rating + '%', backgroundColor: 'orange' }"></div>
-            </div>
+  <div class="rating-container">
+    <h1 style="font-family: 'Inter'; margin-bottom: 0;">Ratings</h1>
+    <hr>
+
+    <div class="main-section">
+
+      <!-- Left Section -->
+      <div class="audience-rating-section">
+        <h2>Audience Rating Summary</h2>
+        <div v-for="(rating, index) in ratings" :key="index" class="bar-container">
+          <h3>{{ 5 - index }}</h3>
+          <div class="rating-bar">
+            <div class="fill"></div>
           </div>
-        </div>
-  
-        <!-- Overall Ratings -->
-        <div class="overall-rating">
-          <div class="p1">Overall Ratings</div>
-          <div class="rating-value">
-            <div class="rating-number">{{ overallRating.toFixed(1) }}</div>
-            <span class="stars">
-              <i
-                v-for="star in 5"
-                :key="star"
-                :class="[
-                  'star',
-                  star <= hoverRating * 2 || star <= newRating * 2 ? 'filled' : ''
-                ]"
-                @click="setRating(star / 2)"
-                @mouseover="hoverRating = star / 2"
-                @mouseleave="hoverRating = 0"
-              >★</i>
-        </span>
-          </div>
-          <div class="total_rating">{{ totalRatings }} Ratings</div>
-          <!-- <button @click="showModal = true" class="leave-rating-btn">
-            Leave A Rating
-          </button> -->
-          <button @click="openSubmitModal" class="leave-rating-btn">
-            Leave A Rating
-          </button>
-        </div>
-      </div>
-  
-      <!-- Rating Modal -->
-      <div v-if="showModal" class="modal-overlay">
-        <div class="modal">
-          <h2>Give Your Rating</h2>
-          <div class="stars">
-            <i
-              v-for="star in 5"
-              :key="star"
-              :class="[
-                'star',
-                star <= hoverRating * 2 || star <= newRating * 2 ? 'filled' : ''
-              ]"
-              @click="setRating(star / 2)"
-              @mouseover="hoverRating = star / 2"
-              @mouseleave="hoverRating = 0"
-            >★</i>
-          </div>
-          <button @click="submitRating" class="submit-rating-btn">Submit</button>
-          <button @click="closeModal" class="close-modal-btn">Cancel</button>
         </div>
       </div>
 
-      <!-- Submit Modal -->
-      <div v-if="showSubmitModal" class="modal-overlay">
-        <div class="modal">
-            <h2>Submit Your Rating</h2>
-            <p>Thank you for leaving a rating!</p>
-            <button @click="closeSubmitModal" class="submit-rating-btn">Close</button>
-        </div>
+      <!-- Right Section -->
+      <div class="overall-rating">
+        <h2>Overall Ratings</h2>
+        <h1 class="score">{{ overallRating.toFixed(1) }}</h1>
+        <span>
+          <iconify-icon v-for="index in 5" :key="index" class="overall-stars" icon="material-symbols:star-rounded" />
+        </span>
+        <span class="total-rating">{{ totalRatings }} Ratings</span>
+        <button @click="openModal" class="rating-btn">
+          Leave A Rating
+        </button>
       </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        ratings: [50, 20, 10, 10, 10], // Percentages for the 5-star rating bars
-        overallRating: 4.0, // Default overall rating
-        totalRatings: 500, // Total number of ratings
-        showModal: false, // Modal visibility
-        newRating: 0, // User's new rating
-        hoverRating: 0, // Star being hovered
-        showSubmitModal: false, // Submit modal visibility
-      };
+
+    <!-- Pop up Section -->
+    <div class="popup" v-if="showModal">
+      <div class="popup-header">
+        <h1>Your oppinions matters to us!</h1>
+      </div>
+      <h2>How would you rate this product overall quality?</h2>
+      <form class="rating-form" @submit.prevent="myMethod">
+        <div>
+          <iconify-icon
+            class="rating-star" 
+            icon="material-symbols:star-rounded" 
+            v-for="index in 5" :key="index"
+            @click="selectedStar(index)"
+          />
+        </div>
+        <button class="submit-btn">Submit</button>
+        <button class="later-btn" @click="closeModal">Maybe Later</button>
+      </form>
+    </div>
+  </div>  
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      ratings: [50, 20, 10, 10, 10], // Percentages for the 5-star rating bars
+      overallRating: 4.0, // Default overall rating
+      totalRatings: 500, // Total number of ratings
+      showModal: false, // Modal visibility
+      newRating: 0, // User's new rating
+      hoverRating: 0, // Star being hovered
+      showSubmitModal: false, // Submit modal visibility
+    }
+  },
+  methods: {
+    setRating(star) {
+      this.newRating = star; // Set the user's selected rating
     },
-    methods: {
-      setRating(star) {
-        this.newRating = star; // Set the user's selected rating
-      },
-      submitRating() {
-        if (this.newRating > 0) {
-          // Update overall rating and total ratings
-          const totalWeighted = this.overallRating * this.totalRatings;
-          this.totalRatings += 1;
-          this.overallRating =
-            (totalWeighted + this.newRating) / this.totalRatings;
-  
-          // Update individual rating percentages
-          const index = 5 - this.newRating; // Find the corresponding bar index
-          this.ratings[index] += 1;
-          this.normalizeRatings();
-  
-          // Close the modal
-          this.showModal = false;
-          this.newRating = 0;
-        } else {
-          alert("Please select a rating before submitting.");
-        }
-      },
-      normalizeRatings() {
-        const total = this.ratings.reduce((sum, count) => sum + count, 0);
-        this.ratings = this.ratings.map((count) => (count / total) * 100);
-      },
-      closeModal() {
+    submitRating() {
+      if (this.newRating > 0) {
+        // Update overall rating and total ratings
+        const totalWeighted = this.overallRating * this.totalRatings;
+        this.totalRatings += 1;
+        this.overallRating =
+          (totalWeighted + this.newRating) / this.totalRatings;
+
+        // Update individual rating percentages
+        const index = 5 - this.newRating; // Find the corresponding bar index
+        this.ratings[index] += 1;
+        this.normalizeRatings();
+
+        // Close the modal
         this.showModal = false;
         this.newRating = 0;
-      },
-      openSubmitModal() {
-      this.showSubmitModal = true; // Show the submit modal
-      },
-      closeSubmitModal() {
-        this.showSubmitModal = false; // Close the submit modal
-      },
+      }
     },
-  };
-  </script>
-  
-  <style scoped>
-  /* General Styles */
-    .ratings-section {
-      font-family: Arial, sans-serif;
-      padding: 30px 33px;
-    }
-    
-    .rating-wrap {
-      display: flex;
-      justify-content: space-between;
-    }
-    
-    /* Rating Bars */
-    .rating-bar {
-      padding-inline: 5rem;
-      display: flex;
-      align-items: center;
-      margin: 8px 0;
-    }
-    
-    .bar {
-      flex: 1;
-      background-color: #eee;
-      width: 700px;
-      margin-left: 10px;
-      border-radius: 15px;
-      overflow: hidden;
-      position: relative;
-      height: 35px;
-    }
-    
-    .bar .fill {
-      height: 100%;
-      background-color: orange;
-    }
-    
-    /* Stars and Buttons */
-    .stars .star {
-      font-size: 2em;
-      cursor: pointer;
-      color: gray;
-      margin-right: 10px;
-      /* transition: color 0.3s ease; */
-    }
-    
-    .stars .filled {
-      color: orange;
-      margin-left: 15px;
-    }
-    
-    .total_rating {
-      font-family: inter;
-      font-size: 1em;
-      margin-top: 10px;
-      margin-left: 55px;
-    }
-    .leave-rating-btn {
-      background-color: black;
-      color: white;
-      border-radius: 13px;
-      cursor: pointer;
-      width: 300px;
-      height: 60px;
-      font-size: 25px;
-      margin-left: 0px;
-      margin-top: 25px;
-      margin-right: 230px;
-      
+    normalizeRatings() {
+      const total = this.ratings.reduce((sum, count) => sum + count, 0);
+      this.ratings = this.ratings.map((count) => (count / total) * 100);
+    },
 
-    }
 
-    .rating-btn {
-      margin-top: 3rem;
-      margin-left: 80px;
-      background-color: orange;
-      border-color: white;
-      color: white;
-      border-radius: 20px;
-      cursor: pointer;
-      width: 280px;
-      height: 65px;
-      font-size: 50px;
-      
-    }
-    .rating-btn:hover {
-      background-color: rgb(251, 171, 23);
-    }
+    selectedStar(index){
+     console.log('bouto kill myself ' + index)
+    },
+    closeModal() {
+      this.showModal = false;
+      this.newRating = 0;
+    },
+    openModal() {
+    this.showModal = true;
+    },
+  },
+};
+</script>
 
-    .leave-rating-btn:hover {
-      background-color: #333;
-    }
-    
-    .submit-rating-btn {
-      background-color: orange;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    
-    .close-modal-btn {
-      background-color: #999;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-left: 10px;
-    }
-    
-    /* Modal Styles */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .modal {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-    }
+<style scoped>
+*{
+  font-family: 'Inter';
+}
 
-    .modal h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    }
+.rating-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  height: auto;
+  width: 100%;
+  position: relative;
+}
 
-    .modal p {
-      font-size: 1.4em;
-      margin-bottom: 20px;
-      padding-inline: 5rem;
-    }
+hr{
+  width: 100%;
+  margin-top: 15px;
+}
 
-    p {
-      font-family: Inter;
-      font-size: 2em;
-      margin-left: 80px;
-    }
-    
-    .p1 {
-      margin-top: 40px;
-      font-family: Inter;
-      font-size: 2em;
-    
-    }
+.main-section{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
 
-    hr {
-      margin-top: 20px;
-      margin-left: 80px;
-      margin-right: 130px;
-    }
+/* LEFT SECTION */
+.audience-rating-section{
+  width: 60%;
+}
 
-    .rating-number {
-      font-size: 5em;
-      font-family: inter;
-      margin-left: 50px;
-    }
+.rating-bar{
+  border: 1px solid black;
+  width: 80%;
+  height: 10px;
+}
 
-    .submit-rating-btn {
-      background-color: orange;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1em;
-    }
+.bar-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
 
-    .submit-rating-btn:hover {
-      background-color: darkorange;
-    }
+.bar-container > h3{
+  font-size: 22px;
+}
 
-  </style>
-  
+.rating-bar{
+  height: 35px;
+  background-color: #D9D9D9;
+  border: 0px;
+  border-radius: 35px;
+}
+
+/* RIGHT SECTION */
+.overall-rating{
+  width: 40%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid grey;
+  border-radius: 25px;
+  box-shadow: 7px 17px 17px #8e8e8e;
+}
+
+.overall-rating > h1,
+.overall-rating > h2{
+  margin: 0;
+}
+
+.overall-stars{
+  width: 28px;
+  height: 28px;
+}
+
+.overall-rating > h1{
+  font-size: 80px;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.total-rating{
+  font-weight: 500;
+  color: grey;
+}
+
+.rating-btn{
+  cursor: pointer;
+  margin-top: 25px;
+  width: 40%;
+  height: 50px;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border-radius: 30px;
+  border: none;
+}
+
+/* Pop Up Section */
+.popup{
+  border: 1px solid black;
+  display: flex;
+  width: 50%;
+  left: 25%;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: absolute;
+}
+
+.popup h1{
+  color: white;
+}
+
+.popup-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d0907;
+  width: 100%;
+  height: 100px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.rating-star{
+  width: 85px;
+  height: 85px;
+  color: #8e8e8e;
+  cursor: pointer;
+}
+
+.rating-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.submit-btn{
+  margin-top: 30px;
+  font-size: 20px;
+  width: 50%;
+  height: 50px;
+  border-radius: 30px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.later-btn{
+  background-color: transparent;
+  border: none;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  color: grey;
+  opacity: 70%;
+  cursor: pointer;
+}
+
+.active_rating{
+  color: #FFAA00;
+}
+</style>

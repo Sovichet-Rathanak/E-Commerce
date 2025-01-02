@@ -5,10 +5,10 @@
             brandname="Air Jordan 1 High OG" 
             productname="Chicago Lost and Found" 
             price_tag="239"/>
-
+        
+        <Rating_Component/> 
+        <div>Testing Section</div>
     </body>
-
-    <Rating_Component /> 
 </template>
 
 <script>
