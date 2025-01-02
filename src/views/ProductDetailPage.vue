@@ -6,7 +6,7 @@
       productname="Chicago Lost and Found"
       price_tag="239"
     />
-
+        <comment_section/>
     <Rating_Component />
     <div>Testing Section</div>
   </body>
@@ -15,11 +15,12 @@
 <script>
 import ProductImage from "../components/ProductImage.vue";
 import Rating_Component from "@/components/RatingComponent.vue";
-
+import comment_section from '@/components/comment_section.vue';
 export default {
   components: {
     ProductImage,
     Rating_Component,
+        comment_section
   },
   data() {
     return {
