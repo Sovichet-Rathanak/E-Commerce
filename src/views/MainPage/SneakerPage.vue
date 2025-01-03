@@ -2,7 +2,10 @@
   <WebBanner :images="banner.sneakerBanner.image" />
   <!-- checkout banner.js and just basically populate the image array with your own image -->
   <div class="Container">
-    <SeeMore SectionTitle="New and Noteworthy" style="margin-top: 1.75rem" />
+    <SeeMore style="margin-top: 1.75rem"
+      SectionTitle="New and Noteworthy"
+
+    />
 
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
@@ -31,8 +34,8 @@
 
     <SeeMore
       SectionTitle="Popular Brand"
-      targetPage="PopularBrand"
-      backPage="Sneaker"
+      PageTitle="PopularBrand"
+      brandType="sneakerBrand"
     />
 
     <div class="brand_section">
@@ -67,12 +70,12 @@
       />
     </div>
 
-
     <SeeMore
       SectionTitle="Articles"
       targetPage="ArticlePage"
       backPage="Sneaker"
     />
+    
     <div class="article_section">
       <!-- just like the product component you just have to change the path of the productImage, we will also setup pinia for this :3 -->
       <ArticleCard

@@ -28,10 +28,11 @@
     </div>
 
     <SeeMore
-      SectionTitle="Popular Brand"
-      targetPage="PopularBrand"
-      backPage="Collectibles"
+      SectionTitle="Popular Artists"
+      PageTitle="PopularBrand"
+      brandType="collectibleBrand"
     />
+    
     <div class="brand_section">
       <BrandCard
         v-for="index in 4"

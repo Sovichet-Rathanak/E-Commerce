@@ -33,7 +33,10 @@
                 <div class="size-selector" @click="showList">
                     <span>Size: </span>
                     <div class="dropper">
-                        <span>All</span>
+                        <span :class="[activated ? size_activated : 'null']">
+                            {{ activated ? productSizes[selectedIndex].size || 'Select Size' : 'All' }}
+                        </span>   
+                        
                         <iconify-icon v-if="show_list" icon="ri:arrow-drop-down-line" style="transform: scaleY(-1);" width="24px" height="24px"/>
                         <iconify-icon v-else icon="ri:arrow-drop-down-line" width="24px" height="24px"/>
                     </div>
@@ -42,19 +45,29 @@
                 <div class="dropped-list" v-if="show_list">
                     <h3>Size (US)</h3>
                     <div class="sizes">
-                        <button v-for="size in 14" :key="size">US {{size + 3}}</button>
-                    </div>
-                </div>
+                        <div :class="[selectedIndex === index ? active_state : normal_state]" v-for="(item, index) in productSizes" :key="index" @click="selectedSizeIndex(index)">
+                            <p class="size-price">
+                                <span>{{ item.size }}</span>
+                                 <br> 
+                                <span>${{ item.price }}</span>
+                            </p>
+                        </div>
+                    </div> 
+                </div> 
 
-                <div class="buy-section">
-                    <hgroup>
-                        <h3 style="margin-bottom: 10px;">Buy now for</h3>
-                        <h1 class="price">${{ price_tag }}</h1>
-                    </hgroup>
-                    <div class="buy-container">
-                        <button class="buy-btn">BUY NOW</button>
+                    <div class="buy-section">
+                        <hgroup>
+                            <h3 style="margin-bottom: 10px;">Buy now for:</h3>
+                            <h1 class="price"
+                                :class="[activated ? price_activated : 'null']"
+                            > 
+                                {{ activated ? `$${productSizes[selectedIndex].price || price_tag}` : `${price_tag}` }} 
+                            </h1>
+                        </hgroup>
+                        <div class="buy-container">
+                            <button class="buy-btn">BUY NOW</button>
+                        </div>
                     </div>
-                </div>
 
                 <div class="miscellaneous">
                     <div class="kVeri-head" @click="showDesc">
@@ -93,16 +106,34 @@ export default {
         price_tag:{
             type: Number,
             required: true 
+        },
+        productSizes:{
+            type: Array,
+            required: true
         }
     },
     data() {
         return {
             activeIndex: 0,
             show_list: false,
-            show_desc: true, 
+            show_desc: true,
+            isActive: false,
+
+            // size button handling
+            normal_state: 'size-button',
+            active_state: 'size-active',
+            selectedIndex: null,
+            activated: false,
+            price_activated: 'price-activated',
+            size_activated: 'size-activated'
         };
     },
     methods: {
+        selectedSizeIndex(index){
+            this.selectedIndex = index;
+            this.show_list= false,
+            this.activated = true;
+        },
         showList(){
             this.show_list = !this.show_list;
         },
@@ -286,7 +317,7 @@ export default {
 
 .buy-btn:hover{
     color: white;
-    background-color: rgb(0, 65, 0);
+    background-color: #004100;
     transition: 100ms ease-in;
 }
 
@@ -294,7 +325,7 @@ export default {
     border: 2px solid black;
     border-top: 0px;
     width: 80%;
-    height: 70%;
+    height: 100%;
     padding: 1rem;
     position: absolute;
     background-color: white;
@@ -316,12 +347,37 @@ export default {
     font-weight: bold;
 }
 
-.sizes > button{
+.size-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 2px solid black;
     font-weight: 600;
     background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.size-button:hover{
+    color: white;
+    font-weight: 800;
+    transition: 300ms ease-in;
+    border: 2px solid #004100;
+    background-color: #004100;
+}
+
+.size-active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 2px solid black;
+    font-weight: 800;
+    background-color: #004100;
+    color: white;
     cursor: pointer;
 }
 
@@ -357,5 +413,20 @@ export default {
     position: absolute;
     align-self: flex-end;
     width: 80%;
+}
+
+.size-price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.price-activated,
+.size-activated{
+    font-weight: 700;
+    color: #006e00;
 }
 </style>

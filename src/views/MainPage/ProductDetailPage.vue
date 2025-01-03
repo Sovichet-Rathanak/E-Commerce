@@ -5,6 +5,7 @@
             :brandname="product.brand_name"
             :productname="product.product_name"
             :price_tag="product.price"
+            :productSizes="product.productSizes"
         />
         <ProductDetail
             :brandname="product.brand_name"
@@ -42,7 +43,6 @@ export default {
         prodcutId(){
             return this.route.params.id;
         },
-        
         product(){
             for(const category in this.productsByCategory){
                 const found = this.productsByCategory[category].find(
@@ -55,7 +55,7 @@ export default {
     },
     methods:{
         logg(){
-            console.log(this.product.brand_name)
+            console.log(this.product.productSizes)
         }
     }
 };

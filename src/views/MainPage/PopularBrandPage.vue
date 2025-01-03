@@ -1,18 +1,11 @@
 <template>
   <div class="BrandList">
-    <SeeMore
-      SectionTitle="Popular Brand"
-      targetPage="PopularBrand"
-      backPage="Womenswear"
-      class="section-header"
-    />
-
     <div class="BrandCard">
       <BrandCard
-        v-for="index in 15"
+        v-for="(logo, index) in selectedBrand?.logo"
         :key="index"
-        :brandImg="brand.womenswearBrand.logo[index - 1]"
-        :brandName="brand.womenswearBrand.brand_name[index - 1]"
+        :brandImg="logo"
+        :brandName="selectedBrand?.brand_name[index]"
         :cardSize="dynamicSize"
       />
     </div>
@@ -20,49 +13,40 @@
 </template>
 
 <script>
-import SeeMore from "@/components/SeeMore.vue";
 import BrandCard from "@/components/BrandCard.vue";
+import { ref, computed } from "vue";
+import { useRoute } from "vue-router";
 import { useBrandStore } from "@/store/brand";
-import { mapState } from "pinia";
+
 export default {
   components: {
     BrandCard,
-    SeeMore,
   },
-
+  data(){
+    return{
+      dynamicSize: "large",
+    }
+  },
   setup() {
     const brandStore = useBrandStore();
+    const route = useRoute();
+    const brandType = ref(route.params.id); //Get the route param ID but i can't use it for some reason
+
+    const selectedBrand = computed(() => {
+      return brandStore.brands[brandType.value];  //this solve the problem
+    });
+
     return {
       brandStore,
+      brandType,
+      selectedBrand,
     };
-  },
-
-  computed: {
-    ...mapState(useBrandStore, {
-      brand: "brands",
-    }),
-  },
-
-  data() {
-    return {
-      dynamicSize: "large", // Default size, can be adjusted dynamically
-    };
-  },
-  methods: {
-    display() {
-      console.log(this.brand.sneakerBrand.logo[0]);
-    },
   },
 };
 </script>
 
-<style scoped>
-.section-header{
-  margin-bottom: 2rem;
-  justify-content: space-between;
-  width: auto;
-}
 
+<style scoped>
 .BrandList {
   width: auto;
   padding: 2rem 2rem;

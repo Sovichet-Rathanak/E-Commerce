@@ -6,19 +6,19 @@ export const useBrandStore = defineStore('brands',{
             brands:{
                 sneakerBrand:{
                     logo:[
-                        "./src/assets/images/BrandLogo/SneakerBrand/Jordan.png",
-                        "./src/assets/images/BrandLogo/SneakerBrand/Converse.png",
-                        "./src/assets/images/BrandLogo/SneakerBrand/Vans.png",
-                        "./src/assets/images/BrandLogo/SneakerBrand/Yeezy.png"
+                        "/src/assets/images/BrandLogo/SneakerBrand/Jordan.png",
+                        "/src/assets/images/BrandLogo/SneakerBrand/Converse.png",
+                        "/src/assets/images/BrandLogo/SneakerBrand/Vans.png",
+                        "/src/assets/images/BrandLogo/SneakerBrand/Yeezy.png"
                     ],
                     brand_name:["Jordan","Converse", "Vans", "Yeezy"]
                 },
                 accessoryBrand:{
                     logo:[
-                        "./src/assets/images/BrandLogo/SneakerBrand/AccessoryBrand/Hermes.png", 
-                        "./src/assets/images/BrandLogo/SneakerBrand/AccessoryBrand/Chanel.png", 
-                        "./src/assets/images/BrandLogo/SneakerBrand/AccessoryBrand/Prada.png", 
-                        "./src/assets/images/BrandLogo/SneakerBrand/AccessoryBrand/Dior.png"
+                        "./src/assets/images/BrandLogo/AccessoryBrand/Hermes.png", 
+                        "./src/assets/images/BrandLogo/AccessoryBrand/Chanel.png", 
+                        "./src/assets/images/BrandLogo/AccessoryBrand/Prada.png", 
+                        "./src/assets/images/BrandLogo/AccessoryBrand/Dior.png"
                     ],
                     brand_name:["Hermes","Chanel", "Prada", "DIOR"]
                 },
@@ -32,7 +32,7 @@ export const useBrandStore = defineStore('brands',{
                     brand_name:["Dior","Hermes","Prada", "Valentino"]
                 },
                 womenswearBrand:{
-                  logo:[
+                    logo:[
                         "./src/assets/images/BrandLogo/Womenwear/D&G.jpg",
                         "./src/assets/images/BrandLogo/Womenwear/Dior.jpg",
                         "./src/assets/images/BrandLogo/Womenwear/PRADA.jpg",
@@ -42,16 +42,14 @@ export const useBrandStore = defineStore('brands',{
                 },
                 collectibleBrand:{
                     logo:[
-                        "./src/assets/images/BrandLogo/CollectibleArtist/aespaBrand.jpg", 
-                        "./src/assets/images/BrandLogo/CollectibleArtist/newjeansBrand.jpg", 
-                        "./src/assets/images/BrandLogo/CollectibleArtist/illit.jpg", 
-                        "./src/assets/images/BrandLogo/CollectibleArtist/enhypenBrand.jpg"
+                        "/src/assets/images/BrandLogo/CollectibleArtist/aespaBrand.jpg", 
+                        "/src/assets/images/BrandLogo/CollectibleArtist/newjeansBrand.jpg", 
+                        "/src/assets/images/BrandLogo/CollectibleArtist/illit.jpg", 
+                        "/src/assets/images/BrandLogo/CollectibleArtist/enhypenBrand.jpg"
                     ],
                     brand_name:["AESPA","NEWJEANS","ILLIT","ENHYPEN"]
                 },
             }
         }
     },
-    actions:{
-    }
 })

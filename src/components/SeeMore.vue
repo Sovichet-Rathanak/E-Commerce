@@ -2,39 +2,33 @@
 <template>
     <div class="container">
       <span class="sectionTitle">{{ SectionTitle }}</span>
-      <button @click="showMore">{{ GoBack }}</button>
+      <button class="link" @click="goToBrandList"> See More </button>
     </div>
   </template>
 
 <script>
 
 export default{
-  data() {
-    return {
-      isClicked: false
-    };
-  },
   props:{
-    SectionTitle: String,
-    targetPage: String,
-    backPage: String
-  },
-
-  computed: {
-    GoBack() {
-      return this.$route.name === this.targetPage ? "Back" : "See More";
+    SectionTitle:{
+      type: String,
+      required: true
+    }, 
+    PageTitle:{
+      type: String,
+      required: true
     },
+    brandType:{
+      type: String,
+      required: true
+    }
   },
-  methods: {
-    showMore() {
-      if (this.$route.name === this.targetPage) {
-        this.$router.push({ name: this.backPage});
-      } else {
-        this.$router.push({ name: this.targetPage });
-      }
-    },
-  },
-
+  methods:{
+    goToBrandList() {
+      this.$router.push(`/${this.PageTitle}/${this.brandType}`);
+      console.log(this.brandType)
+    }
+  }
 }
 </script>
 
@@ -52,18 +46,14 @@ export default{
   font-weight: bold;
 }
 
-button{
+.link{
+  text-decoration: none;
   font-family: 'Inter';
   font-weight: bold;
   font-size: 30px;
   color: black;
   background-color: transparent;
   border: none;
-}
-
-button:hover{
-  color: black;
   cursor: pointer;
 }
-
 </style>

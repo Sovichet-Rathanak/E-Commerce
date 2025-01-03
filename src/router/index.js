@@ -86,7 +86,7 @@ const routes = [
     component: ReturnPolicyPage
   },
   {
-    path: "/PopularBrand",
+    path: "/PopularBrand/:id",
     name: "PopularBrand",
     component: PopularBrand,
   },
