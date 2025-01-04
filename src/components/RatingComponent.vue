@@ -2,54 +2,44 @@
   <div id="app">
     <!-- Ratings Section -->
     <div class="ratings-section">
-      <h2>Ratings</h2>
+      <h1>Ratings</h1>
       <hr />
       <div class="main-section">
         <!-- Left Section: Audience Rating -->
         <div class="audience-rating-section">
-          <p>Audience rating summary</p>
-          <div
-            v-for="(count, index) in starCounts"
-            :key="index"
-            class="rating-bar"
-          >
-            <!-- &#9733; = star -->
-            <span class="stars-display">
-              <span class="star">&#9733;</span>({{ 5 - index }})
-            </span>
+          <h2>Audience rating summary</h2>
+
+          <div v-for="(count, index) in starCounts" :key="index" class="rating-bar">
+            <div class="star-numb">
+              <h3>{{ 5 - index }}</h3> 
+              <iconify-icon icon="material-symbols:star-rounded" width="24px" height="24px" color="#ffaa00"></iconify-icon>
+            </div>
 
             <div class="bar">
               <div class="fill" :style="{ width: getBarWidth(count) }"></div>
             </div>
-
-            <!-- Count the number of people who rated -->
+            
             <span class="countRate">{{ count }}</span>
           </div>
+
         </div>
 
         <!-- Right Section: Overall Rating -->
         <div class="overall-rating">
-          <p>Overall Ratings</p>
-          <h2 class="rating-number">{{ overallRating.toFixed(1) }}</h2>
+          <h2>Overall Ratings</h2>
+          <h2 class="rating-number">{{ ratings.length === 0 ? '0.0' : overallRating.toFixed(1) }}</h2>
 
-          <!-- Start represent rating number -->
-          <div class="overall-stars">
-            <iconify-icon
-              class="heref"
-              v-for="index in 5"
-              :key="index"
-              icon="material-symbols:star-rounded"
-              :class="{
-                full: index <= Math.floor(overallRating),
-                half:
-                  index === Math.ceil(overallRating) &&
-                  overallRating % 1 >= 0.5,
-                empty: index > overallRating,
-              }"
-            ></iconify-icon>
+          <div class="overallstar-container">
+            <div class="overall-stars" :style="[{width: ratings.length === 0? '0%' : getStarWidth + '%'}]">
+                <iconify-icon class="heref" v-for="index in 5" :key="index" icon="material-symbols:star-rounded"></iconify-icon>
+            </div>
+            <div class="starholder-container">
+              <iconify-icon class="star-holder" v-for="index in 5" :key="index" icon="material-symbols:star-rounded"></iconify-icon>
+            </div>
           </div>
 
-          <p class="total_rating">{{ ratings.length }} Ratings</p>
+            <h4 class="total_rating">{{ ratings.length === 0 ? 'This product has no rating' : ratings.length + ' Ratings'}}</h4>
+
           <button class="leave-rating-btn" @click="showPopup = true">
             Leave A Rating
           </button>
@@ -90,57 +80,63 @@
 export default {
   data() {
     return {
-      ratings: [4, 3, 5, 2, 1, 4, 5, 4, 2],
+      ratings: [],
       showPopup: false,
       selectedRating: 0,
+      RatingAVG: 0,
     };
   },
   computed: {
     overallRating() {
       return (
-        this.ratings.reduce((sum, rating) => sum + rating, 0) /
-        this.ratings.length
-      ); // The reduce function sums all the ratings, and then we divide by the length to get the average
+        this.ratings.reduce((sum, rating) => sum + rating, 0) /this.ratings.length
+      ); 
     },
 
     starCounts() {
       const counts = [0, 0, 0, 0, 0];
       this.ratings.forEach((rating) => {
-        counts[Math.floor(rating) - 1]++;
+        counts[5 - Math.floor(rating)]++;
       });
       return counts;
     },
+
+    getStarWidth(){
+      return ((100/5.0) * this.overallRating).toFixed(2);
+    },
   },
   methods: {
-    // Calculates the width of the rating bar for each rating level
     getBarWidth(count) {
-      const max = Math.max(...this.starCounts); // Find the maximum rating count
-      return `${(count / max) * 100}%`; // Returns the width as a percentage based on the count relative to the maximum count
+      const totalVotes = this.ratings.length;
+      if (totalVotes === 0) return "0%";   
+      return `${(count / totalVotes) * 100}%`;
     },
 
     updateRating(value) {
-      this.selectedRating = value; // Set the selected rating to the value clicked
+      this.selectedRating = value; 
     },
 
     submitRating() {
+      console.log(this.ratings);
       if (this.selectedRating > 0) {
-        this.ratings.push(this.selectedRating); // Add the selected rating to the ratings array
+        this.ratings.push(this.selectedRating); 
         this.closePopup();
       }
     },
 
     closePopup() {
-      this.showPopup = false; // Hide the popup
-      this.selectedRating = 0; // Reset the selected rating
+      this.showPopup = false; 
+      this.selectedRating = 0; 
     },
   },
 };
 </script>
 
 <style scoped>
-.heref {
-  font-size: 25px;
+*{
+  font-family: "Inter";
 }
+
 .ratings-section {
   display: flex;
   justify-content: center;
@@ -152,14 +148,9 @@ export default {
   position: relative;
 }
 
-h2 {
-  font-family: Arial, sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-}
 hr {
   width: 100%;
-  margin-top: 15px;
+  margin-top: 0;
 }
 
 .main-section {
@@ -172,73 +163,63 @@ hr {
   width: 60%;
 }
 
-p {
-  font-family: Arial, sans-serif;
-  font-size: 28px;
-  font-weight: 600;
+.star-numb{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
+
+.star-numb > h3{
+  font-family: "Inter";
+  font-size: 24px;
+  margin-right: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .rating-bar {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  margin: 8px 0;
-}
-
-.stars-display {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.stars-display .star {
-  color: rgb(255, 232, 103);
-  font-size: 35px;
-  margin-right: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.rating-bar span {
-  text-align: center;
-  font-size: 23px;
+  gap: 10px;
+  margin-top: 30px;
 }
 
 .bar {
   background-color: #eee;
-  margin: 0 18px;
-  border-radius: 12px;
-  overflow: hidden;
-  width: 630px;
-  height: 20px;
+  border-radius: 35px;
+  width: 75%;
+  height: 35px;
 }
 
 .bar .fill {
   height: 100%;
   background-color: #ffaa00;
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-radius: 35px;
 }
 .countRate {
-  font-family: Arial, Helvetica, sans-serif;
-  margin-right: 50px;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 24px;
 }
+
 /* Right Section  */
 .overall-rating {
-  width: 36%;
+  width: 40%;
   margin-top: 20px;
   display: flex;
-  right: 0%;
-  position: absolute;
+  position: relative;
+  box-sizing: border-box;
   padding: 10px 0 30px 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 2px solid grey;
   border-radius: 25px;
-  box-shadow: 7px 17px 17px #8e8e8e;
+  box-shadow: 7px 10px 10px #8e8e8e;
 }
 
 .rating-value {
@@ -254,37 +235,46 @@ p {
   font-weight: normal;
 }
 
-/* Star represent rating numebr */
+.overallstar-container{
+  width: 21%;
+  height: 31px;
+  position: relative;
+}
+
 .overall-stars {
   display: flex;
-  gap: 5px;
-  margin: 10px 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow-x: hidden; 
+  box-sizing: border-box;
 }
 
-.overall-stars iconify-icon {
-  font-size: 30px;
-  color: #ccc; /* Default color for empty stars */
+.starholder-container{
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
 }
 
-.overall-stars iconify-icon.full {
-  color: gold; /* Color for full stars */
+.overall-stars .heref,
+.star-holder{
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0; 
 }
 
-.overall-stars iconify-icon.half {
-  background: linear-gradient(90deg, gold 50%, #ccc 50%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.star-holder{
+  color: black;
+  opacity:20%;
 }
 
-.overall-stars iconify-icon.empty {
-  color: #ccc; /* Color for empty stars */
-}
-
+/* Star represent rating numebr */
 .total_rating {
   color: rgba(26, 26, 26, 0.5);
-  margin-top: 10px;
   font-size: 22px;
-  font-weight: normal;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 25px;
 }
 
 .stars {
@@ -300,16 +290,13 @@ p {
   background-color: black;
   color: white;
   padding: 10px;
-  border-radius: 18px;
+  border-radius: 55px;
   cursor: pointer;
   padding-bottom: 10px;
-  width: 230px;
+  width: 45%;
   height: 55px;
   font-size: 24px;
-}
-
-.leave-rating-btn:hover {
-  background-color: #a1a1a1;
+  font-weight: 600;
 }
 
 /* Pop UP Section */
@@ -328,9 +315,8 @@ p {
 
 .popup {
   background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px black;
   width: 50%;
   justify-content: center;
   align-items: center;
@@ -342,9 +328,9 @@ p {
   justify-content: center;
   align-items: center;
   background-color: #0d0907;
+  border-radius: 10px 10px 0px 0px;
   width: 100%;
   height: 100px;
-  border-radius: 10px 10px 0px 0px;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
@@ -356,9 +342,7 @@ p {
 
 .stars {
   display: flex;
-  gap: 0.5rem;
   justify-content: center;
-  margin: 10px 0;
 }
 
 .star-wrapper {
@@ -366,19 +350,19 @@ p {
 }
 
 .rating-star {
-  width: 85px;
-  height: 85px;
+  width: 90px;
+  height: 90px;
   color: #8e8e8e;
   cursor: pointer;
   margin: 15px 0 23px 0;
 }
 
 .rating-star.selected {
-  color: gold;
+  color: #ffaa00;
 }
 
 .overall-stars.selected {
-  color: gold;
+  color: #ffaa00;
 }
 
 .submit-btn {
@@ -390,7 +374,7 @@ p {
   margin-top: 10px;
   font-size: 20px;
   width: 50%;
-  height: 50px;
+  height: 60px;
   font-weight: bold;
 }
 
@@ -404,8 +388,5 @@ p {
   color: grey;
   opacity: 70%;
   cursor: pointer;
-}
-button:hover {
-  background-color: #333;
 }
 </style>
