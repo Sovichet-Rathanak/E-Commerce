@@ -13,12 +13,16 @@
             :key="index"
             class="rating-bar"
           >
+            <!-- &#9733; = star -->
             <span class="stars-display">
               <span class="star">&#9733;</span>({{ 5 - index }})
             </span>
+
             <div class="bar">
               <div class="fill" :style="{ width: getBarWidth(count) }"></div>
             </div>
+
+            <!-- Count the number of people who rated -->
             <span class="countRate">{{ count }}</span>
           </div>
         </div>
@@ -27,6 +31,8 @@
         <div class="overall-rating">
           <p>Overall Ratings</p>
           <h2 class="rating-number">{{ overallRating.toFixed(1) }}</h2>
+
+          <!-- Start represent rating number -->
           <div class="overall-stars">
             <iconify-icon
               class="heref"
@@ -42,6 +48,7 @@
               }"
             ></iconify-icon>
           </div>
+
           <p class="total_rating">{{ ratings.length }} Ratings</p>
           <button class="leave-rating-btn" @click="showPopup = true">
             Leave A Rating
@@ -56,6 +63,7 @@
         <div class="popup-header">
           <h1>Your opinion matters to us!</h1>
         </div>
+
         <h2 class="popuptitle">
           How would you like to rate this product overall quality?
         </h2>
@@ -92,33 +100,38 @@ export default {
       return (
         this.ratings.reduce((sum, rating) => sum + rating, 0) /
         this.ratings.length
-      );
+      ); // The reduce function sums all the ratings, and then we divide by the length to get the average
     },
+
     starCounts() {
       const counts = [0, 0, 0, 0, 0];
       this.ratings.forEach((rating) => {
-        counts[Math.floor(rating) - 1]++; // Categorizing ratings
+        counts[Math.floor(rating) - 1]++;
       });
       return counts;
     },
   },
   methods: {
+    // Calculates the width of the rating bar for each rating level
     getBarWidth(count) {
-      const max = Math.max(...this.starCounts);
-      return `${(count / max) * 100}%`;
+      const max = Math.max(...this.starCounts); // Find the maximum rating count
+      return `${(count / max) * 100}%`; // Returns the width as a percentage based on the count relative to the maximum count
     },
+
     updateRating(value) {
-      this.selectedRating = value;
+      this.selectedRating = value; // Set the selected rating to the value clicked
     },
+
     submitRating() {
       if (this.selectedRating > 0) {
-        this.ratings.push(this.selectedRating);
+        this.ratings.push(this.selectedRating); // Add the selected rating to the ratings array
         this.closePopup();
       }
     },
+
     closePopup() {
-      this.showPopup = false;
-      this.selectedRating = 0;
+      this.showPopup = false; // Hide the popup
+      this.selectedRating = 0; // Reset the selected rating
     },
   },
 };
@@ -361,6 +374,10 @@ p {
 }
 
 .rating-star.selected {
+  color: gold;
+}
+
+.overall-stars.selected {
   color: gold;
 }
 
