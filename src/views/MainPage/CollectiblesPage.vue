@@ -1,5 +1,5 @@
 <template>
-  <WebBanner :images="banner.sneakerBanner.image" />
+  <WebBanner :images="banner.collectiblesBanner.image" />
   <!-- checkout banner.js and just basically populate the image array with your own image -->
   <div class="Container">
     <SeeMore SectionTitle="New and Noteworthy" style="margin-top: 1.75rem" />
@@ -9,10 +9,9 @@
       <ProductCard
         v-for="index in 4"
         :key="index"
-        productImage="./src/assets/images/AJ1HighLost_Found.jpg"
+        productImage="./src/assets/images/aespaProduct.png"
         productName="Jordan 1 Retro High OG Chicago Lost and Found"
         productStatus="Available In Stock"
-        productCat="{{ currentCat }}"
       ></ProductCard>
     </div>
 
@@ -22,24 +21,24 @@
       <ProductCard
         v-for="index in 4"
         :key="index"
-        productImage="./src/assets/images/AJ1HighLost_Found.jpg"
+        productImage="./src/assets/images/aespaProduct.png"
         productName="Jordan 1 Retro High OG Chicago Lost and Found"
         productStatus="Available In Stock"
-        productCat=""
       ></ProductCard>
     </div>
 
     <SeeMore
-      SectionTitle="Popular Brand"
-      targetPage="PopularBrand"
-      backPage="Sneaker"
+      SectionTitle="Popular Artists"
+      PageTitle="PopularBrand"
+      brandType="collectibleBrand"
     />
+    
     <div class="brand_section">
       <BrandCard
         v-for="index in 4"
         :key="index"
-        :brandImg="brand.sneakerBrand.logo[index - 1]"
-        :brandName="brand.sneakerBrand.brand_name[index - 1]"
+        :brandImg="brand.collectibleBrand.logo[index - 1]"
+        :brandName="brand.collectibleBrand.brand_name[index - 1]"
       />
     </div>
 
@@ -49,10 +48,9 @@
       <ProductCard
         v-for="index in 4"
         :key="index"
-        productImage="./src/assets/images/AJ1HighLost_Found.jpg"
+        productImage="./src/assets/images/newjeans.png"
         productName="Jordan 1 Retro High OG Chicago Lost and Found"
         productStatus="Available In Stock"
-        productCat=""
       ></ProductCard>
     </div>
 
@@ -67,17 +65,14 @@
     </div>
 
 
-    <SeeMore
-      SectionTitle="Articles"
-      targetPage="ArticlePage"
-      backPage="Sneaker"
-    />
+
+    <SeeMore SectionTitle="Articles" />
     <div class="article_section">
       <!-- just like the product component you just have to change the path of the productImage, we will also setup pinia for this :3 -->
       <ArticleCard
         v-for="index in 2"
         :key="index"
-        article_image="src/assets/images/Articles/travisArticle.jpg"
+        article_image="src/assets/images/Articles/newjeans.jpg"
         article_title="Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features"
       />
     </div>
@@ -103,11 +98,6 @@ export default {
     WebBanner,
     ProductCard,
     SeeMore,
-  },
-  data(){
-    return{
-      currentCat: "Sneaker",
-    }
   },
   setup() {
     const brandStore = useBrandStore();

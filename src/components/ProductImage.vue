@@ -8,7 +8,7 @@
                     :src="image"
                     alt="product_image"
                     @click="setLargeImage(index)"
-                    :class="{ active: index === activeIndex }"
+                    :class="{ active: index === activeIndex}"
                 />
             </div>
 
@@ -20,19 +20,23 @@
                 </div>
             </div>
         </div>
+
         <div class="SizePrice-section">
             <div class="title-section">
                 <hgroup>
                     <h3 class="brandname">{{ brandname }}</h3>
                     <h1 class="productname">{{ productname }}</h1>
                 </hgroup>
-                <button class="x-button"><iconify-icon icon="maki:cross" width="20px" height="20px"/></button>
+                <button class="x-button" @click="$router.go(-1)"><iconify-icon icon="maki:cross" width="20px" height="20px"/></button>
             </div>
             <div class="func-section">
                 <div class="size-selector" @click="showList">
                     <span>Size: </span>
                     <div class="dropper">
-                        <span>All</span>
+                        <span :class="[activated ? size_activated : 'null']">
+                            {{ activated ? productSizes[selectedIndex].size || 'Select Size' : 'All' }}
+                        </span>   
+                        
                         <iconify-icon v-if="show_list" icon="ri:arrow-drop-down-line" style="transform: scaleY(-1);" width="24px" height="24px"/>
                         <iconify-icon v-else icon="ri:arrow-drop-down-line" width="24px" height="24px"/>
                     </div>
@@ -41,19 +45,29 @@
                 <div class="dropped-list" v-if="show_list">
                     <h3>Size (US)</h3>
                     <div class="sizes">
-                        <button v-for="size in 14" :key="size">US {{size + 3}}</button>
-                    </div>
-                </div>
+                        <div :class="[selectedIndex === index ? active_state : normal_state]" v-for="(item, index) in productSizes" :key="index" @click="selectedSizeIndex(index)">
+                            <p class="size-price">
+                                <span>{{ item.size }}</span>
+                                 <br> 
+                                <span>${{ item.price }}</span>
+                            </p>
+                        </div>
+                    </div> 
+                </div> 
 
-                <div class="buy-section">
-                    <hgroup>
-                        <h3 style="margin-bottom: 10px;">Buy now for</h3>
-                        <h1 class="price">${{ price_tag }}</h1>
-                    </hgroup>
-                    <div class="buy-container">
-                        <button class="buy-btn">BUY NOW</button>
+                    <div class="buy-section">
+                        <hgroup>
+                            <h3 style="margin-bottom: 10px;">Buy now for:</h3>
+                            <h1 class="price"
+                                :class="[activated ? price_activated : 'null']"
+                            > 
+                                {{ activated ? `$${productSizes[selectedIndex].price || price_tag}` : `${price_tag}` }} 
+                            </h1>
+                        </hgroup>
+                        <div class="buy-container">
+                            <button class="buy-btn" @click="gotoCartPage">BUY NOW</button>
+                        </div>
                     </div>
-                </div>
 
                 <div class="miscellaneous">
                     <div class="kVeri-head" @click="showDesc">
@@ -66,7 +80,7 @@
                         <hr v-if="show_desc" width="100%">
                     </div>
                     <div class="desc" v-if="show_desc">
-                        <p>"Kravan Verified" represents our commitment to excellence, guaranteeing every item undergoes a meticulous inspection, every time. <router-link to="Privacy&Policy">Learn more.</router-link></p>
+                        <p>"Kravan Verified" represents our commitment to excellence, guaranteeing every item undergoes a meticulous inspection, every time. <router-link to="/Privacy&Policy">Learn more.</router-link></p>
                     </div>
                 </div>
             </div>
@@ -92,16 +106,38 @@ export default {
         price_tag:{
             type: Number,
             required: true 
+        },
+        productSizes:{
+            type: Array,
+            required: true
+        },
+        productId:{
+            type: String,
+            required: true
         }
     },
     data() {
         return {
             activeIndex: 0,
             show_list: false,
-            show_desc: false, 
+            show_desc: true,
+            isActive: false,
+
+            // size button handling
+            normal_state: 'size-button',
+            active_state: 'size-active',
+            selectedIndex: null,
+            activated: false,
+            price_activated: 'price-activated',
+            size_activated: 'size-activated'
         };
     },
     methods: {
+        selectedSizeIndex(index){
+            this.selectedIndex = index;
+            this.show_list= false,
+            this.activated = true;
+        },
         showList(){
             this.show_list = !this.show_list;
         },
@@ -118,6 +154,10 @@ export default {
         nextImage() {
             this.activeIndex = (this.activeIndex + 1) % this.images.length;
         },
+        gotoCartPage() {
+            this.$router.push(`/cart/${this.productId}`);
+            console.log(this.productId)
+        }
     },
 };
 </script>
@@ -125,12 +165,12 @@ export default {
 <style scoped>
 .ProductImage-container {
     font-family: "Inter";
-    height: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 2rem;
     width: 100%;
+    height: fit-content;
 }
 
 /* LEFT SECTION */
@@ -138,7 +178,7 @@ export default {
     display: flex;
     flex-direction: row;
     gap: 7px;
-    width: 58.5%;
+    width: 60%;
     height: 100%;
 }
 
@@ -149,22 +189,30 @@ export default {
 }
 
 .row > img {
-    width: 10rem;
+    width: 8rem;
     height: 8rem;
     object-fit: fill;
     cursor: pointer;
+    background-color: #e7e7e7;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
 }
 
 .large-section {
     position: relative;
+    width: 80%;
+    height: auto;
 }
 
 .large-section > img {
-    height: 41.75rem;
-    width: 56rem;
+    height: 100%;
+    width: 100%;   
+    background-color: #e7e7e7;
+    border-radius: 5px;
+    border: 1px solid #cfcfcf;
 }
 
-.large-section .button-container {
+.button-container {
     display: flex;
     right: 20px;
     bottom: 15px;
@@ -180,7 +228,7 @@ export default {
 
 /* RIGHT SECTION */
 .ProductImage-container .SizePrice-section{
-    width: 41.5%;
+    width: 40%;
     height: 100%;
 }
 
@@ -277,15 +325,20 @@ export default {
 
 .buy-btn:hover{
     color: white;
-    background-color: rgb(0, 65, 0);
+    background-color: #004100;
     transition: 100ms ease-in;
+}
+
+.buy-btn .link{
+    text-decoration: none;
+    color: white;
 }
 
 .dropped-list{
     border: 2px solid black;
     border-top: 0px;
     width: 80%;
-    height: 70%;
+    height: 100%;
     padding: 1rem;
     position: absolute;
     background-color: white;
@@ -307,12 +360,37 @@ export default {
     font-weight: bold;
 }
 
-.sizes > button{
+.size-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 2px solid black;
     font-weight: 600;
     background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.size-button:hover{
+    color: white;
+    font-weight: 800;
+    transition: 300ms ease-in;
+    border: 2px solid #004100;
+    background-color: #004100;
+}
+
+.size-active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 2px solid black;
+    font-weight: 800;
+    background-color: #004100;
+    color: white;
     cursor: pointer;
 }
 
@@ -348,5 +426,20 @@ export default {
     position: absolute;
     align-self: flex-end;
     width: 80%;
+}
+
+.size-price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.price-activated,
+.size-activated{
+    font-weight: 700;
+    color: #006e00;
 }
 </style>
