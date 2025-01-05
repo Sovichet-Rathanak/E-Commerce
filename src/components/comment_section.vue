@@ -6,14 +6,23 @@
             <img src="/src/assets/images/testimg1.jpg" alt="pfp">
             <input v-model="newComment" type="text" placeholder="Leave a comment...">
             <button @click="addCmt" class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 12.9999H9V10.9999H3V1.84558C3 1.56944 3.22386 1.34558 3.5 1.34558C3.58425 1.34558 3.66714 1.36687 3.74096 1.40747L22.2034 11.5618C22.4454 11.6949 22.5337 11.9989 22.4006 12.2409C22.3549 12.324 22.2865 12.3924 22.2034 12.4381L3.74096 22.5924C3.499 22.7255 3.19497 22.6372 3.06189 22.3953C3.02129 22.3214 3 22.2386 3 22.1543V12.9999Z"></path></svg>
+                <iconify-icon class="send" icon="iconoir:send-solid"></iconify-icon>
             </button>
         </div>
-        <comment_component :key="index" v-for="(comment, index) in comments"    
-            :username="comment.username"
-            :rating="comment.rating"
-            :comment="comment.comment"
-        ></comment_component>
+        <div v-if="comments.length === 0" class="no_comments">
+            <span>No comments yet</span>
+        </div>
+        <div v-else>
+            <div v-for="(comment, index) in comments" :key="index" class="comment">
+                <comment_component 
+                    :username="comment.username"
+                    :rating="comment.rating"
+                    :comment="comment.comment"
+                    :replies="comment.replies"
+                    @add-reply="addReply(index, $event)"
+                />
+            </div>
+        </div>
     </div>
 </template>
 
@@ -27,18 +36,7 @@ export default {
     data(){
         return{
             newCmt: "",
-            comments: [
-                {
-                    username: "John Doe",
-                    rating: 4,
-                    comment: "This is a comment"
-                },
-                {
-                    username: "John Doe",
-                    rating: 4,
-                    comment: "This is a comment"
-                }
-            ]
+            comments: []
             }
     },
     methods:{
@@ -48,10 +46,14 @@ export default {
             this.comments.push({
                 username: "Anonymous",
                 rating: 5, 
-                comment: this.newComment
+                comment: this.newComment,
+                replies: []
             });
 
             this.newComment = ""; 
+        },
+        addReply(commentIndex, reply) {
+            this.comments[commentIndex].replies.push(reply);
         }
     }
 }
@@ -62,6 +64,8 @@ export default {
     gap: 1rem;
     display: flex;
     flex-direction: column;
+    font-family: "Inter";
+    margin-bottom: 200px;
 }
 h1{
     font-family: "Inter"
@@ -81,10 +85,9 @@ h1{
     margin-top: 1rem;
     width: 100%;
 }
-
-.icon svg{
-    width: 20px;
-    height: 30px;
+.send{
+    width: 25px;
+    height: 25px;
 }
 .icon{
     background-color: transparent;
@@ -97,6 +100,7 @@ input{
     height: 50px;
     border-radius: 50px;
     border: none;
+    font-size: 15px;
     background-color: lightgray;
     padding-left: 30px;
 }
@@ -104,5 +108,13 @@ img{
     width: 60px;
     height: 60px;
     border-radius: 50%;
+}
+.no_comments{
+    width: 50%;
+    margin-top: 20px;
+    color: gray;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
 }
 </style>
