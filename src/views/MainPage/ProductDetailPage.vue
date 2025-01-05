@@ -6,6 +6,7 @@
             :productname="product.product_name"
             :price_tag="product.price"
             :productSizes="product.productSizes"
+            :productId="product.product_id"
         />
         <ProductDetail
             :brandname="product.brand_name"

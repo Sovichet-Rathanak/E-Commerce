@@ -223,6 +223,6 @@ hardware elevates its design to an unparalleled level of refinement.`,
                 console.log('Filtered Products:', filteredProducts);
                 return filteredProducts;
             }
-        }                
+        }
     },
 })

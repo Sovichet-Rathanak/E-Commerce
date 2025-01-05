@@ -65,7 +65,7 @@
                             </h1>
                         </hgroup>
                         <div class="buy-container">
-                            <button class="buy-btn">BUY NOW</button>
+                            <button class="buy-btn" @click="gotoCartPage">BUY NOW</button>
                         </div>
                     </div>
 
@@ -110,6 +110,10 @@ export default {
         productSizes:{
             type: Array,
             required: true
+        },
+        productId:{
+            type: String,
+            required: true
         }
     },
     data() {
@@ -150,6 +154,10 @@ export default {
         nextImage() {
             this.activeIndex = (this.activeIndex + 1) % this.images.length;
         },
+        gotoCartPage() {
+            this.$router.push(`/cart/${this.productId}`);
+            console.log(this.productId)
+        }
     },
 };
 </script>
@@ -319,6 +327,11 @@ export default {
     color: white;
     background-color: #004100;
     transition: 100ms ease-in;
+}
+
+.buy-btn .link{
+    text-decoration: none;
+    color: white;
 }
 
 .dropped-list{

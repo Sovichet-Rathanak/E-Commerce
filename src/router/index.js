@@ -15,6 +15,7 @@ import PopularBrand from "@/views/MainPage/PopularBrandPage.vue";
 import ArticlePage from "@/views/MainPage/ArticlePage.vue";
 import ProductDetailPage from "@/views/MainPage/ProductDetailPage.vue";
 import { createRouter, createWebHistory } from "vue-router";
+import CartPage from "@/views/CartPage.vue";
 
 const routes = [
   {
@@ -99,6 +100,11 @@ const routes = [
     path: "/product/:id",
     name: "ProductDetail",
     component: ProductDetailPage
+  },
+  {
+    path: "/cart/:id",
+    name: "Cart",
+    component: CartPage
   }
 ];
 
