@@ -14,6 +14,8 @@
             :description="product.description"
             :detailImages="product.detailImages"
         />
+        <RatingComponent></RatingComponent>
+        <comment_section></comment_section>
     </body>
 </template>
 
@@ -23,11 +25,15 @@ import { useRoute } from 'vue-router';
 import ProductImage from '@/components/ProductImage.vue';
 import ProductDetail from '@/components/ProductDetail.vue'
 import { mapState } from 'pinia';
+import comment_section from '@/components/comment_section.vue';
+import RatingComponent from '@/components/RatingComponent.vue';
 
 export default {
     components: {
         ProductImage,
-        ProductDetail
+        ProductDetail,
+        comment_section,
+        RatingComponent
     },
     setup(){
         const route = useRoute();
