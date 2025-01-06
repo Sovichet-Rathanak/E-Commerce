@@ -24,12 +24,10 @@ export const useProductStore = defineStore('productStore', {
                         '/src/assets/images/DetailImage/Sneakers/YellowOchre/detail1.jpg',
                         '/src/assets/images/DetailImage/Sneakers/YellowOchre/detail2.jpg',
                     ],
-                    description: `Step into the perfect blend of classic and contemporary with this remastered Air Jordan 1. The bold interplay of Yellow Ochre and deep black creates a striking contrast against the smooth, 
-tumbled Sail leather, delivering a look that's as clean as it is sophisticated. 
-
-Every detail has been thoughtfully refined, from the premium materials to the vintage-inspired branding, evoking a sense of timelessness. This is where heritage meets innovation—a seamless 
-fusion of old-school charm and modern design. With a finish as smooth as MJ's signature fadeaway, this AJ1 stands as a true testament to the legacy of greatness, designed for those who appreciate
-both tradition and bold, fresh style.`,
+                    description: `Step into the perfect blend of classic and contemporary with this remastered Air Jordan 1. The bold interplay of Yellow Ochre and deep black creates a striking contrast against the smooth, tumbled Sail leather, delivering a look that's as clean as it is sophisticated. 
+                                Every detail has been thoughtfully refined, from the premium materials to the vintage-inspired branding, evoking a sense of timelessness. This is where heritage meets innovation—a seamless 
+                                fusion of old-school charm and modern design. With a finish as smooth as MJ's signature fadeaway, this AJ1 stands as a true testament to the legacy of greatness, designed for those who appreciate
+                                both tradition and bold, fresh style.`,
                     tags: ["new"],
                     productSizes: [
                         {size: "US 4", price: 177},
@@ -66,7 +64,7 @@ both tradition and bold, fresh style.`,
                         '/src/assets/images/DetailImage/Sneakers/Yuto/detail2.jpg',
                     ],
                     description: `Not many can claim to be the first. Yuto Horigome is one of the few. Crafted to the champion's specs, the Nike SB Dunk Low x Yuto brings you a skate-worthy design that taps into the places where he first 
-developed his craft. Delivering the gold standard of skate shoes (and marked with Yuto's family crest), it lets you glide between casually spinning tricks on vert and going big in the streets—just like Yuto.`,
+                                developed his craft. Delivering the gold standard of skate shoes (and marked with Yuto's family crest), it lets you glide between casually spinning tricks on vert and going big in the streets—just like Yuto.`,
                     tags: ["new"],
                     productSizes: [
                         {size: "US 4", price: 201},
@@ -103,8 +101,8 @@ developed his craft. Delivering the gold standard of skate shoes (and marked wit
                         '/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/detail2.jpg',
                     ],
                     description: `You don't need a cape to take flight—just your AJ1s. You know, the ones seen on Miles in "Spider-Man: Across the Spider-Verse", exclusively in cinemas. This fresh take on the iconic Chicago 
-colourway boasts a mix of materials, including lustrous leather and soft suede. The world is waiting, so step on in.`,
-                    tags: ["new"],
+                                colourway boasts a mix of materials, including lustrous leather and soft suede. The world is waiting, so step on in.`,
+                    tags: ["new","recommended", "collab"],
                     productSizes: [
                         {size: "US 4", price: 177},
                         {size: "US 5", price: 142},
@@ -139,12 +137,12 @@ colourway boasts a mix of materials, including lustrous leather and soft suede. 
                         '/src/assets/images/DetailImage/Sneakers/NewBalance574/detail1.png',
                         '/src/assets/images/DetailImage/Sneakers/NewBalance574/detail2.png',
                     ],
-                    description: `The most New Balance shoe ever’ says it all, right? No, actually. The 574 might be our unlikeliest icon. The 574 was built to be a reliable shoe that could do a lot of different things well rather than as a platform 
-for revolutionary technology, or as a premium materials showcase. This unassuming, unpretentious versatility is exactly what launched the 574 into the ranks of all-time greats. 
+                    description: `The most New Balance shoe ever says it all, right? No, actually. The 574 might be our unlikeliest icon. The 574 was built to be a reliable shoe that could do a lot of different things well rather than as a platform 
+                                for revolutionary technology, or as a premium materials showcase. This unassuming, unpretentious versatility is exactly what launched the 574 into the ranks of all-time greats. 
 
-As hybrid road/trail design built on a wider last than the previous generation’s narrow racing silhouettes, the 574 offered a uniquely versatile mix of new, different, uncomplicated, rugged, durable, and 
-comfortable that was adopted as a closet staple across the globe. That’s why today, the 574 is synonymous with the boundary defying New Balance style, and worn by anyone. With the 574 for kids, the same 
-style inspiration is pared down for growing feet.`,
+                                As hybrid road/trail design built on a wider last than the previous generation’s narrow racing silhouettes, the 574 offered a uniquely versatile mix of new, different, uncomplicated, rugged, durable, and 
+                                comfortable that was adopted as a closet staple across the globe. That’s why today, the 574 is synonymous with the boundary defying New Balance style, and worn by anyone. With the 574 for kids, the same 
+                                style inspiration is pared down for growing feet.`,
                     tags: ["new"],
                     productSizes: [
                         {size: "US 4", price: 60},
@@ -165,7 +163,7 @@ style inspiration is pared down for growing feet.`,
                 {
                     brand_name: "Hermés",
                     product_name: "Vert D'eau Birkins",
-                    price: "$23000 Starting",
+                    price: "$23,000 Starting",
                     product_id: "HB_40E",
                     product_type: "accessories",
                     product_status: "Available For Pre-order",
@@ -182,10 +180,10 @@ style inspiration is pared down for growing feet.`,
 
                     ],
                     description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
-sophistication and versatility, making it an extraordinary addition to any collection.
+                                sophistication and versatility, making it an extraordinary addition to any collection.
 
-Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
-hardware elevates its design to an unparalleled level of refinement.`,
+                                Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
+                                hardware elevates its design to an unparalleled level of refinement.`,
                     tags: ["new"],
                     productSizes: [
                         {size: 'S', price: 23000},
@@ -194,8 +192,10 @@ hardware elevates its design to an unparalleled level of refinement.`,
                         {size: 'XL', price: 100000},
                     ]
                 },
-            ]
-        }
+            ],
+        },
+        selectedProduct: null,
+        selectedSize: null,
     }),
     getters:{
         getProductsByTag(state) {
@@ -223,6 +223,16 @@ hardware elevates its design to an unparalleled level of refinement.`,
                 console.log('Filtered Products:', filteredProducts);
                 return filteredProducts;
             }
-        }
+        },
     },
+    actions: {
+        selectedProduct(category, productId) {
+            this.selectedProduct = this.products[category]?.find(
+                (product) => product.product_id === productId
+            );
+        },
+        selectSize(size) {
+            this.selectedSize = size;
+        },
+    },    
 })

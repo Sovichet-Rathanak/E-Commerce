@@ -65,7 +65,7 @@ export default {
     display: flex;
     flex-direction: column;
     font-family: "Inter";
-    margin-bottom: 200px;
+    margin-bottom: 5rem;
 }
 h1{
     font-family: "Inter"

@@ -3,7 +3,7 @@
     <!-- Ratings Section -->
     <div class="ratings-section">
       <h1>Ratings</h1>
-      <hr />
+      <hr style="opacity: 40%;"/>
       <div class="main-section">
         <!-- Left Section: Audience Rating -->
         <div class="audience-rating-section">
@@ -146,6 +146,10 @@ export default {
   height: auto;
   width: 100%;
   position: relative;
+}
+
+.ratings-section > h1{
+  font-size: 35px;
 }
 
 hr {

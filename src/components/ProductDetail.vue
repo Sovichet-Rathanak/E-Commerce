@@ -7,9 +7,9 @@
             <h2 class="productname">{{ productname }}</h2>
         </hgroup>
 
-        <p>
-            <span><pre class="desc">{{ description }}</pre></span>
-        </p>
+        <pre class="desc-container">
+            {{ description }}
+        </pre>
 
         <div class="image-container">
             <img class="De-image" v-for="image in detailImages" :key="image"
@@ -49,14 +49,13 @@
 
 .detail{
     margin-bottom: 0;
-    font-size: 45px;
+    font-size: 35px;
 }
 
 .image-container{
     display: flex;
     flex-direction: row;
     gap: 10px;
-    margin-top: 3rem;
     justify-content: center;
     align-items: center;
 }
@@ -66,9 +65,9 @@ hgroup > h2{
     margin: 0;
 }
 
-.brandname{
-    margin-top: 45px;
-    margin-bottom: 15px;
+.brandname{ 
+    margin-top: 20px;  
+    margin-bottom: 5px;
     font-size: 20px;
 }
 
@@ -76,14 +75,13 @@ hgroup > h2{
     font-size: 30px;
 }
 
-.desc{
-    display: flex;
-    justify-content: flex-start;
-    font-size: 18px;
+.desc-container{
     font-family: "Inter";
-    font-weight: 400;
-    width:  95%;
-    overflow: auto;
+    width: 100%;
+    line-height: 170%;
+    font-size: 18px;
+    word-break: break-word;
+    white-space: normal;
 }
 
 .De-image{
