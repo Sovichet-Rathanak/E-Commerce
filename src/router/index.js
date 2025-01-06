@@ -102,7 +102,7 @@ const routes = [
     component: ProductDetailPage
   },
   {
-    path: "/cart/:id",
+    path: "/cart",
     name: "Cart",
     component: CartPage
   }

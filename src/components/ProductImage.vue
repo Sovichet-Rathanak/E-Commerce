@@ -49,7 +49,7 @@
                             <p class="size-price">
                                 <span>{{ item.size }}</span>
                                  <br> 
-                                <span>${{ item.price }}</span>
+                                <span>{{ formatter.format(item.price) }}</span>
                             </p>
                         </div>
                     </div> 
@@ -61,7 +61,7 @@
                             <h1 class="price"
                                 :class="[activated ? price_activated : 'null']"
                             > 
-                                {{ activated ? `$${productSizes[selectedIndex].price || price_tag}` : `${price_tag}` }} 
+                                {{ activated ? `${formatter.format(productSizes[selectedIndex].price)|| formatter.format(price_tag)}` : `${price_tag}` }} 
                             </h1>
                         </hgroup>
                         <div class="buy-container">
@@ -89,6 +89,10 @@
 </template>
 
 <script>
+import { useCartStore } from '@/store/cart';
+import { useProductStore } from '@/store/product';
+import { mapState } from 'pinia';
+
 export default {
     props: {
         images: {
@@ -116,6 +120,7 @@ export default {
             required: true
         }
     },
+
     data() {
         return {
             activeIndex: 0,
@@ -129,14 +134,41 @@ export default {
             selectedIndex: null,
             activated: false,
             price_activated: 'price-activated',
-            size_activated: 'size-activated'
+            size_activated: 'size-activated',
+
+            formatter: new Intl.NumberFormat('en-us', {
+                style: 'currency',
+                currency: 'USD',
+                trailingZeroDisplay: 'stripIfInteger'
+            })
         };
     },
+
+    setup() {
+        const productStore = useProductStore();
+        const cartStore = useCartStore();
+        return { 
+            productStore,
+            cartStore
+        };
+    },
+
+    computed:{
+        selectedSize() {
+            return this.productStore.selectSize;
+        },
+        ...mapState(useCartStore, {
+            cartItems: "cartItems",
+        })
+    },
+
     methods: {
         selectedSizeIndex(index){
             this.selectedIndex = index;
             this.show_list= false,
             this.activated = true;
+
+            this.productStore.selectSize(this.productSizes[index])
         },
         showList(){
             this.show_list = !this.show_list;
@@ -155,8 +187,23 @@ export default {
             this.activeIndex = (this.activeIndex + 1) % this.images.length;
         },
         gotoCartPage() {
-            this.$router.push(`/cart/${this.productId}`);
-            console.log(this.productId)
+            if (!this.activated || this.selectedIndex === null) {
+                alert('Please select a size before adding to the cart.');
+                return;
+            }
+
+            const cartItem = {
+                productId: this.productId,
+                name: this.productname,
+                brand: this.brandname,
+                image: this.images[0], 
+                size: this.productSizes[this.selectedIndex]?.size,
+                price: this.productSizes[this.selectedIndex]?.price,
+            };
+
+            this.cartStore.addToCart(cartItem);
+            console.log('Cart Items:', this.cartItems);
+            this.$router.push('/cart');
         }
     },
 };

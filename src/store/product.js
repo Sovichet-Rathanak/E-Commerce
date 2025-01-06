@@ -102,7 +102,7 @@ export const useProductStore = defineStore('productStore', {
                     ],
                     description: `You don't need a cape to take flight—just your AJ1s. You know, the ones seen on Miles in "Spider-Man: Across the Spider-Verse", exclusively in cinemas. This fresh take on the iconic Chicago 
                                 colourway boasts a mix of materials, including lustrous leather and soft suede. The world is waiting, so step on in.`,
-                    tags: ["new"],
+                    tags: ["new","recommended", "collab"],
                     productSizes: [
                         {size: "US 4", price: 177},
                         {size: "US 5", price: 142},
@@ -163,7 +163,7 @@ export const useProductStore = defineStore('productStore', {
                 {
                     brand_name: "Hermés",
                     product_name: "Vert D'eau Birkins",
-                    price: "$23000 Starting",
+                    price: "$23,000 Starting",
                     product_id: "HB_40E",
                     product_type: "accessories",
                     product_status: "Available For Pre-order",
@@ -192,8 +192,10 @@ export const useProductStore = defineStore('productStore', {
                         {size: 'XL', price: 100000},
                     ]
                 },
-            ]
-        }
+            ],
+        },
+        selectedProduct: null,
+        selectedSize: null,
     }),
     getters:{
         getProductsByTag(state) {
@@ -221,6 +223,16 @@ export const useProductStore = defineStore('productStore', {
                 console.log('Filtered Products:', filteredProducts);
                 return filteredProducts;
             }
-        }
+        },
     },
+    actions: {
+        selectedProduct(category, productId) {
+            this.selectedProduct = this.products[category]?.find(
+                (product) => product.product_id === productId
+            );
+        },
+        selectSize(size) {
+            this.selectedSize = size;
+        },
+    },    
 })
