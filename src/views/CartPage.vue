@@ -1,14 +1,18 @@
 <template>
     <body>
-        <hgroup style="width: 50%;">
-            <h1>My Shopping Cart</h1>
-            <h2>{{ cart.length }} {{cart.length > 1? 'Items' : 'Item'}} in Cart</h2>
-            <hr>
-        </hgroup>
+        <header>
+            <hgroup style="width: 50%;">
+                <h1>My Shopping Cart</h1>
+                <h2>{{ cart.length }} {{cart.length > 1? 'Items' : 'Item'}} in Cart</h2>
+                <hr>
+            </hgroup>
+        </header>
         <div class="item-container" v-for="item in cart" :key="item">
             <CartItem
             :cart="item"/>
         </div>
+
+        <div>KMS</div>
     </body>
 </template>
 
@@ -51,7 +55,7 @@ export default{
         margin-top: 1.5rem;
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 1rem;
         padding-inline: 7rem;
     }
 </style>
