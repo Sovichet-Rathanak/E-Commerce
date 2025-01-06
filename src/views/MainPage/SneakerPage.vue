@@ -23,7 +23,7 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('recommended')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType('recommended', 'sneaker')" :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName = "product.brand_name"
         :productName="product.product_name"

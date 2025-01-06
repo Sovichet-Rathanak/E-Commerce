@@ -3,7 +3,7 @@
         <div class="title_section" :style="titleStyle">
             <router-link to="/" style="text-decoration: none;"><h1>Kravan</h1></router-link>
             <div class="header_nav" v-if="$route.name !== 'Home'">
-                <button>Cart</button>
+                <button @click="goToCart">Cart</button>
                 <router-link to="/Registration"><button>Sign In</button></router-link>
                 <search-btn></search-btn>
             </div>
@@ -40,6 +40,9 @@
           this.titleStyle.height = "7rem";
           this.navStyle.display = "block";
         }
+      },
+      goToCart(){
+        this.$router.push('/cart');
       }
     }  
   }
