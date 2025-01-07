@@ -24,8 +24,8 @@ export const useProductStore = defineStore('productStore', {
                         '/src/assets/images/DetailImage/Sneakers/YellowOchre/detail1.jpg',
                         '/src/assets/images/DetailImage/Sneakers/YellowOchre/detail2.jpg',
                     ],
-                    description: `Step into the perfect blend of classic and contemporary with this remastered Air Jordan 1. The bold interplay of Yellow Ochre and deep black creates a striking contrast against the smooth, tumbled Sail leather, delivering a look that's as clean as it is sophisticated. 
-                                Every detail has been thoughtfully refined, from the premium materials to the vintage-inspired branding, evoking a sense of timelessness. This is where heritage meets innovation—a seamless 
+                    description: `Step into the perfect blend of classic and contemporary with this remastered Air Jordan 1. The bold interplay of Yellow Ochre and deep black creates a striking contrast against the smooth, tumbled Sail leather, delivering a look that's as clean as it is sophisticated.
+                                Every detail has been thoughtfully refined, from the premium materials to the vintage-inspired branding, evoking a sense of timelessness. This is where heritage meets innovation—a seamless
                                 fusion of old-school charm and modern design. With a finish as smooth as MJ's signature fadeaway, this AJ1 stands as a true testament to the legacy of greatness, designed for those who appreciate
                                 both tradition and bold, fresh style.`,
                     tags: ["new"],
@@ -63,7 +63,7 @@ export const useProductStore = defineStore('productStore', {
                         '/src/assets/images/DetailImage/Sneakers/Yuto/detail1.jpg',
                         '/src/assets/images/DetailImage/Sneakers/Yuto/detail2.jpg',
                     ],
-                    description: `Not many can claim to be the first. Yuto Horigome is one of the few. Crafted to the champion's specs, the Nike SB Dunk Low x Yuto brings you a skate-worthy design that taps into the places where he first 
+                    description: `Not many can claim to be the first. Yuto Horigome is one of the few. Crafted to the champion's specs, the Nike SB Dunk Low x Yuto brings you a skate-worthy design that taps into the places where he first
                                 developed his craft. Delivering the gold standard of skate shoes (and marked with Yuto's family crest), it lets you glide between casually spinning tricks on vert and going big in the streets—just like Yuto.`,
                     tags: ["new"],
                     productSizes: [
@@ -100,7 +100,7 @@ export const useProductStore = defineStore('productStore', {
                         '/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/detail1.jpg',
                         '/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/detail2.jpg',
                     ],
-                    description: `You don't need a cape to take flight—just your AJ1s. You know, the ones seen on Miles in "Spider-Man: Across the Spider-Verse", exclusively in cinemas. This fresh take on the iconic Chicago 
+                    description: `You don't need a cape to take flight—just your AJ1s. You know, the ones seen on Miles in "Spider-Man: Across the Spider-Verse", exclusively in cinemas. This fresh take on the iconic Chicago
                                 colourway boasts a mix of materials, including lustrous leather and soft suede. The world is waiting, so step on in.`,
                     tags: ["new","recommended", "collab"],
                     productSizes: [
@@ -137,11 +137,11 @@ export const useProductStore = defineStore('productStore', {
                         '/src/assets/images/DetailImage/Sneakers/NewBalance574/detail1.png',
                         '/src/assets/images/DetailImage/Sneakers/NewBalance574/detail2.png',
                     ],
-                    description: `The most New Balance shoe ever says it all, right? No, actually. The 574 might be our unlikeliest icon. The 574 was built to be a reliable shoe that could do a lot of different things well rather than as a platform 
-                                for revolutionary technology, or as a premium materials showcase. This unassuming, unpretentious versatility is exactly what launched the 574 into the ranks of all-time greats. 
+                    description: `The most New Balance shoe ever says it all, right? No, actually. The 574 might be our unlikeliest icon. The 574 was built to be a reliable shoe that could do a lot of different things well rather than as a platform
+                                for revolutionary technology, or as a premium materials showcase. This unassuming, unpretentious versatility is exactly what launched the 574 into the ranks of all-time greats.
 
-                                As hybrid road/trail design built on a wider last than the previous generation’s narrow racing silhouettes, the 574 offered a uniquely versatile mix of new, different, uncomplicated, rugged, durable, and 
-                                comfortable that was adopted as a closet staple across the globe. That’s why today, the 574 is synonymous with the boundary defying New Balance style, and worn by anyone. With the 574 for kids, the same 
+                                As hybrid road/trail design built on a wider last than the previous generation’s narrow racing silhouettes, the 574 offered a uniquely versatile mix of new, different, uncomplicated, rugged, durable, and
+                                comfortable that was adopted as a closet staple across the globe. That’s why today, the 574 is synonymous with the boundary defying New Balance style, and worn by anyone. With the 574 for kids, the same
                                 style inspiration is pared down for growing feet.`,
                     tags: ["new"],
                     productSizes: [
@@ -153,7 +153,7 @@ export const useProductStore = defineStore('productStore', {
                         {size: "US 9", price: 73},
                         {size: "US 10", price: 72},
                         {size: "US 11", price: 82},
-                        {size: "US 12", price: 83},    
+                        {size: "US 12", price: 83},
                         {size: "US 13", price: 82},
                         {size: "US 14", price: 88},
                     ]
@@ -919,6 +919,276 @@ export const useProductStore = defineStore('productStore', {
                     ]
                 },
             ],
+            womanswears: [
+              {
+                brand_name: "Bottega Veneta",
+                product_name: "Adalyn A-line Collared Neck Twill Mini Dress",
+                price: '$699',
+                product_type: "womenswear",
+                product_id: "adalyn-a-line-collared-neck-twill-mini-dress",
+                product_status: "Available Instock",
+                thumbNail: "/src/assets/images/DetailImage/Womenswears/clothes1/image4.jpg",
+                productImages: [
+                    '/src/assets/images/DetailImage/Womenswears/clothes1/image4.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes1/image1.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes1/image2.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes1/image3.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes1/image5.jpg',
+
+                ],
+                detailImages:[
+                    '/src/assets/images/DetailImage/Womenswears/clothes1/detail1.png',
+                    '/src/assets/images/DetailImage/Womenswears/clothes1/detail2.jpg',
+                ],
+                description: `This outfit features a sophisticated black dress with a polished and elegant design. The dress is accented by a sharp white pointed collar,
+                creating a striking contrast against the black fabric and adding a formal touch. The fitted bodice enhances the silhouette, while the pleated skirt introduces
+                a subtle yet stylish volume, blending refinement with a playful edge. Decorative flap-style pockets near the waist provide a tailored detail, contributing to
+                the dress's structured appearance. The long sleeves maintain a sleek and modest look, perfect for professional or formal settings. Paired with a chic black handbag,
+                this ensemble exudes timeless elegance and is ideal for occasions that demand a classy and polished style.`,
+                    tags: ["new"],
+                    productSizes: [
+                        {size: "S", price: 699},
+                        {size: "M", price: 699},
+                        {size: "L", price: 699},
+                        {size: "XL", price: 699},
+                        {size: "XXL", price: 699},
+                    ]
+              },
+              {
+                brand_name: "Miu Miu",
+                product_name: "Jacquard knit vest & arm warmers",
+                price: '$399',
+                product_type: "womenswear",
+                product_id: "jacquard-knit-vast",
+                product_status: "Available Instock",
+                thumbNail: "/src/assets/images/DetailImage/Womenswears/clothes3/image6.jpg",
+                productImages: [
+                    '/src/assets/images/DetailImage/Womenswears/clothes3/image4.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes3/image1.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes3/image2.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes3/image3.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes3/image5.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes3/image6.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes3/image7.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes3/image8.jpg',
+
+                ],
+                detailImages:[],
+                description: `This outfit features a cozy and stylish oversized white cable-knit sweater with a deep V-neckline, combining comfort and elegance. The sweater is adorned with a small black metal embellishment near the chest, adding a modern and edgy touch to the classic knit design. It also includes contrasting black stripe details on the sleeves, creating a sporty yet chic vibe. Paired with a neutral-toned mini skirt, this ensemble balances warmth and femininity, making it perfect for casual or semi-formal settings.`,
+                    tags: ["new"],
+                    productSizes: [
+                        {size: "S", price: 399},
+                        {size: "M", price: 399},
+                        {size: "L", price: 399},
+                        {size: "XL", price: 399},
+                        {size: "XXL", price: 399},
+                    ]
+              },
+              {
+                brand_name: "Alaïa",
+                product_name: "Contrast Color Lace Bow Decorative Sling Dress",
+                price: '$199',
+                product_type: "womenswear",
+                product_id: "bow-decorative-sling-dress",
+                product_status: "Available Instock",
+                thumbNail: "/src/assets/images/DetailImage/Womenswears/clothes4/image1.jpg",
+                productImages: [
+                    '/src/assets/images/DetailImage/Womenswears/clothes4/image4.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes4/image1.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes4/image2.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes4/image3.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes4/image5.jpg',
+
+                ],
+                detailImages:[
+                    '/src/assets/images/DetailImage/Womenswears/clothes4/detail3.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes4/detail2.jpg',
+                ],
+                description: `This outfit features a sophisticated black dress with a polished and elegant design. The dress is accented by a sharp white pointed collar,
+                creating a striking contrast against the black fabric and adding a formal touch. The fitted bodice enhances the silhouette, while the pleated skirt introduces
+                a subtle yet stylish volume, blending refinement with a playful edge. Decorative flap-style pockets near the waist provide a tailored detail, contributing to
+                the dress's structured appearance. The long sleeves maintain a sleek and modest look, perfect for professional or formal settings. Paired with a chic black handbag,
+                this ensemble exudes timeless elegance and is ideal for occasions that demand a classy and polished style.`,
+                    tags: ["new"],
+                    productSizes: [
+                        {size: "S", price: 199},
+                        {size: "M", price: 199},
+                        {size: "L", price: 199},
+                        {size: "XL", price: 199},
+                        {size: "XXL", price: 199},
+                    ]
+              },
+              {
+                brand_name: "Oscar de la Renta",
+                product_name: "Magot drapping off shoulder pencil dress",
+                price: '$239',
+                product_type: "womenswear",
+                product_id: "drapping-off-shoulder-dress",
+                product_status: "Available Instock",
+                thumbNail: "/src/assets/images/DetailImage/Womenswears/clothes6/image1.jpg",
+                productImages: [
+                    '/src/assets/images/DetailImage/Womenswears/clothes6/image3.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes6/image1.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes6/image2.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes6/image4.jpg',
+
+                ],
+                detailImages:[
+                    '/src/assets/images/DetailImage/Womenswears/clothes6/detail1.png',
+                    '/src/assets/images/DetailImage/Womenswears/clothes6/detail2.png',
+                ],
+                description: ``,
+                    tags: ["new"],
+                    productSizes: [
+                        {size: "S", price: 239},
+                        {size: "M", price: 239},
+                        {size: "L", price: 239},
+                        {size: "XL", price: 239},
+                        {size: "XXL", price: 239},
+                    ]
+              },
+              {
+                brand_name: "Valentino",
+                product_name: "Unique Super Good-looking Old Leather Jacket",
+                price: '$139',
+                product_type: "womenswear",
+                product_id: "leather-jacket",
+                product_status: "Available Instock",
+                thumbNail: "/src/assets/images/DetailImage/Womenswears/clothes7/image3.jpg",
+                productImages: [
+                    '/src/assets/images/DetailImage/Womenswears/clothes7/image4.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes7/image1.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes7/image2.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes7/image3.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes7/image5.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes7/image6.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes7/image7.jpg',
+
+                ],
+                detailImages:[
+
+                ],
+                description: `This outfit features a sophisticated black dress with a polished and elegant design. The dress is accented by a sharp white pointed collar,
+                creating a striking contrast against the black fabric and adding a formal touch. The fitted bodice enhances the silhouette, while the pleated skirt introduces
+                a subtle yet stylish volume, blending refinement with a playful edge. Decorative flap-style pockets near the waist provide a tailored detail, contributing to
+                the dress's structured appearance. The long sleeves maintain a sleek and modest look, perfect for professional or formal settings. Paired with a chic black handbag,
+                this ensemble exudes timeless elegance and is ideal for occasions that demand a classy and polished style.`,
+                    tags: ["recommended"],
+                    productSizes: [
+                        {size: "S", price: 699},
+                        {size: "M", price: 699},
+                        {size: "L", price: 699},
+                        {size: "XL", price: 699},
+                        {size: "XXL", price: 699},
+                    ]
+              },
+              {
+                brand_name: "Carolina Herrera",
+                product_name: "White Waist Dress",
+                price: '$299',
+                product_type: "womenswear",
+                product_id: "white-waist-dress",
+                product_status: "Available Instock",
+                thumbNail: "/src/assets/images/DetailImage/Womenswears/clothes5/image4.jpg",
+                productImages: [
+                    '/src/assets/images/DetailImage/Womenswears/clothes5/image4.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes5/image2.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes5/image3.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes5/image5.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes5/image6.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes5/image7.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes5/image8.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes5/image9.jpg',
+
+                ],
+                detailImages:['/src/assets/images/DetailImage/Womenswears/clothes5/image1.jpg',],
+                description: ``,
+                    tags: ["recommended"],
+                    productSizes: [
+                        {size: "S", price: 299},
+                        {size: "M", price: 299},
+                        {size: "L", price: 299},
+                        {size: "XL", price: 299},
+                        {size: "XXL", price: 299},
+                    ]
+              },
+              {
+                brand_name: "Docle & Gabbana",
+                product_name: "Skyblue Stand Collar Wool Long Coat",
+                price: '$119',
+                product_type: "womenswear",
+                product_id: "skyblue-long-coat",
+                product_status: "Available Instock",
+                thumbNail: "/src/assets/images/DetailImage/Womenswears/clothes8/image4.jpg",
+                productImages: [
+                    '/src/assets/images/DetailImage/Womenswears/clothes8/image4.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes8/image1.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes8/image2.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes8/image3.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes8/image5.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes8/image6.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes8/image7.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes8/image8.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes8/image9.jpg',
+
+
+                ],
+                detailImages:[
+                    '/src/assets/images/DetailImage/Womenswears/clothes8/detail1.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes8/detail2.jpg',
+                ],
+                description: `This outfit features a sophisticated black dress with a polished and elegant design. The dress is accented by a sharp white pointed collar,
+                creating a striking contrast against the black fabric and adding a formal touch. The fitted bodice enhances the silhouette, while the pleated skirt introduces
+                a subtle yet stylish volume, blending refinement with a playful edge. Decorative flap-style pockets near the waist provide a tailored detail, contributing to
+                the dress's structured appearance. The long sleeves maintain a sleek and modest look, perfect for professional or formal settings. Paired with a chic black handbag,
+                this ensemble exudes timeless elegance and is ideal for occasions that demand a classy and polished style.`,
+                    tags: ["recommended"],
+                    productSizes: [
+                        {size: "S", price: 119},
+                        {size: "M", price: 119},
+                        {size: "L", price: 119},
+                        {size: "XL", price: 119},
+                        {size: "XXL", price: 119},
+                    ]
+              },
+              {
+                brand_name: "Dior",
+                product_name: "Light Yellow Halter Neck Shirt/Shorts",
+                price: '$99',
+                product_type: "womenswear",
+                product_id: "light-yellow-halter-neck-shirt-shorts",
+                product_status: "Available Instock",
+                thumbNail: "/src/assets/images/DetailImage/Womenswears/clothes10/image4.jpg",
+                productImages: [
+                    '/src/assets/images/DetailImage/Womenswears/clothes10/image4.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes10/image1.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes10/image2.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes10/image3.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes10/image5.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes10/image6.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes10/image7.jpg',
+
+                ],
+                detailImages:[
+                    '/src/assets/images/DetailImage/Womenswears/clothes10/detail1.jpg',
+                    '/src/assets/images/DetailImage/Womenswears/clothes10/detail2.jpg',
+                ],
+                description: `This outfit features a sophisticated black dress with a polished and elegant design. The dress is accented by a sharp white pointed collar,
+                creating a striking contrast against the black fabric and adding a formal touch. The fitted bodice enhances the silhouette, while the pleated skirt introduces
+                a subtle yet stylish volume, blending refinement with a playful edge. Decorative flap-style pockets near the waist provide a tailored detail, contributing to
+                the dress's structured appearance. The long sleeves maintain a sleek and modest look, perfect for professional or formal settings. Paired with a chic black handbag,
+                this ensemble exudes timeless elegance and is ideal for occasions that demand a classy and polished style.`,
+                    tags: ["recommended"],
+                    productSizes: [
+                        {size: "S", price: 99},
+                        {size: "M", price: 99},
+                        {size: "L", price: 99},
+                        {size: "XL", price: 99},
+                        {size: "XXL", price: 99},
+                    ]
+              },
+
+            ],
         },
         selectedProduct: null,
         selectedSize: null,
@@ -960,5 +1230,5 @@ export const useProductStore = defineStore('productStore', {
         selectSize(size) {
             this.selectedSize = size;
         },
-    },    
+    },
 })
