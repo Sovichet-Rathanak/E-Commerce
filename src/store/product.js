@@ -1068,11 +1068,7 @@ export const useProductStore = defineStore('productStore', {
                 detailImages:[
 
                 ],
-                description: `This outfit features a sophisticated black dress with a polished and elegant design. The dress is accented by a sharp white pointed collar,
-                creating a striking contrast against the black fabric and adding a formal touch. The fitted bodice enhances the silhouette, while the pleated skirt introduces
-                a subtle yet stylish volume, blending refinement with a playful edge. Decorative flap-style pockets near the waist provide a tailored detail, contributing to
-                the dress's structured appearance. The long sleeves maintain a sleek and modest look, perfect for professional or formal settings. Paired with a chic black handbag,
-                this ensemble exudes timeless elegance and is ideal for occasions that demand a classy and polished style.`,
+                description: `This outfit combines edgy and vintage vibes with an oversized distressed black leather jacket featuring bold stitching, utility pockets, and straps for an industrial feel. It's paired with a black pleated skirt for a feminine-grunge touch, accessorized with layers and high boots, creating a bold, rebellious aesthetic.`,
                     tags: ["recommended"],
                     productSizes: [
                         {size: "S", price: 699},
@@ -1102,7 +1098,7 @@ export const useProductStore = defineStore('productStore', {
 
                 ],
                 detailImages:['/src/assets/images/DetailImage/Womenswears/clothes5/image1.jpg',],
-                description: ``,
+                description: `This white dress exudes elegance and vintage charm with its Peter Pan collar, soft bow tie, sheer sleeves, and lace accents. The flowing A-line silhouette adds grace, while subtle accessories, a black chain-strap handbag, and sleek black shoes complete the timeless look, perfect for formal or romantic occasions.`,
                     tags: ["recommended"],
                     productSizes: [
                         {size: "S", price: 299},
@@ -1137,11 +1133,7 @@ export const useProductStore = defineStore('productStore', {
                     '/src/assets/images/DetailImage/Womenswears/clothes8/detail1.jpg',
                     '/src/assets/images/DetailImage/Womenswears/clothes8/detail2.jpg',
                 ],
-                description: `This outfit features a sophisticated black dress with a polished and elegant design. The dress is accented by a sharp white pointed collar,
-                creating a striking contrast against the black fabric and adding a formal touch. The fitted bodice enhances the silhouette, while the pleated skirt introduces
-                a subtle yet stylish volume, blending refinement with a playful edge. Decorative flap-style pockets near the waist provide a tailored detail, contributing to
-                the dress's structured appearance. The long sleeves maintain a sleek and modest look, perfect for professional or formal settings. Paired with a chic black handbag,
-                this ensemble exudes timeless elegance and is ideal for occasions that demand a classy and polished style.`,
+                description: `This minimalistic outfit showcases a sky-blue long coat with a high collar, subtle buttons, and oversized pockets for a sophisticated touch. Paired with straight dark trousers, a black chain-strap handbag, and a tucked-in scarf, it balances warmth and elegance, perfect for a polished winter look.`,
                     tags: ["recommended"],
                     productSizes: [
                         {size: "S", price: 119},
