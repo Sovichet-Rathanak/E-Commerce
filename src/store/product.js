@@ -177,7 +177,8 @@ export const useProductStore = defineStore('productStore', {
                         '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/image6.jpeg',
                     ],
                     detailImages:[
-
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/detail2.png',
                     ],
                     description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
                                 sophistication and versatility, making it an extraordinary addition to any collection.
@@ -190,6 +191,106 @@ export const useProductStore = defineStore('productStore', {
                         {size: 'M', price: 25000},
                         {size: 'L', price: 30000},
                         {size: 'XL', price: 100000},
+                    ]
+                },
+                {
+                    brand_name: "Hermés",
+                    product_name: "Matte White Niloticus Crocodile",
+                    price: "$145,000 Starting",
+                    product_id: "HM_30P",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/image6.jpeg',
+                    ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/detail2.png',
+                    ],
+                    description: `Hermes Matte White Niloticus Crocodile Mimalaya Birkin known as a wearable piece of art, a status symbol, and a testament to unparalleled luxury handbag. This exquisite piece is one of the most coveted and prestigious handbags in the world, a symbol of ultimate luxury and exclusivity. 
+                                The interior is lined with supple leather in a matching or complementary hue, designed to protect valuables while maintaining a luxurious feel.
+
+                                The bag is adorned with palladium or gold-plated hardware, depending on the specific model, enhancing its luxurious aesthetic. Moderate oxidation throughout the exotic skin exterior and to handles. Signature hardware elements include the turn-lock closure, Hermès-engraved padlock, and matching keys housed in a leather clochette.
+                                The Himalaya Birkin is one of the rarest Hermès handbags, produced in extremely limited quantities due to the meticulous craftsmanship and scarcity of high-quality crocodile skins.`,
+                    tags: ["new"], 
+                    productSizes: [
+                        {size: 'S', price: 145000},
+                        {size: 'M', price: 175000},
+                        {size: 'L', price: 200000},
+                        {size: 'XL', price: 250000},
+                    ]
+                },
+                {
+                    brand_name: "Chanel",
+                    product_name: "Cream White Quilted Caviar",
+                    price: "$11,900 Starting",
+                    product_id: "CC_25W",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/image6.jpeg',
+                    ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/detail2.png',
+                    ],
+                    description: `Chanel Cream White Quilted Caviar Small Classic Double Flap Bag Gold Hardware absolute masterpiece of an iconic and sophisticated piece that embodies timeless elegance and the unparalleled craftsmanship synonymous with Chanel. This exquisite piece is a treasure in the world of luxury handbags. 
+                                Crafted from quilted caviar leather, the bag is renowned for its durability and textured finish, making it resistant to scratches while maintaining its luxurious appearance.
+                                The interior features a second flap with a snap closure, protecting the main compartment and adding an extra layer of security.
+
+                                Lined in burgundy leather, a signature detail of the Classic Flap, the interior includes a main compartment, a slip pocket, and a lipstick slot for practical organization.
+                                The Chanel Cream White Quilted Caviar Small Classic Double Flap Bag is a timeless investment piece, celebrated for its iconic design and exceptional quality.`,
+                    tags: ["new"], 
+                    productSizes: [
+                        {size: 'S', price: 11900},
+                        {size: 'M', price: 25000},
+                        {size: 'L', price: 30000},
+                        {size: 'XL', price: 50000},
+                    ]
+                },
+                {
+                    brand_name: "Hermés",
+                    product_name: "Gris Meyer Madame",
+                    price: "$31,800 Starting",
+                    product_id: "HG_24M",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/image6.jpeg',
+                    ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/detail2.png',
+                    ],
+                    description: `Gris Meyer Madame Birkin 30 Sellier Gold Hardware absolute masterpiece of understated elegance and classic, embodying timeless luxurious and masterful craftsmanship. 
+                                This exquisite piece is a treasure in the world of luxury handbags. The interior is lined with matching soft leather, providing a luxurious feel and protecting valuables.
+                                The handbag  includes a slip pocket and a zippered pocket, clochette, lock, keys, felt, dust bag and box, offering practical organization for everyday items.
+
+                                Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty, and embodying the artistry and heritage of the Hermès brand.`,
+                    tags: ["new"], 
+                    productSizes: [
+                        {size: 'S', price: 31800},
+                        {size: 'M', price: 50000},
+                        {size: 'L', price: 86000},
+                        {size: 'XL', price: 99000},
                     ]
                 },
             ],
