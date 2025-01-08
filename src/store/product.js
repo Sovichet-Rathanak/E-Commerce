@@ -200,18 +200,18 @@ export const useProductStore = defineStore('productStore', {
                     product_id: "HM_30P",
                     product_type: "accessories",
                     product_status: "Available For Pre-order",
-                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/image1.jpeg",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesMatteWhiteNilo/image1.jpeg",
                     productImages: [
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/image1.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/image2.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/image3.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/image4.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/image5.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/image6.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesMatteWhiteNilo/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesMatteWhiteNilo/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesMatteWhiteNilo/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesMatteWhiteNilo/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesMatteWhiteNilo/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesMatteWhiteNilo/image6.jpeg',
                     ],
                     detailImages:[
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/detail1.png',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesMatteWhiteNilo/detail2.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesMatteWhiteNilo/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesMatteWhiteNilo/detail2.png',
                     ],
                     description: `Hermes Matte White Niloticus Crocodile Mimalaya Birkin known as a wearable piece of art, a status symbol, and a testament to unparalleled luxury handbag. This exquisite piece is one of the most coveted and prestigious handbags in the world, a symbol of ultimate luxury and exclusivity. 
                                 The interior is lined with supple leather in a matching or complementary hue, designed to protect valuables while maintaining a luxurious feel.
@@ -233,18 +233,18 @@ export const useProductStore = defineStore('productStore', {
                     product_id: "CC_25W",
                     product_type: "accessories",
                     product_status: "Available For Pre-order",
-                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/image1.jpeg",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/ChanelCreamWhite/image1.jpeg",
                     productImages: [
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/image1.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/image2.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/image3.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/image4.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/image5.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/image6.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelCreamWhite/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelCreamWhite/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelCreamWhite/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelCreamWhite/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelCreamWhite/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelCreamWhite/image6.jpeg',
                     ],
                     detailImages:[
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/detail1.png',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/ChanelCreamWhite/detail2.png',
+                        '/src/assets/images/DetailImage/Accessories/ChanelCreamWhite/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/ChanelCreamWhite/detail2.png',
                     ],
                     description: `Chanel Cream White Quilted Caviar Small Classic Double Flap Bag Gold Hardware absolute masterpiece of an iconic and sophisticated piece that embodies timeless elegance and the unparalleled craftsmanship synonymous with Chanel. This exquisite piece is a treasure in the world of luxury handbags. 
                                 Crafted from quilted caviar leather, the bag is renowned for its durability and textured finish, making it resistant to scratches while maintaining its luxurious appearance.
@@ -267,18 +267,18 @@ export const useProductStore = defineStore('productStore', {
                     product_id: "HG_24M",
                     product_type: "accessories",
                     product_status: "Available For Pre-order",
-                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/image1.jpeg",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesGrisMeyer/image1.jpeg",
                     productImages: [
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/image1.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/image2.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/image3.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/image4.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/image5.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/image6.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesGrisMeyer/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesGrisMeyer/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesGrisMeyer/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesGrisMeyer/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesGrisMeyer/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesGrisMeyer/image6.jpeg',
                     ],
                     detailImages:[
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/detail1.png',
-                        '/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/HermesGrisMeyer/detail2.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesGrisMeyer/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesGrisMeyer/detail2.png',
                     ],
                     description: `Gris Meyer Madame Birkin 30 Sellier Gold Hardware absolute masterpiece of understated elegance and classic, embodying timeless luxurious and masterful craftsmanship. 
                                 This exquisite piece is a treasure in the world of luxury handbags. The interior is lined with matching soft leather, providing a luxurious feel and protecting valuables.
@@ -291,6 +291,75 @@ export const useProductStore = defineStore('productStore', {
                         {size: 'M', price: 50000},
                         {size: 'L', price: 86000},
                         {size: 'XL', price: 99000},
+                    ]
+                },
+                {
+                    brand_name: "Chanel",
+                    product_name: "Pink Quilted Aged",
+                    price: "$8,000 Starting",
+                    product_id: "CP_20Q",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/ChanelPinkQuilted/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/ChanelPinkQuilted/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelPinkQuilted/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelPinkQuilted/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelPinkQuilted/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelPinkQuilted/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelPinkQuilted/image6.jpeg',
+                    ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/ChanelPinkQuilted/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/ChanelPinkQuilted/detail2.png',
+                    ],
+                    description: `The Chanel Pink Quilted Aged Calfskin Chain Around Single Flap Bag is a stunning and unique piece that blends Chanel’s timeless elegance with a modern, edgy twist. 
+                                Designed for fashion-forward individuals, this handbag is both luxurious and versatile. 
+                                
+                                This bag is crafted from aged calfskin, offering a distinctive textured appearance that is both durable and stylish. 
+                                The soft pink color is feminine yet bold, making it a standout piece. It exudes warmth and versatility, perfect for adding a pop of color to your outfits.
+                                The bag is adorned with warm gold-tone hardware that complements the pink leather beautifully.
+                                This Chanel Single Flap Bag is perfect for clients seeking a standout yet versatile accessory. Its pink hue, luxurious aged calfskin, and bold chain accents make it a statement piece that’s both timeless and contemporary. `,
+                    tags: ["recommended"], 
+                    productSizes: [
+                        {size: 'S', price: 8000},
+                        {size: 'M', price: 10000},
+                        {size: 'L', price: 25000},
+                        {size: 'XL', price: 40000},
+                    ]
+                },
+                {
+                    brand_name: "Chanel",
+                    product_name: "Black Quilted Lambskin",
+                    price: "$4,000 Starting",
+                    product_id: "CB_20L",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image6.jpeg',
+                    ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/detail2.png',
+                    ],
+                    description: `The Chanel Black Quilted Lambskin Boy Bucket Bag with Aged Gold Hardware is a modern, edgy reinterpretation of Chanel's classic elegance, designed for those who love a mix of sophistication and contemporary style. This versatile handbag is perfect for clients seeking an iconic statement piece that’s both functional and chic. 
+                                This bag is crafted from aged calfskin, offering a distinctive textured appearance that is both durable and stylish. The material has a slightly distressed look, adding character and a touch of vintage charm.
+                                
+                                The classic diamond quilting, a hallmark of Chanel, enhances the bag’s timeless appeal while adding depth and texture.
+                                A unique design element, the chain detailing runs around the edges of the bag, adding a bold, contemporary touch that sets it apart from traditional Chanel styles.
+                                The Chanel Black Quilted Lambskin Boy Bucket Bag is edgy reinterpretation of Chanel's classic elegance, designed for those who love a mix of sophistication and contemporary style.`,
+                    tags: ["recommended"], 
+                    productSizes: [
+                        {size: 'S', price: 4000},
+                        {size: 'M', price: 6000},
+                        {size: 'L', price: 7500},
+                        {size: 'XL', price: 8400},
                     ]
                 },
             ],
