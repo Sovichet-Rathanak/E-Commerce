@@ -7,24 +7,26 @@
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
-        v-for="index in 4"
-        :key="index"
-        productImage="./src/assets/images/Jacket.jpg"
-        productName="Jordan 1 Retro High OG Chicago Lost and Found"
-        productStatus="Available In Stock"
-      ></ProductCard>
+        v-for="product in filteredProductsByTagandType('new', 'menswears')" :key="product.product_id"
+        :productImage="product.thumbNail"
+        :brandName = "product.brand_name"
+        :productName="product.product_name"
+        :productStatus="product.product_status"
+        :productId="product.product_id"
+      />
     </div>
 
     <SeeMore SectionTitle="Recommend For You" />
 
     <div class="recommended_section">
       <ProductCard
-        v-for="index in 4"
-        :key="index"
-        productImage="./src/assets/images/Man-T-Shirt.jpg"
-        productName="Jordan 1 Retro High OG Chicago Lost and Found"
-        productStatus="Available In Stock"
-      ></ProductCard>
+        v-for="product in filteredProductsByTagandType('recommended', 'menswears')" :key="product.product_id"
+        :productImage="product.thumbNail"
+        :brandName = "product.brand_name"
+        :productName="product.product_name"
+        :productStatus="product.product_status"
+        :productId="product.product_id"
+      />
     </div>
 
     <SeeMore
@@ -45,12 +47,13 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="index in 4"
-        :key="index"
-        productImage="./src/assets/images/Jacket.jpg"
-        productName="Jordan 1 Retro High OG Chicago Lost and Found"
-        productStatus="Available In Stock"
-      ></ProductCard>
+        v-for="product in filteredProductsByTagandType('collab', 'menswears')" :key="product.product_id"
+        :productImage="product.thumbNail"
+        :brandName = "product.brand_name"
+        :productName="product.product_name"
+        :productStatus="product.product_status"
+        :productId="product.product_id"
+      />
     </div>
 
     <span class="indie_section">Special Offer</span>
@@ -86,6 +89,7 @@ import ProductCard from "@/components/product_card.vue";
 import { useBrandStore } from "@/store/brand";
 import { mapState } from "pinia";
 import { useBannerStore } from "@/store/banner";
+import { useProductStore } from "@/store/product";
 
 export default {
   components: {
@@ -99,10 +103,11 @@ export default {
   setup() {
     const brandStore = useBrandStore();
     const bannerStore = useBannerStore();
-
+    const productStore = useProductStore();
     return {
       brandStore,
       bannerStore,
+      productStore,
     };
   },
   computed: {
@@ -112,10 +117,26 @@ export default {
     ...mapState(useBannerStore, {
       banner: "banners",
     }),
+    ...mapState(useProductStore,{
+      productsByCategory: "productsByCategory",
+    }),
+    filteredProductsByTag() {
+      return(tag) => {
+        const productStore = useProductStore();
+        return productStore.getProductsByTag(tag);
+      }
+    },
+
+    filteredProductsByTagandType(){
+      return(tag, type) => {
+        const productStore = useProductStore();
+        return productStore.getProductByTypeAndTag(tag, type)
+      }
+    }
   },
   methods: {
     display() {
-      console.log(this.brand.sneakerBrand.logo[0]);
+      console.log(this.brand.menswearBrand.logo[0]);
     },
   },
 };

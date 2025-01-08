@@ -1,145 +1,150 @@
 import { defineStore } from "pinia";
 
-export const useProductStore = defineStore('productStore', {
-    state:() => ({
-        productsByCategory: {
-            sneakers: [
-                {
-                    brand_name: "Air Jordan 1 Retro High",
-                    product_name: "Yellow Ochre",
-                    price: "$133 Starting",
-                    product_id: "AJ1_YLO",
-                    product_type: "sneaker",
-                    product_status: "Available For Pre-order",
-                    thumbNail: "/src/assets/images/DetailImage/Sneakers/YellowOchre/image1.jpg",
-                    productImages: [
-                        '/src/assets/images/DetailImage/Sneakers/YellowOchre/image1.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/YellowOchre/image2.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/YellowOchre/image3.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/YellowOchre/image4.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/YellowOchre/image5.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/YellowOchre/image6.jpg',
-                    ],
-                    detailImages:[
-                        '/src/assets/images/DetailImage/Sneakers/YellowOchre/detail1.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/YellowOchre/detail2.jpg',
-                    ],
-                    description: `Step into the perfect blend of classic and contemporary with this remastered Air Jordan 1. The bold interplay of Yellow Ochre and deep black creates a striking contrast against the smooth, tumbled Sail leather, delivering a look that's as clean as it is sophisticated.
+export const useProductStore = defineStore("productStore", {
+  state: () => ({
+    productsByCategory: {
+      sneakers: [
+        {
+          brand_name: "Air Jordan 1 Retro High",
+          product_name: "Yellow Ochre",
+          price: "$133 Starting",
+          product_id: "AJ1_YLO",
+          product_type: "sneaker",
+          product_status: "Available For Pre-order",
+          thumbNail:
+            "/src/assets/images/DetailImage/Sneakers/YellowOchre/image1.jpg",
+          productImages: [
+            "/src/assets/images/DetailImage/Sneakers/YellowOchre/image1.jpg",
+            "/src/assets/images/DetailImage/Sneakers/YellowOchre/image2.jpg",
+            "/src/assets/images/DetailImage/Sneakers/YellowOchre/image3.jpg",
+            "/src/assets/images/DetailImage/Sneakers/YellowOchre/image4.jpg",
+            "/src/assets/images/DetailImage/Sneakers/YellowOchre/image5.jpg",
+            "/src/assets/images/DetailImage/Sneakers/YellowOchre/image6.jpg",
+          ],
+          detailImages: [
+            "/src/assets/images/DetailImage/Sneakers/YellowOchre/detail1.jpg",
+            "/src/assets/images/DetailImage/Sneakers/YellowOchre/detail2.jpg",
+          ],
+          description: `Step into the perfect blend of classic and contemporary with this remastered Air Jordan 1. The bold interplay of Yellow Ochre and deep black creates a striking contrast against the smooth, tumbled Sail leather, delivering a look that's as clean as it is sophisticated.
                                 Every detail has been thoughtfully refined, from the premium materials to the vintage-inspired branding, evoking a sense of timelessness. This is where heritage meets innovation—a seamless
                                 fusion of old-school charm and modern design. With a finish as smooth as MJ's signature fadeaway, this AJ1 stands as a true testament to the legacy of greatness, designed for those who appreciate
                                 both tradition and bold, fresh style.`,
-                    tags: ["new"],
-                    productSizes: [
-                        {size: "US 4", price: 177},
-                        {size: "US 5", price: 142},
-                        {size: "US 6", price: 148},
-                        {size: "US 7", price: 181},
-                        {size: "US 8", price: 133},
-                        {size: "US 9", price: 195},
-                        {size: "US 10", price: 206},
-                        {size: "US 11", price: 286},
-                        {size: "US 12", price: 245},
-                        {size: "US 13", price: 216},
-                        {size: "US 14", price: 209},
-                    ]
-                },
-                {
-                    brand_name: "SB Dunk Low",
-                    product_name: "Yuto x Wolf Grey",
-                    price: "$201 Starting",
-                    product_id: "SBD_Yuto",
-                    product_type: "sneaker",
-                    product_status: "Available For Pre-order",
-                    thumbNail: "/src/assets/images/DetailImage/Sneakers/Yuto/image1.jpg",
-                    productImages: [
-                        '/src/assets/images/DetailImage/Sneakers/Yuto/image1.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/Yuto/image2.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/Yuto/image3.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/Yuto/image4.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/Yuto/image5.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/Yuto/image6.jpg',
-                    ],
-                    detailImages:[
-                        '/src/assets/images/DetailImage/Sneakers/Yuto/detail1.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/Yuto/detail2.jpg',
-                    ],
-                    description: `Not many can claim to be the first. Yuto Horigome is one of the few. Crafted to the champion's specs, the Nike SB Dunk Low x Yuto brings you a skate-worthy design that taps into the places where he first
+          tags: ["new"],
+          productSizes: [
+            { size: "US 4", price: 177 },
+            { size: "US 5", price: 142 },
+            { size: "US 6", price: 148 },
+            { size: "US 7", price: 181 },
+            { size: "US 8", price: 133 },
+            { size: "US 9", price: 195 },
+            { size: "US 10", price: 206 },
+            { size: "US 11", price: 286 },
+            { size: "US 12", price: 245 },
+            { size: "US 13", price: 216 },
+            { size: "US 14", price: 209 },
+          ],
+        },
+        {
+          brand_name: "SB Dunk Low",
+          product_name: "Yuto x Wolf Grey",
+          price: "$201 Starting",
+          product_id: "SBD_Yuto",
+          product_type: "sneaker",
+          product_status: "Available For Pre-order",
+          thumbNail: "/src/assets/images/DetailImage/Sneakers/Yuto/image1.jpg",
+          productImages: [
+            "/src/assets/images/DetailImage/Sneakers/Yuto/image1.jpg",
+            "/src/assets/images/DetailImage/Sneakers/Yuto/image2.jpg",
+            "/src/assets/images/DetailImage/Sneakers/Yuto/image3.jpg",
+            "/src/assets/images/DetailImage/Sneakers/Yuto/image4.jpg",
+            "/src/assets/images/DetailImage/Sneakers/Yuto/image5.jpg",
+            "/src/assets/images/DetailImage/Sneakers/Yuto/image6.jpg",
+          ],
+          detailImages: [
+            "/src/assets/images/DetailImage/Sneakers/Yuto/detail1.jpg",
+            "/src/assets/images/DetailImage/Sneakers/Yuto/detail2.jpg",
+          ],
+          description: `Not many can claim to be the first. Yuto Horigome is one of the few. Crafted to the champion's specs, the Nike SB Dunk Low x Yuto brings you a skate-worthy design that taps into the places where he first
                                 developed his craft. Delivering the gold standard of skate shoes (and marked with Yuto's family crest), it lets you glide between casually spinning tricks on vert and going big in the streets—just like Yuto.`,
-                    tags: ["new"],
-                    productSizes: [
-                        {size: "US 4", price: 201},
-                        {size: "US 5", price: 211},
-                        {size: "US 6", price: 263},
-                        {size: "US 7", price: 276},
-                        {size: "US 8", price: 274},
-                        {size: "US 9", price: 311},
-                        {size: "US 10", price: 319},
-                        {size: "US 11", price: 363},
-                        {size: "US 12", price: 341},
-                        {size: "US 13", price: 399},
-                        {size: "US 14", price: 385},
-                    ]
-                },
-                {
-                    brand_name: "Air Jordan 1 High OG",
-                    product_name: "Spiderman Next Chapter",
-                    price: '$94 Starting',
-                    product_type: "sneaker",
-                    product_id: "AJ1_SPM",
-                    product_status: "Available Instock",
-                    thumbNail: "/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/image1.jpg",
-                    productImages: [
-                        '/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/image1.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/image2.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/image3.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/image4.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/image5.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/image6.jpg',
-                    ],
-                    detailImages:[
-                        '/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/detail1.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/detail2.jpg',
-                    ],
-                    description: `You don't need a cape to take flight—just your AJ1s. You know, the ones seen on Miles in "Spider-Man: Across the Spider-Verse", exclusively in cinemas. This fresh take on the iconic Chicago
+          tags: ["new"],
+          productSizes: [
+            { size: "US 4", price: 201 },
+            { size: "US 5", price: 211 },
+            { size: "US 6", price: 263 },
+            { size: "US 7", price: 276 },
+            { size: "US 8", price: 274 },
+            { size: "US 9", price: 311 },
+            { size: "US 10", price: 319 },
+            { size: "US 11", price: 363 },
+            { size: "US 12", price: 341 },
+            { size: "US 13", price: 399 },
+            { size: "US 14", price: 385 },
+          ],
+        },
+        {
+          brand_name: "Air Jordan 1 High OG",
+          product_name: "Spiderman Next Chapter",
+          price: "$94 Starting",
+          product_type: "sneaker",
+          product_id: "AJ1_SPM",
+          product_status: "Available Instock",
+          thumbNail:
+            "/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/image1.jpg",
+          productImages: [
+            "/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/image1.jpg",
+            "/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/image2.jpg",
+            "/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/image3.jpg",
+            "/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/image4.jpg",
+            "/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/image5.jpg",
+            "/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/image6.jpg",
+          ],
+          detailImages: [
+            "/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/detail1.jpg",
+            "/src/assets/images/DetailImage/Sneakers/AJ1Spiderman/detail2.jpg",
+          ],
+          description: `You don't need a cape to take flight—just your AJ1s. You know, the ones seen on Miles in "Spider-Man: Across the Spider-Verse", exclusively in cinemas. This fresh take on the iconic Chicago
                                 colourway boasts a mix of materials, including lustrous leather and soft suede. The world is waiting, so step on in.`,
-                    tags: ["new","recommended", "collab"],
-                    productSizes: [
-                        {size: "US 4", price: 177},
-                        {size: "US 5", price: 142},
-                        {size: "US 6", price: 148},
-                        {size: "US 7", price: 181},
-                        {size: "US 8", price: 133},
-                        {size: "US 9", price: 195},
-                        {size: "US 10", price: 206},
-                        {size: "US 11", price: 286},
-                        {size: "US 12", price: 245},
-                        {size: "US 13", price: 216},
-                        {size: "US 14", price: 209},
-                    ]
-                },
-                {
-                    brand_name: "New Balance",
-                    product_name: "Nimbus Cloud 574 Core",
-                    price: "$60 Starting",
-                    product_type: "sneaker",
-                    product_id: "NB_574",
-                    product_status: "Available Instock",
-                    thumbNail: "/src/assets/images/DetailImage/Sneakers/NewBalance574/thumbnail_image.png",
-                    productImages: [
-                        '/src/assets/images/DetailImage/Sneakers/NewBalance574/image1.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/NewBalance574/image2.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/NewBalance574/image3.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/NewBalance574/image4.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/NewBalance574/image5.jpg',
-                        '/src/assets/images/DetailImage/Sneakers/NewBalance574/image6.jpg',
-                    ],
-                    detailImages:[
-                        '/src/assets/images/DetailImage/Sneakers/NewBalance574/detail1.png',
-                        '/src/assets/images/DetailImage/Sneakers/NewBalance574/detail2.png',
-                    ],
-                    description: `The most New Balance shoe ever says it all, right? No, actually. The 574 might be our unlikeliest icon. The 574 was built to be a reliable shoe that could do a lot of different things well rather than as a platform
+          tags: ["new", "recommended", "collab"],
+          productSizes: [
+            { size: "US 4", price: 177 },
+            { size: "US 5", price: 142 },
+            { size: "US 6", price: 148 },
+            { size: "US 7", price: 181 },
+            { size: "US 8", price: 133 },
+            { size: "US 9", price: 195 },
+            { size: "US 10", price: 206 },
+            { size: "US 11", price: 286 },
+            { size: "US 12", price: 245 },
+            { size: "US 13", price: 216 },
+            { size: "US 14", price: 209 },
+          ],
+        },
+        {
+          brand_name: "New Balance",
+          product_name: "Nimbus Cloud 574 Core",
+          price: "$60 Starting",
+          product_type: "sneaker",
+          product_id: "NB_574",
+          product_status: "Available Instock",
+          thumbNail:
+            "/src/assets/images/DetailImage/Sneakers/NewBalance574/thumbnail_image.png",
+          productImages: [
+            "/src/assets/images/DetailImage/Sneakers/NewBalance574/image1.jpg",
+            "/src/assets/images/DetailImage/Sneakers/NewBalance574/image2.jpg",
+            "/src/assets/images/DetailImage/Sneakers/NewBalance574/image3.jpg",
+            "/src/assets/images/DetailImage/Sneakers/NewBalance574/image4.jpg",
+            "/src/assets/images/DetailImage/Sneakers/NewBalance574/image5.jpg",
+            "/src/assets/images/DetailImage/Sneakers/NewBalance574/image6.jpg",
+          ],
+          detailImages: [
+            "/src/assets/images/DetailImage/Sneakers/NewBalance574/detail1.png",
+            "/src/assets/images/DetailImage/Sneakers/NewBalance574/detail2.png",
+          ],
+          description: `The most New Balance shoe ever says it all, right? No, actually. The 574 might be our unlikeliest icon. The 574 was built to be a reliable shoe that could do a lot of different things well rather than as a platform
                                 for revolutionary technology, or as a premium materials showcase. This unassuming, unpretentious versatility is exactly what launched the 574 into the ranks of all-time greats.
 
+                                As hybrid road/trail design built on a wider last than the previous generation’s narrow racing silhouettes, the 574 offered a uniquely versatile mix of new, different, uncomplicated, rugged, durable, and
+                                comfortable that was adopted as a closet staple across the globe. That’s why today, the 574 is synonymous with the boundary defying New Balance style, and worn by anyone. With the 574 for kids, the same
                                 As hybrid road/trail design built on a wider last than the previous generation’s narrow racing silhouettes, the 574 offered a uniquely versatile mix of new, different, uncomplicated, rugged, durable, and
                                 comfortable that was adopted as a closet staple across the globe. That’s why today, the 574 is synonymous with the boundary defying New Balance style, and worn by anyone. With the 574 for kids, the same
                                 style inspiration is pared down for growing feet.`,
@@ -185,14 +190,302 @@ export const useProductStore = defineStore('productStore', {
 
                                 Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
                                 hardware elevates its design to an unparalleled level of refinement.`,
-                    tags: ["new"],
-                    productSizes: [
-                        {size: 'S', price: 23000},
-                        {size: 'M', price: 25000},
-                        {size: 'L', price: 30000},
-                        {size: 'XL', price: 100000},
-                    ]
-                },
+          tags: ["new"],
+          productSizes: [
+            { size: "S", price: 23000 },
+            { size: "M", price: 25000 },
+            { size: "L", price: 30000 },
+            { size: "XL", price: 100000 },
+          ],
+        },
+      ],
+      Menswears: [
+        {
+          brand_name: "Versace",
+          product_name: "Collana Punk T-shirt",
+          price: "$230",
+          product_id: "Versace_90s",
+          product_type: "menswears",
+          product_status: "Available For Pre-order",
+          thumbNail:
+            "/src/assets/images/DetailImage/Menswears/Shirt/Ver1.jpg",
+          productImages: [
+            "/src/assets/images/DetailImage/Menswears/Shirt/Ver1.jpg",
+            "/src/assets/images/DetailImage/Menswears/Shirt/Ver2.jpg",
+            "/src/assets/images/DetailImage/Menswears/Shirt/Ver3.jpg",
+            "/src/assets/images/DetailImage/Menswears/Shirt/Ver4.jpg",
+          ],
+          detailImages: [],
+          description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
+                              sophistication and versatility, making it an extraordinary addition to any collection.
+
+                              Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
+                              hardware elevates its design to an unparalleled level of refinement.`,
+          tags: ["new"],
+          productSizes: [
+            { size: "S", price: 230 },
+            { size: "M", price: 230 },
+            { size: "L", price: 230 },
+            { size: "XL", price: 230 },
+          ],
+        },
+        {
+          brand_name: "Balenciaga",
+          product_name: "logo-print T-shirt",
+          price: "$1009",
+          product_id: "Balenciaga_Logo",
+          product_type: "menswears",
+          product_status: "Available For Pre-order",
+          thumbNail:
+            "/src/assets/images/DetailImage/Menswears/Balenciaga/Balen1.jpg",
+          productImages: [
+            "/src/assets/images/DetailImage/Menswears/Balenciaga/Balen1.jpg",
+            "/src/assets/images/DetailImage/Menswears/Balenciaga/Balen2.jpg",
+            "/src/assets/images/DetailImage/Menswears/Balenciaga/Balen3.jpg",
+            "/src/assets/images/DetailImage/Menswears/Balenciaga/Balen4.jpg",
+          ],
+          detailImages: [
+            "/src/assets/images/DetailImage/Menswears/Balenciaga/Balen5.jpg",
+          ],
+          description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
+                            sophistication and versatility, making it an extraordinary addition to any collection.
+
+                            Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
+                            hardware elevates its design to an unparalleled level of refinement.`,
+          tags: ["new","recommended"],
+          productSizes: [
+            { size: "S", price: 1009 },
+            { size: "M", price: 1009 },
+            { size: "L", price: 1009 },
+            { size: "XL", price: 1009 },
+          ],
+        },
+        {
+          brand_name: "Versace",
+          product_name: "University embroidered T-shirt",
+          price: "$500",
+          product_id: "Versace_Uni",
+          product_type: "menswears",
+          product_status: "Available For Pre-order",
+          thumbNail:
+            "/src/assets/images/DetailImage/Menswears/Shirt/Black_Ver1.jpg",
+          productImages: [
+            "/src/assets/images/DetailImage/Menswears/Shirt/Black_Ver1.jpg",
+            "/src/assets/images/DetailImage/Menswears/Shirt/Black_Ver2.jpg",
+            "/src/assets/images/DetailImage/Menswears/Shirt/Black_Ver3.jpg",
+            "/src/assets/images/DetailImage/Menswears/Shirt/Black_Ver4.jpg",
+            "/src/assets/images/DetailImage/Menswears/Shirt/Black_Ver5.jpg",
+          ],
+          detailImages: [],
+          description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
+                            sophistication and versatility, making it an extraordinary addition to any collection.
+
+                            Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
+                            hardware elevates its design to an unparalleled level of refinement.`,
+          tags: ["new"],
+          productSizes: [
+            { size: "S", price: 500 },
+            { size: "M", price: 500 },
+            { size: "L", price: 500 },
+            { size: "XL", price: 500 },
+          ],
+        },
+        {
+          brand_name: "Valentino Garavani",
+          product_name: "graphic-print short-sleeve shirt",
+          price: "$1111",
+          product_id: "sleeve shirt",
+          product_type: "menswears",
+          product_status: "Available For Pre-order",
+          thumbNail:
+            "/src/assets/images/DetailImage/Menswears/Shirt/sleeve1.jpg",
+          productImages: [
+           "/src/assets/images/DetailImage/Menswears/Shirt/sleeve1.jpg",
+           "/src/assets/images/DetailImage/Menswears/Shirt/sleeve2.jpg",
+           "/src/assets/images/DetailImage/Menswears/Shirt/sleeve3.jpg",
+           "/src/assets/images/DetailImage/Menswears/Shirt/sleeve4.jpg",
+           "/src/assets/images/DetailImage/Menswears/Shirt/sleeve5.jpg",
+          ],
+          detailImages: [
+          ],
+          description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
+                          sophistication and versatility, making it an extraordinary addition to any collection.
+
+                          Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
+                          hardware elevates its design to an unparalleled level of refinement.`,
+          tags: ["collab"],
+          productSizes: [
+            { size: "S", price: 999 },
+            { size: "M", price: 999 },
+            { size: "L", price: 999 },
+            { size: "XL", price: 999 },
+          ],
+        },
+        {
+          brand_name: "Gucci",
+          product_name: "Logo-print bermuda shorts",
+          price: "$800",
+          product_id: "Gucci_Bermuda",
+          product_type: "menswears",
+          product_status: "Available For Pre-order",
+          thumbNail:
+            "/src/assets/images/DetailImage/Menswears/Gucci/G_Short1.jpg",
+          productImages: [
+            "/src/assets/images/DetailImage/Menswears/Gucci/G_Short1.jpg",
+            "/src/assets/images/DetailImage/Menswears/Gucci/G_Short2.jpg",
+            "/src/assets/images/DetailImage/Menswears/Gucci/G_Short3.jpg",
+            "/src/assets/images/DetailImage/Menswears/Gucci/G_Short4.jpg",
+            "/src/assets/images/DetailImage/Menswears/Gucci/G_Short5.jpg",
+          ],
+          detailImages: [
+            "/src/assets/images/DetailImage/Menswears/Gucci/G_Short6.jpg",
+            "/src/assets/images/DetailImage/Menswears/Gucci/G_Short7.jpg",
+          ],
+          description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
+                          sophistication and versatility, making it an extraordinary addition to any collection.
+
+                          Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
+                          hardware elevates its design to an unparalleled level of refinement.`,
+          tags: [ "collab",'new'],
+          productSizes: [
+            { size: "S", price: 800 },
+            { size: "M", price: 800 },
+            { size: "L", price: 800 },
+            { size: "XL", price: 800 },
+          ],
+        },
+        {
+          brand_name: "AAPE",
+          product_name: "Logo varsity jacket",
+          price: "$1300",
+          product_id: "varsity_AAPE",
+          product_type: "menswears",
+          product_status: "Available For Pre-order",
+          thumbNail:
+            "/src/assets/images/DetailImage/Menswears/Jacket/AAPE1.jpg",
+          productImages: [
+            "/src/assets/images/DetailImage/Menswears/Jacket/AAPE1.jpg",
+            "/src/assets/images/DetailImage/Menswears/Jacket/AAPE2.jpg",
+            "/src/assets/images/DetailImage/Menswears/Jacket/AAPE3.jpg",
+            "/src/assets/images/DetailImage/Menswears/Jacket/AAPE4.jpg",
+            "/src/assets/images/DetailImage/Menswears/Jacket/AAPE5.jpg",
+
+          ],
+          detailImages: [
+
+          ],
+          description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
+                          sophistication and versatility, making it an extraordinary addition to any collection.
+
+                          Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
+                          hardware elevates its design to an unparalleled level of refinement.`,
+          tags: ["recommended"],
+          productSizes: [
+            { size: "S", price: 1300 },
+            { size: "M", price: 1300 },
+            { size: "L", price: 1300 },
+            { size: "XL", price: 1300 },
+          ],
+        },
+               {
+          brand_name: "Christian Dior Pre-Owned",
+          product_name: "1970s check-pattern",
+          price: "$1168",
+          product_id: "CheckPattern",
+          product_type: "menswears",
+          product_status: "Available For Pre-order",
+          thumbNail:
+            "/src/assets/images/DetailImage/Menswears/Dior/Dior1.jpg",
+          productImages: [
+            "/src/assets/images/DetailImage/Menswears/Dior/Dior1.jpg",
+            "/src/assets/images/DetailImage/Menswears/Dior/Dior2.jpg",
+            "/src/assets/images/DetailImage/Menswears/Dior/Dior3.jpg",
+            "/src/assets/images/DetailImage/Menswears/Dior/Dior4.jpg",
+            "/src/assets/images/DetailImage/Menswears/Dior/Dior5.jpg",
+
+          ],
+          detailImages: [
+            "/src/assets/images/DetailImage/Menswears/Jacket/ralph-lauren7.jpg",
+            "/src/assets/images/DetailImage/Menswears/Jacket/ralph-lauren8.jpg",
+
+          ],
+          description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
+                          sophistication and versatility, making it an extraordinary addition to any collection.
+
+                          Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
+                          hardware elevates its design to an unparalleled level of refinement.`,
+          tags: ["collab"],
+          productSizes: [
+            { size: "S", price: 1168 },
+            { size: "M", price: 1168 },
+            { size: "L", price: 1168 },
+            { size: "XL", price: 1168 },
+          ],
+        },
+        {
+          brand_name: "Peace and After",
+          product_name: "cotton shirt",
+          price: "$999",
+          product_id: "cotton-shirt",
+          product_type: "menswears",
+          product_status: "Available For Pre-order",
+          thumbNail:
+            "/src/assets/images/DetailImage/Menswears/Shirt/Cotton_Shirt1.jpg",
+          productImages: [
+           "/src/assets/images/DetailImage/Menswears/Shirt/Cotton_Shirt1.jpg",
+           "/src/assets/images/DetailImage/Menswears/Shirt/Cotton_Shirt2.jpg",
+           "/src/assets/images/DetailImage/Menswears/Shirt/Cotton_Shirt3.jpg",
+           "/src/assets/images/DetailImage/Menswears/Shirt/Cotton_Shirt5.jpg",
+           "/src/assets/images/DetailImage/Menswears/Shirt/Cotton_Shirt4.jpg",
+
+          ],
+          detailImages: [
+          ],
+          description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
+                          sophistication and versatility, making it an extraordinary addition to any collection.
+
+                          Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
+                          hardware elevates its design to an unparalleled level of refinement.`,
+          tags: ["collab","recommended"],
+          productSizes: [
+            { size: "S", price: 999 },
+            { size: "M", price: 999 },
+            { size: "L", price: 999 },
+            { size: "XL", price: 999 },
+          ],
+        },
+        {
+          brand_name: "Peace and After",
+          product_name: "cargo track pants",
+          price: "$845",
+          product_id: "cargo_pants",
+          product_type: "menswears",
+          product_status: "Available For Pre-order",
+          thumbNail:
+            "/src/assets/images/DetailImage/Menswears/Pants/Cargo1.jpg",
+          productImages: [
+           "/src/assets/images/DetailImage/Menswears/Pants/Cargo1.jpg",
+           "/src/assets/images/DetailImage/Menswears/Pants/Cargo2.jpg",
+           "/src/assets/images/DetailImage/Menswears/Pants/Cargo3.jpg",
+           "/src/assets/images/DetailImage/Menswears/Pants/Cargo4.jpg",
+           "/src/assets/images/DetailImage/Menswears/Pants/Cargo5.jpg",
+
+          ],
+          detailImages: [
+          ],
+          description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
+                          sophistication and versatility, making it an extraordinary addition to any collection.
+
+                          Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
+                          hardware elevates its design to an unparalleled level of refinement.`,
+          tags: ["recommended"],
+          productSizes: [
+            { size: "S", price: 999 },
+            { size: "M", price: 999 },
+            { size: "L", price: 999 },
+            { size: "XL", price: 999 },
+          ],
+        },
                 {
                     brand_name: "Hermés",
                     product_name: "Matte White Niloticus Crocodile",
@@ -1324,47 +1617,49 @@ export const useProductStore = defineStore('productStore', {
                     ]
               },
 
-            ],
-        },
-        selectedProduct: null,
-        selectedSize: null,
-    }),
-    getters:{
-        getProductsByTag(state) {
-            return function(tag) {
-                const allProducts = Object.values(state.productsByCategory).flat(); //get all the array within or productByCategory object and store it as one array
-                return allProducts.filter(product => product.tags?.includes(tag)).slice(0, 4); //filter and only display 4
-            };
-        },
-
-        getProductByType(state){
-            return function(type){
-                const allProducts = Object.values(state.productsByCategory).flat();
-                return allProducts.filter(product => product.type?.includes(type));
-            }
-        },
-
-        getProductByTypeAndTag(state) {
-            return function (tag, type) {
-                const allProducts = Object.values(state.productsByCategory).flat();
-                console.log('All Products:', allProducts);
-
-                const filteredProducts = allProducts.filter(function (product) {
-                    return product.tags.includes(tag) && product.product_type == type;
-                });
-                console.log('Filtered Products:', filteredProducts);
-                return filteredProducts;
-            }
-        },
+      ],
     },
-    actions: {
-        selectedProduct(category, productId) {
-            this.selectedProduct = this.products[category]?.find(
-                (product) => product.product_id === productId
-            );
-        },
-        selectSize(size) {
-            this.selectedSize = size;
-        },
+    selectedProduct: null,
+    selectedSize: null,
+  }),
+  getters: {
+    getProductsByTag(state) {
+      return function (tag) {
+        const allProducts = Object.values(state.productsByCategory).flat(); //get all the array within or productByCategory object and store it as one array
+        return allProducts
+          .filter((product) => product.tags?.includes(tag))
+          .slice(0, 4); //filter and only display 4
+      };
     },
-})
+
+    getProductByType(state) {
+      return function (type) {
+        const allProducts = Object.values(state.productsByCategory).flat();
+        return allProducts.filter((product) => product.type?.includes(type));
+      };
+    },
+
+    getProductByTypeAndTag(state) {
+      return function (tag, type) {
+        const allProducts = Object.values(state.productsByCategory).flat();
+        console.log("All Products:", allProducts);
+
+        const filteredProducts = allProducts.filter(function (product) {
+          return product.tags.includes(tag) && product.product_type == type;
+        });
+        console.log("Filtered Products:", filteredProducts);
+        return filteredProducts;
+      };
+    },
+  },
+  actions: {
+    selectedProduct(category, productId) {
+      this.selectedProduct = this.products[category]?.find(
+        (product) => product.product_id === productId
+      );
+    },
+    selectSize(size) {
+      this.selectedSize = size;
+    },
+  },
+});
