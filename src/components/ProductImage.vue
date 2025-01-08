@@ -260,6 +260,7 @@ export default {
       };
 
       this.cartStore.addToCart(cartItem);
+            this.cartStore.calculateTotalPrice();
       console.log("Cart Items:", this.cartItems);
       this.$router.push("/cart");
     },

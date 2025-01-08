@@ -47,18 +47,20 @@ export default {
         ...mapState(useCartStore, {
             cartItems: "cartItems",
             amountInCart: "amountInCart",
-            total : "total"
         }),
         numb() {
             const key = `${this.cart.productId}-${this.cart.size}`;
             return this.amountInCart[key] || 0;
         },
+        total() {
+            const cartStore = useCartStore();
+            return cartStore.calculateTotalPrice(); 
+        }
     },
     methods: {
         increment() {
             const cartStore = useCartStore();
             cartStore.addToCart(this.cart);
-            cartStore.calculateTotalPrice();
         },
         decrement() {
             const cartStore = useCartStore();
@@ -75,14 +77,15 @@ export default {
 </script>
 
 
+
 <style scoped>
     .cart-container{
-        width: 50%;
+        width: 100%;
         box-sizing: border-box;
         border: 1px solid rgb(187, 187, 187);
         border-radius: 10px;
         box-shadow: 0px 10px 9px rgb(150, 150, 150);
-        margin-bottom: 10px;
+        margin-bottom: 19px;
     }
 
     .image-detail{
@@ -98,8 +101,7 @@ export default {
         align-items: center;
         border-radius: 10px 0px 0px 10px;
         width: 40%;
-        height: 40%;
-        border: 1px solid grey;
+        height: 100%;
         border-bottom: 0px;
         border-left: 0px;
         border-top: 0px;

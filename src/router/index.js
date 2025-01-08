@@ -16,6 +16,8 @@ import ArticlePage from "@/views/MainPage/ArticlePage.vue";
 import ProductDetailPage from "@/views/MainPage/ProductDetailPage.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import CartPage from "@/views/CartPage.vue";
+import CheckoutPage from "@/views/CheckoutPage.vue";
+import ConfirmPage from "@/views/ConfirmPage.vue";
 
 const routes = [
   {
@@ -106,6 +108,16 @@ const routes = [
     path: "/cart",
     name: "Cart",
     component: CartPage
+  },
+  {
+    path: "/checkout",
+    name: "Checkout",
+    component: CheckoutPage
+  },
+  {
+    path: "/checkoutComplete",
+    name: "CheckoutComplete",
+    component: ConfirmPage
   }
 ];
 
