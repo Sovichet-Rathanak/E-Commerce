@@ -362,6 +362,216 @@ export const useProductStore = defineStore('productStore', {
                         {size: 'XL', price: 8400},
                     ]
                 },
+                {
+                    brand_name: "Dior",
+                    product_name: "Light Blue Alligator",
+                    price: "$10,000 Starting",
+                    product_id: "DL_22B",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/DiorLightBlueAll/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/DiorLightBlueAll/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/DiorLightBlueAll/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/DiorLightBlueAll/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/DiorLightBlueAll/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/DiorLightBlueAll/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/DiorLightBlueAll/image6.jpeg',
+                    ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/DiorLightBlueAll/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/DiorLightBlueAll/detail2.png',
+                    ],
+                    description: `The Christian Dior Light Blue Alligator Mini Lady Dior with Light Gold Hardware, 2022 is an exquisite blend of elegance, luxury, and artisanal craftsmanship. 
+                                This handbag, a signature from the House of Dior, represents timeless sophistication and exclusivity, making it a cherished piece for discerning collectors and fashion enthusiasts.
+
+                                Crafted from premium-grade alligator leather, the bag showcases a natural, glossy texture with a refined pattern unique to each piece, emphasizing its rarity and luxury.
+                                The soft, serene light blue shade exudes sophistication and femininity, making it a versatile choice for both day and evening wear. This delicate color is perfect for adding a subtle touch of elegance to any outfit.
+                                The interior is lined with plush suede, adding an extra layer of luxury while protecting your belongings. A small slip pocket offers convenient storage for smaller items.
+                                The Christian Dior Light Blue Alligator Mini Lady Dior is more than just a handbag—it’s a wearable work of art that symbolizes prestige, elegance, and timeless style.`,
+                    tags: ["recommended"], 
+                    productSizes: [
+                        {size: 'S', price: 10000},
+                        {size: 'M', price: 12000},
+                        {size: 'L', price: 30000},
+                        {size: 'XL', price: 55000},
+                    ]
+                },
+                {
+                    brand_name: "Louis Vuitton",
+                    product_name: "Virgil Abloh Yellow",
+                    price: "$7,300 Starting",
+                    product_id: "LV_50A",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/LVVirgilAbloh/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/LVVirgilAbloh/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/LVVirgilAbloh/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/LVVirgilAbloh/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/LVVirgilAbloh/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/LVVirgilAbloh/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/LVVirgilAbloh/image6.jpeg',
+                        
+                         ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/LVVirgilAbloh/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/LVVirgilAbloh/detail2.png',
+                    ],
+                    description: `The Louis Vuitton Virgil Abloh Yellow Leather Everyday LV Keepall Bandoulière 50 with Silver Hardware is a bold, contemporary reinterpretation of Louis Vuitton's iconic travel bag. 
+                                Designed by the late Virgil Abloh, this standout piece showcases his revolutionary approach to luxury, blending timeless craftsmanship with vibrant, streetwear-inspired aesthetics.
+                                
+                                The bag is adorned with a subtle embossed LV Monogram design, giving it a distinctive yet understated texture while paying homage to Louis Vuitton’s heritage.            
+                                The polished silver hardware contrasts beautifully with the bold yellow leather, adding a contemporary and sleek touch.
+                                he interior is lined with a soft, durable fabric in a complementary tone, ensuring practicality and style.
+                                The Louis Vuitton Virgil Abloh Yellow is a perfect fusion of practicality, bold design, and luxury. Its standout color, spacious functionality, and unique branding make it ideal for those who want to express their style through their accessories.`,
+                    tags: ["recommended"], 
+                    productSizes: [
+                        {size: 'S', price: 7300},
+                        {size: 'M', price: 8500},
+                        {size: 'L', price: 10000},
+                        {size: 'XL', price: 20000},
+                    ]
+                },
+                {
+                    brand_name: "Hermés",
+                    product_name: "Ardoise & Vert Peppermint",
+                    price: "$38,000 Starting",
+                    product_id: "HA_25V",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesArdoise/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image6.jpeg',
+                         ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/detail2.png',
+                    ],
+                    description: `The Hermès Ardoise and Vert Peppermint Epsom and Black Tadelakt Casaque Étoilée Kelly is a striking masterpiece that seamlessly blends timeless Hermès craftsmanship with modern artistic flair. This handbag embodies elegance, exclusivity, and impeccable attention to detail. 
+                                The main body of the bag is crafted from Epsom leather, known for its lightweight durability and fine-grained texture. This leather holds its shape beautifully, making it ideal for the structured Sellier style.
+                                
+                                The external stitching of the Sellier style gives the bag a clean and angular silhouette, emphasizing its architectural beauty.
+                                The iconic Hermès turn-lock closure, engraved with “Hermès Paris,” secures the bag while serving as a hallmark of the brand’s exquisite design.
+                                The interior is lined with supple leather, providing a luxurious finish. It features a slip pocket and a zipped pocket for added organization of modern luxury.`,
+                    tags: ["collab"], 
+                    productSizes: [
+                        {size: 'S', price: 38000},
+                        {size: 'M', price: 44000},
+                        {size: 'L', price: 70000},
+                        {size: 'XL', price: 90000},
+                    ]
+                },
+                {
+                    brand_name: "Goyard",
+                    product_name: "Green Goyardine Canvas",
+                    price: "$4,550 Starting",
+                    product_id: "GG_23G",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/GoyardGreenGoyardine/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/GoyardGreenGoyardine/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/GoyardGreenGoyardine/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/GoyardGreenGoyardine/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/GoyardGreenGoyardine/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/GoyardGreenGoyardine/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/GoyardGreenGoyardine/image6.jpeg',
+                         ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/GoyardGreenGoyardine/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/GoyardGreenGoyardine/detail2.png',
+                    ],
+                    description: `The Goyard Green Goyardine Canvas and Chevroches Calfskin Saïgon Souple Mini Bag is a chic and iconic piece that merges Goyard’s rich heritage with contemporary design. 
+                                Combining exceptional craftsmanship with practicality, this mini bag is a perfect companion for modern lifestyles.
+                                The bag features the iconic Goyardine canvas, a lightweight and durable material adorned with the signature chevron motif. This hand-painted pattern is a hallmark of Goyard’s legacy, representing unparalleled craftsmanship and sophistication.
+                                
+                                The structured accents and trims are crafted from luxurious Chevroches calfskin, a smooth, supple leather known for its refined texture and durability.
+                                The structured leather top handle allows for hand-held carrying, adding a polished and classic touch.
+                                The Goyard Green Goyardine Canvas and Chevroches Calfskin Saïgon Souple Mini Bag is a symbol of understated luxury and timeless design.`,
+                    tags: ["collab"], 
+                    productSizes: [
+                        {size: 'S', price: 4550},
+                        {size: 'M', price: 6000},
+                        {size: 'L', price: 7300},
+                        {size: 'XL', price: 8700},
+                    ]
+                },
+                {
+                    brand_name: "Louis Vuitton",
+                    product_name: "Brown Monogram Coated",
+                    price: "$4,000 Starting",
+                    product_id: "LVB_21M",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/LVBrownMonogram/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/LVBrownMonogram/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/LVBrownMonogram/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/LVBrownMonogram/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/LVBrownMonogram/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/LVBrownMonogram/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/LVBrownMonogram/image6.jpeg',
+                         ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/LVBrownMonogram/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/LVBrownMonogram/detail2.png',
+                    ],
+                    description: `Brown Monogram Coated Canvas Passy Handbag is an exquisite blend of timeless craftsmanship and modern elegance. Crafted from the iconic brown monogram-coated canvas, this piece is a celebration of Louis Vuitton's heritage, instantly recognizable and beloved by fashion enthusiasts worldwide.
+                                The handbag showcases Louis Vuitton's iconic monogram print on durable, coated canvas, ensuring longevity and a sophisticated look.
+                                
+                                Accented with luxurious gold hardware, the bag adds a touch of opulence, perfectly complementing the monogram design.
+                                Lined with a soft, premium fabric, the bag includes multiple interior pockets, ensuring organization and easy access to smaller items.
+                                This Louis Vuitton Passy Handbag is more than just an accessory; it’s an investment in timeless luxury.`,
+                    tags: ["collab"], 
+                    productSizes: [
+                        {size: 'S', price: 4000},
+                        {size: 'M', price: 5000},
+                        {size: 'L', price: 6200},
+                        {size: 'XL', price: 8000},
+                    ]
+                },
+                {
+                    brand_name: "Chanel",
+                    product_name: "Black Quilted Lambskin",
+                    price: "$7,100 Starting",
+                    product_id: "CB_24L",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/ChanelBlackQLamb/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQLamb/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQLamb/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQLamb/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQLamb/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQLamb/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQLamb/image6.jpeg',
+                         ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQLamb/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQLamb/detail2.png',
+                    ],
+                    description: `Chanel Black Quilted Lambskin Pearl Crush Flap Bag is an embodiment of the timeless elegance and innovative design that Chanel is renowned for. This exquisite piece, part of Chanel's 2024 collection, combines iconic details with a modern twist, making it a must-have addition for fashion connoisseurs.
+                                It's crafted from sumptuous lambskin leather, the bag features Chanel's signature diamond quilting pattern, exuding sophistication and timeless charm.
+                    
+                                The standout feature of this bag is its adjustable chain strap adorned with the "Pearl Crush" mechanism—a brushed gold spherical bead that slides along the chain, allowing for easy length adjustments.
+                                The flap opens to a sleek and well-organized interior, lined in a matching leather or fabric. It includes a slip pocket for essentials like cards or keys.
+                                The Pearl Crush Flap Bag is a reimagined classic, blending Chanel's heritage with a touch of modern innovation, making it a perfect statement piece for any wardrobe.
+                                This Chanel Black Quilted Lambskin Pearl Crush Flap Bag is a handbag—it's a statement of sophistication, luxury, and impeccable taste. Whether you're looking to elevate your personal style or invest in a timeless piece, this bag is a flawless choice.`,
+                    tags: ["collab"], 
+                    productSizes: [
+                        {size: 'S', price: 7100},
+                        {size: 'M', price: 8000},
+                        {size: 'L', price: 9400},
+                        {size: 'XL', price: 12000},
+                    ]
+                },
+
             ],
         },
         selectedProduct: null,
