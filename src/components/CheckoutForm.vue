@@ -1,302 +1,435 @@
 <template>
-  <div class="checkoutContainer">
-    <h1>CHECKOUT</h1>
+  <form class="checkoutform" @submit.prevent="submitForm">
+    <h1>Checkout</h1>
 
-    <div class="section">
+    <hgroup>
       <h2>Shipping Address</h2>
-      <p>
-        This information ensures your package arrives at the correct location.
-      </p>
-      <div class="form-group">
-        <div class="row">
-          <div class="input-wrapper">
-            <input type="text" v-model="firstName" placeholder="First Name" required />
-          </div>
-          <div class="input-wrapper">
-            <input type="text" v-model="surname" placeholder="Surname" required />
-          </div>
-        </div>
-        <div class="input-wrapper">
-          <input type="text" v-model="address" placeholder="Street address" required />
-        </div>
-        <div class="input-wrapper">
-          <input type="text" v-model="phoneNumber" placeholder="Phone Number" required />
-        </div>
-        <div class="input-wrapper">
-          <input type="text" v-model="cityProvince" placeholder="City/Province" required />
-        </div>
+      <h4>This information ensures your packages arrive at the correct location.</h4>
+    </hgroup>
+    <div class="contact-container">
+      <div class="name">
+        <input v-model="firstName" type="text" placeholder="First Name" required />
+        <span v-if="errors.firstName" class="error-message">{{ errors.firstName }}</span>
+
+        <input v-model="surname" type="text" placeholder="Surname" required />
+        <span v-if="errors.surname" class="error-message">{{ errors.surname }}</span>
       </div>
-    </div>
-    <div class="section">
-      <div class="shipping-options">
-        <h2>Shipping Options</h2>
-        <form>
-          <div class="option">
-            <input type="radio" id="in-store-pickup" name="shipping" value="in-store" checked />
-            <label for="in-store-pickup">
-              <div class="row">
-                <strong>In-store pickup</strong>
-                <span class="details">Free</span>
-              </div>
-              <div class="row">
-                <p>Your item Will be available for pick up at the store</p>
-                <span class="detail">7-10 Business Day</span>
-              </div>
-            </label>
-          </div>
-          <hr />
-          <div class="option">
-            <input type="radio" id="in-store-pickup" name="shipping" value="in-store" checked />
-            <label for="in-store-pickup">
-              <div class="row">
-                <strong>Easy Shipping</strong>
-                <span class="details">$5.00</span>
-              </div>
-              <div class="row">
-                <p>Your item will be delivered to your location</p>
-                <span class="detail">3 Business Day at most</span>
-              </div>
-            </label>
-          </div>
-          <hr />
-          <div class="option">
-            <input type="radio" id="in-store-pickup" name="shipping" value="in-store" checked />
-            <label for="in-store-pickup">
-              <div class="row">
-                <strong>Overnight Shipping</strong>
-                <span class="details">$70.00</span>
-              </div>
-              <div class="row">
-                <p>
-                  Your item is prioritized and will be delivered to your
-                  location
-                </p>
-                <span class="detail">Overnight Shipping</span>
-              </div>
-            </label>
-          </div>
-          <hr />
-        </form>
+      <div class="address">
+        <input v-model="streetAddress" type="text" placeholder="Street address" required />
+        <span v-if="errors.streetAddress" class="error-message">{{ errors.streetAddress }}</span>
+
+        <input v-model="phoneNumber" type="tel" placeholder="Phone number" required />
+        <span v-if="errors.phoneNumber" class="error-message">{{ errors.phoneNumber }}</span>
+
+        <input v-model="city" type="text" autoComplete="home city" placeholder="City/Province" />
+        <span v-if="errors.city" class="error-message">{{ errors.city }}</span>
       </div>
     </div>
 
-    <div class="section">
+    <hgroup>
+      <h2>Shipping Options</h2>
+      <h4>Select your shipping method</h4>
+    </hgroup>
+    <div class="options-container">
+      <div class="option" v-for="option in shippingOptions" :key="option.id">
+        <input type="radio" name="option" :id="option.id" v-model="selectedShippingOption" :value="option.id" />
+        <div class="option-context">
+          <div class="type-price">
+            <strong>{{ option.type }}</strong>
+            <strong>{{ formatter.format(option.shippingPrice) }}</strong>
+          </div>
+          <div class="definition-duration">
+            <span>{{ option.definition }}</span>
+            <span>{{ option.shippingDuration }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hgroup>
       <h2>Payment Methods</h2>
-      <div class="billing-box">
-        <h3>
-          <iconify-icon icon="dashicons:arrow-down-alt2"></iconify-icon> Bill Information
-        </h3>
-        <label class="payment-method">
-          <input type="radio" v-model="paymentMethod" value="creditCard" checked />
-          <span>
-            <iconify-icon icon="solar:card-bold"></iconify-icon> Credit/Debit Card
-          </span>
-          <div class="card-icons">
-            <iconify-icon icon="logos:visa" title="Visa" width="35px" height="35px" />
-            <iconify-icon icon="logos:mastercard" title="MasterCard" width="35px" height="35px" />
-            <iconify-icon icon="logos:jcb" title="JCB" width="35px" height="35px" />
-          </div>
-        </label>
+    </hgroup>
+    <div class="billing-container">
+      <div class="header-section">
+        <iconify-icon class="drop" icon="material-symbols:arrow-drop-down-rounded" width="32px" height="32px"/>
+        <h3>Billing Information</h3>
+      </div>
 
-        <div class="input-wrapper">
-          <label>Name on card<input type="text" v-model="cardName" placeholder="eg. John Doe" required /></label>
-
+      <div class="card-select">
+        <div>
+          <input type="radio" name="billing" id="billing" checked />
+          <iconify-icon class="card-icon" icon="fa6-regular:credit-card" />
+          <span>Debit/Credit Card</span>
         </div>
-        <div class="input-wrapper">
-          <label>Card Number<input type="text" v-model="cardNumber" placeholder="xxxx-xxxx-xxxx-xxxx"
-              required /></label>
-
-
+        <div class="card-logos">
+          <iconify-icon icon="logos:mastercard" width="40px" height="40px" />
+          <iconify-icon icon="logos:visa" width="40px" height="40px" />
+          <iconify-icon icon="logos:unionpay" width="40px" height="40px" />
         </div>
-        <div class="row">
-          <div class="input-wrapper">
-            <label>expiryDate<input type="text" v-model="expiryDate" placeholder="MM/YY" required /></label>
+      </div>
 
+      <div class="card-info">
+        <div class="cardname">
+          <label>
+            Name On Card
+            <input v-model="cardName" type="text" placeholder="e.g John Smith" required />
+            <span v-if="errors.cardName" class="error-message">{{ errors.cardName }}</span>
+          </label>
+        </div>
+
+        <div class="cardnumber">
+          <label>
+            Card Number
+            <input v-model="cardNumber" type="text" placeholder="XXXX-XXXX-XXXX-XXXX" required />
+            <span v-if="errors.cardNumber" class="error-message">{{ errors.cardNumber }}</span>
+          </label>
+        </div>
+
+        <div class="date-cvv">
+          <div class="exp-date">
+            <label>
+              Expiry Date
+              <input v-model="expiryDate" type="text" placeholder="MM/YY" required />
+              <span v-if="errors.expiryDate" class="error-message">{{ errors.expiryDate }}</span>
+            </label>
           </div>
-          <div class="input-wrapper">
-            <label>CVC/CVV<input type="text" v-model="cvc" placeholder="xxx" required /></label>
 
+          <div class="cvc">
+            <label>
+              CVC/CVV
+              <input v-model="cvc" type="text" placeholder="XXX" required />
+              <span v-if="errors.cvc" class="error-message">{{ errors.cvc }}</span>
+            </label>
           </div>
         </div>
       </div>
     </div>
-
-    <button class="checkout-button">Complete Checkout</button>
-  </div>
+    <div class="btn-container">
+      <button class="submit-btn" type="submit">Complete Checkout</button>
+    </div>
+  </form>
 </template>
 
 <script>
+import { useCartStore } from '@/store/cart';
+
 export default {
   data() {
     return {
-      firstName: "",
-      surname: "",
-      address: "",
-      phoneNumber: "",
-      cityProvince: "",
-      paymentMethod: "creditCard",
-      cardName: "",
-      cardNumber: "",
-      expiryDate: "",
-      cvc: "",
+      firstName: '',
+      surname: '',
+      streetAddress: '',
+      phoneNumber: '',
+      city: '',
+      cardName: '',
+      cardNumber: '',
+      expiryDate: '',
+      cvc: '',
+      errors: {}, 
+
+      formatter: new Intl.NumberFormat('en-us', {
+        style: 'currency',
+        currency: 'USD',
+        trailingZeroDisplay: 'stripIfInteger',
+      }),
     };
   },
+  computed: {
+    cartStore() {
+      return useCartStore();
+    },
+    shippingOptions() {
+      return this.cartStore.shippingOptions;
+    },
+    selectedShippingOption: {
+      get() {
+        return this.cartStore.selectedShippingOption;
+      },
+      set(value) {
+        this.cartStore.updateShippingOption(value);
+      }
+    },
+    subtotal() {
+      return this.cartStore.subtotal;
+    },
+    total() {
+      const selectedOption = this.shippingOptions.find(option => option.id === this.selectedShippingOption);
+      const shippingCost = selectedOption ? selectedOption.shippingPrice : 0;
+      return this.subtotal + shippingCost;
+    }
+  },
+  methods: {
+    submitForm() {
+      this.errors = {};
+
+      // Validation
+      let isValid = true;
+
+      if (!this.firstName) {
+        this.errors.firstName = 'First name is required.';
+        isValid = false;
+      }
+
+      if (!this.surname) {
+        this.errors.surname = 'Surname is required.';
+        isValid = false;
+      }
+
+      if (!this.streetAddress) {
+        this.errors.streetAddress = 'Street address is required.';
+        isValid = false;
+      }
+
+      if (!this.phoneNumber) {
+        this.errors.phoneNumber = 'Phone number is required.';
+        isValid = false;
+      }
+
+      if (!this.city) {
+        this.errors.city = 'City/Province is required.';
+        isValid = false;
+      }
+
+      if (!this.selectedShippingOption) {
+        this.errors.selectedShippingOption = 'Please select a shipping method.';
+        isValid = false;
+      }
+
+      if (!this.cardName) {
+        this.errors.cardName = 'Card name is required.';
+        isValid = false;
+      }
+
+      if (!this.cardNumber || !/^\d{4}-\d{4}-\d{4}-\d{4}$/.test(this.cardNumber)) {
+        this.errors.cardNumber = 'Please enter a valid card number.';
+        isValid = false;
+      }
+
+      if (!this.expiryDate || !/^(0[1-9]|1[0-2])\/\d{2}$/.test(this.expiryDate)) {
+        this.errors.expiryDate = 'Please enter a valid expiry date (MM/YY).';
+        isValid = false;
+      }
+
+      if (!this.cvc || !/^\d{3}$/.test(this.cvc)) {
+        this.errors.cvc = 'Please enter a valid CVC/CVV.';
+        isValid = false;
+      }
+
+      if (isValid) {
+        this.$router.push('/checkoutComplete');
+      }
+    }
+  }
 };
 </script>
 
+
 <style scoped>
-.checkoutContainer {
-  font-family: Arial, sans-serif;
-  max-width: 50%;
-  margin: 20px auto;
-}
+  .error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
 
-.section {
-  margin: 20px 0;
-}
+  .checkout-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
-h1 {
-  font-size: 28px;
-  font-weight: bold;
-}
+  hgroup >h2{
+    margin-bottom: 0;
+  }
 
-h2 {
-  font-size: 20px;
-  margin: 15px 0;
-}
+  hgroup > h4{
+    margin-top: 5px;
+    font-weight: 500;
+    color: grey;
+  }
 
-p {
-  font-size: 14px;
-  color: #666;
-}
+  .contact-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
 
-.input-wrapper {
-  display: flex;
-  align-items: center;
-  margin: 0px 50px;
-  border: 1px solid #3f2f2f;
-  border-radius: 5px;
-  padding: 10px;
-}
+  .name{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+  }
 
-.input-wrapper input {
-  width: 100%;
-  border: none;
-  outline: none;
-  font-size: 14px;
-}
+  .name > input{
+    width: 50%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-indent: 10px;
+    font-size: 16px;
+  }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
+  .address{
+    margin-top: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+  }
 
-.row .input-wrapper {
-  width: 70%;
-  flex: 1;
-}
+  .address > input{
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-indent: 10px;
+    font-size: 16px;
+  }
 
-.billing-box {
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
+  .option{
+    border-bottom: 1.5px solid grey;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
 
-.checkout-button {
-  width: 50%;
-  padding: 15px;
-  background-color: black;
-  color: white;
-  font-size: 18px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  margin-left: 28%;
-}
+  .option > input[type=radio]{
+    width: 20px;
+    height: 20px;
+    border: 0px;
+    cursor: pointer;
+    accent-color: black;
+  }
+  
+  .option-context{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
 
-.checkout-button:hover {
-  background-color: #333;
-}
+  .type-price,
+  .definition-duration{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
 
-.shipping-options {
-  margin: auto;
-}
+  .definition-duration{
+    margin-bottom: 5px;
+    color: rgb(122, 122, 122);
+  }
 
-.option {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 10px 0;
-}
+  .billing-container{
+    width: 100%;
+    padding-inline: 2rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
 
-.option input[type="radio"] {
-  margin-right: 15px;
-  margin-top: 5px;
-}
+  .header-section{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
 
-.option label {
-  flex: 1;
-}
+  .card-select{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    accent-color: black;
+  }
 
-.option .details {
-  white-space: nowrap;
-  text-align: right;
-  font-weight: bold;
-}
+  .card-select > div{
+    display: flex;
+    align-items: center;
+  }
 
-.option .detail {
-  font-size: 13px;
-  text-align: right;
-  margin-top: 10px;
-  color: gray;
-}
+  .card-icon{
+    margin-left: 20px;
+    margin-right: 5px;
+  }
 
-hr {
-  border: none;
-  border-top: 1px solid #191313;
-  margin: 10px 0;
-}
+  .card-logos{
+    gap: 10px;
+  }
 
-.payment-method {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
-}
+  .card-info{
+    width: 100%;
+  }
 
-.card-icons {
-  display: flex;
-  gap: 8px;
-  margin-left: auto;
-}
+  .cardname, 
+  .cardnumber {
+    font-size: 18px;
+    font-weight: 450;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
 
-.billing-box {
-  padding: 20px;
-  border: 1px solid #181313;
-  border-radius: 8px;
-}
+  .cardname input,
+  .cardnumber input {
+    width: 100%;
+    margin-top: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
 
-.input-wrapper {
-  margin: 10px 0;
-  border: 1px solid #292222;
-  border-radius: 5px;
-  padding: 10px;
-}
+  .date-cvv{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 3rem;
+  }
 
-.input-wrapper input {
-  width: 100%;
-  border: none;
-  outline: none;
-  font-size: 14px;
-}
+  .exp-date, 
+  .cvc {
+    font-size: 18px;
+    font-weight: 450;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+  }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-}
+  .exp-date input,
+  .cvc input {
+    width: 100%;
+    margin-top: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  } 
 
-.row .input-wrapper {
-  width: 30%;
-}
+  .btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn-container > button{
+    width: 40%;
+    height: 55px;
+    font-family: "Inter";
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 55px;
+    cursor: pointer;
+  }
+
+
 </style>

@@ -1,59 +1,78 @@
-
 <template>
-    <div class="container">
-      <span class="sectionTitle">{{ SectionTitle }}</span>
-      <button class="link" @click="goToBrandList"> See More </button>
-    </div>
-  </template>
+  <div class="container">
+    <span class="sectionTitle">{{ SectionTitle }}</span>
+    <button @click="showMore">{{ GoBack }}</button>
+  </div>
+</template>
 
 <script>
-
-export default{
-  props:{
-    SectionTitle:{
-      type: String,
-      required: true
-    }, 
-    PageTitle:{
-      type: String,
-      required: true
-    },
-    brandType:{
-      type: String,
-      required: true
-    }
+export default {
+  data() {
+    return {
+      isClicked: false,
+    };
   },
-  methods:{
-    goToBrandList() {
-      this.$router.push(`/${this.PageTitle}/${this.brandType}`);
-      console.log(this.brandType)
-    }
-  }
-}
+  props: {
+    SectionTitle: {
+      type: String,
+    },
+    targetPage: {
+      type: String,
+    },
+    backPage: {
+      type: String,
+    },
+    routeName: {
+      type: String,
+      required: false,
+    },
+  },
+  computed: {
+    GoBack() {
+      return this.$route.name === this.targetPage ? "Back" : "See More";
+    },
+  },
+  methods: {
+    showMore() {
+      if (this.$route.name === this.targetPage) {
+        console.log("Navigating back to:", this.backPage);
+        this.$router.go(-1); // back navigation, it uses the browser history.
+      } else {
+        this.$router.push({
+          name: this.targetPage,
+          params: { category: this.backPage.toLowerCase() },
+        });
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
-.container{
+.container {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   margin-inline: 5rem;
 }
 
-.sectionTitle{
-  font-family: 'Inter';
+.sectionTitle {
+  font-family: "Inter";
   font-size: 30px;
   font-weight: bold;
 }
 
-.link{
-  text-decoration: none;
-  font-family: 'Inter';
+button {
+  font-family: "Inter";
   font-weight: bold;
   font-size: 30px;
   color: black;
   background-color: transparent;
   border: none;
+}
+
+button:hover {
+  color: black;
   cursor: pointer;
 }
 </style>
