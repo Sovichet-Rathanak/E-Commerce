@@ -1,13 +1,13 @@
 <template>
-  <div class="productCard">
-    <img class="productImg" :src="productImage" alt="product image" />
-    <hgroup>
-      <h3 class="brandName">{{ brandName }}</h3>
-      <h3 class="productName">{{ productName }}</h3>
-      <h3 class="productStatus">{{ productStatus }}</h3>
-    </hgroup>
-    <button class="buyBtn" @click="goToProductDetailPage">Buy</button>
-  </div>
+    <div class="productCard">
+        <img class="productImg" :src="productImage" alt="product image">
+        <hgroup>
+            <h3 class="brandName"> {{ brandName }}</h3>
+            <h3 class="productName"> {{ productName }}</h3>
+            <h3 class="productStatus"> {{ productStatus }}</h3>
+        </hgroup>
+        <button class="buyBtn" @click="goToProductDetailPage">Buy</button>
+    </div>
 </template>
 
 <script>
@@ -36,12 +36,18 @@ export default {
   background-color: transparent;
 }
 
-.productImg {
-  width: 320px;
-  height: 320px;
-  border-radius: 20px;
-  background-color: white;
-  object-fit: cover;
+.productImg{
+    width: 320px;
+    height: 320px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.image-container > img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 20px;
+    background-color: white;
 }
 
 .productName,

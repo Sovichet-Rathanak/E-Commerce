@@ -5,7 +5,7 @@ export const useCartStore = defineStore('cartStore', {
         amountInCart: {}, 
         cartItems: [],
         subtotal: 0, 
-        taxRate: 0.05, 
+        taxRate: 0.035, 
         tax: 0, 
         selectedShippingOption: 'free', 
         shippingOptions: [

@@ -33,7 +33,7 @@
     },
     methods:{
       shrinkTitle(){
-        if (window.scrollY > 700) {
+        if (window.scrollY > 300) {
           this.titleStyle.height = "5rem";
           this.navStyle.display = "none";
         } else {

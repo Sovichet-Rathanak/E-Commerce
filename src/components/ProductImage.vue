@@ -289,20 +289,21 @@ export default {
 }
 
 .row {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 8rem;
+    height: 8rem;
 }
 
 .row > img {
-  width: 8rem;
-  height: 8rem;
-  object-fit: fill;
-  cursor: pointer;
-  background-color: #e7e7e7;
-  border: 1px solid #cfcfcf;
-  border-radius: 5px;
-  object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: fill;
+    cursor: pointer;
+    background-color: #e7e7e7;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
 }
 
 .large-section {
