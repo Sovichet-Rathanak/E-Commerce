@@ -5,8 +5,8 @@
 </template>
 
 <script>
-  import HeaderComponent from './components/header_component.vue';
-  import FooterComponent from './components/footer_compo.vue'
+  import HeaderComponent from './components/HomeComponent/header_component.vue';
+  import FooterComponent from './components/HomeComponent/footer_compo.vue'
   export default{
     components:{
       HeaderComponent,

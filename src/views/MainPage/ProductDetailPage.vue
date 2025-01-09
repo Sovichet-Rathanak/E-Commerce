@@ -1,6 +1,7 @@
 <template>
     <body>
         <ProductImage 
+            v-if="product"
             :images="product.productImages"
             :brandname="product.brand_name"
             :productname="product.product_name"
@@ -9,24 +10,26 @@
             :productId="product.product_id"
         />
         <ProductDetail
+            v-if="product"
             :brandname="product.brand_name"
             :productname="product.product_name"
             :description="product.description"
             :detailImages="product.detailImages"
         />
-        <RatingComponent></RatingComponent>
-        <comment_section></comment_section>
+        <RatingComponent v-if="product"></RatingComponent>
+        <comment_section v-if="product"></comment_section>
     </body>
 </template>
 
 <script>
-import { useProductStore } from '@/store/product';
+import { useProductStore } from '@/store/ProductStore/product';
 import { useRoute } from 'vue-router';
-import ProductImage from '@/components/ProductImage.vue';
-import ProductDetail from '@/components/ProductDetail.vue'
+import ProductImage from '@/components/DetailComponent/ProductImage.vue';
+import ProductDetail from '@/components/DetailComponent/ProductDetail.vue'
 import { mapState } from 'pinia';
-import comment_section from '@/components/comment_section.vue';
-import RatingComponent from '@/components/RatingComponent.vue';
+import comment_section from '@/components/DetailComponent/comment_section.vue';
+import RatingComponent from '@/components/DetailComponent/RatingComponent.vue';
+import { onMounted } from 'vue';
 
 export default {
     components: {
@@ -38,6 +41,13 @@ export default {
     setup(){
         const route = useRoute();
         const productStore = useProductStore();
+
+        onMounted(() => {
+            if (Object.keys(productStore.productsByCategory).length === 0) {
+                productStore.populateProductsByCategory();
+            }
+        });
+
         return{
             route,
             productStore

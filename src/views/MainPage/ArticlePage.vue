@@ -22,7 +22,7 @@
 
 <script>
 import SeeMore from "@/components/SeeMore.vue";
-import ArticleCard from "@/components/ArticleCardComponent.vue";
+import ArticleCard from "@/components/Card/ArticleCardComponent.vue";
 import { useArticleStore } from "@/store/article";
 
 export default {

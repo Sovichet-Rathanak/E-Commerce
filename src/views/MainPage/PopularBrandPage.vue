@@ -20,7 +20,7 @@
 
 <script>
 import SeeMore from "@/components/SeeMore.vue";
-import BrandCard from "@/components/BrandCard.vue";
+import BrandCard from "@/components/Card/BrandCard.vue";
 import { useBrandStore } from "@/store/brand";
 
 export default {

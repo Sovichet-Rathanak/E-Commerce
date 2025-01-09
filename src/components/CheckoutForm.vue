@@ -162,16 +162,23 @@ export default {
     submitForm() {
       this.errors = {};
 
-      // Validation
       let isValid = true;
+
+      const stringRegex = /^[a-zA-Z\s]+$/;
 
       if (!this.firstName) {
         this.errors.firstName = 'First name is required.';
+        isValid = false;
+      } else if (!stringRegex.test(this.firstName.trim())) {
+        this.errors.firstName = 'First name should only contain letters.';
         isValid = false;
       }
 
       if (!this.surname) {
         this.errors.surname = 'Surname is required.';
+        isValid = false;
+      } else if (!stringRegex.test(this.surname.trim())) {
+        this.errors.surname = 'Surname should only contain letters.';
         isValid = false;
       }
 
@@ -188,6 +195,9 @@ export default {
       if (!this.city) {
         this.errors.city = 'City/Province is required.';
         isValid = false;
+      } else if (!stringRegex.test(this.city.trim())) {
+        this.errors.city = 'City/Province should only contain letters.';
+        isValid = false;
       }
 
       if (!this.selectedShippingOption) {
@@ -197,6 +207,9 @@ export default {
 
       if (!this.cardName) {
         this.errors.cardName = 'Card name is required.';
+        isValid = false;
+      } else if (!stringRegex.test(this.cardName.trim())) {
+        this.errors.cardName = 'Card name should only contain letters.';
         isValid = false;
       }
 

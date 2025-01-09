@@ -1,6 +1,8 @@
 <template>
     <div class="productCard">
-        <img class="productImg" :src="productImage" alt="product image">
+    <div class="image-container">
+      <img class="productImg" :src="productImage" alt="product image">
+    </div>
         <hgroup>
             <h3 class="brandName"> {{ brandName }}</h3>
             <h3 class="productName"> {{ productName }}</h3>
@@ -36,11 +38,12 @@ export default {
   background-color: transparent;
 }
 
-.productImg{
-    width: 320px;
-    height: 320px;
-    border-radius: 20px;
-    background-color: white;
+.image-container{
+  width: 320px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-container > img{
@@ -56,6 +59,7 @@ export default {
   font-weight: normal;
   font-size: 20px;
   font-family: "Inter";
+  font-weight: 450;
   margin: 0;
 }
 
