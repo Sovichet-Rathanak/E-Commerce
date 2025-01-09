@@ -1,18 +1,20 @@
 <template>
-  <div class="SneakerAriticlePage">
-    <SeeMore
-      SectionTitle="Article Page"
-      targetPage="ArticlePage"
-      backPage="Sneaker"
-    />
-
-    <div class="Article_section">
+  <div class="AriticlePage">
+    <div class="section-header">
+      <SeeMore
+        SectionTitle="Articles"
+        targetPage="ArticlePage"
+        :backPage="category"
+      />
+    </div>
+    <div class="article-wrap">
       <ArticleCard
-        v-for="index in 15"
+        v-for="(image, index) in currentArticle.article_images"
         :key="index"
-        :brandImg="brand.womenswearBrand.logo[index - 1]"
-        :brandName="brand.womenswearBrand.brand_name[index - 1]"
+        :article_image="image"
+        :article_title="currentArticle.article_titles[index]"
         :cardSize="dynamicSize"
+        class="article-section"
       />
     </div>
   </div>
@@ -21,45 +23,57 @@
 <script>
 import SeeMore from "@/components/SeeMore.vue";
 import ArticleCard from "@/components/ArticleCardComponent.vue";
-import { useBrandStore } from "@/store/brand";
-import { mapState } from "pinia";
+import { useArticleStore } from "@/store/article";
+
 export default {
   components: {
     SeeMore,
     ArticleCard,
   },
-  setup() {
-    const brandStore = useBrandStore();
 
-    return {
-      brandStore,
-    };
+  props: {
+    category: {
+      type: String,
+      required: true,
+    },
   },
+
   computed: {
-    ...mapState(useBrandStore, {
-      brand: "brands",
-    }),
-  },
-  data() {
-    return {
-      dynamicSize: "large", // Default size, can be adjusted dynamically
-    };
-  },
-  methods: {
-    display() {
-      console.log(this.brand.sneakerBrand.logo[0]);
+    currentArticle() {
+      const store = useArticleStore();
+      return (
+        store.articles[this.category + "Article"] || {
+          article_titles: [],
+          article_images: [],
+        }
+      );
     },
   },
 };
 </script>
 
-<style sc>
-.SneakerAriticlePage {
-  padding: 2rem 0;
+<style scoped>
+.AriticlePage {
+  width: auto;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
 }
-.Article_section {
-  display: grid;
-  grid-template-columns: repeat(2, 7 rem);
+.section-header {
+  margin-bottom: 2rem;
+  justify-content: space-between;
+  width: auto;
+}
+.article-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.article-section {
+  display: flex;
+  align-items: center;
   justify-items: center;
+  margin-left: 38px;
 }
 </style>

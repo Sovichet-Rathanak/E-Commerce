@@ -2,17 +2,15 @@
   <WebBanner :images="banner.sneakerBanner.image" />
   <!-- checkout banner.js and just basically populate the image array with your own image -->
   <div class="Container">
-    <SeeMore style="margin-top: 1.75rem"
-      SectionTitle="New and Noteworthy"
-
-    />
+    <SeeMore SectionTitle="New and Noteworthy" style="margin-top: 1.75rem" />
 
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
-        v-for="product in filteredProductsByTagandType('new', 'sneaker')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType('new', 'sneaker')"
+        :key="product.product_id"
         :productImage="product.thumbNail"
-        :brandName = "product.brand_name"
+        :brandName="product.brand_name"
         :productName="product.product_name"
         :productStatus="product.product_status"
         :productId="product.product_id"
@@ -23,9 +21,10 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('recommended', 'sneaker')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType('recommended')"
+        :key="product.product_id"
         :productImage="product.thumbNail"
-        :brandName = "product.brand_name"
+        :brandName="product.brand_name"
         :productName="product.product_name"
         :productStatus="product.product_status"
         :productId="product.product_id"
@@ -34,8 +33,9 @@
 
     <SeeMore
       SectionTitle="Popular Brand"
-      PageTitle="PopularBrand"
-      brandType="sneakerBrand"
+      targetPage="PopularBrand"
+      backPage="Sneaker"
+      routeName="SneakerBrand"
     />
 
     <div class="brand_section">
@@ -51,9 +51,10 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('collab', 'sneaker')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType('collab', 'sneaker')"
+        :key="product.product_id"
         :productImage="product.thumbNail"
-        :brandName = "product.brand_name"
+        :brandName="product.brand_name"
         :productName="product.product_name"
         :productStatus="product.product_status"
         :productId="product.product_id"
@@ -75,14 +76,13 @@
       targetPage="ArticlePage"
       backPage="Sneaker"
     />
-    
     <div class="article_section">
       <!-- just like the product component you just have to change the path of the productImage, we will also setup pinia for this :3 -->
       <ArticleCard
         v-for="index in 2"
         :key="index"
-        article_image="src/assets/images/Articles/travisArticle.jpg"
-        article_title="Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features"
+        :article_image="article.sneakerArticle.article_images[index - 1]"
+        :article_title="article.sneakerArticle.article_titles[index - 1]"
       />
     </div>
   </div>
@@ -99,6 +99,7 @@ import { useBrandStore } from "@/store/brand";
 import { mapState } from "pinia";
 import { useBannerStore } from "@/store/banner";
 import { useProductStore } from "@/store/product";
+import { useArticleStore } from "@/store/article";
 
 export default {
   components: {
@@ -113,37 +114,42 @@ export default {
     const brandStore = useBrandStore();
     const bannerStore = useBannerStore();
     const productStore = useProductStore();
+    const articleStore = useArticleStore();
 
     return {
       brandStore,
       bannerStore,
-      productStore
+      productStore,
+      articleStore,
     };
   },
   computed: {
     ...mapState(useBrandStore, {
       brand: "brands",
     }),
+    ...mapState(useArticleStore, {
+      article: "articles",
+    }),
     ...mapState(useBannerStore, {
       banner: "banners",
     }),
-    ...mapState(useProductStore,{
+    ...mapState(useProductStore, {
       productsByCategory: "productsByCategory",
     }),
 
     filteredProductsByTag() {
-      return(tag) => {
+      return (tag) => {
         const productStore = useProductStore();
-        return productStore.getProductsByTag(tag); 
-      }
+        return productStore.getProductsByTag(tag);
+      };
     },
 
-    filteredProductsByTagandType(){
-      return(tag, type) => {
+    filteredProductsByTagandType() {
+      return (tag, type) => {
         const productStore = useProductStore();
-        return productStore.getProductByTypeAndTag(tag, type)
-      }
-    }
+        return productStore.getProductByTypeAndTag(tag, type);
+      };
+    },
   },
 
   methods: {

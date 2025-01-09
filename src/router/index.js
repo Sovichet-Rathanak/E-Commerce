@@ -92,9 +92,10 @@ const routes = [
     component: PopularBrand,
   },
   {
-    path: "/ArticlePage",
+    path: "/ArticlePage/:category",
     name: "ArticlePage",
     component: ArticlePage,
+    props: (route) => ({ category: route.params.category }),
   },
   {
     path: "/product/:id",

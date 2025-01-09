@@ -1,11 +1,17 @@
 <template>
   <div class="BrandList">
+    <SeeMore
+      SectionTitle="Popular Brand"
+      targetPage="PopularBrand"
+      :backPage="category"
+      class="section-header"
+    />
     <div class="BrandCard">
       <BrandCard
-        v-for="(logo, index) in selectedBrand?.logo"
+        v-for="(logo, index) in currentBrand.logo"
         :key="index"
         :brandImg="logo"
-        :brandName="selectedBrand?.brand_name[index]"
+        :brandName="currentBrand.brand_name[index]"
         :cardSize="dynamicSize"
       />
     </div>
@@ -13,40 +19,47 @@
 </template>
 
 <script>
+import SeeMore from "@/components/SeeMore.vue";
 import BrandCard from "@/components/BrandCard.vue";
-import { ref, computed } from "vue";
-import { useRoute } from "vue-router";
 import { useBrandStore } from "@/store/brand";
 
 export default {
   components: {
+    SeeMore,
     BrandCard,
   },
-  data(){
-    return{
-      dynamicSize: "large",
-    }
+  props: {
+    category: {
+      type: String,
+      required: true,
+    },
   },
-  setup() {
-    const brandStore = useBrandStore();
-    const route = useRoute();
-    const brandType = ref(route.params.id); //Get the route param ID but i can't use it for some reason
-
-    const selectedBrand = computed(() => {
-      return brandStore.brands[brandType.value];  //this solve the problem
-    });
-
+  computed: {
+    currentBrand() {
+      const store = useBrandStore();
+      return (
+        store.brands[this.category + "Brand"] || {
+          logo: [],
+          brand_name: [],
+        }
+      );
+    },
+  },
+  data() {
     return {
-      brandStore,
-      brandType,
-      selectedBrand,
+      dynamicSize: "large",
     };
   },
 };
 </script>
 
-
 <style scoped>
+.section-header {
+  margin-bottom: 2rem;
+  justify-content: space-between;
+  width: auto;
+}
+
 .BrandList {
   width: auto;
   padding: 2rem 2rem;
@@ -55,7 +68,7 @@ export default {
 .BrandCard {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 45px;
