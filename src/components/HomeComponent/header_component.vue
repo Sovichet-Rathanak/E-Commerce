@@ -29,7 +29,7 @@
       window.addEventListener('scroll', this.shrinkTitle);
     },
     unmounted(){
-      window.addEventListener('scroll', this.shrinkTitle);
+      window.removeEventListener('scroll', this.shrinkTitle);
     },
     methods:{
       shrinkTitle(){

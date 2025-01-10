@@ -229,6 +229,8 @@ export default {
       }
 
       if (isValid) {
+        this.cartStore.amountInCart = {};
+        this.cartStore.cartItems = [];
         this.$router.push('/checkoutComplete');
       }
     }
