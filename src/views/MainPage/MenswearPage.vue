@@ -7,9 +7,10 @@
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
-        v-for="product in filteredProductsByTagandType('new', 'menswears')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType('new', 'menswears')"
+        :key="product.product_id"
         :productImage="product.thumbNail"
-        :brandName = "product.brand_name"
+        :brandName="product.brand_name"
         :productName="product.product_name"
         :productStatus="product.product_status"
         :productId="product.product_id"
@@ -20,9 +21,13 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('recommended', 'menswears')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType(
+          'recommended',
+          'menswears'
+        )"
+        :key="product.product_id"
         :productImage="product.thumbNail"
-        :brandName = "product.brand_name"
+        :brandName="product.brand_name"
         :productName="product.product_name"
         :productStatus="product.product_status"
         :productId="product.product_id"
@@ -32,7 +37,7 @@
     <SeeMore
       SectionTitle="Popular Brand"
       targetPage="PopularBrand"
-      backPage="Menswear"
+      backPage="menswear"
     />
     <div class="brand_section">
       <BrandCard
@@ -47,9 +52,10 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('collab', 'menswears')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType('collab', 'menswears')"
+        :key="product.product_id"
         :productImage="product.thumbNail"
-        :brandName = "product.brand_name"
+        :brandName="product.brand_name"
         :productName="product.product_name"
         :productStatus="product.product_status"
         :productId="product.product_id"
@@ -66,14 +72,18 @@
       />
     </div>
 
-    <SeeMore SectionTitle="Articles" />
+    <SeeMore
+      SectionTitle="Magazines"
+      targetPage="MagazinePage"
+      backPage="manswear"
+    />
     <div class="article_section">
       <!-- just like the product component you just have to change the path of the productImage, we will also setup pinia for this :3 -->
-      <ArticleCard
-        v-for="index in 2"
+      <MagazineCard
+        v-for="index in 3"
         :key="index"
-        article_image="src/assets/images/Magazine_Man.png"
-        article_title="Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features"
+        :Magazine_image="article.manswearArticle.article_images[index - 1]"
+        :Magazine_title="article.manswearArticle.article_titles[index - 1]"
       />
     </div>
   </div>
@@ -84,19 +94,20 @@ import SeeMore from "@/components/SeeMore.vue";
 import WebBanner from "@/components/HomeComponent/web_banner.vue";
 import BrandCard from "@/components/Card/BrandCard.vue";
 import OfferCard from "@/components/HomeComponent/OfferCard.vue";
-import ArticleCard from "@/components/Card/ArticleCardComponent.vue";
 import ProductCard from "@/components/Card/product_card.vue";
 import { useBrandStore } from "@/store/brand";
 import { mapState } from "pinia";
 import { useBannerStore } from "@/store/banner";
 import { useProductStore } from "@/store/ProductStore/product";
 import { onMounted } from "vue";
+import { useArticleStore } from "@/store/article";
+import MagazineCard from "@/components/Card/MagazineCardComponent.vue";
 
 export default {
   components: {
     BrandCard,
     OfferCard,
-    ArticleCard,
+    MagazineCard,
     WebBanner,
     ProductCard,
     SeeMore,
@@ -105,16 +116,18 @@ export default {
     const brandStore = useBrandStore();
     const bannerStore = useBannerStore();
     const productStore = useProductStore();
+    const articleStore = useArticleStore();
 
     onMounted(() => {
       productStore.populateProductsByCategory();
-      console.log("Product Store: ",productStore)
+      console.log("Product Store: ", productStore);
     });
-    
+
     return {
       brandStore,
       bannerStore,
       productStore,
+      articleStore,
     };
   },
   computed: {
@@ -124,22 +137,25 @@ export default {
     ...mapState(useBannerStore, {
       banner: "banners",
     }),
-    ...mapState(useProductStore,{
+    ...mapState(useArticleStore, {
+      article: "articles",
+    }),
+    ...mapState(useProductStore, {
       productsByCategory: "productsByCategory",
     }),
     filteredProductsByTag() {
-      return(tag) => {
+      return (tag) => {
         const productStore = useProductStore();
         return productStore.getProductsByTag(tag);
-      }
+      };
     },
 
-    filteredProductsByTagandType(){
-      return(tag, type) => {
+    filteredProductsByTagandType() {
+      return (tag, type) => {
         const productStore = useProductStore();
-        return productStore.getProductByTypeAndTag(tag, type)
-      }
-    }
+        return productStore.getProductByTypeAndTag(tag, type);
+      };
+    },
   },
   methods: {
     display() {

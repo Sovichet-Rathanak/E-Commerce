@@ -71,14 +71,18 @@
       />
     </div>
 
-    <SeeMore SectionTitle="Articles" />
+    <SeeMore
+      SectionTitle="Magazines"
+      targetPage="MagazinePage"
+      backPage="womenwear"
+    />
     <div class="article_section">
       <!-- just like the product component you just have to change the path of the productImage, we will also setup pinia for this :3 -->
       <MagazineCard
         v-for="index in 3"
         :key="index"
-        Magazine_image="src/assets/images/Magazine/Magazine1.jpg"
-        Magazine_title="Step into the world of timeless fashion with our exclusive collection!"
+        :Magazine_image="article.womenwearArticle.article_images[index - 1]"
+        :Magazine_title="article.womenwearArticle.article_titles[index - 1]"
       />
     </div>
   </div>
@@ -96,6 +100,7 @@ import { mapState } from "pinia";
 import { useBannerStore } from "@/store/banner";
 import { useProductStore } from "@/store/ProductStore/product";
 import { onMounted } from "vue";
+import { useArticleStore } from "@/store/article";
 export default {
   components: {
     BrandCard,
@@ -109,16 +114,18 @@ export default {
     const brandStore = useBrandStore();
     const bannerStore = useBannerStore();
     const productStore = useProductStore();
+    const articleStore = useArticleStore();
 
     onMounted(() => {
       productStore.populateProductsByCategory();
-      console.log("Product Store: ",productStore)
+      console.log("Product Store: ", productStore);
     });
 
     return {
       brandStore,
       bannerStore,
       productStore,
+      articleStore,
     };
   },
   computed: {
@@ -127,6 +134,9 @@ export default {
     }),
     ...mapState(useBannerStore, {
       banner: "banners",
+    }),
+    ...mapState(useArticleStore, {
+      article: "articles",
     }),
     ...mapState(useProductStore, {
       productsByCategory: "productsByCategory",

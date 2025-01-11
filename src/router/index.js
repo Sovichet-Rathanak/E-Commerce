@@ -18,6 +18,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import CartPage from "@/views/CartPage.vue";
 import CheckoutPage from "@/views/CheckoutPage.vue";
 import ConfirmPage from "@/views/ConfirmPage.vue";
+import MagazinePage from "@/views/MainPage/MagazinePage.vue";
 
 const routes = [
   {
@@ -88,17 +89,28 @@ const routes = [
     name: "ReturnPolicies",
     component: ReturnPolicyPage
   },
+
   {
-    path: "/PopularBrand/:id",
+    path: "/PopularBrand/:category",
     name: "PopularBrand",
     component: PopularBrand,
+    props: (route) => ({ category: route.params.category }),
   },
+
   {
     path: "/ArticlePage/:category",
     name: "ArticlePage",
     component: ArticlePage,
     props: (route) => ({ category: route.params.category }),
   },
+
+  {
+    path: "/MagazinePage/:category",
+    name: "MagazinePage",
+    component: MagazinePage,
+    props: (route) => ({ category: route.params.category }),
+  },
+
   {
     path: "/product/:id",
     name: "ProductDetail",
@@ -118,7 +130,10 @@ const routes = [
     path: "/checkoutComplete",
     name: "CheckoutComplete",
     component: ConfirmPage
-  }
+  },
+
+
+
 ];
 
 const router = createRouter({

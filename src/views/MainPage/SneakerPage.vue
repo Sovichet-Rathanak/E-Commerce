@@ -21,7 +21,10 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('recommended', 'sneaker')"
+        v-for="product in filteredProductsByTagandType(
+          'recommended',
+          'sneaker'
+        )"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -34,8 +37,7 @@
     <SeeMore
       SectionTitle="Popular Brand"
       targetPage="PopularBrand"
-      backPage="Sneaker"
-      routeName="SneakerBrand"
+      backPage="sneaker"
     />
 
     <div class="brand_section">
@@ -119,7 +121,7 @@ export default {
 
     onMounted(() => {
       productStore.populateProductsByCategory();
-      console.log("Product Store: ",productStore)
+      console.log("Product Store: ", productStore);
     });
 
     return {
