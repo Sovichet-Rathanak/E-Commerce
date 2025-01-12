@@ -172,7 +172,6 @@ export default {
     },
 
     navigateToBrand(brandName) {
-      // Make sure the category is passed, in this case "sneakers"
       this.$router.push(`/${this.category}/${brandName}`);
     },
   },

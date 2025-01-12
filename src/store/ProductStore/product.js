@@ -45,7 +45,13 @@ export const useProductStore = defineStore("productStore", {
         console.log("56Filtered Products:", filteredProducts);
         return filteredProducts;
       };
-    }
+    },
+
+
+      getAllProducts(state) {
+        return Object.values(state.productsByCategory).flat(); // Combine all products into a single array
+      },
+
 
   },
   actions: {
@@ -72,5 +78,6 @@ export const useProductStore = defineStore("productStore", {
     selectSize(size) {
       this.selectedSize = size;
     },
+
   },
 });

@@ -38,14 +38,12 @@ export default {
   setup(props) {
     const productStore = useProductStore();
 
-    // Populate products when the component mounts
     onMounted(() => {
       if (Object.keys(productStore.productsByCategory).length === 0) {
         productStore.populateProductsByCategory();
       }
     });
 
-    // Filter products based on category and brand
     const filteredProducts = computed(() => {
       console.log(
         `Filtering for category: ${props.category}, brand: ${props.brand}`

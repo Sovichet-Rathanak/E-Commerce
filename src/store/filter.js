@@ -18,12 +18,12 @@ export const useFilterStore = defineStore('filters', {
           Rating:["Highest to Lowest", "Lowest to Highest"]
         },
         Menswear:{
-          Brand:["I like menswear"],
+          Brand:["Docle & Grabrana", "Dior", "Prada", "Vlentino"],
           Price:["Very high prolly idk :3"],
           Rating:["Highest to Lowest", "Lowest to Highest"]
         },
         Womenswear:{
-          Brand:["sundress goated fr"],
+          Brand:["Docle & Grabrana", "Dior", "Prada", "Valentino"],
           Price:["Very high prolly idk :3"],
           Rating:["Highest to Lowest", "Lowest to Highest"]
         },
