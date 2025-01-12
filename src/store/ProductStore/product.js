@@ -47,12 +47,6 @@ export const useProductStore = defineStore("productStore", {
       };
     },
 
-
-      getAllProducts(state) {
-        return Object.values(state.productsByCategory).flat(); // Combine all products into a single array
-      },
-
-
   },
   actions: {
     populateProductsByCategory() {
