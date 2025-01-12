@@ -44,10 +44,10 @@ export const useBrandStore = defineStore('brands',{
                     logo:[
                         "./src/assets/images/BrandLogo/CollectibleArtist/aespaBrand.jpg",
                         "./src/assets/images/BrandLogo/CollectibleArtist/newjeansBrand.jpg",
-                        "./src/assets/images/BrandLogo/CollectibleArtist/illit.jpg",
-                        "./src/assets/images/BrandLogo/CollectibleArtist/enhypenBrand.jpg"
+                        "./src/assets/images/BrandLogo/CollectibleArtist/lesserafim.jpg",
+                        "./src/assets/images/BrandLogo/CollectibleArtist/seventeen.jpg"
                     ],
-                    brand_name:["AESPA","NewJeans","ILLIT","ENHYPEN"]
+                    brand_name:["aespa","NewJeans","LESSERAFIM","SEVENTEEN"]
                 },
             }
         }

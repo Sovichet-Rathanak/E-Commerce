@@ -2,7 +2,11 @@
   <WebBanner :images="banner.sneakerBanner.image" />
   <!-- checkout banner.js and just basically populate the image array with your own image -->
   <div class="Container">
-    <SeeMore SectionTitle="New and Noteworthy" style="margin-top: 1.75rem" />
+    <SeeMore SectionTitle="New and Noteworthy" 
+    targetPage="FilterNew"
+    :backPage="category"
+    class="section-header"
+    style="margin-top: 1.75rem" />
 
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->

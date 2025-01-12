@@ -4,7 +4,36 @@ export const useCollectibleStore = defineStore("collectibleStore", {
     state: () => ({
         products: [
             {
-                category: "Collectibles",
+                category: "collectible",
+                brand_name: "aespa",
+                product_name: "The 1st Album [Armageddon] (LP ver.)",
+                price: "$43.78 Starting",
+                product_id: "AESPA_1st_Album",
+                product_type: "collectible",
+                product_status: "Available For Pre-order",
+                thumbNail: "/src/assets/images/DetailImage/Collectibles/AESPA/image1.png",
+                productImages: [
+                    '/src/assets/images/DetailImage/Collectibles/AESPA/image1.png',
+                ],
+                detailImages:[                   
+                    '/src/assets/images/DetailImage/Collectibles/AESPA/image3.png',
+                    '/src/assets/images/DetailImage/Collectibles/AESPA/image4.png',
+                    '/src/assets/images/DetailImage/Collectibles/AESPA/image2.png', 
+                ],
+                description: `NewJeans' debut album blends fresh sounds with bold energy,
+                delivering a mix of catchy pop, R&B, and electronic influences. With standout
+                tracks that showcase the group's unique style, the album captures their youthful
+                spirit and musical versatility, making a powerful statement in the K-pop scene.
+                A must-listen for fans of innovative and genre-defying music!`,
+                tags: ["new"],
+                productSizes: [
+                    {size: "Normal", price: 43.78},
+                    {size: "Rare", price: 55.90},
+                    {size: "Premium", price: 70.89},
+                ]
+            },
+            {
+                category: "collectible",
                 brand_name: "NewJeans",
                 product_name: "NewJeans 1st EP 'New Jeans' Weverse Albums ver.",
                 price: "$8.93 Starting",
@@ -137,7 +166,7 @@ export const useCollectibleStore = defineStore("collectibleStore", {
                 tracks that showcase the group's unique style, the album captures their youthful
                 spirit and musical versatility, making a powerful statement in the K-pop scene.
                 A must-listen for fans of innovative and genre-defying music!`,
-                tags: ["recommended"],
+                tags: ["recommended", "new"],
                 productSizes: [
                     {size: "Normal", price: 24.35},
                     {size: "Rare", price: 35},
@@ -146,7 +175,7 @@ export const useCollectibleStore = defineStore("collectibleStore", {
             },
             {
                 category: "collectible",
-                brand_name: "gfriend",
+                brand_name: "GFRIEND",
                 product_name: "[OFFLINE FANSIGN] Special Album 'Season of Memories'",
                 price: "$15.41 Starting",
                 product_id: "gfriend_fansign",
@@ -164,7 +193,7 @@ export const useCollectibleStore = defineStore("collectibleStore", {
                 tracks that showcase the group's unique style, the album captures their youthful
                 spirit and musical versatility, making a powerful statement in the K-pop scene.
                 A must-listen for fans of innovative and genre-defying music!`,
-                tags: ["recommended"],
+                tags: ["recommended", "new"],
                 productSizes: [
                     {size: "Normal", price: 15.41},
                     {size: "Rare", price: 22.60},
@@ -193,7 +222,7 @@ export const useCollectibleStore = defineStore("collectibleStore", {
                 tracks that showcase the group's unique style, the album captures their youthful
                 spirit and musical versatility, making a powerful statement in the K-pop scene.
                 A must-listen for fans of innovative and genre-defying music!`,
-                tags: ["recommended"],
+                tags: ["recommended", "new"],
                 productSizes: [
                     {size: "Normal", price: 126.93},
                     {size: "Rare", price: 152},
@@ -225,7 +254,7 @@ export const useCollectibleStore = defineStore("collectibleStore", {
                 tracks that showcase the group's unique style, the album captures their youthful
                 spirit and musical versatility, making a powerful statement in the K-pop scene.
                 A must-listen for fans of innovative and genre-defying music!`,
-                tags: ["collab"],
+                tags: ["recommended","new"],
                 productSizes: [
                     {size: "Normal", price: 40.18},
                     {size: "Rare", price: 60.92},
@@ -255,7 +284,7 @@ export const useCollectibleStore = defineStore("collectibleStore", {
                 tracks that showcase the group's unique style, the album captures their youthful
                 spirit and musical versatility, making a powerful statement in the K-pop scene.
                 A must-listen for fans of innovative and genre-defying music!`,
-                tags: ["recommended"],
+                tags: ["collab","recommended", "new"],
                 productSizes: [
                     {size: "Normal", price: 29.19},
                     {size: "Rare", price: 32},
@@ -286,7 +315,7 @@ export const useCollectibleStore = defineStore("collectibleStore", {
                 tracks that showcase the group's unique style, the album captures their youthful
                 spirit and musical versatility, making a powerful statement in the K-pop scene.
                 A must-listen for fans of innovative and genre-defying music!`,
-                tags: ["collab"],
+                tags: ["recommended", "new", "collab"],
                 productSizes: [
                     {size: "Normal", price: 65.78},
                     {size: "Rare", price: 89},
@@ -320,7 +349,7 @@ export const useCollectibleStore = defineStore("collectibleStore", {
                 tracks that showcase the group's unique style, the album captures their youthful
                 spirit and musical versatility, making a powerful statement in the K-pop scene.
                 A must-listen for fans of innovative and genre-defying music!`,
-                tags: ["collab"],
+                tags: ["recommended", "new", "collab"],
                 productSizes: [
                     {size: "Normal", price: 24.60},
                     {size: "Rare", price: 45},
@@ -352,7 +381,7 @@ export const useCollectibleStore = defineStore("collectibleStore", {
                 tracks that showcase the group's unique style, the album captures their youthful
                 spirit and musical versatility, making a powerful statement in the K-pop scene.
                 A must-listen for fans of innovative and genre-defying music!`,
-                tags: ["collab"],
+                tags: ["recommended", "new", "collab"],
                 productSizes: [
                     {size: "Normal", price: 40.18},
                     {size: "Rare", price: 70.98},
