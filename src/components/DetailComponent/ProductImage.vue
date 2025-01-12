@@ -8,7 +8,11 @@
           :src="image"
           alt="product_image"
           @click="setLargeImage(index)"
-          :class="{ active: index === activeIndex }"
+          :class="[
+            'product_image',
+            productImage,
+            { active: index === activeIndex },
+          ]"
         />
       </div>
 
@@ -177,6 +181,10 @@ export default {
       type: String,
       required: true,
     },
+    productImage: {
+      type: String,
+      default: "medium",
+    },
   },
 
   data() {
@@ -260,7 +268,7 @@ export default {
       };
 
       this.cartStore.addToCart(cartItem);
-            this.cartStore.calculateTotalPrice();
+      this.cartStore.calculateTotalPrice();
       console.log("Cart Items:", this.cartItems);
       this.$router.push("/cart");
     },
@@ -290,23 +298,32 @@ export default {
 }
 
 .row {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    height: 860px;
-    overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  height: 860px;
+  overflow-y: scroll;
 }
 
 .row > img {
-    width: 8rem;
-    height: 8rem;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: fill;
-    cursor: pointer;
-    background-color: #e7e7e7;
-    border: 1px solid #cfcfcf;
-    border-radius: 5px;
+  cursor: pointer;
+  background-color: #e7e7e7;
+  border: 1px solid #cfcfcf;
+  border-radius: 5px;
+}
+.product_image.medium {
+  width: 8rem;
+  height: 8rem;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: fill;
+}
+.product_image.large {
+  width: 8rem;
+  height: 8rem;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: fill;
 }
 
 .large-section {
