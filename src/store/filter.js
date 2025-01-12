@@ -14,17 +14,17 @@ export const useFilterStore = defineStore('filters', {
         },
         Accessories:{
           Brand:["Hermes", "Chanel", "Prada", "DIOR", "Goyard", "Louis Vuitton", "GUCCI", "COACH", "Yves Saint Laurent", "Fendi", "Givenchy", "BURBERRY"],
-          Price:["Very high prolly idk :3"],
+          Price:["Highest to Lowest", "Lowest to Highest"],
           Rating:["Highest to Lowest", "Lowest to Highest"]
         },
         Menswear:{
           Brand:["Docle & Grabrana", "Dior", "Prada", "Vlentino"],
-          Price:["Very high prolly idk :3"],
+          Price:["Highest to Lowest", "Lowest to Highest"],
           Rating:["Highest to Lowest", "Lowest to Highest"]
         },
         Womenswear:{
           Brand:["Docle & Grabrana", "Dior", "Prada", "Valentino"],
-          Price:["Very high prolly idk :3"],
+          Price:["Highest to Lowest", "Lowest to Highest"],
           Rating:["Highest to Lowest", "Lowest to Highest"]
         },
         Collectibles:{
