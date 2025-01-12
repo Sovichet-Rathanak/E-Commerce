@@ -94,6 +94,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: center;
     gap: 45px;
   }
   </style>
