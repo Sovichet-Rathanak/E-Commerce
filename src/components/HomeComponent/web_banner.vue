@@ -47,9 +47,8 @@ export default {
 
 <style>
 .webbannerContainer{
-    padding: 1rem;
-    width: 98%;
-    height: 600px;
+    width: 100%;
+    height: 750px;
     display: flex;
     align-items: flex-end;
     overflow: hidden;
