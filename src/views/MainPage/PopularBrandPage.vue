@@ -34,7 +34,6 @@ export default {
   props: {
     category: {
       type: String,
-      // Optional: Use route params if not explicitly provided
     },
   },
 
@@ -43,19 +42,16 @@ export default {
     const route = useRoute();
     const brandStore = useBrandStore();
 
-    // Dynamically determine the category (either from props or route params)
     const currentCategory = computed(() => {
       return props.category || route.params.category || "all";
     });
 
-    // Navigate to FilteredBrandPage
     const navigateToFilteredBrand = (brand) => {
       router.push({
-        path: `/${currentCategory.value}/${brand}`, // Dynamic URL generation based on your route config
+        path: `/${currentCategory.value}/${brand}`,
       });
     };
 
-    // Retrieve current brand data
     const currentBrand = computed(() => {
       return (
         brandStore.brands[currentCategory.value + "Brand"] || {
