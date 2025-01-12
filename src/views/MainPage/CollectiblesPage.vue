@@ -36,15 +36,15 @@
 
     <SeeMore
       SectionTitle="Popular Brand"
-      PageTitle="PopularBrand"
-      brandType="collectibleBrand"
+      targetPage="PopularBrand"
+      backPage="collectible"
     />
 
     <div class="brand_section">
       <BrandCard
         v-for="(brandName, index) in brand.collectibleBrand.brand_name"
         :key="index"
-        :brandImg="brand.collectibleBrand.logo[index - 1]"
+        :brandImg="brand.collectibleBrand.logo[index]"
         :brandName="brandName"
         @click="navigateToBrand(brandName)"
       />
@@ -77,7 +77,7 @@
     <SeeMore
       SectionTitle="Articles"
       targetPage="ArticlePage"
-      backPage="Sneaker"
+      backPage="collectibles"
     />
 
     <div class="article_section">
@@ -85,8 +85,8 @@
       <ArticleCard
         v-for="index in 2"
         :key="index"
-        article_image="src/assets/images/Articles/newjeans.jpg"
-        article_title="Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features"
+        :article_image="article.collectiblesArticle.article_images[index - 1]"
+        :article_title="article.collectiblesArticle.article_titles[index - 1]"
       />
     </div>
   </div>
@@ -104,6 +104,7 @@ import { mapState } from "pinia";
 import { useBannerStore } from "@/store/banner";
 import { useProductStore } from "@/store/ProductStore/product";
 import { onMounted } from "vue";
+import { useArticleStore } from "@/store/article";
 
 export default {
   components: {
@@ -123,9 +124,11 @@ export default {
     const brandStore = useBrandStore();
     const bannerStore = useBannerStore();
     const productStore = useProductStore();
+    const articleStore = useArticleStore();
 
     onMounted(() => {
       productStore.populateProductsByCategory();
+      console.log("Product Store: ", productStore);
       console.log("Product Store: ", productStore);
     });
 
@@ -133,6 +136,7 @@ export default {
       brandStore,
       bannerStore,
       productStore,
+      articleStore,
     };
   },
   computed: {
@@ -141,6 +145,10 @@ export default {
     }),
     ...mapState(useBannerStore, {
       banner: "banners",
+    }),
+
+    ...mapState(useArticleStore, {
+      article: "articles",
     }),
     ...mapState(useProductStore, {
       productsByCategory: "productsByCategory",

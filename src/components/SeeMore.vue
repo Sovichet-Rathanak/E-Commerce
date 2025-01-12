@@ -22,10 +22,6 @@ export default {
     backPage: {
       type: String,
     },
-    routeName: {
-      type: String,
-      required: false,
-    },
   },
   computed: {
     GoBack() {

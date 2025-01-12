@@ -37,7 +37,7 @@
     <SeeMore
       SectionTitle="Popular Brand"
       targetPage="PopularBrand"
-      backPage="Sneaker"
+      backPage="accessory"
     />
 
     <div class="brand_section">
@@ -129,6 +129,7 @@ export default {
 
     onMounted(() => {
       productStore.populateProductsByCategory();
+      console.log("Product Store: ", productStore);
       console.log("Product Store: ", productStore);
     });
 

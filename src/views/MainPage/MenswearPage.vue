@@ -37,7 +37,7 @@
     <SeeMore
       SectionTitle="Popular Brand"
       targetPage="PopularBrand"
-      backPage="Menswear"
+      backPage="menswear"
     />
     <div class="brand_section">
       <BrandCard
@@ -73,14 +73,18 @@
       />
     </div>
 
-    <SeeMore SectionTitle="Articles" />
+    <SeeMore
+      SectionTitle="Magazines"
+      targetPage="MagazinePage"
+      backPage="manswear"
+    />
     <div class="article_section">
       <!-- just like the product component you just have to change the path of the productImage, we will also setup pinia for this :3 -->
-      <ArticleCard
-        v-for="index in 2"
+      <MagazineCard
+        v-for="index in 3"
         :key="index"
-        article_image="src/assets/images/Magazine_Man.png"
-        article_title="Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features"
+        :Magazine_image="article.manswearArticle.article_images[index - 1]"
+        :Magazine_title="article.manswearArticle.article_titles[index - 1]"
       />
     </div>
   </div>
@@ -91,19 +95,20 @@ import SeeMore from "@/components/SeeMore.vue";
 import WebBanner from "@/components/HomeComponent/web_banner.vue";
 import BrandCard from "@/components/Card/BrandCard.vue";
 import OfferCard from "@/components/HomeComponent/OfferCard.vue";
-import ArticleCard from "@/components/Card/ArticleCardComponent.vue";
 import ProductCard from "@/components/Card/product_card.vue";
 import { useBrandStore } from "@/store/brand";
 import { mapState } from "pinia";
 import { useBannerStore } from "@/store/banner";
 import { useProductStore } from "@/store/ProductStore/product";
 import { onMounted } from "vue";
+import { useArticleStore } from "@/store/article";
+import MagazineCard from "@/components/Card/MagazineCardComponent.vue";
 
 export default {
   components: {
     BrandCard,
     OfferCard,
-    ArticleCard,
+    MagazineCard,
     WebBanner,
     ProductCard,
     SeeMore,
@@ -117,9 +122,11 @@ export default {
     const brandStore = useBrandStore();
     const bannerStore = useBannerStore();
     const productStore = useProductStore();
+    const articleStore = useArticleStore();
 
     onMounted(() => {
       productStore.populateProductsByCategory();
+      console.log("Product Store: ", productStore);
       console.log("Product Store: ", productStore);
     });
 
@@ -127,6 +134,7 @@ export default {
       brandStore,
       bannerStore,
       productStore,
+      articleStore,
     };
   },
   computed: {
@@ -135,6 +143,10 @@ export default {
     }),
     ...mapState(useBannerStore, {
       banner: "banners",
+    }),
+
+    ...mapState(useArticleStore, {
+      article: "articles",
     }),
     ...mapState(useProductStore, {
       productsByCategory: "productsByCategory",
