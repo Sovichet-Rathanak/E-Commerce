@@ -21,7 +21,10 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('recommended', 'sneaker')"
+        v-for="product in filteredProductsByTagandType(
+          'recommended',
+          'sneaker'
+        )"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -34,16 +37,16 @@
     <SeeMore
       SectionTitle="Popular Brand"
       targetPage="PopularBrand"
-      backPage="Sneaker"
-      routeName="SneakerBrand"
+      backPage="sneaker"
     />
 
     <div class="brand_section">
       <BrandCard
-        v-for="index in 4"
+        v-for="(brandName, index) in brand.sneakerBrand.brand_name"
         :key="index"
-        :brandImg="brand.sneakerBrand.logo[index - 1]"
-        :brandName="brand.sneakerBrand.brand_name[index - 1]"
+        :brandImg="brand.sneakerBrand.logo[index]"
+        :brandName="brandName"
+        @click="navigateToBrand(brandName)"
       />
     </div>
 
@@ -111,6 +114,11 @@ export default {
     ProductCard,
     SeeMore,
   },
+  data() {
+    return {
+      category: "sneaker",
+    };
+  },
   setup() {
     const brandStore = useBrandStore();
     const bannerStore = useBannerStore();
@@ -119,7 +127,7 @@ export default {
 
     onMounted(() => {
       productStore.populateProductsByCategory();
-      console.log("Product Store: ",productStore)
+      console.log("Product Store: ", productStore);
     });
 
     return {
@@ -161,6 +169,11 @@ export default {
   methods: {
     display() {
       console.log(this.brand.sneakerBrand.logo[0]);
+    },
+
+    navigateToBrand(brandName) {
+      // Make sure the category is passed, in this case "sneakers"
+      this.$router.push(`/${this.category}/${brandName}`);
     },
   },
 };

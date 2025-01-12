@@ -42,10 +42,11 @@
 
     <div class="brand_section">
       <BrandCard
-        v-for="index in 4"
+        v-for="(brandName, index) in brand.accessoryBrand.brand_name"
         :key="index"
-        :brandImg="brand.accessoryBrand.logo[index - 1]"
-        :brandName="brand.accessoryBrand.brand_name[index - 1]"
+        :brandImg="brand.accessoryBrand.logo[index]"
+        :brandName="brandName"
+        @click="navigateToBrand(brandName)"
       />
     </div>
 
@@ -113,7 +114,13 @@ export default {
     ProductCard,
     SeeMore,
   },
-  
+
+  data() {
+    return {
+      category: "accessory",
+    };
+  },
+
   setup() {
     const brandStore = useBrandStore();
     const bannerStore = useBannerStore();
@@ -122,7 +129,7 @@ export default {
 
     onMounted(() => {
       productStore.populateProductsByCategory();
-      console.log("Product Store: ",productStore)
+      console.log("Product Store: ", productStore);
     });
 
     return {
@@ -164,6 +171,9 @@ export default {
   methods: {
     display() {
       console.log(this.brand.sneakerBrand.logo[0]);
+    },
+    navigateToBrand(brandName) {
+      this.$router.push(`/${this.category}/${brandName}`);
     },
   },
 };

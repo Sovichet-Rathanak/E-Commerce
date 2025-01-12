@@ -7,9 +7,10 @@
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
-        v-for="product in filteredProductsByTagandType('new', 'menswears')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType('new', 'menswears')"
+        :key="product.product_id"
         :productImage="product.thumbNail"
-        :brandName = "product.brand_name"
+        :brandName="product.brand_name"
         :productName="product.product_name"
         :productStatus="product.product_status"
         :productId="product.product_id"
@@ -20,9 +21,13 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('recommended', 'menswears')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType(
+          'recommended',
+          'menswears'
+        )"
+        :key="product.product_id"
         :productImage="product.thumbNail"
-        :brandName = "product.brand_name"
+        :brandName="product.brand_name"
         :productName="product.product_name"
         :productStatus="product.product_status"
         :productId="product.product_id"
@@ -36,10 +41,11 @@
     />
     <div class="brand_section">
       <BrandCard
-        v-for="index in 4"
+        v-for="(brandName, index) in brand.menswearBrand.brand_name"
         :key="index"
-        :brandImg="brand.menswearBrand.logo[index - 1]"
-        :brandName="brand.menswearBrand.brand_name[index - 1]"
+        :brandImg="brand.menswearBrand.logo[index]"
+        :brandName="brandName"
+        @click="navigateToBrand(brandName)"
       />
     </div>
 
@@ -47,9 +53,10 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('collab', 'menswears')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType('collab', 'menswears')"
+        :key="product.product_id"
         :productImage="product.thumbNail"
-        :brandName = "product.brand_name"
+        :brandName="product.brand_name"
         :productName="product.product_name"
         :productStatus="product.product_status"
         :productId="product.product_id"
@@ -101,6 +108,11 @@ export default {
     ProductCard,
     SeeMore,
   },
+  data() {
+    return {
+      category: "menswear",
+    };
+  },
   setup() {
     const brandStore = useBrandStore();
     const bannerStore = useBannerStore();
@@ -108,9 +120,9 @@ export default {
 
     onMounted(() => {
       productStore.populateProductsByCategory();
-      console.log("Product Store: ",productStore)
+      console.log("Product Store: ", productStore);
     });
-    
+
     return {
       brandStore,
       bannerStore,
@@ -124,26 +136,29 @@ export default {
     ...mapState(useBannerStore, {
       banner: "banners",
     }),
-    ...mapState(useProductStore,{
+    ...mapState(useProductStore, {
       productsByCategory: "productsByCategory",
     }),
     filteredProductsByTag() {
-      return(tag) => {
+      return (tag) => {
         const productStore = useProductStore();
         return productStore.getProductsByTag(tag);
-      }
+      };
     },
 
-    filteredProductsByTagandType(){
-      return(tag, type) => {
+    filteredProductsByTagandType() {
+      return (tag, type) => {
         const productStore = useProductStore();
-        return productStore.getProductByTypeAndTag(tag, type)
-      }
-    }
+        return productStore.getProductByTypeAndTag(tag, type);
+      };
+    },
   },
   methods: {
     display() {
       console.log(this.brand.menswearBrand.logo[0]);
+    },
+    navigateToBrand(brandName) {
+      this.$router.push(`/${this.category}/${brandName}`);
     },
   },
 };

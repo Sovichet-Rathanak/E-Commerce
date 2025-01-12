@@ -36,15 +36,16 @@
     <SeeMore
       SectionTitle="Popular Brand"
       targetPage="PopularBrand"
-      backPage="Womenswear"
+      backPage="womenswear"
     />
 
     <div class="brand_section">
       <BrandCard
-        v-for="index in 4"
+        v-for="(brandName, index) in brand.womenswearBrand.brand_name"
         :key="index"
-        :brandImg="brand.womenswearBrand.logo[index - 1]"
-        :brandName="brand.womenswearBrand.brand_name[index - 1]"
+        :brandImg="brand.womenswearBrand.logo[index]"
+        :brandName="brandName"
+        @click="navigateToBrand(brandName)"
       />
     </div>
     <SeeMore SectionTitle="Exclusives and Collaborations" />
@@ -105,6 +106,11 @@ export default {
     SeeMore,
     MagazineCard,
   },
+  data() {
+    return {
+      category: "womenswear",
+    };
+  },
   setup() {
     const brandStore = useBrandStore();
     const bannerStore = useBannerStore();
@@ -112,7 +118,7 @@ export default {
 
     onMounted(() => {
       productStore.populateProductsByCategory();
-      console.log("Product Store: ",productStore)
+      console.log("Product Store: ", productStore);
     });
 
     return {
@@ -149,6 +155,9 @@ export default {
   methods: {
     display() {
       console.log(this.brand.sneakerBrand.logo[0]);
+    },
+    navigateToBrand(brandName) {
+      this.$router.push(`/${this.category}/${brandName}`);
     },
   },
 };

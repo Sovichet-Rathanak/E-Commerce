@@ -4,6 +4,7 @@ export const useMenswearStore = defineStore("menswearStore",{
     state: () => ({
         products: [
             {
+                category: "menswear",
                 brand_name: "Versace",
                 product_name: "Collana Punk T-shirt",
                 price: "$230",
@@ -21,7 +22,7 @@ export const useMenswearStore = defineStore("menswearStore",{
                 detailImages: [],
                 description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
                                     sophistication and versatility, making it an extraordinary addition to any collection.
-    
+
                                     Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
                                     hardware elevates its design to an unparalleled level of refinement.`,
                 tags: ["new"],
@@ -33,6 +34,7 @@ export const useMenswearStore = defineStore("menswearStore",{
                 ],
             },
             {
+                category: "menswear",
                 brand_name: "Balenciaga",
                 product_name: "logo-print T-shirt",
                 price: "$1009",
@@ -52,7 +54,7 @@ export const useMenswearStore = defineStore("menswearStore",{
                 ],
                 description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
                                 sophistication and versatility, making it an extraordinary addition to any collection.
-    
+
                                 Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
                                 hardware elevates its design to an unparalleled level of refinement.`,
                 tags: ["new","recommended"],
@@ -64,6 +66,7 @@ export const useMenswearStore = defineStore("menswearStore",{
                 ],
             },
             {
+                category: "menswear",
                 brand_name: "Versace",
                 product_name: "University embroidered T-shirt",
                 price: "$500",
@@ -82,7 +85,7 @@ export const useMenswearStore = defineStore("menswearStore",{
                 detailImages: [],
                 description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
                                 sophistication and versatility, making it an extraordinary addition to any collection.
-    
+
                                 Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
                                 hardware elevates its design to an unparalleled level of refinement.`,
                 tags: ["new"],
@@ -94,6 +97,7 @@ export const useMenswearStore = defineStore("menswearStore",{
                 ],
             },
             {
+                category: "menswear",
                 brand_name: "Valentino Garavani",
                 product_name: "graphic-print short-sleeve shirt",
                 price: "$1111",
@@ -113,7 +117,7 @@ export const useMenswearStore = defineStore("menswearStore",{
                 ],
                 description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
                                 sophistication and versatility, making it an extraordinary addition to any collection.
-    
+
                                 Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
                                 hardware elevates its design to an unparalleled level of refinement.`,
                 tags: ["collab"],
@@ -125,6 +129,7 @@ export const useMenswearStore = defineStore("menswearStore",{
                 ],
             },
             {
+                category: "menswear",
                 brand_name: "Gucci",
                 product_name: "Logo-print bermuda shorts",
                 price: "$800",
@@ -146,7 +151,7 @@ export const useMenswearStore = defineStore("menswearStore",{
                 ],
                 description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
                                 sophistication and versatility, making it an extraordinary addition to any collection.
-    
+
                                 Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
                                 hardware elevates its design to an unparalleled level of refinement.`,
                 tags: [ "collab",'new'],
@@ -158,6 +163,7 @@ export const useMenswearStore = defineStore("menswearStore",{
                 ],
             },
             {
+                category: "menswear",
                 brand_name: "AAPE",
                 product_name: "Logo varsity jacket",
                 price: "$1300",
@@ -172,14 +178,14 @@ export const useMenswearStore = defineStore("menswearStore",{
                 "/src/assets/images/DetailImage/Menswears/Jacket/AAPE3.jpg",
                 "/src/assets/images/DetailImage/Menswears/Jacket/AAPE4.jpg",
                 "/src/assets/images/DetailImage/Menswears/Jacket/AAPE5.jpg",
-    
+
                 ],
                 detailImages: [
-    
+
                 ],
                 description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
                                 sophistication and versatility, making it an extraordinary addition to any collection.
-    
+
                                 Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
                                 hardware elevates its design to an unparalleled level of refinement.`,
                 tags: ["recommended"],
@@ -190,7 +196,8 @@ export const useMenswearStore = defineStore("menswearStore",{
                 { size: "XL", price: 1300 },
                 ],
             },
-                    {
+            {
+                category: "menswear",
                 brand_name: "Christian Dior Pre-Owned",
                 product_name: "1970s check-pattern",
                 price: "$1168",
@@ -205,16 +212,16 @@ export const useMenswearStore = defineStore("menswearStore",{
                 "/src/assets/images/DetailImage/Menswears/Dior/Dior3.jpg",
                 "/src/assets/images/DetailImage/Menswears/Dior/Dior4.jpg",
                 "/src/assets/images/DetailImage/Menswears/Dior/Dior5.jpg",
-    
+
                 ],
                 detailImages: [
                 "/src/assets/images/DetailImage/Menswears/Jacket/ralph-lauren7.jpg",
                 "/src/assets/images/DetailImage/Menswears/Jacket/ralph-lauren8.jpg",
-    
+
                 ],
                 description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
                                 sophistication and versatility, making it an extraordinary addition to any collection.
-    
+
                                 Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
                                 hardware elevates its design to an unparalleled level of refinement.`,
                 tags: ["collab"],
@@ -226,6 +233,7 @@ export const useMenswearStore = defineStore("menswearStore",{
                 ],
             },
             {
+                category: "menswear",
                 brand_name: "Peace and After",
                 product_name: "cotton shirt",
                 price: "$999",
@@ -240,13 +248,13 @@ export const useMenswearStore = defineStore("menswearStore",{
                 "/src/assets/images/DetailImage/Menswears/Shirt/Cotton_Shirt3.jpg",
                 "/src/assets/images/DetailImage/Menswears/Shirt/Cotton_Shirt5.jpg",
                 "/src/assets/images/DetailImage/Menswears/Shirt/Cotton_Shirt4.jpg",
-    
+
                 ],
                 detailImages: [
                 ],
                 description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
                                 sophistication and versatility, making it an extraordinary addition to any collection.
-    
+
                                 Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
                                 hardware elevates its design to an unparalleled level of refinement.`,
                 tags: ["collab","recommended"],
@@ -258,6 +266,7 @@ export const useMenswearStore = defineStore("menswearStore",{
                 ],
             },
             {
+                category: "menswear",
                 brand_name: "Peace and After",
                 product_name: "cargo track pants",
                 price: "$845",
@@ -272,13 +281,13 @@ export const useMenswearStore = defineStore("menswearStore",{
                 "/src/assets/images/DetailImage/Menswears/Pants/Cargo3.jpg",
                 "/src/assets/images/DetailImage/Menswears/Pants/Cargo4.jpg",
                 "/src/assets/images/DetailImage/Menswears/Pants/Cargo5.jpg",
-    
+
                 ],
                 detailImages: [
                 ],
                 description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
                                 sophistication and versatility, making it an extraordinary addition to any collection.
-    
+
                                 Crafted in Hermès' signature Togo leather, known for its supple texture and resistance to scratches, this Birkin radiates timeless beauty. The harmonious interplay between the Vert d'Eau hue and its palladium
                                 hardware elevates its design to an unparalleled level of refinement.`,
                 tags: ["recommended"],

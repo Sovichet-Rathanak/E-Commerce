@@ -4,6 +4,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
     state: () => ({
         products: [
             {
+            category: "womenswear",
             brand_name: "Bottega Veneta",
             product_name: "Adalyn A-line Collared Neck Twill Mini Dress",
             price: '$299',
@@ -17,7 +18,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 '/src/assets/images/DetailImage/Womenswears/clothes1/image2.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes1/image3.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes1/image5.jpg',
-    
+
             ],
             detailImages:[
                 '/src/assets/images/DetailImage/Womenswears/clothes1/detail1.png',
@@ -38,6 +39,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 ]
             },
             {
+            category: "womenswear",
             brand_name: "Miu Miu",
             product_name: "Jacquard knit vest & arm warmers",
             price: '$199',
@@ -54,7 +56,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 '/src/assets/images/DetailImage/Womenswears/clothes3/image6.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes3/image7.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes3/image8.jpg',
-    
+
             ],
             detailImages:[],
             description: `This outfit features a cozy and stylish oversized white cable-knit sweater with a deep V-neckline, combining comfort and elegance. The sweater is adorned with a small black metal embellishment near the chest, adding a modern and edgy touch to the classic knit design. It also includes contrasting black stripe details on the sleeves, creating a sporty yet chic vibe. Paired with a neutral-toned mini skirt, this ensemble balances warmth and femininity, making it perfect for casual or semi-formal settings.`,
@@ -68,6 +70,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 ]
             },
             {
+            category: "Womenswear",
             brand_name: "Alaïa",
             product_name: "Bow High-end Waist Mid-length Cape Woolen Coat",
             price: '$199',
@@ -84,7 +87,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 '/src/assets/images/DetailImage/Womenswears/clothes16/image8.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes16/image9.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes16/image10.jpg',
-    
+
             ],
             detailImages:[
                 '/src/assets/images/DetailImage/Womenswears/clothes16/detail1.jpg',
@@ -104,6 +107,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 ]
             },
             {
+            category: "womenswear",
             brand_name: "Oscar de la Renta",
             product_name: "Magot drapping off shoulder pencil dress",
             price: '$99',
@@ -119,7 +123,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 '/src/assets/images/DetailImage/Womenswears/clothes9/image5.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes9/image6.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes9/image7.jpg',
-    
+
             ],
             detailImages:[
                 '/src/assets/images/DetailImage/Womenswears/clothes9/detail1.jpg',
@@ -135,6 +139,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 ]
             },
             {
+            category: "womenswear",
             brand_name: "Valentino",
             product_name: "Unique Super Good-looking Old Leather Jacket",
             price: '$139',
@@ -150,10 +155,10 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 '/src/assets/images/DetailImage/Womenswears/clothes7/image5.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes7/image6.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes7/image7.jpg',
-    
+
             ],
             detailImages:[
-    
+
             ],
             description: `This outfit combines edgy and vintage vibes with an oversized distressed black leather jacket featuring bold stitching, utility pockets, and straps for an industrial feel. It's paired with a black pleated skirt for a feminine-grunge touch, accessorized with layers and high boots, creating a bold, rebellious aesthetic.`,
                 tags: ["recommended"],
@@ -166,6 +171,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 ]
             },
             {
+            category: "womenswear",
             brand_name: "Carolina Herrera",
             product_name: "White Waist Dress",
             price: '$299',
@@ -182,7 +188,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 '/src/assets/images/DetailImage/Womenswears/clothes5/image7.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes5/image8.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes5/image9.jpg',
-    
+
             ],
             detailImages:['/src/assets/images/DetailImage/Womenswears/clothes5/image1.jpg',],
             description: `This white dress exudes elegance and vintage charm with its Peter Pan collar, soft bow tie, sheer sleeves, and lace accents. The flowing A-line silhouette adds grace, while subtle accessories, a black chain-strap handbag, and sleek black shoes complete the timeless look, perfect for formal or romantic occasions.`,
@@ -196,6 +202,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 ]
             },
             {
+            category: "womenswear",
             brand_name: "Docle & Gabbana",
             product_name: "Skyblue Stand Collar Wool Long Coat",
             price: '$119',
@@ -213,8 +220,8 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 '/src/assets/images/DetailImage/Womenswears/clothes8/image7.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes8/image8.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes8/image9.jpg',
-    
-    
+
+
             ],
             detailImages:[
                 '/src/assets/images/DetailImage/Womenswears/clothes8/detail1.jpg',
@@ -231,6 +238,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 ]
             },
             {
+            category: "womenswear",
             brand_name: "Dior",
             product_name: "Light Yellow Halter Neck Shirt/Shorts",
             price: '$269',
@@ -246,7 +254,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 '/src/assets/images/DetailImage/Womenswears/clothes10/image5.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes10/image6.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes10/image7.jpg',
-    
+
             ],
             detailImages:[
                 '/src/assets/images/DetailImage/Womenswears/clothes10/detail1.jpg',
@@ -267,6 +275,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 ]
             },
             {
+            category: "womenswear",
             brand_name: "Prada",
             product_name: "Soft fur short duffle girly jacket & pleated mini skirt",
             price: '$269',
@@ -284,7 +293,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 '/src/assets/images/DetailImage/Womenswears/clothes11/image7.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes11/image8.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes11/image9.jpg',
-    
+
             ],
             detailImages:[
                 '/src/assets/images/DetailImage/Womenswears/clothes11/detail1.jpg',
@@ -304,6 +313,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 ]
             },
             {
+            category: "womenswear",
             brand_name: "Valentino",
             product_name: "Waist see-through rolled skirt style camisole dress",
             price: '$119',
@@ -320,7 +330,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 '/src/assets/images/DetailImage/Womenswears/clothes12/image8.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes12/image9.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes12/image10.jpg',
-    
+
             ],
             detailImages:[
                 '/src/assets/images/DetailImage/Womenswears/clothes12/detail1.jpg',
@@ -340,6 +350,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 ]
             },
             {
+            category: "womenswear",
             brand_name: "Miu Miu",
             product_name: "White Nine-tailed Fur Ball Knitted Cape",
             price: '$169',
@@ -356,7 +367,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 '/src/assets/images/DetailImage/Womenswears/clothes13/image7.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes13/image8.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes13/image9.jpg',
-    
+
             ],
             detailImages:[],
             description: `This outfit features a sophisticated black dress with a polished and elegant design. The dress is accented by a sharp white pointed collar,
@@ -374,6 +385,7 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 ]
             },
             {
+            category: "womenswear",
             brand_name: "Alaïa",
             product_name: "First Love Overture Double Princess Dress/Fur Coat",
             price: '$139',
@@ -388,9 +400,9 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                 '/src/assets/images/DetailImage/Womenswears/clothes14/image3.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes14/image5.jpg',
                 '/src/assets/images/DetailImage/Womenswears/clothes14/image6.jpg',
-    
+
             ],
-    
+
             description: `This outfit features a sophisticated black dress with a polished and elegant design. The dress is accented by a sharp white pointed collar,
             creating a striking contrast against the black fabric and adding a formal touch. The fitted bodice enhances the silhouette, while the pleated skirt introduces
             a subtle yet stylish volume, blending refinement with a playful edge. Decorative flap-style pockets near the waist provide a tailored detail, contributing to
@@ -405,7 +417,8 @@ export const useWomenswearStore = defineStore("womenswearStore",{
                     {size: "XXL", price: 139},
                 ]
             },
-    
+
         ],
-    })
-})
+    }),
+
+});

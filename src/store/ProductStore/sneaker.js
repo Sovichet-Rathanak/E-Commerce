@@ -4,6 +4,7 @@ export const useSneakerStore = defineStore("sneakerStore",{
     state: () => ({
         products: [
             {
+            category: "sneaker",
             brand_name: "Air Jordan 1 Retro High",
             product_name: "Yellow Ochre",
             price: "$133 Starting",
@@ -44,6 +45,7 @@ export const useSneakerStore = defineStore("sneakerStore",{
             ],
             },
             {
+            category: "sneaker",
             brand_name: "SB Dunk Low",
             product_name: "Yuto x Wolf Grey",
             price: "$201 Starting",
@@ -81,6 +83,7 @@ export const useSneakerStore = defineStore("sneakerStore",{
             ],
             },
             {
+            category: "sneaker",
             brand_name: "Air Jordan 1 High OG",
             product_name: "Spiderman Next Chapter",
             price: "$94 Starting",
@@ -119,6 +122,7 @@ export const useSneakerStore = defineStore("sneakerStore",{
             ],
             },
             {
+                category: "sneaker",
                 brand_name: "New Balance",
                 product_name: "Nimbus Cloud 574 Core",
                 price: "$60 Starting",
@@ -138,9 +142,9 @@ export const useSneakerStore = defineStore("sneakerStore",{
                     '/src/assets/images/DetailImage/Sneakers/NewBalance574/detail1.png',
                     '/src/assets/images/DetailImage/Sneakers/NewBalance574/detail2.png',
                 ],
-                description: `The most New Balance shoe ever says it all, right? No, actually. The 574 might be our unlikeliest icon. The 574 was built to be a reliable shoe that could do a lot of different things well rather than as a platform 
-                            for revolutionary technology, or as a premium materials showcase. This unassuming, unpretentious versatility is exactly what launched the 574 into the ranks of all-time greats. 
-    
+                description: `The most New Balance shoe ever says it all, right? No, actually. The 574 might be our unlikeliest icon. The 574 was built to be a reliable shoe that could do a lot of different things well rather than as a platform
+                            for revolutionary technology, or as a premium materials showcase. This unassuming, unpretentious versatility is exactly what launched the 574 into the ranks of all-time greats.
+
                             As hybrid road/trail design built on a wider last than the previous generation’s narrow racing silhouettes, the 574 offered a uniquely versatile mix of new, different, uncomplicated, rugged, durable, and
                             comfortable that was adopted as a closet staple across the globe. That’s why today, the 574 is synonymous with the boundary defying New Balance style, and worn by anyone. With the 574 for kids, the same
                             As hybrid road/trail design built on a wider last than the previous generation’s narrow racing silhouettes, the 574 offered a uniquely versatile mix of new, different, uncomplicated, rugged, durable, and
@@ -162,6 +166,7 @@ export const useSneakerStore = defineStore("sneakerStore",{
                 ]
             },
             {
+                category: "sneaker",
                 brand_name: "Air Jordan 5 Retro",
                 product_name: "Off-White Muslim",
                 price: "$535 Starting",
@@ -192,12 +197,13 @@ export const useSneakerStore = defineStore("sneakerStore",{
                     {size: "US 9", price: 678},
                     {size: "US 10", price: 797},
                     {size: "US 11", price: 839},
-                    {size: "US 12", price: 912},    
+                    {size: "US 12", price: 912},
                     {size: "US 13", price: 1083},
                     {size: "US 14", price: 1347},
                 ]
             },
             {
+                category: "sneaker",
                 brand_name: "Air Jordan 1 Low OG SP",
                 product_name: "Travis Scott Reverse Mocha",
                 price: "$1,069 Starting",
@@ -228,12 +234,13 @@ export const useSneakerStore = defineStore("sneakerStore",{
                     {size: "US 9", price: 1293},
                     {size: "US 10", price: 1400},
                     {size: "US 11", price: 1347},
-                    {size: "US 12", price: 1372},    
+                    {size: "US 12", price: 1372},
                     {size: "US 13", price: 1069},
                     {size: "US 14", price: 1201},
                 ]
             },
             {
+                category: "sneaker",
                 brand_name: "Air Jordan 1 Retro High OG",
                 product_name: "Chicago Lost and Found",
                 price: "$208 Starting",
@@ -253,7 +260,7 @@ export const useSneakerStore = defineStore("sneakerStore",{
                     '/src/assets/images/DetailImage/Sneakers/AJ1LnF/detail1.jpg',
                     '/src/assets/images/DetailImage/Sneakers/AJ1LnF/detail2.jpg',
                 ],
-                description: `Dressed in a Varsity Red, Black, Sail, and Muslin colour scheme. This offering of the Air Jordan 1 comes built with cracked leather featuring a White leather base with Red overlays and Black on the Wings, Swooshes, and collar. Other details includes Muslin tongues, Nike Air branding atop a White midsole and Red rubber outsole. 
+                description: `Dressed in a Varsity Red, Black, Sail, and Muslin colour scheme. This offering of the Air Jordan 1 comes built with cracked leather featuring a White leather base with Red overlays and Black on the Wings, Swooshes, and collar. Other details includes Muslin tongues, Nike Air branding atop a White midsole and Red rubber outsole.
                             The pair is a homage to the days when you’d find a pair of DS 85 Chicago Jordan 1s in their stock housed in aged boxes with replacement Orange Nike lids (AJKO lids). The shoes also come with special throwback graphic tissue paper, sale stickers, and vintage-style invoice receipt.`,
                 tags: ["recommended"],
                 productSizes: [
@@ -265,12 +272,13 @@ export const useSneakerStore = defineStore("sneakerStore",{
                     {size: "US 9", price: 310},
                     {size: "US 10", price: 325},
                     {size: "US 11", price: 324},
-                    {size: "US 12", price: 345},    
+                    {size: "US 12", price: 345},
                     {size: "US 13", price: 311},
                     {size: "US 14", price: 345},
                 ]
             },
             {
+                category: "sneaker",
                 brand_name: "Air Jordan 1 Low",
                 product_name: "Vintage UNC Grey",
                 price: "$98 Starting",
@@ -301,12 +309,13 @@ export const useSneakerStore = defineStore("sneakerStore",{
                     {size: "US 9", price: 98},
                     {size: "US 10", price: 134},
                     {size: "US 11", price: 169},
-                    {size: "US 12", price: 242},    
+                    {size: "US 12", price: 242},
                     {size: "US 13", price: 342},
                     {size: "US 14", price: 345},
                 ]
             },
             {
+                category: "sneaker",
                 brand_name: "ACG Air",
                 product_name: "Retro Vintage",
                 price: "$75 Starting",
@@ -326,7 +335,7 @@ export const useSneakerStore = defineStore("sneakerStore",{
                     '/src/assets/images/DetailImage/Sneakers/ACGAir/detail1.jpg',
                     '/src/assets/images/DetailImage/Sneakers/ACGAir/detail2.jpg',
                 ],
-                
+
                 description: "The ACG Air Retro is a sleek, high-performance sneaker that combines Nike's renowned All Conditions Gear (ACG) technology with a retro-inspired design. Built for versatility, comfort, and durability, this shoe seamlessly blends style with function, making it ideal for urban exploration or outdoor adventures. With a rugged outsole, cushioned midsole, and weather-ready features, the ACG Air Retro is the perfect choice for those who demand both performance and fashion in their footwear.",
                 tags: ["recommended"],
                 productSizes: [
@@ -338,12 +347,13 @@ export const useSneakerStore = defineStore("sneakerStore",{
                     {size: "US 9", price: 82},
                     {size: "US 10", price: 75},
                     {size: "US 11", price: 84},
-                    {size: "US 12", price: 96},    
+                    {size: "US 12", price: 96},
                     {size: "US 13", price: 85},
                     {size: "US 14", price: 125},
                 ]
             },
             {
+                category: "sneaker",
                 brand_name: "Air Jordan 1 Low",
                 product_name: "Mocha",
                 price: "$95 Starting",
@@ -364,7 +374,7 @@ export const useSneakerStore = defineStore("sneakerStore",{
                     '/src/assets/images/DetailImage/Sneakers/AJ1Low_Mocha/detail2.jpg',
                     '/src/assets/images/DetailImage/Sneakers/AJ1Low_Mocha/detail3.jpg',
                 ],
-                
+
                 description: "The Jordan 1 Low Mocha brings a fresh twist to the iconic silhouette, featuring a sleek, earthy colorway that blends premium materials and a laid-back design. With its smooth leather uppers in rich mocha brown, white accents, and classic Nike Swoosh, this sneaker offers a refined, versatile look perfect for both everyday wear and stylish streetwear. The low-top profile ensures a comfortable fit, while the timeless Jordan 1 design remains at the heart of this effortlessly cool sneaker. Whether you're a collector or simply a fan of premium kicks, the Jordan 1 Low Mocha is a must-have addition to your rotation.",
                 tags: ["recommended"],
                 productSizes: [
@@ -376,12 +386,13 @@ export const useSneakerStore = defineStore("sneakerStore",{
                     {size: "US 9", price: 130},
                     {size: "US 10", price: 117},
                     {size: "US 11", price: 134},
-                    {size: "US 12", price: 132},    
+                    {size: "US 12", price: 132},
                     {size: "US 13", price: 113},
                     {size: "US 14", price: 107},
                 ]
             },
             {
+                category: "sneaker",
                 brand_name: "Air Force 1",
                 product_name: "Off-White",
                 price: "$102 Starting",
@@ -402,7 +413,7 @@ export const useSneakerStore = defineStore("sneakerStore",{
                     '/src/assets/images/DetailImage/Sneakers/AF1_OffWhite/detail2.jpg',
                     '/src/assets/images/DetailImage/Sneakers/AF1_OffWhite/detail3.jpg',
                 ],
-                
+
                 description:"The Air Force 1 Off-White is a standout collaboration between Nike and Virgil Abloh's Off-White brand, merging classic design with cutting-edge street style. Featuring a clean, minimalist white leather upper, the sneaker is elevated by signature Off-White details, including bold “AIR” branding, the iconic zip tie, and unique stitching and deconstructed elements. The translucent Swoosh and subtle text on the side provide a fresh, industrial look that pays homage to Abloh’s distinctive aesthetic. With its perfect mix of high fashion and basketball heritage, the Air Force 1 Off-White is a must-have for sneakerheads and fashion-forward individuals alike.",
                 tags: ["collab"],
                 productSizes: [
@@ -414,12 +425,13 @@ export const useSneakerStore = defineStore("sneakerStore",{
                     {size: "US 9", price: 142},
                     {size: "US 10", price: 157},
                     {size: "US 11", price: 146},
-                    {size: "US 12", price: 168},    
+                    {size: "US 12", price: 168},
                     {size: "US 13", price: 128},
                     {size: "US 14", price: 150},
                 ]
             },
             {
+                category: "sneaker",
                 brand_name: "Air Force 1",
                 product_name: "Peace Maker",
                 price: "$208 Starting",
@@ -441,7 +453,7 @@ export const useSneakerStore = defineStore("sneakerStore",{
                     '/src/assets/images/DetailImage/Sneakers/AF1_PMaker/detail3.jpg',
                     '/src/assets/images/DetailImage/Sneakers/AF1_PMaker/detail4.jpg',
                 ],
-                
+
                 description: "The Air Force 1 Peace Maker is a fresh and stylish take on the iconic silhouette, combining classic design with modern, meaningful details. This edition features premium materials and a bold colorway, with the standout Peace Maker theme showcased through symbolic graphics and subtle embellishments. The sneaker's clean leather upper is paired with unique stitching and custom logos that reflect a message of unity and positivity. With its versatile look and statement-making details, the Air Force 1 Peace Maker is perfect for those who want to stand out while promoting a message of peace and inclusivity.",
                 tags: ["collab"],
                 productSizes: [
@@ -453,7 +465,7 @@ export const useSneakerStore = defineStore("sneakerStore",{
                     {size: "US 9", price: 1293},
                     {size: "US 10", price: 1400},
                     {size: "US 11", price: 1347},
-                    {size: "US 12", price: 1372},    
+                    {size: "US 12", price: 1372},
                     {size: "US 13", price: 1069},
                     {size: "US 14", price: 1201},
                 ]
