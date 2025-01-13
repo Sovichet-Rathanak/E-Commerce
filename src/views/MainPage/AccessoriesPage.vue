@@ -2,12 +2,16 @@
   <WebBanner :images="banner.accessoryBanner.image" />
   <!-- checkout banner.js and just basically populate the image array with your own image -->
   <div class="Container">
-    <SeeMore SectionTitle="New and Noteworthy" style="margin-top: 1.75rem" />
-
+    <SeeMore SectionTitle="New and Noteworthy" 
+      style="margin-top: 1.75rem" 
+      targetPage="FilterNew"
+      backPage="Accessories"
+      class="section-header"
+    />
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
-        v-for="product in filteredProductsByTagandType('new', 'accessories')"
+        v-for="product in filteredProductsByTagandType('new', 'accessories').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -17,14 +21,15 @@
       />
     </div>
 
-    <SeeMore SectionTitle="Recommended For You" />
-
+    <SeeMore SectionTitle="Recommended For You"
+      style="margin-top: 1.75rem" 
+      targetPage="FilterRecommended"
+      backPage="Accessories"
+      class="section-header"
+    />
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType(
-          'recommended',
-          'accessories'
-        )"
+        v-for="product in filteredProductsByTagandType('recommended', 'accessories').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -50,11 +55,15 @@
       />
     </div>
 
-    <SeeMore SectionTitle="Exclusives and Collaborations" />
-
+    <SeeMore SectionTitle="Exclusives and Collaborations"
+      style="margin-top: 1.75rem" 
+      targetPage="FilterCollab"
+      backPage="Accessories"
+      class="section-header"
+    />
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('collab', 'accessories')"
+        v-for="product in filteredProductsByTagandType('collab', 'accessories').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"

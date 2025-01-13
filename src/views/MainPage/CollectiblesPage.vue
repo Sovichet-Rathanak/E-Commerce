@@ -42,7 +42,7 @@
     </div>
 
     <SeeMore
-      SectionTitle="Popular Brand"
+      SectionTitle="Popular Artists"
       targetPage="PopularBrand"
       backPage="collectible"
     />

@@ -2,12 +2,16 @@
   <WebBanner :images="banner.menswearBanner.image" />
   <!-- checkout banner.js and just basically populate the image array with your own image -->
   <div class="Container">
-    <SeeMore SectionTitle="Outfit Inspiration" style="margin-top: 1.75rem" />
-
+    <SeeMore SectionTitle="New and Noteworthy" 
+      style="margin-top: 1.75rem" 
+      targetPage="FilterNew"
+      backPage="menswears"
+      class="section-header"
+    />
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
-        v-for="product in filteredProductsByTagandType('new', 'menswears')"
+        v-for="product in filteredProductsByTagandType('new', 'menswears').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -17,14 +21,15 @@
       />
     </div>
 
-    <SeeMore SectionTitle="Recommend For You" />
-
+    <SeeMore SectionTitle="Recommended For You"
+      style="margin-top: 1.75rem" 
+      targetPage="FilterRecommended"
+      backPage="menswears"
+      class="section-header"
+    />
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType(
-          'recommended',
-          'menswears'
-        )"
+        v-for="product in filteredProductsByTagandType('recommended', 'menswears').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -49,11 +54,16 @@
       />
     </div>
 
-    <SeeMore SectionTitle="On Trend" />
+    <SeeMore SectionTitle="On Trend"
+      style="margin-top: 1.75rem" 
+      targetPage="FilterCollab"
+      backPage="menswears"
+      class="section-header"
+    />
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('collab', 'menswears')"
+        v-for="product in filteredProductsByTagandType('collab', 'menswears').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
