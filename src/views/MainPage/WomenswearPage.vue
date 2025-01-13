@@ -2,13 +2,13 @@
   <WebBanner :images="banner.womenswearBanner.image" />
   <!-- checkout banner.js and just basically populate the image array with your own image -->
   <div class="Container">
-    <SeeMore SectionTitle="New and Noteworthy" 
-      style="margin-top: 1.75rem" 
+    <SeeMore
+      SectionTitle="New and Noteworthy"
+      style="margin-top: 1.75rem"
       targetPage="FilterNew"
       :backPage="category"
       class="section-header"
     />
-
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
@@ -22,8 +22,9 @@
       />
     </div>
 
-    <SeeMore SectionTitle="Recommended For You" 
-      style="margin-top: 1.75rem" 
+    <SeeMore
+      SectionTitle="Recommended For You"
+      style="margin-top: 1.75rem"
       targetPage="FilterRecommended"
       :backPage="category"
       class="section-header"
@@ -48,7 +49,10 @@
 
     <div class="brand_section">
       <BrandCard
-        v-for="(brandName, index) in brand.womenswearBrand.brand_name"
+        v-for="(brandName, index) in brand.womenswearBrand.brand_name.slice(
+          0,
+          4
+        )"
         :key="index"
         :brandImg="brand.womenswearBrand.logo[index]"
         :brandName="brandName"
@@ -56,14 +60,13 @@
       />
     </div>
 
-    <SeeMore SectionTitle="On Trend"
-      style="margin-top: 1.75rem" 
+    <SeeMore
+      SectionTitle="Exlusives and Collaborations"
+      style="margin-top: 1.75rem"
       targetPage="FilterCollab"
       :backPage="category"
       class="section-header"
     />
-    
-
     <div class="recommended_section">
       <ProductCard
         v-for="product in filteredProductsByTagandType('collab', 'womenswear').slice(0,4)"

@@ -79,20 +79,30 @@ export const useArticleStore = defineStore('articles', {
 
         womenwearArticle: {
           article_titles: [
+            "Taeyeon is an elegant living portrait for the January 2025 cover of 'Allure'",
+            "Jisoo __ Dazed Korea SE September 2025",
             "Step into the world of timeless fashion with our exclusive collection!",
+
             "Step into the world of timeless fashion with our exclusive collection!",
+            "Lorde on the Historic 2025 Grammys, the #MeToo Movement & Loving Cardi B",
+            "Urassaya Sperbund Throughout the Years in Vogue",
+
             "Step into the world of timeless fashion with our exclusive collection!",
-            "Step into the world of timeless fashion with our exclusive collection!",
-            "Step into the world of timeless fashion with our exclusive collection!",
-            "Step into the world of timeless fashion with our exclusive collection!",
+            "Liu Yifei covers Marie Claire China by Ziqian",
+            "Cover of Elle Hong Kong with Yuko Araki, Magazines _ The FMD",
           ],
           article_images: [
-            "/src/assets/images/Magazine/Magazine1.jpg",
-            "/src/assets/images/Magazine/Magazine2.jpg",
-            "/src/assets/images/Magazine/Magazine3.jpg",
-            "/src/assets/images/Magazine/Magazine1.jpg",
-            "/src/assets/images/Magazine/Magazine1.jpg",
-            "/src/assets/images/Magazine/Magazine1.jpg",
+            "/src/assets/images/Magazine/womenswear/Magazine1.jpg",
+            "/src/assets/images/Magazine/womenswear/Magazine2.jpg",
+            "/src/assets/images/Magazine/womenswear/Magazine3.jpg",
+
+            "/src/assets/images/Magazine/womenswear/Magazine4.jpg",
+            "/src/assets/images/Magazine/womenswear/Magazine5.jpg",
+            "/src/assets/images/Magazine/womenswear/Magazine6.jpg",
+
+            "/src/assets/images/Magazine/womenswear/Magazine7.jpg",
+            "/src/assets/images/Magazine/womenswear/Magazine8.jpg",
+            "/src/assets/images/Magazine/womenswear/Magazine9.jpg",
           ],
 
         },

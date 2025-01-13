@@ -31,11 +31,9 @@ export default {
   methods: {
     showMore() {
       if (this.$route.name === this.targetPage) {
-        // If already on the target page, go back to the previous route
         console.log("Navigating back to:", this.backPage);
-        this.$router.go(-1); // Go back to previous page
+        this.$router.go(-1);
       } else {
-        // Navigate to the target page, passing 'category' as a parameter
         console.log(
           `Navigating to targetPage: ${
             this.targetPage

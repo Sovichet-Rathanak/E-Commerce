@@ -47,5 +47,6 @@ export default {
   text-align: left;
   color: black;
   margin: 15px 10px 0 25px;
+  font-family: "Inter";
 }
 </style>
