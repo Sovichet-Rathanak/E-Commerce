@@ -49,7 +49,7 @@
 
     <div class="brand_section">
       <BrandCard
-        v-for="(brandName, index) in brand.collectibleBrand.brand_name"
+        v-for="(brandName, index) in brand.collectibleBrand.brand_name.slice(0, 4)"
         :key="index"
         :brandImg="brand.collectibleBrand.logo[index]"
         :brandName="brandName"

@@ -23,6 +23,7 @@ import FilteredBrandPage from "@/views/MainPage/FilteredBrandPage.vue";
 import FilterNewPage from "@/views/MainPage/FilterNewPage.vue";
 import FilterRecommendPage from "@/views/MainPage/FilterRecommendPage.vue";
 import FilterCollabPage from "@/views/MainPage/FilterCollabPage.vue";
+import ArticleDetailPage from "@/views/MainPage/ArticleDetailPage.vue";
 
 const routes = [
   {
@@ -166,6 +167,11 @@ const routes = [
     component: FilterCollabPage,
     props: (route) => ({ category: route.params.category }),
   },
+  {
+    path: "/Article",
+    name: "ArticleDetail",
+    component: ArticleDetailPage,
+  }
 ];
 
 const router = createRouter({

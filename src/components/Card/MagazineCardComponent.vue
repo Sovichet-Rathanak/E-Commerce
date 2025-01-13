@@ -1,10 +1,12 @@
 <template>
-    <div class="Magazine">
+    <RouterLink class="router-link" to="/Article">
+        <div class="Magazine">
         <div class="magazneImages">
             <img :src="Magazine_image" alt="" class="Magazine_image">
         </div>
         <div class="Magazine_title">{{ Magazine_title }}</div>
     </div>  
+    </RouterLink>
 </template>
 
 <script>
