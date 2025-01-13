@@ -1,15 +1,15 @@
 <template>
   <WebBanner :images="banner.menswearBanner.image" />
-  <!-- checkout banner.js and just basically populate the image array with your own image -->
   <div class="Container">
-    <SeeMore SectionTitle="New and Noteworthy" 
-      style="margin-top: 1.75rem" 
+    <SeeMore
+      SectionTitle="New and Noteworthy"
+      style="margin-top: 1.75rem"
       targetPage="FilterNew"
-      backPage="menswears"
+      :backPage="category"
       class="section-header"
     />
+
     <div class="recommended_section">
-      <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
         v-for="product in filteredProductsByTagandType('new', 'menswears').slice(0,4)"
         :key="product.product_id"
@@ -21,12 +21,14 @@
       />
     </div>
 
-    <SeeMore SectionTitle="Recommended For You"
-      style="margin-top: 1.75rem" 
+    <SeeMore
+      SectionTitle="Recommended For You"
+      style="margin-top: 1.75rem"
       targetPage="FilterRecommended"
-      backPage="menswears"
+      :backPage="category"
       class="section-header"
     />
+
     <div class="recommended_section">
       <ProductCard
         v-for="product in filteredProductsByTagandType('recommended', 'menswears').slice(0,4)"
@@ -46,7 +48,7 @@
     />
     <div class="brand_section">
       <BrandCard
-        v-for="(brandName, index) in brand.menswearBrand.brand_name"
+        v-for="(brandName, index) in brand.menswearBrand.brand_name.slice(0,4)"
         :key="index"
         :brandImg="brand.menswearBrand.logo[index]"
         :brandName="brandName"
@@ -54,10 +56,11 @@
       />
     </div>
 
-    <SeeMore SectionTitle="On Trend"
-      style="margin-top: 1.75rem" 
+    <SeeMore
+      SectionTitle="Exclusive and Collaboration"
+      style="margin-top: 1.75rem"
       targetPage="FilterCollab"
-      backPage="menswears"
+      :backPage="category"
       class="section-header"
     />
 

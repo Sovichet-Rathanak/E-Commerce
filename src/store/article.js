@@ -64,11 +64,12 @@ export const useArticleStore = defineStore('articles', {
           ],
           article_images: [
             "/src/assets/images/Magazine_Man.png",
-            "/src/assets/images/Magazine_Man.png",
-            "/src/assets/images/Magazine_Man.png",
-            "/src/assets/images/Magazine_Man.png",
-            "/src/assets/images/Magazine_Man.png",
-            "/src/assets/images/Magazine_Man.png",
+            "/src/assets/images/MenswearMagazine/Magazine1.jpg",
+            "/src/assets/images/MenswearMagazine/Magazine2.jpg",
+            "/src/assets/images/MenswearMagazine/Magazine3.jpg",
+            "/src/assets/images/MenswearMagazine/Magazine4.jpg",
+            "/src/assets/images/MenswearMagazine/Magazine5.jpg",
+
           ],
 
         },

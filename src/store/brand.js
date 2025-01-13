@@ -28,9 +28,17 @@ export const useBrandStore = defineStore('brands',{
                       "./src/assets/images/BrandLogo/MenswearBrand/Dior-Logo.png",
                       "./src/assets/images/BrandLogo/MenswearBrand/Hermes-Logo.png",
                       "./src/assets/images/BrandLogo/MenswearBrand/Prada-Logo.png",
-                      "./src/assets/images/BrandLogo/MenswearBrand/Valentino-Logo.png"
+                      "./src/assets/images/BrandLogo/MenswearBrand/Valentino-Logo.png",
+                      "./src/assets/images/BrandLogo/MenswearBrand/Ck.jpg",
+                      "./src/assets/images/BrandLogo/MenswearBrand/Balenciga.jpg",
+                      "./src/assets/images/BrandLogo/MenswearBrand/Gucci.jpg",
+                      "./src/assets/images/BrandLogo/MenswearBrand/Lacoste.jpg",
+                      "./src/assets/images/BrandLogo/MenswearBrand/LV.jpg",
+                      "./src/assets/images/BrandLogo/MenswearBrand/Rushberry.jpg",
+                      "./src/assets/images/BrandLogo/MenswearBrand/tommy.png",
+                      "./src/assets/images/BrandLogo/MenswearBrand/Essential.jpg",
                     ],
-                    brand_name:["Dior","Hermes","Prada", "Valentino"]
+                    brand_name:["Dior","Hermes","Prada", "Valentino","Calvin klein","Balenciaga","Gucci","Lacoste","Louis Vuiton","Rushberry","Tommy","Essential Fear of God"]
                 },
                 womenswearBrand:{
                     logo:[
