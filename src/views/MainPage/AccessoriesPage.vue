@@ -5,9 +5,10 @@
     <SeeMore SectionTitle="New and Noteworthy" 
       style="margin-top: 1.75rem" 
       targetPage="FilterNew"
-      backPage="Accessories"
+      :backPage="category"
       class="section-header"
-    />
+      />
+
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
@@ -21,12 +22,13 @@
       />
     </div>
 
-    <SeeMore SectionTitle="Recommended For You"
+    <SeeMore SectionTitle="Recommended For You" 
       style="margin-top: 1.75rem" 
       targetPage="FilterRecommended"
-      backPage="Accessories"
+      :backPage="category"
       class="section-header"
     />
+
     <div class="recommended_section">
       <ProductCard
         v-for="product in filteredProductsByTagandType('recommended', 'accessories').slice(0,4)"
@@ -55,10 +57,10 @@
       />
     </div>
 
-    <SeeMore SectionTitle="Exclusives and Collaborations"
+    <SeeMore SectionTitle="Exclusives and Collaborations" 
       style="margin-top: 1.75rem" 
       targetPage="FilterCollab"
-      backPage="Accessories"
+      :backPage="category"
       class="section-header"
     />
     <div class="recommended_section">
@@ -126,7 +128,7 @@ export default {
 
   data() {
     return {
-      category: "accessory",
+      category: "accessories",
     };
   },
 

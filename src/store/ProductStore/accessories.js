@@ -109,6 +109,40 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                 {
                     category: "accessory",
                     brand_name: "Hermés",
+                    product_name: "Rouge de Coeur Epsom",
+                    price: "$9,400 Starting",
+                    product_id: "HR_19C",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesRougedeCoeur/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/HermesRougedeCoeur/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesRougedeCoeur/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesRougedeCoeur/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesRougedeCoeur/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesRougedeCoeur/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesRougedeCoeur/image6.jpeg',
+                    ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/HermesRougedeCoeur/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesRougedeCoeur/detail2.png',
+                    ],
+                    description: `Hermès Rouge de Coeur Epsom Constance 24 is a step into timeless luxury, a true masterpiece from the house of Hermès. 
+                                The vibrant of this handbag, passionate red tone of Rouge de Coeur captures attention with its lively and sophisticated charm, ideal for adding a pop of color to any ensemble.
+                                The iconic Hermès "H" clasp is elevated with a Mauve Sylvestre enamel finish, offering a soft, feminine contrast to the bold red.
+                                Cool-toned palladium hardware perfectly complements the design, providing a polished and contemporary edge.
+                                Designed for versatility, the adjustable strap allows the bag to be worn crossbody or on the shoulder, making it perfect for both day-to-night transitions.`,
+                    tags: ["new"],
+                    productSizes: [
+                        { size: "S", price: 9400 },
+                        { size: "M", price: 12500 },
+                        { size: "L", price: 34000 },
+                        { size: "XL", price: 68300 },
+                    ],
+                },
+                {
+                    category: "accessory",
+                    brand_name: "Hermés",
                     product_name: "Gris Meyer Madame",
                     price: "$31,800 Starting",
                     product_id: "HG_24M",
@@ -139,6 +173,74 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                         {size: 'L', price: 86000},
                         {size: 'XL', price: 99000},
                     ]
+                },
+                {
+                    category: "accessory",
+                    brand_name: "Goyard",
+                    product_name: "Pearly Blue Goyardine",
+                    price: "$7,200 Starting",
+                    product_id: "GP_24B",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/GoyardPearlyBlue/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/GoyardPearlyBlue/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/GoyardPearlyBlue/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/GoyardPearlyBlue/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/GoyardPearlyBlue/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/GoyardPearlyBlue/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/GoyardPearlyBlue/image6.jpeg',
+                    ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/GoyardPearlyBlue/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/GoyardPearlyBlue/detail2.png',
+                    ],
+                    description: `Pearly Blue Goyardine Canvas and Chevroches Calfskin Saïgon Structuré Nano Bag Silver Hardware, 2024 in a stunning Pearly Blue finish. Crafted with meticulous attention to detail, this iconic piece blends luxury and functionality in perfect harmony.
+                                Made from Goyard's signature Goyardine canvas paired with supple Chevroches calfskin, offering unmatched durability and sophistication.
+                                The Pearly Blue hue exudes a soft yet captivating charm, ideal for both casual and formal ensembles.
+                                The Nano size is perfect for carrying your essentials while maintaining a lightweight, convenient profile.
+                                Polished silver accents, including the signature Saïgon wooden trims and buckles, add a modern, refined touch.`,
+                    tags: ["new"],
+                    productSizes: [
+                        { size: "S", price: 7200 },
+                        { size: "M", price: 8000 },
+                        { size: "L", price: 9100 },
+                        { size: "XL", price: 10700 },
+                    ],
+                },
+                {
+                    category: "accessory",
+                    brand_name: "Chanel",
+                    product_name: "Light Yellow Quilted",
+                    price: "$4,800 Starting",
+                    product_id: "CL_23Y",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/ChanelLightYellow/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/ChanelLightYellow/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelLightYellow/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelLightYellow/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelLightYellow/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelLightYellow/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelLightYellow/image6.jpeg',
+                    ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/ChanelLightYellow/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/ChanelLightYellow/detail2.png',
+                    ],
+                    description: `Chanel Light Yellow Quilted Calfskin Mini 22 Hobo Bag from the exclusive collection. Designed for the modern trendsetter, this exquisite piece combines luxury with practicality.
+                                A soft, light yellow hue that exudes elegance and versatility, making it perfect for both daytime chic and evening glamour.
+                                The iconic Chanel quilting and the signature "CHANEL" lettering add a timeless touch, while the minimalist hobo silhouette ensures a contemporary edge.
+                                Adorned with polished gold-tone hardware, including an intricate chain strap and CC logo accents, which beautifully complement the soft yellow tone.
+                                This limited-edition bag epitomizes Chanel’s legacy of sophistication and innovation. Whether paired with casual ensembles or formal attire, it is a statement piece that guarantees admiration.`,
+                    tags: ["new"],
+                    productSizes: [
+                        { size: "S", price: 4800 },
+                        { size: "M", price: 5600 },
+                        { size: "L", price: 6100 },
+                        { size: "XL", price: 8000 },
+                    ],
                 },
                 {
                     category: "accessory",
@@ -178,38 +280,37 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                 },
                 {
                     category: "accessory",
-                    brand_name: "Chanel",
-                    product_name: "Black Quilted Lambskin",
-                    price: "$4,000 Starting",
-                    product_id: "CB_20L",
+                    brand_name: "Hermés",
+                    product_name: "Bleu Zanzibar Evercolor",
+                    price: "$7,260 Starting",
+                    product_id: "HB_24Z",
                     product_type: "accessories",
                     product_status: "Available For Pre-order",
-                    thumbNail: "/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image1.jpeg",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesBleuZanzibar/image1.jpeg",
                     productImages: [
-                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image1.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image2.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image3.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image4.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image5.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image6.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesBleuZanzibar/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesBleuZanzibar/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesBleuZanzibar/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesBleuZanzibar/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesBleuZanzibar/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesBleuZanzibar/image6.jpeg',
                     ],
                     detailImages:[
-                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/detail1.png',
-                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/detail2.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesBleuZanzibar/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesBleuZanzibar/detail2.png',
                     ],
-                    description: `The Chanel Black Quilted Lambskin Boy Bucket Bag with Aged Gold Hardware is a modern, edgy reinterpretation of Chanel's classic elegance, designed for those who love a mix of sophistication and contemporary style. This versatile handbag is perfect for clients seeking an iconic statement piece that’s both functional and chic.
-                                This bag is crafted from aged calfskin, offering a distinctive textured appearance that is both durable and stylish. The material has a slightly distressed look, adding character and a touch of vintage charm.
-
-                                The classic diamond quilting, a hallmark of Chanel, enhances the bag’s timeless appeal while adding depth and texture.
-                                A unique design element, the chain detailing runs around the edges of the bag, adding a bold, contemporary touch that sets it apart from traditional Chanel styles.
-                                The Chanel Black Quilted Lambskin Boy Bucket Bag is edgy reinterpretation of Chanel's classic elegance, designed for those who love a mix of sophistication and contemporary style.`,
+                    description: `Hermès Bleu Zanzibar Evercolor Mini Roulis 18, a perfect fusion of modern sophistication and timeless craftsmanship. Introduced in 2024, this coveted piece is the epitome of understated luxury, ideal for those who value impeccable design and functionality in one exquisite package.
+                                The vivid and refreshing Bleu Zanzibar tone exudes contemporary elegance. Its rich aqua-inspired hue offers a bold yet versatile statement, effortlessly complementing both neutral and vibrant wardrobes.
+                                The cool shine of palladium hardware accentuates the minimalist design, adding a modern touch to this refined handbag. The signature "Chaîne d'Ancre" clasp makes it instantly recognizable as a work of Hermès artistry.
+                                A slender, adjustable strap allows the bag to be styled as a crossbody or shoulder bag, making it ideal for both daytime chic and evening sophistication.
+                                The Hermès Mini Roulis 18 is more than a handbag—it's a lifestyle statement. Its modern, streamlined design combined with Hermès’ signature craftsmanship makes it the perfect companion for today’s fashion-forward individual.`,
                     tags: ["recommended"],
                     productSizes: [
-                        {size: 'S', price: 4000},
-                        {size: 'M', price: 6000},
-                        {size: 'L', price: 7500},
-                        {size: 'XL', price: 8400},
-                    ]
+                        { size: "S", price: 7260 },
+                        { size: "M", price: 8500 },
+                        { size: "L", price: 10000 },
+                        { size: "XL", price: 15900 },
+                    ],
                 },
                 {
                     category: "accessory",
@@ -286,38 +387,106 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                 },
                 {
                     category: "accessory",
-                    brand_name: "Hermés",
-                    product_name: "Ardoise & Vert Peppermint",
-                    price: "$38,000 Starting",
-                    product_id: "HA_25V",
+                    brand_name: "Chanel",
+                    product_name: "Black Quilted Lambskin",
+                    price: "$4,000 Starting",
+                    product_id: "CB_20L",
                     product_type: "accessories",
                     product_status: "Available For Pre-order",
-                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesArdoise/image1.jpeg",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image1.jpeg",
                     productImages: [
-                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image1.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image2.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image3.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image4.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image5.jpeg',
-                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image6.jpeg',
-                        ],
-                    detailImages:[
-                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/detail1.png',
-                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/detail2.png',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image6.jpeg',
                     ],
-                    description: `The Hermès Ardoise and Vert Peppermint Epsom and Black Tadelakt Casaque Étoilée Kelly is a striking masterpiece that seamlessly blends timeless Hermès craftsmanship with modern artistic flair. This handbag embodies elegance, exclusivity, and impeccable attention to detail.
-                                The main body of the bag is crafted from Epsom leather, known for its lightweight durability and fine-grained texture. This leather holds its shape beautifully, making it ideal for the structured Sellier style.
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/detail2.png',
+                    ],
+                    description: `The Chanel Black Quilted Lambskin Boy Bucket Bag with Aged Gold Hardware is a modern, edgy reinterpretation of Chanel's classic elegance, designed for those who love a mix of sophistication and contemporary style. This versatile handbag is perfect for clients seeking an iconic statement piece that’s both functional and chic.
+                                This bag is crafted from aged calfskin, offering a distinctive textured appearance that is both durable and stylish. The material has a slightly distressed look, adding character and a touch of vintage charm.
 
-                                The external stitching of the Sellier style gives the bag a clean and angular silhouette, emphasizing its architectural beauty.
-                                The iconic Hermès turn-lock closure, engraved with “Hermès Paris,” secures the bag while serving as a hallmark of the brand’s exquisite design.
-                                The interior is lined with supple leather, providing a luxurious finish. It features a slip pocket and a zipped pocket for added organization of modern luxury.`,
+                                The classic diamond quilting, a hallmark of Chanel, enhances the bag’s timeless appeal while adding depth and texture.
+                                A unique design element, the chain detailing runs around the edges of the bag, adding a bold, contemporary touch that sets it apart from traditional Chanel styles.
+                                The Chanel Black Quilted Lambskin Boy Bucket Bag is edgy reinterpretation of Chanel's classic elegance, designed for those who love a mix of sophistication and contemporary style.`,
+                    tags: ["recommended"],
+                    productSizes: [
+                        {size: 'S', price: 4000},
+                        {size: 'M', price: 6000},
+                        {size: 'L', price: 7500},
+                        {size: 'XL', price: 8400},
+                    ]
+                },
+                {
+                    category: "accessory",
+                    brand_name: "Hermés",
+                    product_name: "Black Swift Mini Roulis",
+                    price: "$10,500 Starting",
+                    product_id: "HB_22S",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesBlackSwift/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/HermesBlackSwift/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesBlackSwift/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesBlackSwift/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesBlackSwift/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesBlackSwift/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesBlackSwift/image6.jpeg',
+                    ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/HermesBlackSwift/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesBlackSwift/detail2.png',
+                    ],
+                    description: `Hermès Mini Roulis 18, crafted from luxurious Black Swift leather. This iconic piece, from the coveted 2022 collection, epitomizes sophistication and practicality.
+                                The warm golden tones of Hermès' signature permabrass hardware beautifully complement the deep black hue, adding a touch of glamour to the minimalist design.
+                                The Mini Roulis 18 offers a perfect balance of elegance and functionality, with enough space to hold your essentials while maintaining a sleek silhouette.
+                                The signature anchor-chain detail highlights Hermès' attention to detail and commitment to impeccable craftsmanship.
+                                This bag is more than just an accessory—it's a statement of timeless style and unmatched craftsmanship. The Mini Roulis 18 is ideal for collectors and fashion connoisseurs alike, offering a versatile size perfect for any occasion, from casual outings to formal events.`,
+                    tags: ["recommended"],
+                    productSizes: [
+                        { size: "S", price: 10500 },
+                        { size: "M", price: 17500 },
+                        { size: "L", price: 24000 },
+                        { size: "XL", price: 33300 },
+                    ],
+                },
+                {
+                    category: "accessory",
+                    brand_name: "Hermés",
+                    product_name: "Rose Mexico Mysore",
+                    price: "$3,920 Starting",
+                    product_id: "HR_17M",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesRoseMexico/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/HermesRoseMexico/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesRoseMexico/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesRoseMexico/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesRoseMexico/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesRoseMexico/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesRoseMexico/image6.jpeg',
+                    ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/HermesRoseMexico/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesRoseMexico/detail2.png',
+                    ],
+                    description: `Hermès Rose Mexico Mysore Verrou Chaine Mini Bag, indulge in the pinnacle of refined elegance. Blending artistry with practicality, this miniature masterpiece is designed for those who value impeccable craftsmanship and exclusivity in their accessories.
+                                The vivid and striking Rose Mexico shade radiates sophistication and charm, offering a vibrant pop of color that adds an uplifting touch to any outfit.
+                                The signature Verrou lock, inspired by a door bolt, is a bold design element that adds a touch of modernity to the bag’s classic silhouette. Crafted in gleaming palladium, it embodies Hermès' dedication to detail and functionality.
+                                Despite its mini size, the bag features a well-structured interior that offers ample space for your evening essentials—phone, cards, lipstick, and keys.
+                                The Hermès Verrou Chaine Mini Bag is a symbol of understated luxury and innovation. Its rare design, combined with the vibrant Rose Mexico colorway, makes it a conversation starter and a coveted collector’s piece.`,
                     tags: ["collab"],
                     productSizes: [
-                        {size: 'S', price: 38000},
-                        {size: 'M', price: 44000},
-                        {size: 'L', price: 70000},
-                        {size: 'XL', price: 90000},
-                    ]
+                        { size: "S", price: 3920 },
+                        { size: "M", price: 5500 },
+                        { size: "L", price: 64000 },
+                        { size: "XL", price: 8300 },
+                    ],
                 },
                 {
                     category: "accessory",
@@ -426,6 +595,41 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                         {size: 'XL', price: 12000},
                     ]
                 },
-                ],
+                {
+                    category: "accessory",
+                    brand_name: "Hermés",
+                    product_name: "Ardoise & Vert Peppermint",
+                    price: "$38,000 Starting",
+                    product_id: "HA_25V",
+                    product_type: "accessories",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesArdoise/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/image6.jpeg',
+                        ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesArdoise/detail2.png',
+                    ],
+                    description: `The Hermès Ardoise and Vert Peppermint Epsom and Black Tadelakt Casaque Étoilée Kelly is a striking masterpiece that seamlessly blends timeless Hermès craftsmanship with modern artistic flair. This handbag embodies elegance, exclusivity, and impeccable attention to detail.
+                                The main body of the bag is crafted from Epsom leather, known for its lightweight durability and fine-grained texture. This leather holds its shape beautifully, making it ideal for the structured Sellier style.
+
+                                The external stitching of the Sellier style gives the bag a clean and angular silhouette, emphasizing its architectural beauty.
+                                The iconic Hermès turn-lock closure, engraved with “Hermès Paris,” secures the bag while serving as a hallmark of the brand’s exquisite design.
+                                The interior is lined with supple leather, providing a luxurious finish. It features a slip pocket and a zipped pocket for added organization of modern luxury.`,
+                    tags: ["collab"],
+                    productSizes: [
+                        {size: 'S', price: 38000},
+                        {size: 'M', price: 44000},
+                        {size: 'L', price: 70000},
+                        {size: 'XL', price: 90000},
+                    ]
+                },
+            ],
     })
 })

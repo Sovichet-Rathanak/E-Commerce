@@ -29,21 +29,21 @@ export const useArticleStore = defineStore('articles', {
 
         accessoriesArticle: {
           article_titles: [
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
+            "Hermés Birkin: Kylie Jenner matches her manicure to her $300K Birkin bag",
+            "Meghan Markle styles Chanel with Valentino after kids get royal titles",
+            "Look: Andrea Brillantes receives a Lady Dior Bag from Dr. Vicki Belo",
+            "Louis Vuitton's 'Speedy' is the new A-list It bag: Rihanna, LeBron James",
+            "Mouni Roy makes a case for power dressing with her Rs 5.77 lacs Chanel bag",
+            "Zendaya fronts 1st Louis Vuitton campaign as brand's new house ambassador-America",
 
           ],
           article_images: [
-            "./src/assets/images/Articles/articlebag.jpg",
-            "./src/assets/images/Articles/articlebag.jpg",
-            "./src/assets/images/Articles/articlebag.jpg",
-            "./src/assets/images/Articles/articlebag.jpg",
-            "./src/assets/images/Articles/articlebag.jpg",
-            "./src/assets/images/Articles/articlebag.jpg",
+            "./src/assets/images/Articles/AccessoriesArticle/hermes.jpg",
+            "./src/assets/images/Articles/AccessoriesArticle/chanel1.jpg",
+            "./src/assets/images/Articles/AccessoriesArticle/dior1.jpg",
+            "./src/assets/images/Articles/AccessoriesArticle/LV1.jpg",
+            "./src/assets/images/Articles/AccessoriesArticle/chanel2.jpg",
+            "./src/assets/images/Articles/AccessoriesArticle/LV2.jpg",
 
           ],
 

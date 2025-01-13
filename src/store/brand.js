@@ -17,10 +17,10 @@ export const useBrandStore = defineStore('brands',{
                     logo:[
                         "./src/assets/images/BrandLogo/AccessoryBrand/Hermes.png",
                         "./src/assets/images/BrandLogo/AccessoryBrand/Chanel.png",
-                        "./src/assets/images/BrandLogo/AccessoryBrand/Prada.png",
+                        "./src/assets/images/BrandLogo/AccessoryBrand/LV.png",
                         "./src/assets/images/BrandLogo/AccessoryBrand/Dior.png"
                     ],
-                    brand_name:["Hermes","Chanel", "Prada", "DIOR"]
+                    brand_name:["Hermés","Chanel", "Louis Vuitton", "Dior"]
                 },
                 menswearBrand:{
                     logo:[
