@@ -1,13 +1,17 @@
 <template>
     <div class="Container">
+        <div class="header">
+            <h1>Article detail</h1>
+            <button class="back-button" @click="$router.go(-1)">Back</button>
+        </div>
         <h1>The truth behind your $12 dress: Inside the Chinese factories fuelling Shein's success</h1>
         <div class="sub-header">
             <span>13 Jan 2025</span>
-            <button>Share 
-                <iconify-icon class="share" icon="fluent:share-android-16-filled"></iconify-icon>
+            <button class="share-btn">
+                <iconify-icon icon="bxs:share" width="24" height="24" />
             </button>
-            <button>Save
-                <iconify-icon class="save" icon="fluent:save-copy-20-regular"></iconify-icon>
+            <button class="save-btn">
+                <iconify-icon class="save" icon="fluent:save-copy-20-regular" width="24" height="24" />
             </button>
         </div>
         <p>
@@ -51,6 +55,12 @@
 h1{
     padding-inline: 5rem;
 }
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-family: "Inter";
+}
 .Container{
     margin-top: 1.75rem;
     display: flex;
@@ -69,12 +79,15 @@ h1{
 span{
     margin-right: 30px;
 }
-button{
+.back-button,
+.share-btn,
+.save-btn{
     background-color: transparent;
     border: none;
     cursor: pointer;
     display: flex;
-    font-size: 17px;
+    font-weight: bold;
+    font-size: 25px;
 }
 p{
     padding-inline: 10rem;

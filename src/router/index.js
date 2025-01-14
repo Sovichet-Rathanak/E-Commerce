@@ -168,7 +168,7 @@ const routes = [
     props: (route) => ({ category: route.params.category }),
   },
   {
-    path: "/Article",
+    path: "/ArticleDetail",
     name: "ArticleDetail",
     component: ArticleDetailPage,
   }

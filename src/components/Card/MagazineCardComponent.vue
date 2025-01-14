@@ -1,5 +1,5 @@
 <template>
-    <RouterLink class="router-link" to="/Article">
+    <RouterLink class="router-link" to="/ArticleDetail">
         <div class="Magazine">
         <div class="magazneImages">
             <img :src="Magazine_image" alt="" class="Magazine_image">

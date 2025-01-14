@@ -1,5 +1,5 @@
 <template>
-  <RouterLink class="router-link" to="/Article">
+  <RouterLink class="router-link" to="/ArticleDetail">
     <div class="article">
       <img :src="`/${article_image}`" alt="image" class="article_image" />
       <div class="article_title">{{ article_title }}</div>
