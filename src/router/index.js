@@ -25,6 +25,7 @@ import FilterRecommendPage from "@/views/MainPage/FilterRecommendPage.vue";
 import FilterCollabPage from "@/views/MainPage/FilterCollabPage.vue";
 import ArticleDetailPage from "@/views/MainPage/ArticleDetailPage.vue";
 
+
 const routes = [
   {
     path: "/",

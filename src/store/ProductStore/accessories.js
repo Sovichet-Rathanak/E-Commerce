@@ -9,7 +9,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                 product_name: "Vert D'eau Birkins",
                 price: "$23,000 Starting",
                 product_id: "HB_40E",
-                product_type: "accessories",
+                product_type: "accessory",
                 product_status: "Available For Pre-order",
                 thumbNail: "/src/assets/images/DetailImage/Accessories/HermesVertD-Eau/image1.jpeg",
                 productImages: [
@@ -43,7 +43,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Matte White Niloticus Crocodile",
                     price: "$145,000 Starting",
                     product_id: "HM_30P",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/HermesMatteWhiteNilo/image1.jpeg",
                     productImages: [
@@ -77,7 +77,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Cream White Quilted Caviar",
                     price: "$11,900 Starting",
                     product_id: "CC_25W",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/ChanelCreamWhite/image1.jpeg",
                     productImages: [
@@ -112,7 +112,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Rouge de Coeur Epsom",
                     price: "$9,400 Starting",
                     product_id: "HR_19C",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/HermesRougedeCoeur/image1.jpeg",
                     productImages: [
@@ -146,7 +146,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Gris Meyer Madame",
                     price: "$31,800 Starting",
                     product_id: "HG_24M",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/HermesGrisMeyer/image1.jpeg",
                     productImages: [
@@ -180,7 +180,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Pearly Blue Goyardine",
                     price: "$7,200 Starting",
                     product_id: "GP_24B",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/GoyardPearlyBlue/image1.jpeg",
                     productImages: [
@@ -200,7 +200,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                                 The Pearly Blue hue exudes a soft yet captivating charm, ideal for both casual and formal ensembles.
                                 The Nano size is perfect for carrying your essentials while maintaining a lightweight, convenient profile.
                                 Polished silver accents, including the signature Saïgon wooden trims and buckles, add a modern, refined touch.`,
-                    tags: ["new"],
+                    tags: ["new","collab"],
                     productSizes: [
                         { size: "S", price: 7200 },
                         { size: "M", price: 8000 },
@@ -214,7 +214,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Light Yellow Quilted",
                     price: "$4,800 Starting",
                     product_id: "CL_23Y",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/ChanelLightYellow/image1.jpeg",
                     productImages: [
@@ -234,7 +234,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                                 The iconic Chanel quilting and the signature "CHANEL" lettering add a timeless touch, while the minimalist hobo silhouette ensures a contemporary edge.
                                 Adorned with polished gold-tone hardware, including an intricate chain strap and CC logo accents, which beautifully complement the soft yellow tone.
                                 This limited-edition bag epitomizes Chanel’s legacy of sophistication and innovation. Whether paired with casual ensembles or formal attire, it is a statement piece that guarantees admiration.`,
-                    tags: ["new"],
+                    tags: ["new","collab"],
                     productSizes: [
                         { size: "S", price: 4800 },
                         { size: "M", price: 5600 },
@@ -244,11 +244,44 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                 },
                 {
                     category: "accessory",
+                    brand_name: "Dior",
+                    product_name: "Yellow Shiny Alligator",
+                    price: "$12,000 Starting",
+                    product_id: "DY_20S",
+                    product_type: "accessory",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/DiorYellowShiny/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/DiorYellowShiny/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/DiorYellowShiny/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/DiorYellowShiny/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/DiorYellowShiny/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/DiorYellowShiny/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/DiorYellowShiny/image6.jpeg',
+                    ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/DiorYellowShiny/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/DiorYellowShiny/detail2.png',
+                    ],
+                    description: `Christian Dior Yellow Shiny Alligator Mini Lady Dior Handbag
+                                The glossy, high-shine finish on the premium alligator leather radiates opulence and instantly draws attention. Perfect for those who love making bold yet refined style statements.
+                                Complementing the vivid yellow, the rose gold accents bring a soft, luxurious glow, elevating the bag's aesthetic to unparalleled sophistication.
+                                A timeless silhouette with quilted stitching that reflects Dior's heritage and craftsmanship. The structured mini size is ideal for carrying your essentials while maintaining an elegant, compact profile.`,
+                    tags: ["new"],
+                    productSizes: [
+                        { size: "S", price: 12000 },
+                        { size: "M", price: 14600 },
+                        { size: "L", price: 15100 },
+                        { size: "XL", price: 22000 },
+                    ],
+                },
+                {
+                    category: "accessory",
                     brand_name: "Chanel",
                     product_name: "Pink Quilted Aged",
                     price: "$8,000 Starting",
                     product_id: "CP_20Q",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/ChanelPinkQuilted/image1.jpeg",
                     productImages: [
@@ -284,7 +317,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Bleu Zanzibar Evercolor",
                     price: "$7,260 Starting",
                     product_id: "HB_24Z",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/HermesBleuZanzibar/image1.jpeg",
                     productImages: [
@@ -318,7 +351,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Light Blue Alligator",
                     price: "$10,000 Starting",
                     product_id: "DL_22B",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/DiorLightBlueAll/image1.jpeg",
                     productImages: [
@@ -354,7 +387,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Virgil Abloh Yellow",
                     price: "$7,300 Starting",
                     product_id: "LV_50A",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/LVVirgilAbloh/image1.jpeg",
                     productImages: [
@@ -391,7 +424,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Black Quilted Lambskin",
                     price: "$4,000 Starting",
                     product_id: "CB_20L",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/ChanelBlackQuilted/image1.jpeg",
                     productImages: [
@@ -426,7 +459,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Black Swift Mini Roulis",
                     price: "$10,500 Starting",
                     product_id: "HB_22S",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/HermesBlackSwift/image1.jpeg",
                     productImages: [
@@ -456,11 +489,78 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                 },
                 {
                     category: "accessory",
+                    brand_name: "Hermès",
+                    product_name: "Lime Swift Kelly",
+                    price: "$18,900 Starting",
+                    product_id: "HL_20S",
+                    product_type: "accessory",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/HermesLimeSwift/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/HermesLimeSwift/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesLimeSwift/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesLimeSwift/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesLimeSwift/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesLimeSwift/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/HermesLimeSwift/image6.jpeg',
+                    ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/HermesLimeSwift/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/HermesLimeSwift/detail2.png',
+                    ],
+                    description: `Hermès Lime Swift Kelly 25 Retourne, a timeless symbol of luxury and sophistication.
+                                A bold yet elegant color that exudes energy and exclusivity, perfect for making a statement.
+                                Gleaming accents that enhance the bag's sophistication, creating a striking contrast against the vibrant lime leather.
+                                Features a softer, relaxed silhouette with expertly crafted curves, adding a touch of understated elegance.
+                                The Kelly 25 is a coveted icon that complements every wardrobe, radiating timeless charm and versatility. `,
+                    tags: ["recommended","collab"],
+                    productSizes: [
+                        { size: "S", price: 18900 },
+                        { size: "M", price: 23500 },
+                        { size: "L", price: 44000 },
+                        { size: "XL", price: 53300 },
+                    ],
+                },
+                {
+                    category: "accessory",
+                    brand_name: "Chanel",
+                    product_name: "Red Quilted Lambskin CC",
+                    price: "$4,500 Starting",
+                    product_id: "CR_20L",
+                    product_type: "accessory",
+                    product_status: "Available For Pre-order",
+                    thumbNail: "/src/assets/images/DetailImage/Accessories/ChanelRedQuilted/image1.jpeg",
+                    productImages: [
+                        '/src/assets/images/DetailImage/Accessories/ChanelRedQuilted/image1.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelRedQuilted/image2.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelRedQuilted/image3.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelRedQuilted/image4.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelRedQuilted/image5.jpeg',
+                        '/src/assets/images/DetailImage/Accessories/ChanelRedQuilted/image6.jpeg',
+                    ],
+                    detailImages:[
+                        '/src/assets/images/DetailImage/Accessories/ChanelRedQuilted/detail1.png',
+                        '/src/assets/images/DetailImage/Accessories/ChanelRedQuilted/detail2.png',
+                    ],
+                    description: `Chanel Red Quilted Lambskin CC Unchained Clutch is a symbol of timeless elegance and unparalleled luxury. Crafted from buttery-soft lambskin, the quilted texture exudes timeless sophistication and elegance. 
+                                The bold red color adds a touch of drama and confidence, making it the perfect accessory for any occasion, from chic evenings out to formal events.
+                                The CC Unchained gold hardware is a standout feature, blending seamlessly with the iconic interlocking CC logo for a luxurious and modern appeal. 
+                                Compact yet spacious, the clutch is designed to hold your essentials effortlessly, including your phone, keys, and makeup. The interior is lined with premium materials, ensuring durability while maintaining a plush feel.`,
+                    tags: ["recommended"],
+                    productSizes: [
+                        { size: "S", price: 4500 },
+                        { size: "M", price: 5300 },
+                        { size: "L", price: 6000 },
+                        { size: "XL", price: 7300 },
+                    ],
+                },
+                {
+                    category: "accessory",
                     brand_name: "Hermés",
                     product_name: "Rose Mexico Mysore",
                     price: "$3,920 Starting",
                     product_id: "HR_17M",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/HermesRoseMexico/image1.jpeg",
                     productImages: [
@@ -494,7 +594,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Green Goyardine Canvas",
                     price: "$4,550 Starting",
                     product_id: "GG_23G",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/GoyardGreenGoyardine/image1.jpeg",
                     productImages: [
@@ -530,7 +630,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Brown Monogram Coated",
                     price: "$4,000 Starting",
                     product_id: "LVB_21M",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/LVBrownMonogram/image1.jpeg",
                     productImages: [
@@ -565,7 +665,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Black Quilted Lambskin",
                     price: "$7,100 Starting",
                     product_id: "CB_24L",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/ChanelBlackQLamb/image1.jpeg",
                     productImages: [
@@ -601,7 +701,7 @@ export const useAccessoryStore = defineStore("accessoryStore",{
                     product_name: "Ardoise & Vert Peppermint",
                     price: "$38,000 Starting",
                     product_id: "HA_25V",
-                    product_type: "accessories",
+                    product_type: "accessory",
                     product_status: "Available For Pre-order",
                     thumbNail: "/src/assets/images/DetailImage/Accessories/HermesArdoise/image1.jpeg",
                     productImages: [

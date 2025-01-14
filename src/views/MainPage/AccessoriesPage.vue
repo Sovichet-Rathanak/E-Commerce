@@ -12,7 +12,7 @@
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
-        v-for="product in filteredProductsByTagandType('new', 'accessories').slice(0,4)"
+        v-for="product in filteredProductsByTagandType('new', 'accessory').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -31,7 +31,7 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('recommended', 'accessories').slice(0,4)"
+        v-for="product in filteredProductsByTagandType('recommended', 'accessory').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -49,7 +49,7 @@
 
     <div class="brand_section">
       <BrandCard
-        v-for="(brandName, index) in brand.accessoryBrand.brand_name"
+        v-for="(brandName, index) in brand.accessoryBrand.brand_name.slice(0,4)"
         :key="index"
         :brandImg="brand.accessoryBrand.logo[index]"
         :brandName="brandName"
@@ -65,7 +65,7 @@
     />
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('collab', 'accessories').slice(0,4)"
+        v-for="product in filteredProductsByTagandType('collab', 'accessory').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -80,8 +80,8 @@
 
     <div class="offer_section">
       <OfferCard
-        :offerImage1="'src/assets/images/SpecialOffers/BlackFriday.jpg'"
-        :offerImage2="'src/assets/images/SpecialOffers/newCollection.jpg'"
+        :offerImage1="'src/assets/images/SpecialOffers/handbag1.jpg'"
+        :offerImage2="'src/assets/images/SpecialOffers/handbagBF.jpg'"
       />
     </div>
 
@@ -128,7 +128,7 @@ export default {
 
   data() {
     return {
-      category: "accessories",
+      category: "accessory",
     };
   },
 
