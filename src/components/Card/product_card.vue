@@ -1,14 +1,14 @@
 <template>
     <div class="productCard">
-    <div class="image-container">
-      <img class="productImg" :src="productImage" alt="product image">
-    </div>
-        <hgroup>
-            <h3 class="brandName"> {{ brandName }}</h3>
-            <h3 class="productName"> {{ productName }}</h3>
-            <h3 class="productStatus"> {{ productStatus }}</h3>
-        </hgroup>
-        <button class="buyBtn" @click="goToProductDetailPage">Buy</button>
+      <div class="image-container">
+        <img :src="productImage" alt="product image">
+      </div>
+      <hgroup>
+          <h3 class="brandName"> {{ brandName }}</h3>
+          <h3 class="productName"> {{ productName }}</h3>
+          <h3 class="productStatus"> {{ productStatus }}</h3>
+      </hgroup>
+      <button class="buyBtn" @click="goToProductDetailPage">Buy</button>
     </div>
 </template>
 
@@ -36,6 +36,7 @@ export default {
   width: 320px;
   height: 500px;
   background-color: transparent;
+  overflow: hidden;
 }
 
 .image-container{
@@ -47,10 +48,8 @@ export default {
 }
 
 .image-container > img{
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 20px;
-    background-color: white;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .productName,

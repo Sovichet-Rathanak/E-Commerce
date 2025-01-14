@@ -11,6 +11,10 @@
     "start:json-server": "json-server --watch data/user.json --port 3000"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "emailjs-com": "^3.2.0",
+    "jspdf": "^2.5.2",
+    "jspdf-autotable": "^3.8.4",
     "pinia": "^2.2.6",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5"

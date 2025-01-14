@@ -1,8 +1,8 @@
 <template>
     <div class="container">
-        <img src="/src/assets/images/testimg1.jpg" alt="">
+        <img :src="userStore.isLogIn? userStore.user.profilePic : '/src/assets/images/default.jpg'" alt="pfp">
         <div class="container2">
-            <span class="name">{{ username }}</span>
+            <span class="name">{{userStore.isLogIn? userStore.user.username : "Guest" }}</span>
             <span class="rating">Rating: {{ rating }}</span>
             <p class="comment">{{ comment }}</p>
             <div class="btn-container">
@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import { useUserStore } from '@/store/user';
+
 export default {
     name: "comment_component",
     props: {
@@ -35,6 +37,14 @@ export default {
         rating: Number,
         comment: String,
         replies: Array
+    },
+    setup(){
+        const userStore = useUserStore();
+        userStore.loadUserFromLocalStorage();
+
+        return{
+            userStore
+        }
     },
     data() {
         return {
@@ -59,7 +69,7 @@ export default {
         postReply() {
             if (this.replyText.trim() === "") return;
             this.$emit("add-reply", {
-                username: "Anonymous",
+                username: this.userStore.isLogIn ? this.userStore.user.username : "Guest",
                 text: this.replyText
             });
             this.replyText = "";
@@ -73,6 +83,7 @@ export default {
 .container {
     font-family: "Inter";
     display: flex;
+    margin-top: 20px;
     margin-bottom: 20px;
     width: 100%;
     gap: 10px;
@@ -140,7 +151,6 @@ img {
 }
 .replies {
     margin-top: 20px;
-    margin-bottom: 20px;
     padding-left: 15px;
     border-left: 2px solid #ccc;
 }

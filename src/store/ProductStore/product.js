@@ -47,6 +47,19 @@ export const useProductStore = defineStore("productStore", {
       };
     },
 
+    getRandomProducts(state) {
+      return () => {
+        const allProducts = Object.values(state.productsByCategory).flat();
+        const uniqueProducts = new Set();
+    
+        while (uniqueProducts.size < 4 && uniqueProducts.size < allProducts.length) {
+          const randomIndex = Math.floor(Math.random() * allProducts.length);
+          uniqueProducts.add(allProducts[randomIndex]);
+        }
+    
+        return Array.from(uniqueProducts);
+      };
+    }    
   },
   actions: {
     populateProductsByCategory() {

@@ -246,7 +246,8 @@ export default {
             }else{
                 const userStore = useUserStore();
                 userStore.login(data[0]);
-                this.$router.push('/Account');
+                localStorage.setItem("user", JSON.stringify(data[0]))
+                this.$router.push('/');
             }
         },
     },
