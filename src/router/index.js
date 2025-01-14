@@ -18,6 +18,14 @@ import { createRouter, createWebHistory } from "vue-router";
 import CartPage from "@/views/CartPage.vue";
 import CheckoutPage from "@/views/CheckoutPage.vue";
 import ConfirmPage from "@/views/ConfirmPage.vue";
+import MagazinePage from "@/views/MainPage/MagazinePage.vue";
+import FilteredBrandPage from "@/views/MainPage/FilteredBrandPage.vue";
+import FilterNewPage from "@/views/MainPage/FilterNewPage.vue";
+import FilterRecommendPage from "@/views/MainPage/FilterRecommendPage.vue";
+import FilterCollabPage from "@/views/MainPage/FilterCollabPage.vue";
+import ArticleDetailPage from "@/views/MainPage/ArticleDetailPage.vue";
+
+import AccountPage from "@/views/AccountPage.vue";
 
 const routes = [
   {
@@ -88,17 +96,28 @@ const routes = [
     name: "ReturnPolicies",
     component: ReturnPolicyPage
   },
+
   {
-    path: "/PopularBrand/:id",
+    path: "/PopularBrand/:category",
     name: "PopularBrand",
     component: PopularBrand,
+    props: (route) => ({ category: route.params.category }),
   },
+
   {
     path: "/ArticlePage/:category",
     name: "ArticlePage",
     component: ArticlePage,
     props: (route) => ({ category: route.params.category }),
   },
+
+  {
+    path: "/MagazinePage/:category",
+    name: "MagazinePage",
+    component: MagazinePage,
+    props: (route) => ({ category: route.params.category }),
+  },
+
   {
     path: "/product/:id",
     name: "ProductDetail",
@@ -118,6 +137,47 @@ const routes = [
     path: "/checkoutComplete",
     name: "CheckoutComplete",
     component: ConfirmPage
+  },
+
+  {
+    path: "/:category/:brand",
+    name: "FilteredBrandPage",
+    component: FilteredBrandPage,
+    props: (route) => ({
+      category: route.params.category,
+      brand: route.params.brand,
+    }),
+  },
+
+  {
+    path: "/NewProducts/:category",
+    name: "FilterNew",
+    component: FilterNewPage,
+    props: (route) => ({ category: route.params.category }),
+  },
+
+  {
+    path: "/Recommended/:category",
+    name: "FilterRecommended",
+    component: FilterRecommendPage,
+    props: (route) => ({ category: route.params.category }),
+  },
+
+  {
+    path: "/Collaboration/:category",
+    name: "FilterCollab",
+    component: FilterCollabPage,
+    props: (route) => ({ category: route.params.category }),
+  },
+  {
+    path: "/ArticleDetail",
+    name: "ArticleDetail",
+    component: ArticleDetailPage,
+  },
+  {
+    path: "/Account",
+    name: "Account",
+    component: AccountPage
   }
 ];
 

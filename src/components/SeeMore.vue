@@ -22,10 +22,6 @@ export default {
     backPage: {
       type: String,
     },
-    routeName: {
-      type: String,
-      required: false,
-    },
   },
   computed: {
     GoBack() {
@@ -36,8 +32,13 @@ export default {
     showMore() {
       if (this.$route.name === this.targetPage) {
         console.log("Navigating back to:", this.backPage);
-        this.$router.go(-1); // back navigation, it uses the browser history.
+        this.$router.go(-1);
       } else {
+        console.log(
+          `Navigating to targetPage: ${
+            this.targetPage
+          }, category: ${this.backPage.toLowerCase()}`
+        );
         this.$router.push({
           name: this.targetPage,
           params: { category: this.backPage.toLowerCase() },

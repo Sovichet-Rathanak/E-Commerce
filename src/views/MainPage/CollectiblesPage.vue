@@ -2,29 +2,39 @@
   <WebBanner :images="banner.collectiblesBanner.image" />
   <!-- checkout banner.js and just basically populate the image array with your own image -->
   <div class="Container">
-    <SeeMore style="margin-top: 1.75rem"
-      SectionTitle="New and Noteworthy"
+    <SeeMore SectionTitle="New and Noteworthy" 
+      style="margin-top: 1.75rem" 
+      targetPage="FilterNew"
+      :backPage="category"
+      class="section-header"
     />
 
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
-        v-for="product in filteredProductsByTagandType('new', 'collectible')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType('new', 'collectible').slice(0,4)"
+        :key="product.product_id"
         :productImage="product.thumbNail"
-        :brandName = "product.brand_name"
+        :brandName="product.brand_name"
         :productName="product.product_name"
         :productStatus="product.product_status"
         :productId="product.product_id"
       />
     </div>
 
-    <SeeMore SectionTitle="Recommended For You" />
+    <SeeMore SectionTitle="Recommended For You"
+      style="margin-top: 1.75rem" 
+      targetPage="FilterRecommended"
+      :backPage="category"
+      class="section-header"
+    />
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('recommended', 'collectible')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType('recommended', 'collectible').slice(0,4)"
+        :key="product.product_id"
         :productImage="product.thumbNail"
-        :brandName = "product.brand_name"
+        :brandName="product.brand_name"
         :productName="product.product_name"
         :productStatus="product.product_status"
         :productId="product.product_id"
@@ -32,27 +42,33 @@
     </div>
 
     <SeeMore
-      SectionTitle="Popular Brand"
-      PageTitle="PopularBrand"
-      brandType="collectibleBrand"
+      SectionTitle="Popular Artists"
+      targetPage="PopularBrand"
+      backPage="collectible"
     />
 
     <div class="brand_section">
       <BrandCard
-        v-for="index in 4"
+        v-for="(brandName, index) in brand.collectibleBrand.brand_name.slice(0, 4)"
         :key="index"
-        :brandImg="brand.collectibleBrand.logo[index - 1]"
-        :brandName="brand.collectibleBrand.brand_name[index - 1]"
+        :brandImg="brand.collectibleBrand.logo[index]"
+        :brandName="brandName"
+        @click="navigateToBrand(brandName)"
       />
     </div>
 
-    <SeeMore SectionTitle="Exclusives and Collaborations" />
-
+    <SeeMore SectionTitle="Exlusives and Collaborations"
+      style="margin-top: 1.75rem" 
+      targetPage="FilterCollab"
+      :backPage="category"
+      class="section-header"
+    />
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('collab', 'collectible')" :key="product.product_id"
+        v-for="product in filteredProductsByTagandType('collab', 'collectible').slice(0,4)"
+        :key="product.product_id"
         :productImage="product.thumbNail"
-        :brandName = "product.brand_name"
+        :brandName="product.brand_name"
         :productName="product.product_name"
         :productStatus="product.product_status"
         :productId="product.product_id"
@@ -72,16 +88,16 @@
     <SeeMore
       SectionTitle="Articles"
       targetPage="ArticlePage"
-      backPage="Sneaker"
+      backPage="collectibles"
     />
-    
+
     <div class="article_section">
       <!-- just like the product component you just have to change the path of the productImage, we will also setup pinia for this :3 -->
       <ArticleCard
         v-for="index in 2"
         :key="index"
-        article_image="src/assets/images/Articles/newjeans.jpg"
-        article_title="Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features"
+        :article_image="article.collectiblesArticle.article_images[index - 1]"
+        :article_title="article.collectiblesArticle.article_titles[index - 1]"
       />
     </div>
   </div>
@@ -99,6 +115,7 @@ import { mapState } from "pinia";
 import { useBannerStore } from "@/store/banner";
 import { useProductStore } from "@/store/ProductStore/product";
 import { onMounted } from "vue";
+import { useArticleStore } from "@/store/article";
 
 export default {
   components: {
@@ -109,20 +126,28 @@ export default {
     ProductCard,
     SeeMore,
   },
+  data() {
+    return {
+      category: "collectible",
+    };
+  },
   setup() {
     const brandStore = useBrandStore();
     const bannerStore = useBannerStore();
     const productStore = useProductStore();
+    const articleStore = useArticleStore();
 
     onMounted(() => {
       productStore.populateProductsByCategory();
-      console.log("Product Store: ",productStore)
+      console.log("Product Store: ", productStore);
+      console.log("Product Store: ", productStore);
     });
 
     return {
       brandStore,
       bannerStore,
-      productStore
+      productStore,
+      articleStore,
     };
   },
   computed: {
@@ -132,28 +157,35 @@ export default {
     ...mapState(useBannerStore, {
       banner: "banners",
     }),
-    ...mapState(useProductStore,{
+
+    ...mapState(useArticleStore, {
+      article: "articles",
+    }),
+    ...mapState(useProductStore, {
       productsByCategory: "productsByCategory",
     }),
 
     filteredProductsByTag() {
-      return(tag) => {
+      return (tag) => {
         const productStore = useProductStore();
-        return productStore.getProductsByTag(tag); 
-      }
+        return productStore.getProductsByTag(tag);
+      };
     },
 
-    filteredProductsByTagandType(){
-      return(tag, type) => {
+    filteredProductsByTagandType() {
+      return (tag, type) => {
         const productStore = useProductStore();
-        return productStore.getProductByTypeAndTag(tag, type)
-      }
-    }
+        return productStore.getProductByTypeAndTag(tag, type);
+      };
+    },
   },
 
   methods: {
     display() {
       console.log(this.brand.sneakerBrand.logo[0]);
+    },
+    navigateToBrand(brandName) {
+      this.$router.push(`/${this.category}/${brandName}`);
     },
   },
 };

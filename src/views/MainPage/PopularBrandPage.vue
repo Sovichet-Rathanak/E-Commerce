@@ -13,12 +13,15 @@
         :brandImg="logo"
         :brandName="currentBrand.brand_name[index]"
         :cardSize="dynamicSize"
+        @click="navigateToFilteredBrand(currentBrand.brand_name[index])"
       />
     </div>
   </div>
 </template>
 
 <script>
+import { computed } from "vue";
+import { useRouter, useRoute } from "vue-router";
 import SeeMore from "@/components/SeeMore.vue";
 import BrandCard from "@/components/Card/BrandCard.vue";
 import { useBrandStore } from "@/store/brand";
@@ -31,22 +34,37 @@ export default {
   props: {
     category: {
       type: String,
-      required: true,
     },
   },
-  computed: {
-    currentBrand() {
-      const store = useBrandStore();
+
+  setup(props) {
+    const router = useRouter();
+    const route = useRoute();
+    const brandStore = useBrandStore();
+
+    const currentCategory = computed(() => {
+      return props.category || route.params.category || "all";
+    });
+
+    const navigateToFilteredBrand = (brand) => {
+      router.push({
+        path: `/${currentCategory.value}/${brand}`,
+      });
+    };
+
+    const currentBrand = computed(() => {
       return (
-        store.brands[this.category + "Brand"] || {
+        brandStore.brands[currentCategory.value + "Brand"] || {
           logo: [],
           brand_name: [],
         }
       );
-    },
-  },
-  data() {
+    });
+
     return {
+      currentCategory,
+      currentBrand,
+      navigateToFilteredBrand,
       dynamicSize: "large",
     };
   },

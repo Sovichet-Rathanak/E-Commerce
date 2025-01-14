@@ -1,8 +1,10 @@
 <template>
-  <div class="article">
-    <img :src="`/${article_image}`" alt="image" class="article_image" />
-    <div class="article_title">{{ article_title }}</div>
-  </div>
+  <RouterLink class="router-link" to="/ArticleDetail">
+    <div class="article">
+      <img :src="`/${article_image}`" alt="image" class="article_image" />
+      <div class="article_title">{{ article_title }}</div>
+    </div>
+  </RouterLink>
 </template>
 
 <script>
@@ -45,5 +47,6 @@ export default {
   text-align: left;
   color: black;
   margin: 15px 10px 0 25px;
+  font-family: "Inter";
 }
 </style>

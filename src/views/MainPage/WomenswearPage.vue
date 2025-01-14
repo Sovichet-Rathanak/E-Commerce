@@ -2,12 +2,17 @@
   <WebBanner :images="banner.womenswearBanner.image" />
   <!-- checkout banner.js and just basically populate the image array with your own image -->
   <div class="Container">
-    <SeeMore SectionTitle="New and Noteworthy" style="margin-top: 1.75rem" />
-
+    <SeeMore
+      SectionTitle="New and Noteworthy"
+      style="margin-top: 1.75rem"
+      targetPage="FilterNew"
+      :backPage="category"
+      class="section-header"
+    />
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
-        v-for="product in filteredProductsByTagandType('new', 'womenswear')"
+        v-for="product in filteredProductsByTagandType('new', 'womenswear').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -17,14 +22,17 @@
       />
     </div>
 
-    <SeeMore SectionTitle="Recommended For You" />
+    <SeeMore
+      SectionTitle="Recommended For You"
+      style="margin-top: 1.75rem"
+      targetPage="FilterRecommended"
+      :backPage="category"
+      class="section-header"
+    />
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType(
-          'recommended',
-          'womenswear'
-        )"
+        v-for="product in filteredProductsByTagandType('recommended', 'womenswear').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -36,22 +44,32 @@
     <SeeMore
       SectionTitle="Popular Brand"
       targetPage="PopularBrand"
-      backPage="Womenswear"
+      backPage="womenswear"
     />
 
     <div class="brand_section">
       <BrandCard
-        v-for="index in 4"
+        v-for="(brandName, index) in brand.womenswearBrand.brand_name.slice(
+          0,
+          4
+        )"
         :key="index"
-        :brandImg="brand.womenswearBrand.logo[index - 1]"
-        :brandName="brand.womenswearBrand.brand_name[index - 1]"
+        :brandImg="brand.womenswearBrand.logo[index]"
+        :brandName="brandName"
+        @click="navigateToBrand(brandName)"
       />
     </div>
-    <SeeMore SectionTitle="Exclusives and Collaborations" />
 
+    <SeeMore
+      SectionTitle="Exlusives and Collaborations"
+      style="margin-top: 1.75rem"
+      targetPage="FilterCollab"
+      :backPage="category"
+      class="section-header"
+    />
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('collab', 'womenswear')"
+        v-for="product in filteredProductsByTagandType('collab', 'womenswear').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -71,14 +89,18 @@
       />
     </div>
 
-    <SeeMore SectionTitle="Articles" />
+    <SeeMore
+      SectionTitle="Magazines"
+      targetPage="MagazinePage"
+      backPage="womenwear"
+    />
     <div class="article_section">
       <!-- just like the product component you just have to change the path of the productImage, we will also setup pinia for this :3 -->
       <MagazineCard
         v-for="index in 3"
         :key="index"
-        Magazine_image="src/assets/images/Magazine/Magazine1.jpg"
-        Magazine_title="Step into the world of timeless fashion with our exclusive collection!"
+        :Magazine_image="article.womenwearArticle.article_images[index - 1]"
+        :Magazine_title="article.womenwearArticle.article_titles[index - 1]"
       />
     </div>
   </div>
@@ -96,6 +118,7 @@ import { mapState } from "pinia";
 import { useBannerStore } from "@/store/banner";
 import { useProductStore } from "@/store/ProductStore/product";
 import { onMounted } from "vue";
+import { useArticleStore } from "@/store/article";
 export default {
   components: {
     BrandCard,
@@ -105,20 +128,27 @@ export default {
     SeeMore,
     MagazineCard,
   },
+  data() {
+    return {
+      category: "womenswear",
+    };
+  },
   setup() {
     const brandStore = useBrandStore();
     const bannerStore = useBannerStore();
     const productStore = useProductStore();
+    const articleStore = useArticleStore();
 
     onMounted(() => {
       productStore.populateProductsByCategory();
-      console.log("Product Store: ",productStore)
+      console.log("Product Store: ", productStore);
     });
 
     return {
       brandStore,
       bannerStore,
       productStore,
+      articleStore,
     };
   },
   computed: {
@@ -127,6 +157,9 @@ export default {
     }),
     ...mapState(useBannerStore, {
       banner: "banners",
+    }),
+    ...mapState(useArticleStore, {
+      article: "articles",
     }),
     ...mapState(useProductStore, {
       productsByCategory: "productsByCategory",
@@ -149,6 +182,9 @@ export default {
   methods: {
     display() {
       console.log(this.brand.sneakerBrand.logo[0]);
+    },
+    navigateToBrand(brandName) {
+      this.$router.push(`/${this.category}/${brandName}`);
     },
   },
 };

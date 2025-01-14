@@ -1,5 +1,5 @@
 <template>
-    <body>
+    <body :key="prodcutId">
         <ProductImage 
             v-if="product"
             :images="product.productImages"
@@ -17,26 +17,29 @@
             :detailImages="product.detailImages"
         />
         <RatingComponent v-if="product"></RatingComponent>
-        <comment_section v-if="product"></comment_section>
+        <comment_section class="comment" v-if="product"></comment_section>
+        <RecommendedComponent class="card"></RecommendedComponent>
     </body>
 </template>
 
 <script>
 import { useProductStore } from '@/store/ProductStore/product';
 import { useRoute } from 'vue-router';
+import { mapState } from 'pinia';
+import { onMounted } from 'vue';
 import ProductImage from '@/components/DetailComponent/ProductImage.vue';
 import ProductDetail from '@/components/DetailComponent/ProductDetail.vue'
-import { mapState } from 'pinia';
 import comment_section from '@/components/DetailComponent/comment_section.vue';
 import RatingComponent from '@/components/DetailComponent/RatingComponent.vue';
-import { onMounted } from 'vue';
+import RecommendedComponent from '@/components/DetailComponent/RecommendedComponent.vue';
 
 export default {
     components: {
         ProductImage,
         ProductDetail,
         comment_section,
-        RatingComponent
+        RatingComponent,
+        RecommendedComponent
     },
     setup(){
         const route = useRoute();
@@ -83,7 +86,16 @@ export default {
         margin-top: 1.5rem;
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+        width: 100vw;
+        gap: 2rem;
         padding-inline: 7rem;
+    }
+
+    .comment{
+        margin-bottom: 3rem;
+    }
+
+    .card{
+        margin-bottom: 3rem;
     }
 </style>

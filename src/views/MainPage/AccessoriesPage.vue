@@ -2,12 +2,17 @@
   <WebBanner :images="banner.accessoryBanner.image" />
   <!-- checkout banner.js and just basically populate the image array with your own image -->
   <div class="Container">
-    <SeeMore SectionTitle="New and Noteworthy" style="margin-top: 1.75rem" />
+    <SeeMore SectionTitle="New and Noteworthy" 
+      style="margin-top: 1.75rem" 
+      targetPage="FilterNew"
+      :backPage="category"
+      class="section-header"
+      />
 
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
-        v-for="product in filteredProductsByTagandType('new', 'accessories')"
+        v-for="product in filteredProductsByTagandType('new', 'accessories').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -17,14 +22,16 @@
       />
     </div>
 
-    <SeeMore SectionTitle="Recommended For You" />
+    <SeeMore SectionTitle="Recommended For You" 
+      style="margin-top: 1.75rem" 
+      targetPage="FilterRecommended"
+      :backPage="category"
+      class="section-header"
+    />
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType(
-          'recommended',
-          'accessories'
-        )"
+        v-for="product in filteredProductsByTagandType('recommended', 'accessories').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -37,23 +44,28 @@
     <SeeMore
       SectionTitle="Popular Brand"
       targetPage="PopularBrand"
-      backPage="Sneaker"
+      backPage="accessory"
     />
 
     <div class="brand_section">
       <BrandCard
-        v-for="index in 4"
+        v-for="(brandName, index) in brand.accessoryBrand.brand_name.slice(0,4)"
         :key="index"
-        :brandImg="brand.accessoryBrand.logo[index - 1]"
-        :brandName="brand.accessoryBrand.brand_name[index - 1]"
+        :brandImg="brand.accessoryBrand.logo[index]"
+        :brandName="brandName"
+        @click="navigateToBrand(brandName)"
       />
     </div>
 
-    <SeeMore SectionTitle="Exclusives and Collaborations" />
-
+    <SeeMore SectionTitle="Exclusives and Collaborations" 
+      style="margin-top: 1.75rem" 
+      targetPage="FilterCollab"
+      :backPage="category"
+      class="section-header"
+    />
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('collab', 'accessories')"
+        v-for="product in filteredProductsByTagandType('collab', 'accessories').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -68,8 +80,8 @@
 
     <div class="offer_section">
       <OfferCard
-        :offerImage1="'src/assets/images/SpecialOffers/BlackFriday.jpg'"
-        :offerImage2="'src/assets/images/SpecialOffers/newCollection.jpg'"
+        :offerImage1="'src/assets/images/SpecialOffers/handbag1.jpg'"
+        :offerImage2="'src/assets/images/SpecialOffers/handbagBF.jpg'"
       />
     </div>
 
@@ -113,7 +125,13 @@ export default {
     ProductCard,
     SeeMore,
   },
-  
+
+  data() {
+    return {
+      category: "accessory",
+    };
+  },
+
   setup() {
     const brandStore = useBrandStore();
     const bannerStore = useBannerStore();
@@ -122,7 +140,8 @@ export default {
 
     onMounted(() => {
       productStore.populateProductsByCategory();
-      console.log("Product Store: ",productStore)
+      console.log("Product Store: ", productStore);
+      console.log("Product Store: ", productStore);
     });
 
     return {
@@ -164,6 +183,9 @@ export default {
   methods: {
     display() {
       console.log(this.brand.sneakerBrand.logo[0]);
+    },
+    navigateToBrand(brandName) {
+      this.$router.push(`/${this.category}/${brandName}`);
     },
   },
 };

@@ -8,7 +8,11 @@
           :src="image"
           alt="product_image"
           @click="setLargeImage(index)"
-          :class="{ active: index === activeIndex }"
+          :class="[
+            'product_image',
+            productImage,
+            { active: index === activeIndex },
+          ]"
         />
       </div>
 
@@ -30,6 +34,20 @@
             />
           </button>
         </div>
+      </div>
+    </div>
+
+    <div class="popup-overlay" v-if="showPopup">
+      <div class="popup">
+        <div class="popup-header">
+          <h1>Unlock Your True Artistic Potential</h1>
+        </div>
+
+        <h2 class="popuptitle">
+          Join the culture
+        </h2>
+        <button class="popup-btn" @click="gotoRegistration">Login or Sign up</button>
+        <button class="later-btn" @click="closePopUp">Maybe later</button>
       </div>
     </div>
 
@@ -93,14 +111,7 @@
           <hgroup>
             <h3 style="margin-bottom: 10px">Buy now for:</h3>
             <h1 class="price" :class="[activated ? price_activated : 'null']">
-              {{
-                activated
-                  ? `${
-                      formatter.format(productSizes[selectedIndex].price) ||
-                      formatter.format(price_tag)
-                    }`
-                  : `${price_tag}`
-              }}
+              {{activated ? `${formatter.format(productSizes[selectedIndex].price) || formatter.format(price_tag)}` : `${price_tag}`}}
             </h1>
           </hgroup>
           <div class="buy-container">
@@ -149,6 +160,7 @@
 <script>
 import { useCartStore } from "@/store/cart";
 import { useProductStore } from "@/store/ProductStore/product";
+import { useUserStore } from "@/store/user";
 import { mapState } from "pinia";
 
 export default {
@@ -177,6 +189,10 @@ export default {
       type: String,
       required: true,
     },
+    productImage: {
+      type: String,
+      default: "medium",
+    },
   },
 
   data() {
@@ -199,15 +215,21 @@ export default {
         currency: "USD",
         trailingZeroDisplay: "stripIfInteger",
       }),
+
+      //Pop up thing
+      showPopup: false,
     };
   },
 
   setup() {
     const productStore = useProductStore();
     const cartStore = useCartStore();
+    const userStore = useUserStore();
+
     return {
       productStore,
       cartStore,
+      userStore
     };
   },
 
@@ -250,6 +272,11 @@ export default {
         return;
       }
 
+      if(!this.userStore.isLogIn){
+        this.showPopup = true;
+        return;
+      }
+
       const cartItem = {
         productId: this.productId,
         name: this.productname,
@@ -260,10 +287,16 @@ export default {
       };
 
       this.cartStore.addToCart(cartItem);
-            this.cartStore.calculateTotalPrice();
+      this.cartStore.calculateTotalPrice();
       console.log("Cart Items:", this.cartItems);
       this.$router.push("/cart");
     },
+    gotoRegistration(){
+      this.$router.push("/Registration");
+    },
+    closePopUp(){
+      this.showPopup = false;
+    }
   },
 };
 </script>
@@ -272,11 +305,78 @@ export default {
 .ProductImage-container {
   font-family: "Inter";
   display: flex;
+  position: relative;
   flex-direction: row;
   justify-content: space-between;
   gap: 2rem;
   width: 100%;
   height: fit-content;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  z-index: 100;
+}
+
+.popup {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px black;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.popup-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d0907;
+  border-radius: 10px 10px 0px 0px;
+  width: 100%;
+  height: 100px;
+  color: white;
+  font-family: "Inter";
+  font-size: 18px;
+}
+
+.popuptitle {
+  font-size: 30px;
+}
+
+.popup-btn{
+  width: 30%;
+  height: 45px;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  font-family: "Inter";
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 100px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.later-btn {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  color: grey;
+  opacity: 70%;
+  cursor: pointer;
 }
 
 /* LEFT SECTION */
@@ -290,23 +390,32 @@ export default {
 }
 
 .row {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-    height: 860px;
-    overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  height: 860px;
+  overflow-y: scroll;
 }
 
 .row > img {
-    width: 8rem;
-    height: 8rem;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: fill;
-    cursor: pointer;
-    background-color: #e7e7e7;
-    border: 1px solid #cfcfcf;
-    border-radius: 5px;
+  cursor: pointer;
+  background-color: #e7e7e7;
+  border: 1px solid #cfcfcf;
+  border-radius: 5px;
+}
+.product_image.medium {
+  width: 8rem;
+  height: 8rem;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: fill;
+}
+.product_image.large {
+  width: 8rem;
+  height: 8rem;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: fill;
 }
 
 .large-section {
@@ -422,7 +531,7 @@ export default {
   align-items: center;
 }
 
-.buy-btn {
+.buy-btn{
   width: 70%;
   height: 60px;
   font-weight: 900;

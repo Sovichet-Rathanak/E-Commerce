@@ -5,22 +5,21 @@
                 <router-link to="/" style="text-decoration: none;"><h1>Kravan</h1></router-link>
                 <h2>Sign in or create an account</h2>
                 <form @submit.prevent>
-
-                    <!-- signin section -->
                     <div class="input-container-signin" v-if="formType === 'signin'">
                         <div class="input-group">
                             <label for="email">Email</label>
-                            <input type="email" required>
+                            <input type="email" v-model="email" required>
                         </div>
                         <div class="input-group">
                             <label for="password">Password</label>
-                            <input type="password" required>
+                            <input type="password" v-model="password" required>
+                            <h4 v-if="errors.login" class="error-message">{{ errors.login }}</h4>
                         </div>
                         <div class="show-pass">
                             <span>Don't have an account?</span>
                             <span @click="toggleSignUp" class="signup" style="font-weight: bold;">Sign Up</span>
                         </div>
-                        <button class="submit-button">Sign In</button>
+                        <button class="submit-button" @click="signInUser">Sign In</button>
                         <div class="line-break">
                             <div class="line-before"></div>
                             <span>or</span>
@@ -34,38 +33,52 @@
                         <span class="forgot-section" @click="toggleForgotpwd">Forgot Password</span>
                     </div>
 
-                    <!-- signup section -->
                     <div class="input-container-signup" v-else-if="formType === 'signup'">
                         <div class="input-group">
                             <label for="email">Email</label>
-                            <input type="email" required>
+                            <input type="email" v-model="email" required>
+                            <h4 v-if="errors.email" class="error-message">{{ errors.email }}</h4>
+                        </div>
+                        <div class="input-group">
+                            <label for="username">Username</label>
+                            <input type="text" v-model="username" required>
                         </div>
                         <div class="input-group">
                             <label for="password">Password</label>
-                            <input type="password" required>
+                            <input type="password" v-model="password" required>
                         </div>
                         <div class="input-group">
                             <label for="confirm-password">Confirm Password</label>
-                            <input type="password" required>
+                            <input type="password" v-model="confirmPassword" required>
+                            <h4 v-if="errors.confirmPassword" class="error-message">{{ errors.confirmPassword }}</h4>
                         </div>
                         <div class="show-pass">
                             <span>Already have an account?</span>
                             <span @click="toggleSignIn" class="signup" style="font-weight: bold;">Sign In</span>
                         </div>
-                        <button class="submit-button">Sign Up</button>
+                        <button class="submit-button" @click="registerUser">Sign Up</button>
                     </div>
 
-                    <!-- forgot pwd section -->
-                    <div class="input-container-signup" v-else>
+                    <div class="input-container-signup" v-else-if="formType === 'forgot'">
                         <div class="input-group">
                             <label for="email">Email</label>
-                            <input type="email">
+                            <input type="email" v-model="email" required>
+                            <h4 v-if="errors.email" class="error-message">{{ errors.email }}</h4>
                         </div>
                         <div class="show-pass">
                             <span @click="toggleSignIn" class="signup" style="font-weight: bold;">Back</span>
                         </div>
-                        <button class="reset-button">Reset Password</button>
+                        <button class="reset-button" @click="handleForgotPassword">Reset Password</button>
                     </div>
+
+                    <div class="input-container-signup" v-else-if="formType === 'newPwd'">
+                        <div class="input-group">
+                            <label for="password">New Password</label>
+                            <input type="password" v-model="password" required>
+                        </div>
+                        <button class="reset-button" @click="resetPassword">Set New Password</button>
+                    </div>
+
                 </form>
             </div>
             <div class="video-container">
@@ -76,33 +89,179 @@
 </template>
 
 <script>
+import { useUserStore } from '@/store/user';
+
 export default {
     data() {
         return {
             formType: "signin",
-            isSignUp: false, 
-            forgotPwd: false,
+            email: "",
+            username: "",
+            password: "",
+            confirmPassword: "",
+            errors: {}
         };
     },
     methods: {
-        toggleSignUp() {
-            this.formType = "signup"
+        isErrors() {
+            this.errors = {};
         },
-        toggleSignIn(){
-            this.formType = "signin"
-        },  
-        toggleForgotpwd(){
-            this.formType = "forgor"
-            console.log(this.forgotPwd)
-        }
+        clearInputs() {
+            this.email = '';
+            this.username = '';
+            this.password = '';
+            this.confirmPassword = '';
+        },
+        toggleSignUp() {
+            this.isErrors();
+            this.clearInputs();
+            this.formType = "signup";
+        },
+        toggleSignIn() {
+            this.isErrors();
+            this.clearInputs();
+            this.formType = "signin";
+        },
+        toggleForgotpwd() {
+            this.isErrors();
+            this.clearInputs();
+            this.formType = "forgot";
+        },
+        toggleNewpwd() {
+            this.isErrors();
+            this.clearInputs();
+            this.formType = "newPwd";
+        },
+
+        async handleForgotPassword() {
+            this.isErrors();
+            if (!this.email) {
+                this.errors.email = "Email is required.";
+                return;
+            }
+
+            const response = await fetch(`http://localhost:3000/users?email=${this.email}`);
+            const data = await response.json();
+
+            if (data.length > 0) {
+                this.clearInputs();
+                this.toggleNewpwd();
+            } else {
+                this.errors.email = "Email not found. Please register.";
+            }
+        },
+
+        async resetPassword() {
+            this.isErrors();
+            if (!this.password) {
+                this.errors.password = "New password is required.";
+                return;
+            }
+
+            const response = await fetch(`http://localhost:3000/users?email=${this.email}`);
+            const data = await response.json();
+
+            if (data.length > 0) {
+                const user = data[0];
+                user.password = this.password;
+
+                const updateResponse = await fetch(`http://localhost:3000/users/${user.id}`, {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(user),
+                });
+
+                if (updateResponse.ok) {
+                    this.clearInputs();
+                    this.toggleSignIn();
+                }
+            }
+        },
+
+        async registerUser() {
+            this.isErrors();
+            if (!this.email) {
+                this.errors.email = "Email is required.";
+                return;
+            }
+            if (!this.username) {
+                this.errors.username = "Username is required.";
+                return;
+            }
+            if (!this.password) {
+                this.errors.password = "Password is required.";
+                return;
+            }
+            if (this.password !== this.confirmPassword) {
+                this.errors.confirmPassword = "Passwords do not match!";
+                return;
+            }
+
+            const response = await fetch(`http://localhost:3000/users?email=${this.email}`);
+            const existingUsers = await response.json();
+
+            if (existingUsers.length > 0) {
+                this.errors.email = "Email is already in use.";
+                return;
+            }
+
+            const newUser = {
+                email: this.email,
+                username: this.username,
+                password: this.password,
+            };
+
+            const registerResponse = await fetch("http://localhost:3000/users", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(newUser),
+            });
+
+            if (registerResponse.ok) {
+                this.clearInputs();
+                this.toggleSignIn();
+            } else {
+                this.errors.registration = "Failed to register. Try again.";
+            }
+        },
+
+        async signInUser() {
+            this.isErrors();
+            if (!this.email) {
+                this.errors.email = "Email is required.";
+                return;
+            }
+            if (!this.password) {
+                this.errors.password = "Password is required.";
+                return;
+            }
+
+            const response = await fetch(
+                `http://localhost:3000/users?email=${this.email}&password=${this.password}`
+            );
+            const data = await response.json();
+
+            if (data.length === 0) {
+                this.errors.login = "Invalid email or password.";
+            }else{
+                const userStore = useUserStore();
+                userStore.login(data[0]);
+                localStorage.setItem("user", JSON.stringify(data[0]))
+                this.$router.push('/');
+            }
+        },
     },
 };
 </script>
 
-
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
+    .error-message {
+        color: red;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+    }
+  
     .container{
         display: flex;
         justify-content: center;
@@ -172,7 +331,7 @@ export default {
         align-items: center;
         flex-direction: column;
         width: 600px;
-        gap: 20px;
+        gap: 10px;
     }
 
     label{

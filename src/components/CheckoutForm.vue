@@ -112,6 +112,10 @@
 
 <script>
 import { useCartStore } from '@/store/cart';
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable';
+import emailjs from 'emailjs-com';
+import { useUserStore } from '@/store/user';
 
 export default {
   data() {
@@ -132,6 +136,14 @@ export default {
         currency: 'USD',
         trailingZeroDisplay: 'stripIfInteger',
       }),
+    };
+  },
+  setup(){
+    const userStore = useUserStore();
+    userStore.loadUserFromLocalStorage(); 
+
+    return {
+      userStore,
     };
   },
   computed: {
@@ -229,8 +241,153 @@ export default {
       }
 
       if (isValid) {
+        this.sendEmail();
+        this.generateReceiptPDF();
+        this.cartStore.amountInCart = {};
+        this.cartStore.cartItems = [];
         this.$router.push('/checkoutComplete');
       }
+    },
+    generateReceiptPDF(){
+      const doc = new jsPDF();
+      const image = new Image();
+      const date = new Date();
+
+      image.src = "/src/assets/images/Kravan_black.png";
+      
+      //Header
+      doc.addImage(image, "png", 12, 12, 34,34)
+      doc.setTextColor(0, 0, 0);
+      doc.setFont("Helvetica", "normal", "bold");
+      doc.setFontSize(65)
+      doc.text("Invoice", 117, 42)
+
+      //From Kravan LLC
+      doc.setTextColor(0, 0, 0);
+      doc.setFont("Helvetica", "normal", "bold");
+      doc.setFontSize(12)
+      doc.text("From", 12, 53)
+
+      doc.setTextColor(0, 0, 0);
+      doc.setFont("Helvetica", "normal", "bold");
+      doc.setFontSize(14)
+      doc.text("Kravan LLC", 12, 60)
+
+      doc.setTextColor(0, 0, 0);
+      doc.setFont("Helvetica", "normal", "normal");
+      doc.setFontSize(12)
+      doc.text("#14 ST57 & 288", 12, 67)
+
+      doc.setTextColor(0, 0, 0);
+      doc.setFont("Helvetica", "normal", "normal");
+      doc.setFontSize(12)
+      doc.text("Sangkat Boeung Keng Kang Area 1", 12, 72)
+
+      doc.setTextColor(0, 0, 0);
+      doc.setFont("Helvetica", "normal", "normal");
+      doc.setFontSize(12);
+      doc.text("Phnom Penh, Cambodia", 12, 77)
+
+      //Invoice date
+      doc.setTextColor(0, 0, 0);
+      doc.setFont("Helvetica", "normal", "bold");
+      doc.setFontSize(12);
+      doc.text("Invoice Date:", 130, 77);
+      
+      doc.setTextColor(0, 0, 0);
+      doc.setFont("Helvetica", "normal", "normal");
+      doc.setFontSize(12);
+      doc.text(date.toDateString(), 158, 77);
+      console.log(this.cartStore.cartItems)
+      
+      //Thank You Message
+      doc.setTextColor(0, 0, 0);
+      doc.setFont("Helvetica", "normal", "bold");
+      doc.setFontSize(16)
+      doc.text("Thank you for your support!", 12, 245)
+
+      doc.setTextColor(0, 0, 0);
+      doc.setFont("Helvetica", "normal", "normal");
+      doc.setFontSize(12)
+      doc.text("We truly appreciate your trust in our service.", 12, 251)
+
+      //PDF FOOTER
+      doc.setFillColor(0,0,0);
+      doc.rect(0, 280, 400, 20, 'F');
+      doc.setTextColor(255,255,255);
+      doc.setFont("Helvetica", "normal", "normal");
+      doc.setFontSize(12);
+      doc.text("©Kravan LLC.All Rights Reserved.", 75, 290);
+
+      const tableBody = this.cartStore.cartItems.map(item => [
+        `${item.brand} \n${item.name}`, 
+        this.cartStore.amountInCart[`${item.productId}-${item.size}`] || 0, 
+        `$${item.price}`, // Price
+        `$${(this.cartStore.amountInCart[`${item.productId}-${item.size}`] || 0) * item.price}`, 
+      ]);
+
+      //Calculate total
+      const selectedOption = this.shippingOptions.find(option => option.id === this.selectedShippingOption);
+      const shippingCost = selectedOption ? selectedOption.shippingPrice : 0;
+      const total = parseFloat(this.cartStore.total) + parseFloat(this.cartStore.tax.toFixed(2));
+
+      //Table
+      autoTable(doc, {
+        startY: 90,
+        head: [["Item", "Quantity", "Rate", "Amount"]],
+        body: tableBody,
+        foot: [
+          ["", "", "Subtotal:", `$${this.cartStore.subtotal}`],
+          ["", "", "Tax:", `$${this.cartStore.tax.toFixed(2)}`],
+          ["", "", "Shipping:", `$${shippingCost}`],
+          ["", "", "Total:", `$${total}`]
+        ],
+        theme: 'grid',
+        columnStyles: {
+          0: { cellWidth: 90 },
+          1: { cellWidth: 30 },
+          2: { cellWidth: 30 },
+          3: { cellWidth: 30 },
+        },
+        headStyles: {
+          fillColor: [0, 0, 0],
+          textColor: [255, 255, 255],
+          fontStyle: 'bold',
+        },
+        footStyles: {
+          fillColor: [255, 255, 255],
+          textColor: [0, 0, 0],
+          margin: 0,
+          fontStyle: 'normal',
+          halign: 'right',
+        },
+        willDrawCell: function (data) {
+          if (data.row.section === 'foot' && data.row.index === 3 && data.column.index === 2) {
+            const doc = data.doc;
+            const cell = data.cell;
+            const { x, y, width } = cell;
+            doc.setLineWidth(1); 
+            doc.line(x, y, x + width + 30, y); 
+          }
+
+          if (data.row.section === 'foot' && data.row.index === 3 && data.column.index >= 2) {
+            doc.setFont("Helvetica", "normal", "bold");
+          }
+        },
+      });
+      window.open(doc.output('bloburl'), '_blank');
+    },
+    sendEmail() {
+      const templateParams = {
+        to_name: this.userStore.user.username,
+        user_email: this.userStore.user.email,
+      }
+
+      emailjs.send("service_annamg9", "template_vghx3hc", templateParams, import.meta.env.VITE_EMAILJS_KEY);
+      // .then(function (res){
+      //   alert("Success" + res.status);
+      // }
+      // ).catch(e => console.log("msg: ", e));
     }
   }
 };

@@ -1,9 +1,9 @@
 <template>
+    <h1>Comments</h1>
+    <div class="hl"></div>
     <div class="comment-section">
-        <h1>Comments</h1>
-        <div class="hl"></div>
         <div class="addComment">
-            <img src="/src/assets/images/testimg1.jpg" alt="pfp">
+            <img :src="userStore.isLogIn ? userStore.user.profilePic : '/src/assets/images/default.jpg'" alt="pfp">
             <input v-model="newComment" type="text" placeholder="Leave a comment...">
             <button @click="addCmt" class="icon">
                 <iconify-icon class="send" icon="iconoir:send-solid"></iconify-icon>
@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import { useUserStore } from '@/store/user';
 import comment_component from './comment_component.vue';
 export default {
     name: "comment-section",
@@ -35,16 +36,27 @@ export default {
     },
     data(){
         return{
-            newCmt: "",
+            newComment: "",
             comments: []
             }
     },
+    setup(){
+        const userStore = useUserStore();
+        userStore.loadUserFromLocalStorage()
+
+        return{
+            userStore
+        };
+    },
     methods:{
         addCmt() {
-            if (this.newComment.trim() === "") return; 
+            if (this.newComment.trim() === "") return;
+            const username = this.userStore.isLogIn ? this.userStore.user.username : "Guest";
+            const profilePic = this.userStore.isLogIn ? this.userStore.user.profilePic : "default-profile-pic.png";
             
             this.comments.push({
-                username: "Anonymous",
+                username,
+                profilePic,
                 rating: 5, 
                 comment: this.newComment,
                 replies: []
@@ -65,10 +77,12 @@ export default {
     display: flex;
     flex-direction: column;
     font-family: "Inter";
-    margin-bottom: 5rem;
+    padding-inline: 10rem;
+    margin-bottom: 3rem;
 }
 h1{
-    font-family: "Inter"
+    font-family: "Inter";
+    font-size: 35px;
 }
 .hl{
     width: 100%;
@@ -96,7 +110,7 @@ h1{
     margin-left: -3.4rem;
 }
 input{
-    width: 50%;
+    width: 100%;
     height: 50px;
     border-radius: 50px;
     border: none;
@@ -110,7 +124,7 @@ img{
     border-radius: 50%;
 }
 .no_comments{
-    width: 50%;
+    width: 100%;
     margin-top: 20px;
     color: gray;
     display: flex;
