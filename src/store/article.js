@@ -7,26 +7,18 @@ export const useArticleStore = defineStore('articles', {
         sneakerArticle: {
           article_titles: [
             "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-
+            "Converse X GOLF set to be release this summer",
+            "How sneakers came to be cultural currency.",
+            "GOLF WANG x Converse Snake Pack.",
           ],
           article_images: [
             "./src/assets/images/Articles/travisArticle.jpg",
-            "./src/assets/images/Articles/travisArticle.jpg",
-            "./src/assets/images/Articles/travisArticle.jpg",
-            "./src/assets/images/Articles/travisArticle.jpg",
-            "./src/assets/images/Articles/travisArticle.jpg",
-            "./src/assets/images/Articles/articlebag.jpg",
+            "./src/assets/images/Articles/conversegolf.jpeg",
+            "./src/assets/images/Articles/CultureCurrency.jpg",
+            "./src/assets/images/Articles/tylershelflife.jpg",
           ],
 
         },
-
-
-
         accessoriesArticle: {
           article_titles: [
             "Hermés Birkin: Kylie Jenner matches her manicure to her $300K Birkin bag",
@@ -44,14 +36,8 @@ export const useArticleStore = defineStore('articles', {
             "./src/assets/images/Articles/AccessoriesArticle/LV1.jpg",
             "./src/assets/images/Articles/AccessoriesArticle/chanel2.jpg",
             "./src/assets/images/Articles/AccessoriesArticle/LV2.jpg",
-
           ],
-
         },
-
-
-
-
         manswearArticle: {
           article_titles: [
             "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
@@ -60,7 +46,6 @@ export const useArticleStore = defineStore('articles', {
             "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
             "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
             "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-
           ],
           article_images: [
             "/src/assets/images/Magazine_Man.png",
@@ -73,10 +58,6 @@ export const useArticleStore = defineStore('articles', {
           ],
 
         },
-
-
-
-
         womenwearArticle: {
           article_titles: [
             "Taeyeon is an elegant living portrait for the January 2025 cover of 'Allure'",
@@ -106,27 +87,18 @@ export const useArticleStore = defineStore('articles', {
           ],
 
         },
-
-
-
-
         collectiblesArticle: {
           article_titles: [
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-
+            "From Stage to Style: ILLIT's Fashion Forward Debut in Vogue Korea",
+            "LE SSERAFIM's 'EASY' album once again receives criticism for 'heavy referencing' | allkpop",
+            "New Jeans group continues to face hardship on workplace safety",
+            "New Jeans singer Hanni gives tearful testimony on workplace harassment",
           ],
           article_images: [
+            "src/assets/images/Articles/illit.jpg",
+            "src/assets/images/Articles/lesserafim.jpg",
             "src/assets/images/Articles/newjeans.jpg",
-            "src/assets/images/Articles/newjeans.jpg",
-            "src/assets/images/Articles/newjeans.jpg",
-            "src/assets/images/Articles/newjeans.jpg",
-            "src/assets/images/Articles/newjeans.jpg",
-            "src/assets/images/Articles/newjeans.jpg",
+            "src/assets/images/Articles/hanni.jpg",
           ],
 
         },

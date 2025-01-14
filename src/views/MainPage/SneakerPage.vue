@@ -81,8 +81,8 @@
 
     <div class="offer_section">
       <OfferCard
-        :offerImage1="'src/assets/images/SpecialOffers/BlackFriday.jpg'"
-        :offerImage2="'src/assets/images/SpecialOffers/newCollection.jpg'"
+        :offerImage1="'src/assets/images/SpecialOffers/chicago.jpg'"
+        :offerImage2="'src/assets/images/SpecialOffers/offertrav.jpg'"
       />
     </div>
 
