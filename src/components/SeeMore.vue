@@ -31,9 +31,16 @@ export default {
   methods: {
     showMore() {
       if (this.$route.name === this.targetPage) {
+        // If already on the target page, go back to the previous route
         console.log("Navigating back to:", this.backPage);
-        this.$router.go(-1); // back navigation, it uses the browser history.
+        this.$router.go(-1); // Go back to previous page
       } else {
+        // Navigate to the target page, passing 'category' as a parameter
+        console.log(
+          `Navigating to targetPage: ${
+            this.targetPage
+          }, category: ${this.backPage.toLowerCase()}`
+        );
         this.$router.push({
           name: this.targetPage,
           params: { category: this.backPage.toLowerCase() },

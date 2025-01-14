@@ -34,6 +34,19 @@ export const useProductStore = defineStore("productStore", {
         );
       };
     },
+
+    getProductsByCategoryAndBrand(state) {
+      return (category, brand) => {
+        const allProducts = Object.values(state.productsByCategory).flat();
+        console.log(`34Filtering products for category: ${category}, brand: ${brand}`);
+        const filteredProducts = allProducts.filter(
+          (product) => product.category === category && product.brand_name === brand
+        );
+        console.log("56Filtered Products:", filteredProducts);
+        return filteredProducts;
+      };
+    },
+
   },
   actions: {
     populateProductsByCategory() {
@@ -59,5 +72,6 @@ export const useProductStore = defineStore("productStore", {
     selectSize(size) {
       this.selectedSize = size;
     },
+
   },
 });

@@ -19,6 +19,11 @@ import CartPage from "@/views/CartPage.vue";
 import CheckoutPage from "@/views/CheckoutPage.vue";
 import ConfirmPage from "@/views/ConfirmPage.vue";
 import MagazinePage from "@/views/MainPage/MagazinePage.vue";
+import FilteredBrandPage from "@/views/MainPage/FilteredBrandPage.vue";
+import FilterNewPage from "@/views/MainPage/FilterNewPage.vue";
+import FilterRecommendPage from "@/views/MainPage/FilterRecommendPage.vue";
+import FilterCollabPage from "@/views/MainPage/FilterCollabPage.vue";
+import ArticleDetailPage from "@/views/MainPage/ArticleDetailPage.vue";
 
 const routes = [
   {
@@ -132,8 +137,41 @@ const routes = [
     component: ConfirmPage
   },
 
+  {
+    path: "/:category/:brand",
+    name: "FilteredBrandPage",
+    component: FilteredBrandPage,
+    props: (route) => ({
+      category: route.params.category,
+      brand: route.params.brand,
+    }),
+  },
 
+  {
+    path: "/NewProducts/:category",
+    name: "FilterNew",
+    component: FilterNewPage,
+    props: (route) => ({ category: route.params.category }),
+  },
 
+  {
+    path: "/Recommended/:category",
+    name: "FilterRecommended",
+    component: FilterRecommendPage,
+    props: (route) => ({ category: route.params.category }),
+  },
+
+  {
+    path: "/Collaboration/:category",
+    name: "FilterCollab",
+    component: FilterCollabPage,
+    props: (route) => ({ category: route.params.category }),
+  },
+  {
+    path: "/ArticleDetail",
+    name: "ArticleDetail",
+    component: ArticleDetailPage,
+  }
 ];
 
 const router = createRouter({
