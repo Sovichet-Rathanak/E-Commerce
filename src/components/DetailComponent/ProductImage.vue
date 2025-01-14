@@ -148,7 +148,7 @@
 
 <script>
 import { useCartStore } from "@/store/cart";
-import { useProductStore } from "@/store/product";
+import { useProductStore } from "@/store/ProductStore/product";
 import { mapState } from "pinia";
 
 export default {
@@ -285,6 +285,7 @@ export default {
   flex-direction: row;
   gap: 7px;
   width: 60%;
+  max-width: 100%;
   height: 100%;
 }
 
@@ -292,11 +293,13 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 7px;
-    width: 8rem;
-    height: 8rem;
+    height: 860px;
+    overflow-y: scroll;
 }
 
 .row > img {
+    width: 8rem;
+    height: 8rem;
     max-width: 100%;
     max-height: 100%;
     object-fit: fill;
@@ -308,8 +311,8 @@ export default {
 
 .large-section {
   position: relative;
-  width: 80%;
-  height: auto;
+  width: 860px;
+  height: 860px;
 }
 
 .large-section > img {

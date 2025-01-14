@@ -52,49 +52,49 @@ export const useArticleStore = defineStore('articles', {
 
 
 
-        // manswearArticle: {
-        //   article_titles: [
-        //     "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-        //     "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-        //     "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-        //     "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-        //     "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
-        //     "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
+        manswearArticle: {
+          article_titles: [
+            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
+            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
+            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
+            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
+            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
+            "Dawn of a New Rage: The Unstoppable Sneaker Reign of Travis Scott - Features",
 
-        //   ],
-        //   article_images: [
-        //     "src/assets/images/Magazine_Man.png",
-        //     "src/assets/images/Magazine_Man.png",
-        //     "src/assets/images/Magazine_Man.png",
-        //     "src/assets/images/Magazine_Man.png",
-        //     "src/assets/images/Magazine_Man.png",
-        //     "src/assets/images/Magazine_Man.png",
-        //   ],
+          ],
+          article_images: [
+            "/src/assets/images/Magazine_Man.png",
+            "/src/assets/images/Magazine_Man.png",
+            "/src/assets/images/Magazine_Man.png",
+            "/src/assets/images/Magazine_Man.png",
+            "/src/assets/images/Magazine_Man.png",
+            "/src/assets/images/Magazine_Man.png",
+          ],
 
-        // },
-
-
+        },
 
 
-        // womenwearArticle: {
-        //   article_titles: [
-        //     "Step into the world of timeless fashion with our exclusive collection!",
-        //     "Step into the world of timeless fashion with our exclusive collection!",
-        //     "Step into the world of timeless fashion with our exclusive collection!",
-        //     "Step into the world of timeless fashion with our exclusive collection!",
-        //     "Step into the world of timeless fashion with our exclusive collection!",
-        //     "Step into the world of timeless fashion with our exclusive collection!",
-        //   ],
-        //   article_images: [
-        //     "src/assets/images/Magazine/Magazine1.jpg",
-        //     "src/assets/images/Magazine/Magazine1.jpg",
-        //     "src/assets/images/Magazine/Magazine1.jpg",
-        //     "src/assets/images/Magazine/Magazine1.jpg",
-        //     "src/assets/images/Magazine/Magazine1.jpg",
-        //     "src/assets/images/Magazine/Magazine1.jpg",
-        //   ],
 
-        // },
+
+        womenwearArticle: {
+          article_titles: [
+            "Step into the world of timeless fashion with our exclusive collection!",
+            "Step into the world of timeless fashion with our exclusive collection!",
+            "Step into the world of timeless fashion with our exclusive collection!",
+            "Step into the world of timeless fashion with our exclusive collection!",
+            "Step into the world of timeless fashion with our exclusive collection!",
+            "Step into the world of timeless fashion with our exclusive collection!",
+          ],
+          article_images: [
+            "/src/assets/images/Magazine/Magazine1.jpg",
+            "/src/assets/images/Magazine/Magazine2.jpg",
+            "/src/assets/images/Magazine/Magazine3.jpg",
+            "/src/assets/images/Magazine/Magazine1.jpg",
+            "/src/assets/images/Magazine/Magazine1.jpg",
+            "/src/assets/images/Magazine/Magazine1.jpg",
+          ],
+
+        },
 
 
 

@@ -21,7 +21,10 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('recommended', 'sneaker')"
+        v-for="product in filteredProductsByTagandType(
+          'recommended',
+          'sneaker'
+        )"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -34,8 +37,7 @@
     <SeeMore
       SectionTitle="Popular Brand"
       targetPage="PopularBrand"
-      backPage="Sneaker"
-      routeName="SneakerBrand"
+      backPage="sneaker"
     />
 
     <div class="brand_section">
@@ -90,16 +92,17 @@
 
 <script>
 import SeeMore from "@/components/SeeMore.vue";
-import WebBanner from "@/components/web_banner.vue";
-import BrandCard from "@/components/BrandCard.vue";
-import OfferCard from "@/components/OfferCard.vue";
-import ArticleCard from "@/components/ArticleCardComponent.vue";
-import ProductCard from "@/components/product_card.vue";
+import WebBanner from "@/components/HomeComponent/web_banner.vue";
+import BrandCard from "@/components/Card/BrandCard.vue";
+import OfferCard from "@/components/HomeComponent/OfferCard.vue";
+import ArticleCard from "@/components/Card/ArticleCardComponent.vue";
+import ProductCard from "@/components/Card/product_card.vue";
 import { useBrandStore } from "@/store/brand";
 import { mapState } from "pinia";
 import { useBannerStore } from "@/store/banner";
-import { useProductStore } from "@/store/product";
+import { useProductStore } from "@/store/ProductStore/product";
 import { useArticleStore } from "@/store/article";
+import { onMounted } from "vue";
 
 export default {
   components: {
@@ -115,6 +118,11 @@ export default {
     const bannerStore = useBannerStore();
     const productStore = useProductStore();
     const articleStore = useArticleStore();
+
+    onMounted(() => {
+      productStore.populateProductsByCategory();
+      console.log("Product Store: ", productStore);
+    });
 
     return {
       brandStore,

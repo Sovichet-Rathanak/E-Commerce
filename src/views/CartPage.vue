@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import CartItem from '@/components/CartItem.vue';
-import SummaryBlock from '@/components/SummaryBlock.vue';
+import CartItem from '@/components/CartComponent/CartItem.vue';
+import SummaryBlock from '@/components/CartComponent/SummaryBlock.vue';
 import { useCartStore } from '@/store/cart';
 import { mapState } from 'pinia';
 

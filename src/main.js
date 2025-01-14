@@ -4,8 +4,8 @@ import { Icon } from '@iconify/vue';
 
 import App from './App.vue';
 import router from './router';
-import nav_filter from "./components/nav_filter.vue";
-import searchBtn from './components/searchBtn.vue';
+import nav_filter from "./components/HomeComponent/nav_filter.vue";
+import searchBtn from './components/HomeComponent/searchBtn.vue';
 
 const app = createApp(App);
 const pinia = createPinia();

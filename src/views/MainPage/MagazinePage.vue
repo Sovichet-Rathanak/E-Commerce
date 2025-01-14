@@ -1,20 +1,19 @@
 <template>
-  <div class="AriticlePage">
+  <div class="MagazinePage">
     <div class="section-header">
       <SeeMore
-        SectionTitle="Articles"
-        targetPage="ArticlePage"
+        SectionTitle="Magazines"
+        targetPage="MagazinePage"
         :backPage="category"
       />
     </div>
-    <div class="article-wrap">
-      <ArticleCard
-        v-for="(image, index) in currentArticle.article_images"
+    <div class="Magazine-wrap">
+      <MagazineCard
+        v-for="(image, index) in currentMagazine.article_images"
         :key="index"
-        :article_image="image"
-        :article_title="currentArticle.article_titles[index]"
-        :cardSize="dynamicSize"
-        class="article-section"
+        :Magazine_image="image"
+        :Magazine_title="currentMagazine.article_titles[index]"
+        class="Magazine-section"
       />
     </div>
   </div>
@@ -22,13 +21,13 @@
 
 <script>
 import SeeMore from "@/components/SeeMore.vue";
-import ArticleCard from "@/components/Card/ArticleCardComponent.vue";
 import { useArticleStore } from "@/store/article";
+import MagazineCard from "@/components/Card/MagazineCardComponent.vue";
 
 export default {
   components: {
     SeeMore,
-    ArticleCard,
+    MagazineCard,
   },
 
   props: {
@@ -39,7 +38,7 @@ export default {
   },
 
   computed: {
-    currentArticle() {
+    currentMagazine() {
       const store = useArticleStore();
       return (
         store.articles[this.category + "Article"] || {
@@ -53,7 +52,7 @@ export default {
 </script>
 
 <style scoped>
-.AriticlePage {
+.MagazinePage {
   width: auto;
   padding: 2rem 2rem;
   display: flex;
@@ -64,13 +63,13 @@ export default {
   justify-content: space-between;
   width: auto;
 }
-.article-wrap {
+.Magazine-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
-.article-section {
+.Magazine-section {
   display: flex;
   align-items: center;
   justify-items: center;
