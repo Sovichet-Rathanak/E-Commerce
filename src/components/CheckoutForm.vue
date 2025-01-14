@@ -375,7 +375,7 @@ export default {
           }
         },
       });
-      window.open(doc.output('bloburl'), '_blank');
+      doc.save("Invoice.pdf;");
     },
     sendEmail() {
       const templateParams = {

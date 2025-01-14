@@ -12,7 +12,7 @@
     <div class="recommended_section">
       <!-- for this component you just have to change the path of the productImage, we will setup pinia later :3 -->
       <ProductCard
-        v-for="product in filteredProductsByTagandType('new', 'accessories').slice(0,4)"
+        v-for="product in filteredProductsByTagandType('new', 'accessory').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -31,7 +31,7 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('recommended', 'accessories').slice(0,4)"
+        v-for="product in filteredProductsByTagandType('recommended', 'accessory').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -65,7 +65,7 @@
     />
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('collab', 'accessories').slice(0,4)"
+        v-for="product in filteredProductsByTagandType('collab', 'accessory').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"

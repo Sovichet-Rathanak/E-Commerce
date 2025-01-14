@@ -11,7 +11,7 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('new', 'menswears').slice(0,4)"
+        v-for="product in filteredProductsByTagandType('new', 'menswear').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -31,7 +31,7 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('recommended', 'menswears').slice(0,4)"
+        v-for="product in filteredProductsByTagandType('recommended', 'menswear').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"
@@ -66,7 +66,7 @@
 
     <div class="recommended_section">
       <ProductCard
-        v-for="product in filteredProductsByTagandType('collab', 'menswears').slice(0,4)"
+        v-for="product in filteredProductsByTagandType('collab', 'menswear').slice(0,4)"
         :key="product.product_id"
         :productImage="product.thumbNail"
         :brandName="product.brand_name"

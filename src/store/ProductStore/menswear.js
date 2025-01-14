@@ -470,12 +470,12 @@ export const useMenswearStore = defineStore("menswearStore", {
         product_type: "menswear",
         product_status: "Available For Pre-order",
         thumbNail:
-          "/src/assets/images/DetailImage/Menswears/Shirt/Sacai-cotton1.jpg",
+          "/src/assets/images/DetailImage/Menswears/Shirt/Sacai-Cotton1.jpg",
         productImages: [
-          "/src/assets/images/DetailImage/Menswears/Shirt/Sacai-cotton1.jpg",
-          "/src/assets/images/DetailImage/Menswears/Shirt/Sacai-cotton2.jpg",
-          "/src/assets/images/DetailImage/Menswears/Shirt/Sacai-cotton3.jpg",
-          "/src/assets/images/DetailImage/Menswears/Shirt/Sacai-cotton4.jpg",
+          "/src/assets/images/DetailImage/Menswears/Shirt/Sacai-Cotton1.jpg",
+          "/src/assets/images/DetailImage/Menswears/Shirt/Sacai-Cotton2.jpg",
+          "/src/assets/images/DetailImage/Menswears/Shirt/Sacai-Cotton3.jpg",
+          "/src/assets/images/DetailImage/Menswears/Shirt/Sacai-Cotton4.jpg",
         ],
         detailImages: [],
         description: `Birkin Vert d'Eau—an absolute masterpiece of understated elegance. This exquisite piece is a treasure in the world of luxury handbags. The serene "water green" tone offers a delicate balance of
