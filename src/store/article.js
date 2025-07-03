@@ -100,7 +100,6 @@ export const useArticleStore = defineStore('articles', {
             "src/assets/images/Articles/newjeans.jpg",
             "src/assets/images/Articles/hanni.jpg",
           ],
-
         },
       }
     }

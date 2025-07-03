@@ -34,7 +34,7 @@ export const useProductStore = defineStore("productStore", {
         );
       };
     },
-
+    
     getProductsByCategoryAndBrand(state) {
       return (category, brand) => {
         const allProducts = Object.values(state.productsByCategory).flat();

@@ -140,7 +140,7 @@ export default {
                 return;
             }
 
-            const response = await fetch(`http://localhost:3000/users?email=${this.email}`);
+            const response = await fetch(`/api/users?email=${this.email}`);
             const data = await response.json();
 
             if (data.length > 0) {
@@ -158,14 +158,14 @@ export default {
                 return;
             }
 
-            const response = await fetch(`http://localhost:3000/users?email=${this.email}`);
+            const response = await fetch(`/api/users?email=${this.email}`);
             const data = await response.json();
 
             if (data.length > 0) {
                 const user = data[0];
                 user.password = this.password;
 
-                const updateResponse = await fetch(`http://localhost:3000/users/${user.id}`, {
+                const updateResponse = await fetch(`/api/users/${user.id}`, {
                     method: "PUT",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(user),
@@ -197,7 +197,7 @@ export default {
                 return;
             }
 
-            const response = await fetch(`http://localhost:3000/users?email=${this.email}`);
+            const response = await fetch(`/api/users?email=${this.email}`);
             const existingUsers = await response.json();
 
             if (existingUsers.length > 0) {
@@ -211,7 +211,7 @@ export default {
                 password: this.password,
             };
 
-            const registerResponse = await fetch("http://localhost:3000/users", {
+            const registerResponse = await fetch("/api/users", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newUser),
@@ -237,7 +237,7 @@ export default {
             }
 
             const response = await fetch(
-                `http://localhost:3000/users?email=${this.email}&password=${this.password}`
+                `/api/users?email=${this.email}&password=${this.password}`
             );
             const data = await response.json();
 
